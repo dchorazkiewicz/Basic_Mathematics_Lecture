@@ -1,30 +1,319 @@
-deploy	Validate generated exercise pages	﻿2026-07-26T13:01:46.7921798Z ##[group]Run python scripts/validate_built_exercises.py
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7922257Z ^[[36;1mpython scripts/validate_built_exercises.py^[[0m
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7966906Z shell: /usr/bin/bash -e {0}
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7967163Z env:
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7967434Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7967867Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7968546Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7968977Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7969373Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7969762Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.7970284Z ##[endgroup]
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8330459Z site_build/exercises-01/problem-06/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8332021Z site_build/exercises-01/problem-08/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8333361Z site_build/exercises-01/problem-09/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8334517Z site_build/exercises-01/problem-10/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8335562Z site_build/exercises-01/problem-13/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8336357Z site_build/exercises-01/problem-14/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8337176Z site_build/exercises-01/problem-15/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8337962Z site_build/exercises-01/problem-16/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8338975Z site_build/exercises-01/problem-17/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8339719Z site_build/exercises-01/problem-19/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8340467Z site_build/exercises-01/problem-20/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8341206Z site_build/exercises-02/problem-08/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8341944Z site_build/exercises-02/problem-09/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8342678Z site_build/exercises-02/problem-10/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8343410Z site_build/exercises-02/problem-11/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8344148Z site_build/exercises-02/problem-15/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8344888Z site_build/exercises-02/problem-16/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8345622Z site_build/exercises-02/problem-20/index.html: raw $$ delimiter remains in rendered problem content
-deploy	Validate generated exercise pages	2026-07-26T13:01:46.8380250Z ##[error]Process completed with exit code 1.
+deploy	Set up job	﻿2026-07-26T13:41:49.5305368Z Current runner version: '2.335.1'
+deploy	Set up job	2026-07-26T13:41:49.5342201Z ##[group]Runner Image Provisioner
+deploy	Set up job	2026-07-26T13:41:49.5343595Z Hosted Compute Agent
+deploy	Set up job	2026-07-26T13:41:49.5345069Z Version: 20260707.563
+deploy	Set up job	2026-07-26T13:41:49.5346157Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+deploy	Set up job	2026-07-26T13:41:49.5347679Z Build Date: 2026-07-07T19:33:50Z
+deploy	Set up job	2026-07-26T13:41:49.5349100Z Worker ID: {e6aa0201-51aa-4964-843d-737fb1b4afd4}
+deploy	Set up job	2026-07-26T13:41:49.5350400Z Azure Region: eastus
+deploy	Set up job	2026-07-26T13:41:49.5351500Z ##[endgroup]
+deploy	Set up job	2026-07-26T13:41:49.5353931Z ##[group]Operating System
+deploy	Set up job	2026-07-26T13:41:49.5354989Z Ubuntu
+deploy	Set up job	2026-07-26T13:41:49.5356009Z 24.04.4
+deploy	Set up job	2026-07-26T13:41:49.5357254Z LTS
+deploy	Set up job	2026-07-26T13:41:49.5358180Z ##[endgroup]
+deploy	Set up job	2026-07-26T13:41:49.5359306Z ##[group]Runner Image
+deploy	Set up job	2026-07-26T13:41:49.5360360Z Image: ubuntu-24.04
+deploy	Set up job	2026-07-26T13:41:49.5361528Z Version: 20260720.247.2
+deploy	Set up job	2026-07-26T13:41:49.5363523Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+deploy	Set up job	2026-07-26T13:41:49.5366632Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+deploy	Set up job	2026-07-26T13:41:49.5368636Z ##[endgroup]
+deploy	Set up job	2026-07-26T13:41:49.5370799Z ##[group]GITHUB_TOKEN Permissions
+deploy	Set up job	2026-07-26T13:41:49.5374099Z Contents: write
+deploy	Set up job	2026-07-26T13:41:49.5375713Z Metadata: read
+deploy	Set up job	2026-07-26T13:41:49.5376677Z ##[endgroup]
+deploy	Set up job	2026-07-26T13:41:49.5379848Z Secret source: Actions
+deploy	Set up job	2026-07-26T13:41:49.5381448Z Prepare workflow directory
+deploy	Set up job	2026-07-26T13:41:49.5847097Z Prepare all required actions
+deploy	Set up job	2026-07-26T13:41:49.5903183Z Getting action download info
+deploy	Set up job	2026-07-26T13:41:49.7704766Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+deploy	Set up job	2026-07-26T13:41:50.4263291Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+deploy	Set up job	2026-07-26T13:41:50.6552907Z Complete job name: deploy
+deploy	Check out repository	﻿2026-07-26T13:41:50.7369791Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+deploy	Check out repository	2026-07-26T13:41:50.7378823Z ##[group]Run actions/checkout@v4
+deploy	Check out repository	2026-07-26T13:41:50.7379668Z with:
+deploy	Check out repository	2026-07-26T13:41:50.7380267Z   fetch-depth: 0
+deploy	Check out repository	2026-07-26T13:41:50.7380860Z   repository: dchorazkiewicz/Basic_Mathematics_Lecture
+deploy	Check out repository	2026-07-26T13:41:50.7384934Z   token: ***
+deploy	Check out repository	2026-07-26T13:41:50.7385426Z   ssh-strict: true
+deploy	Check out repository	2026-07-26T13:41:50.7385911Z   ssh-user: git
+deploy	Check out repository	2026-07-26T13:41:50.7386418Z   persist-credentials: true
+deploy	Check out repository	2026-07-26T13:41:50.7387216Z   clean: true
+deploy	Check out repository	2026-07-26T13:41:50.7387742Z   sparse-checkout-cone-mode: true
+deploy	Check out repository	2026-07-26T13:41:50.7388333Z   fetch-tags: false
+deploy	Check out repository	2026-07-26T13:41:50.7388842Z   show-progress: true
+deploy	Check out repository	2026-07-26T13:41:50.7389351Z   lfs: false
+deploy	Check out repository	2026-07-26T13:41:50.7389832Z   submodules: false
+deploy	Check out repository	2026-07-26T13:41:50.7390392Z   set-safe-directory: true
+deploy	Check out repository	2026-07-26T13:41:50.7390946Z   allow-unsafe-pr-checkout: false
+deploy	Check out repository	2026-07-26T13:41:50.7391799Z ##[endgroup]
+deploy	Check out repository	2026-07-26T13:41:50.8377700Z Syncing repository: dchorazkiewicz/Basic_Mathematics_Lecture
+deploy	Check out repository	2026-07-26T13:41:50.8380988Z ##[group]Getting Git version info
+deploy	Check out repository	2026-07-26T13:41:50.8382625Z Working directory is '/home/runner/work/Basic_Mathematics_Lecture/Basic_Mathematics_Lecture'
+deploy	Check out repository	2026-07-26T13:41:50.8384836Z [command]/usr/bin/git version
+deploy	Check out repository	2026-07-26T13:41:50.9578162Z git version 2.54.0
+deploy	Check out repository	2026-07-26T13:41:50.9603175Z ##[endgroup]
+deploy	Check out repository	2026-07-26T13:41:50.9620646Z Temporarily overriding HOME='/home/runner/work/_temp/5e9ca33a-45c4-4b12-9209-bd6e6d996632' before making global git config changes
+deploy	Check out repository	2026-07-26T13:41:50.9623401Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Check out repository	2026-07-26T13:41:50.9627872Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Basic_Mathematics_Lecture/Basic_Mathematics_Lecture
+deploy	Check out repository	2026-07-26T13:41:50.9853838Z Deleting the contents of '/home/runner/work/Basic_Mathematics_Lecture/Basic_Mathematics_Lecture'
+deploy	Check out repository	2026-07-26T13:41:50.9858454Z ##[group]Initializing the repository
+deploy	Check out repository	2026-07-26T13:41:50.9864751Z [command]/usr/bin/git init /home/runner/work/Basic_Mathematics_Lecture/Basic_Mathematics_Lecture
+deploy	Check out repository	2026-07-26T13:41:51.0323751Z hint: Using 'master' as the name for the initial branch. This default branch name
+deploy	Check out repository	2026-07-26T13:41:51.0325388Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+deploy	Check out repository	2026-07-26T13:41:51.0326709Z hint: to use in all of your new repositories, which will suppress this warning,
+deploy	Check out repository	2026-07-26T13:41:51.0327935Z hint: call:
+deploy	Check out repository	2026-07-26T13:41:51.0328578Z hint:
+deploy	Check out repository	2026-07-26T13:41:51.0329659Z hint: 	git config --global init.defaultBranch <name>
+deploy	Check out repository	2026-07-26T13:41:51.0330683Z hint:
+deploy	Check out repository	2026-07-26T13:41:51.0331403Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+deploy	Check out repository	2026-07-26T13:41:51.0332563Z hint: 'development'. The just-created branch can be renamed via this command:
+deploy	Check out repository	2026-07-26T13:41:51.0333580Z hint:
+deploy	Check out repository	2026-07-26T13:41:51.0334100Z hint: 	git branch -m <name>
+deploy	Check out repository	2026-07-26T13:41:51.0334690Z hint:
+deploy	Check out repository	2026-07-26T13:41:51.0335463Z hint: Disable this message with "git config set advice.defaultBranchName false"
+deploy	Check out repository	2026-07-26T13:41:51.0337538Z Initialized empty Git repository in /home/runner/work/Basic_Mathematics_Lecture/Basic_Mathematics_Lecture/.git/
+deploy	Check out repository	2026-07-26T13:41:51.0342905Z [command]/usr/bin/git remote add origin https://github.com/dchorazkiewicz/Basic_Mathematics_Lecture
+deploy	Check out repository	2026-07-26T13:41:51.0619175Z ##[endgroup]
+deploy	Check out repository	2026-07-26T13:41:51.0620081Z ##[group]Disabling automatic garbage collection
+deploy	Check out repository	2026-07-26T13:41:51.0625587Z [command]/usr/bin/git config --local gc.auto 0
+deploy	Check out repository	2026-07-26T13:41:51.0664825Z ##[endgroup]
+deploy	Check out repository	2026-07-26T13:41:51.0666578Z ##[group]Setting up auth
+deploy	Check out repository	2026-07-26T13:41:51.0673875Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Check out repository	2026-07-26T13:41:51.0713446Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Check out repository	2026-07-26T13:41:51.2598860Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Check out repository	2026-07-26T13:41:51.2634853Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Check out repository	2026-07-26T13:41:51.2871549Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Check out repository	2026-07-26T13:41:51.2909783Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Check out repository	2026-07-26T13:41:51.3147488Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+deploy	Check out repository	2026-07-26T13:41:51.3189674Z ##[endgroup]
+deploy	Check out repository	2026-07-26T13:41:51.3191251Z ##[group]Fetching the repository
+deploy	Check out repository	2026-07-26T13:41:51.3200854Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+deploy	Check out repository	2026-07-26T13:41:51.7914722Z From https://github.com/dchorazkiewicz/Basic_Mathematics_Lecture
+deploy	Check out repository	2026-07-26T13:41:51.7921996Z  * [new branch]      add-free-vector-representatives -> origin/add-free-vector-representatives
+deploy	Check out repository	2026-07-26T13:41:51.7925984Z  * [new branch]      box-all-point-labels    -> origin/box-all-point-labels
+deploy	Check out repository	2026-07-26T13:41:51.7929656Z  * [new branch]      fix-heading-permalinks  -> origin/fix-heading-permalinks
+deploy	Check out repository	2026-07-26T13:41:51.7932517Z  * [new branch]      fix-mkdocs-strict-links -> origin/fix-mkdocs-strict-links
+deploy	Check out repository	2026-07-26T13:41:51.7935616Z  * [new branch]      fix-plane-relations-fullscreen-layout -> origin/fix-plane-relations-fullscreen-layout
+deploy	Check out repository	2026-07-26T13:41:51.7939040Z  * [new branch]      full-site-to-mkdocs     -> origin/full-site-to-mkdocs
+deploy	Check out repository	2026-07-26T13:41:51.7941185Z  * [new branch]      gh-pages                -> origin/gh-pages
+deploy	Check out repository	2026-07-26T13:41:51.7943477Z  * [new branch]      layer-lecture-02-details -> origin/layer-lecture-02-details
+deploy	Check out repository	2026-07-26T13:41:51.7946004Z  * [new branch]      main                    -> origin/main
+deploy	Check out repository	2026-07-26T13:41:51.7948244Z  * [new branch]      migrate-to-mkdocs       -> origin/migrate-to-mkdocs
+deploy	Check out repository	2026-07-26T13:41:51.7950549Z  * [new branch]      organize-lecture-assets -> origin/organize-lecture-assets
+deploy	Check out repository	2026-07-26T13:41:51.7953180Z  * [new branch]      rebuild-3d-scenes-responsively -> origin/rebuild-3d-scenes-responsively
+deploy	Check out repository	2026-07-26T13:41:51.7955963Z  * [new branch]      rebuild-lecture-03-3d-scenes -> origin/rebuild-lecture-03-3d-scenes
+deploy	Check out repository	2026-07-26T13:41:51.7958999Z  * [new branch]      refine-3d-scene-visibility -> origin/refine-3d-scene-visibility
+deploy	Check out repository	2026-07-26T13:41:51.7961885Z  * [new branch]      remove-angle-projection-redundancy -> origin/remove-angle-projection-redundancy
+deploy	Check out repository	2026-07-26T13:41:51.7964706Z  * [new branch]      remove-norm-repetition  -> origin/remove-norm-repetition
+deploy	Check out repository	2026-07-26T13:41:51.7967676Z  * [new branch]      replace-spatial-diagrams-with-3d -> origin/replace-spatial-diagrams-with-3d
+deploy	Check out repository	2026-07-26T13:41:51.7970872Z  * [new branch]      restore-cartesian-axes-in-3d-scenes -> origin/restore-cartesian-axes-in-3d-scenes
+deploy	Check out repository	2026-07-26T13:41:51.7973832Z  * [new branch]      revert-lecture-02-collapsing -> origin/revert-lecture-02-collapsing
+deploy	Check out repository	2026-07-26T13:41:51.7977082Z  * [new branch]      rewrite-free-vector-motivation -> origin/rewrite-free-vector-motivation
+deploy	Check out repository	2026-07-26T13:41:51.7980004Z  * [new branch]      split-anchored-vector-figures -> origin/split-anchored-vector-figures
+deploy	Check out repository	2026-07-26T13:41:51.7982669Z  * [new branch]      tighten-vector-narrative -> origin/tighten-vector-narrative
+deploy	Check out repository	2026-07-26T13:41:51.7985071Z  * [new branch]      true-semantic-markdown  -> origin/true-semantic-markdown
+deploy	Check out repository	2026-07-26T13:41:51.7988142Z  * [new branch]      unify-diagram-labels-lectures-01-03-04 -> origin/unify-diagram-labels-lectures-01-03-04
+deploy	Check out repository	2026-07-26T13:41:51.8212325Z [command]/usr/bin/git branch --list --remote origin/main
+deploy	Check out repository	2026-07-26T13:41:51.8302744Z   origin/main
+deploy	Check out repository	2026-07-26T13:41:51.8321025Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+deploy	Check out repository	2026-07-26T13:41:51.8348627Z f0cd63f04a71be1ead70a53e42d54767f522f4ec
+deploy	Check out repository	2026-07-26T13:41:51.8354819Z ##[endgroup]
+deploy	Check out repository	2026-07-26T13:41:51.8357279Z ##[group]Determining the checkout info
+deploy	Check out repository	2026-07-26T13:41:51.8359671Z ##[endgroup]
+deploy	Check out repository	2026-07-26T13:41:51.8361702Z [command]/usr/bin/git sparse-checkout disable
+deploy	Check out repository	2026-07-26T13:41:51.8453782Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+deploy	Check out repository	2026-07-26T13:41:51.8494343Z ##[group]Checking out the ref
+deploy	Check out repository	2026-07-26T13:41:51.8497496Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+deploy	Check out repository	2026-07-26T13:41:51.8803123Z Switched to a new branch 'main'
+deploy	Check out repository	2026-07-26T13:41:51.8805309Z branch 'main' set up to track 'origin/main'.
+deploy	Check out repository	2026-07-26T13:41:51.8814543Z ##[endgroup]
+deploy	Check out repository	2026-07-26T13:41:51.8867157Z [command]/usr/bin/git log -1 --format=%H
+deploy	Check out repository	2026-07-26T13:41:51.8897651Z f0cd63f04a71be1ead70a53e42d54767f522f4ec
+deploy	Set up Python	﻿2026-07-26T13:41:51.9247358Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+deploy	Set up Python	2026-07-26T13:41:51.9253322Z ##[group]Run actions/setup-python@v5
+deploy	Set up Python	2026-07-26T13:41:51.9254439Z with:
+deploy	Set up Python	2026-07-26T13:41:51.9255254Z   python-version: 3.12
+deploy	Set up Python	2026-07-26T13:41:51.9256186Z   cache: pip
+deploy	Set up Python	2026-07-26T13:41:51.9257482Z   cache-dependency-path: requirements.txt
+deploy	Set up Python	2026-07-26T13:41:51.9258736Z   check-latest: false
+deploy	Set up Python	2026-07-26T13:41:51.9268125Z   token: ***
+deploy	Set up Python	2026-07-26T13:41:51.9269023Z   update-environment: true
+deploy	Set up Python	2026-07-26T13:41:51.9270061Z   allow-prereleases: false
+deploy	Set up Python	2026-07-26T13:41:51.9271071Z   freethreaded: false
+deploy	Set up Python	2026-07-26T13:41:51.9271989Z ##[endgroup]
+deploy	Set up Python	2026-07-26T13:41:52.0639346Z ##[group]Installed versions
+deploy	Set up Python	2026-07-26T13:41:52.1125989Z (node:2192) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+deploy	Set up Python	2026-07-26T13:41:52.1131287Z (Use `node --trace-deprecation ...` to show where the warning was created)
+deploy	Set up Python	2026-07-26T13:41:52.1134094Z Successfully set up CPython (3.12.13)
+deploy	Set up Python	2026-07-26T13:41:52.1137378Z ##[endgroup]
+deploy	Set up Python	2026-07-26T13:41:52.1503143Z [command]/opt/hostedtoolcache/Python/3.12.13/x64/bin/pip cache dir
+deploy	Set up Python	2026-07-26T13:41:53.6185144Z /home/runner/.cache/pip
+deploy	Set up Python	2026-07-26T13:41:53.7666060Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.12.13-pip-80ea4a168388eb4eb3e7b7858ffcad1912794478f525d0a5baa3b441c22ea7df
+deploy	Set up Python	2026-07-26T13:41:53.7701460Z (node:2192) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+deploy	Set up Python	2026-07-26T13:41:53.9743547Z Received 26075766 of 26075766 (100.0%), 141.3 MBs/sec
+deploy	Set up Python	2026-07-26T13:41:53.9744326Z Cache Size: ~25 MB (26075766 B)
+deploy	Set up Python	2026-07-26T13:41:53.9778837Z [command]/usr/bin/tar -xf /home/runner/work/_temp/6ab0c137-7592-4552-9349-7d6f4e9ea5c7/cache.tzst -P -C /home/runner/work/Basic_Mathematics_Lecture/Basic_Mathematics_Lecture --use-compress-program unzstd
+deploy	Set up Python	2026-07-26T13:41:54.0631599Z Cache restored successfully
+deploy	Set up Python	2026-07-26T13:41:54.0649621Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.12.13-pip-80ea4a168388eb4eb3e7b7858ffcad1912794478f525d0a5baa3b441c22ea7df
+deploy	Install dependencies	﻿2026-07-26T13:41:54.0842640Z ##[group]Run python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+deploy	Install dependencies	2026-07-26T13:41:54.0843445Z ^[[36;1mpython -m pip install --upgrade pip && python -m pip install -r requirements.txt^[[0m
+deploy	Install dependencies	2026-07-26T13:41:54.0898051Z shell: /usr/bin/bash -e {0}
+deploy	Install dependencies	2026-07-26T13:41:54.0898353Z env:
+deploy	Install dependencies	2026-07-26T13:41:54.0898631Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Install dependencies	2026-07-26T13:41:54.0899116Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+deploy	Install dependencies	2026-07-26T13:41:54.0899577Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Install dependencies	2026-07-26T13:41:54.0900005Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Install dependencies	2026-07-26T13:41:54.0900426Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Install dependencies	2026-07-26T13:41:54.0900827Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+deploy	Install dependencies	2026-07-26T13:41:54.0901158Z ##[endgroup]
+deploy	Install dependencies	2026-07-26T13:41:55.4217881Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages (26.1.2)
+deploy	Install dependencies	2026-07-26T13:41:56.5245993Z Collecting mkdocs-material==9.7.6 (from -r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.5259365Z   Using cached mkdocs_material-9.7.6-py3-none-any.whl.metadata (19 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.5396061Z Collecting babel>=2.10 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.5408704Z   Using cached babel-2.18.0-py3-none-any.whl.metadata (2.2 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.5657967Z Collecting backrefs>=5.7.post1 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.5675250Z   Using cached backrefs-7.0-py312-none-any.whl.metadata (3.0 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.5802749Z Collecting colorama>=0.4 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.5814717Z   Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.5941521Z Collecting jinja2>=3.1 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.5953813Z   Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.6097863Z Collecting markdown>=3.2 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.6110092Z   Using cached markdown-3.10.2-py3-none-any.whl.metadata (5.1 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.6210598Z Collecting mkdocs-material-extensions>=1.3 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.6222244Z   Using cached mkdocs_material_extensions-1.3.1-py3-none-any.whl.metadata (6.9 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.6346175Z Collecting mkdocs<2,>=1.6 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.6357852Z   Using cached mkdocs-1.6.1-py3-none-any.whl.metadata (6.0 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.6456739Z Collecting paginate>=0.5 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.6469190Z   Using cached paginate-0.5.7-py2.py3-none-any.whl.metadata (11 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.6625410Z Collecting pygments>=2.16 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.6636760Z   Using cached pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.6942264Z Collecting pymdown-extensions>=10.2 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.6954399Z   Using cached pymdown_extensions-11.0.1-py3-none-any.whl.metadata (3.1 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.7125812Z Collecting requests>=2.30 (from mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.7137154Z   Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.7276054Z Collecting click>=7.0 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.7287472Z   Using cached click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.7368787Z Collecting ghp-import>=1.0 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.7380262Z   Using cached ghp_import-2.1.0-py3-none-any.whl.metadata (7.2 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.7886502Z Collecting markupsafe>=2.0.1 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.7903057Z   Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.7997713Z Collecting mergedeep>=1.3.4 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.8011623Z   Using cached mergedeep-1.3.4-py3-none-any.whl.metadata (4.3 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.8104097Z Collecting mkdocs-get-deps>=0.2.0 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.8117722Z   Using cached mkdocs_get_deps-0.2.2-py3-none-any.whl.metadata (4.0 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.8262325Z Collecting packaging>=20.5 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.8277482Z   Using cached packaging-26.2-py3-none-any.whl.metadata (3.5 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.8388609Z Collecting pathspec>=0.11.1 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.8403181Z   Using cached pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.8499643Z Collecting pyyaml-env-tag>=0.1 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.8512483Z   Using cached pyyaml_env_tag-1.1-py3-none-any.whl.metadata (5.5 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.8852015Z Collecting pyyaml>=5.1 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.8868405Z   Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.9275772Z Collecting watchdog>=2.0 (from mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.9290830Z   Using cached watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.9445745Z Collecting python-dateutil>=2.8.1 (from ghp-import>=1.0->mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:56.9459358Z   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+deploy	Install dependencies	2026-07-26T13:41:56.9665937Z Collecting platformdirs>=2.2.0 (from mkdocs-get-deps>=0.2.0->mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:57.0248084Z   Downloading platformdirs-4.11.0-py3-none-any.whl.metadata (5.5 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.0417252Z Collecting six>=1.5 (from python-dateutil>=2.8.1->ghp-import>=1.0->mkdocs<2,>=1.6->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:57.0429204Z   Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.1365891Z Collecting charset_normalizer<4,>=2 (from requests>=2.30->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:57.1380949Z   Using cached charset_normalizer-3.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (41 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.1535057Z Collecting idna<4,>=2.5 (from requests>=2.30->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:57.1547376Z   Using cached idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.1725862Z Collecting urllib3<3,>=1.26 (from requests>=2.30->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:57.1737856Z   Using cached urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.1896467Z Collecting certifi>=2023.5.7 (from requests>=2.30->mkdocs-material==9.7.6->-r requirements.txt (line 1))
+deploy	Install dependencies	2026-07-26T13:41:57.1933990Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2010306Z Using cached mkdocs_material-9.7.6-py3-none-any.whl (9.3 MB)
+deploy	Install dependencies	2026-07-26T13:41:57.2056286Z Using cached mkdocs-1.6.1-py3-none-any.whl (3.9 MB)
+deploy	Install dependencies	2026-07-26T13:41:57.2082456Z Using cached babel-2.18.0-py3-none-any.whl (10.2 MB)
+deploy	Install dependencies	2026-07-26T13:41:57.2131257Z Using cached backrefs-7.0-py312-none-any.whl (398 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2143626Z Using cached click-8.4.2-py3-none-any.whl (119 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2155022Z Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2165941Z Using cached ghp_import-2.1.0-py3-none-any.whl (11 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2176967Z Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2188496Z Using cached markdown-3.10.2-py3-none-any.whl (108 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2200482Z Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2211107Z Using cached mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2221850Z Using cached mkdocs_get_deps-0.2.2-py3-none-any.whl (9.6 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2232638Z Using cached mkdocs_material_extensions-1.3.1-py3-none-any.whl (8.7 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2243466Z Using cached packaging-26.2-py3-none-any.whl (100 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2254628Z Using cached paginate-0.5.7-py2.py3-none-any.whl (13 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2265423Z Using cached pathspec-1.1.1-py3-none-any.whl (57 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2300547Z Downloading platformdirs-4.11.0-py3-none-any.whl (23 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2381239Z Using cached pygments-2.20.0-py3-none-any.whl (1.2 MB)
+deploy	Install dependencies	2026-07-26T13:41:57.2396808Z Using cached pymdown_extensions-11.0.1-py3-none-any.whl (269 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2409156Z Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2421249Z Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2434896Z Using cached pyyaml_env_tag-1.1-py3-none-any.whl (4.7 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2445732Z Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2459362Z Using cached charset_normalizer-3.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (224 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2471931Z Using cached idna-3.18-py3-none-any.whl (65 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2483354Z Using cached urllib3-2.7.0-py3-none-any.whl (131 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2517271Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2672055Z Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.2683558Z Using cached watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+deploy	Install dependencies	2026-07-26T13:41:57.5385086Z Installing collected packages: paginate, watchdog, urllib3, six, pyyaml, pygments, platformdirs, pathspec, packaging, mkdocs-material-extensions, mergedeep, markupsafe, markdown, idna, colorama, click, charset_normalizer, certifi, backrefs, babel, requests, pyyaml-env-tag, python-dateutil, pymdown-extensions, mkdocs-get-deps, jinja2, ghp-import, mkdocs, mkdocs-material
+deploy	Install dependencies	2026-07-26T13:42:02.1137461Z 
+deploy	Install dependencies	2026-07-26T13:42:02.1169035Z Successfully installed babel-2.18.0 backrefs-7.0 certifi-2026.7.22 charset_normalizer-3.4.9 click-8.4.2 colorama-0.4.6 ghp-import-2.1.0 idna-3.18 jinja2-3.1.6 markdown-3.10.2 markupsafe-3.0.3 mergedeep-1.3.4 mkdocs-1.6.1 mkdocs-get-deps-0.2.2 mkdocs-material-9.7.6 mkdocs-material-extensions-1.3.1 packaging-26.2 paginate-0.5.7 pathspec-1.1.1 platformdirs-4.11.0 pygments-2.20.0 pymdown-extensions-11.0.1 python-dateutil-2.9.0.post0 pyyaml-6.0.3 pyyaml-env-tag-1.1 requests-2.34.2 six-1.17.0 urllib3-2.7.0 watchdog-6.0.0
+deploy	Validate exercise math delimiters	﻿2026-07-26T13:42:02.1868350Z ##[group]Run python scripts/normalize_exercise_math.py --check
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1868861Z ^[[36;1mpython scripts/normalize_exercise_math.py --check^[[0m
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1913348Z shell: /usr/bin/bash -e {0}
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1913599Z env:
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1913873Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1914322Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1914783Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1915196Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1915587Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1915992Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.1916339Z ##[endgroup]
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2282290Z docs/exercises-01/problem-06/index.md:23: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2283846Z docs/exercises-01/problem-08/index.md:23: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2285375Z docs/exercises-01/problem-09/index.md:23: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2287022Z docs/exercises-01/problem-09/index.md:29: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2288340Z docs/exercises-01/problem-10/index.md:32: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2289286Z docs/exercises-01/problem-10/index.md:36: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2290227Z docs/exercises-01/problem-10/index.md:40: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2291164Z docs/exercises-01/problem-13/index.md:27: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2292092Z docs/exercises-01/problem-13/index.md:32: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2293029Z docs/exercises-01/problem-14/index.md:21: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2293972Z docs/exercises-01/problem-14/index.md:28: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2294911Z docs/exercises-01/problem-14/index.md:32: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2295849Z docs/exercises-01/problem-15/index.md:39: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2296961Z docs/exercises-01/problem-16/index.md:25: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2297778Z docs/exercises-01/problem-16/index.md:28: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2298575Z docs/exercises-01/problem-16/index.md:34: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2299344Z docs/exercises-01/problem-16/index.md:38: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2300106Z docs/exercises-01/problem-17/index.md:29: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2301085Z docs/exercises-01/problem-17/index.md:33: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2301841Z docs/exercises-01/problem-17/index.md:37: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2302604Z docs/exercises-01/problem-19/index.md:32: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2303360Z docs/exercises-01/problem-20/index.md:20: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2304110Z docs/exercises-02/problem-08/index.md:23: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2305037Z docs/exercises-02/problem-08/index.md:28: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2305797Z docs/exercises-02/problem-09/index.md:23: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2306565Z docs/exercises-02/problem-10/index.md:27: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2307489Z docs/exercises-02/problem-11/index.md:22: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2308277Z docs/exercises-02/problem-15/index.md:28: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2309039Z docs/exercises-02/problem-16/index.md:21: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2309819Z docs/exercises-02/problem-20/index.md:38: display math must start after a blank line; use inline math after list text
+deploy	Validate exercise math delimiters	2026-07-26T13:42:02.2331673Z ##[error]Process completed with exit code 1.
+deploy	Post Check out repository	﻿2026-07-26T13:42:02.2479662Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+deploy	Post Check out repository	2026-07-26T13:42:02.2480987Z Post job cleanup.
+deploy	Post Check out repository	2026-07-26T13:42:02.3317476Z [command]/usr/bin/git version
+deploy	Post Check out repository	2026-07-26T13:42:02.3360315Z git version 2.54.0
+deploy	Post Check out repository	2026-07-26T13:42:02.3431358Z Temporarily overriding HOME='/home/runner/work/_temp/8f58ed55-cbb7-4815-b286-712e0c0e3f64' before making global git config changes
+deploy	Post Check out repository	2026-07-26T13:42:02.3432794Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Post Check out repository	2026-07-26T13:42:02.3437121Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Basic_Mathematics_Lecture/Basic_Mathematics_Lecture
+deploy	Post Check out repository	2026-07-26T13:42:02.3477562Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Post Check out repository	2026-07-26T13:42:02.3527929Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Post Check out repository	2026-07-26T13:42:02.3764508Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Post Check out repository	2026-07-26T13:42:02.3790690Z http.https://github.com/.extraheader
+deploy	Post Check out repository	2026-07-26T13:42:02.3803806Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+deploy	Post Check out repository	2026-07-26T13:42:02.3840093Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Post Check out repository	2026-07-26T13:42:02.4131069Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Post Check out repository	2026-07-26T13:42:02.4175194Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Complete job	﻿2026-07-26T13:42:02.4633181Z Cleaning up orphan processes
+deploy	Complete job	2026-07-26T13:42:02.4857892Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
