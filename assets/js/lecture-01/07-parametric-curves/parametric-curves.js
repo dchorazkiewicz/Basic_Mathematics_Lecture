@@ -11,10 +11,20 @@
   const BASE_VIEW = [-5.5, 5, 5.5, -5];
 
   const modes = {
+    line: {
+      min: -2.5, max: 2.5,
+      x: t => 1 + 2 * t, y: t => 1 + t,
+      formula: 'x(t) = 1 + 2t,  y(t) = 1 + t'
+    },
     circle: {
       min: 0, max: 2 * Math.PI,
       x: t => 3 * Math.cos(t), y: t => 3 * Math.sin(t),
       formula: 'x(t) = 3 cos t,  y(t) = 3 sin t'
+    },
+    circleFast: {
+      min: 0, max: Math.PI,
+      x: t => 3 * Math.cos(2 * t), y: t => 3 * Math.sin(2 * t),
+      formula: 'x(t) = 3 cos(2t),  y(t) = 3 sin(2t)'
     },
     ellipse: {
       min: 0, max: 2 * Math.PI,
@@ -28,7 +38,8 @@
     }
   };
 
-  const state = { mode: 'circle', t: 0 };
+  const defaultMode = buttons[0]?.dataset.parametricMode || 'circle';
+  const state = { mode: defaultMode, t: modes[defaultMode]?.min ?? 0 };
   const board = JXG.JSXGraph.initBoard(host.id, {
     boundingbox: BASE_VIEW, axis: true, grid: true,
     showNavigation: false, showCopyright: false, keepAspectRatio: true,
@@ -80,6 +91,7 @@
   }
 
   function setMode(modeName) {
+    if (!modes[modeName]) return;
     state.mode = modeName;
     const mode = modes[modeName];
     slider.min = mode.min;
@@ -98,5 +110,5 @@
     window.LectureJSX.keepBoardFitted({ board, host, boundingBox: BASE_VIEW });
   }
 
-  setMode('circle');
+  setMode(defaultMode);
 })();
