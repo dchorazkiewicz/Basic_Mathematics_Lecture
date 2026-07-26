@@ -1,0 +1,77 @@
+name: Fix plan math delimiters
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-delimiters:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Replace unsupported GitHub math delimiters
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          files = [
+              Path('lecture-plan/01-cartesian-geometry-and-coordinates.md'),
+              Path('lecture-plan/02-vectors-bases-and-coordinate-systems.md'),
+              Path('lecture-plan/03-lines-and-planes.md'),
+              Path('lecture-plan/04-conic-sections-and-mathematical-models.md'),
+          ]
+
+          for path in files:
+              text = path.read_text(encoding='utf-8')
+              lines = text.splitlines()
+              converted = []
+              in_fence = False
+
+              for line in lines:
+                  stripped = line.strip()
+                  if stripped.startswith('```'):
+                      in_fence = not in_fence
+                      converted.append(line)
+                      continue
+
+                  if not in_fence and stripped == r'\[':
+                      converted.append(line.replace(r'\[', '$$'))
+                      continue
+                  if not in_fence and stripped == r'\]':
+                      converted.append(line.replace(r'\]', '$$'))
+                      continue
+
+                  if not in_fence:
+                      line = line.replace(r'\(', '$').replace(r'\)', '$')
+
+                  converted.append(line)
+
+              new_text = '\n'.join(converted) + ('\n' if text.endswith('\n') else '')
+              path.write_text(new_text, encoding='utf-8')
+          PY
+
+      - name: Commit corrected Markdown
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No delimiter changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lecture-plan/01-cartesian-geometry-and-coordinates.md \
+                  lecture-plan/02-vectors-bases-and-coordinate-systems.md \
+                  lecture-plan/03-lines-and-planes.md \
+                  lecture-plan/04-conic-sections-and-mathematical-models.md
+          git commit -m "Fix GitHub math rendering in lecture plans 1-4"
+          git push
