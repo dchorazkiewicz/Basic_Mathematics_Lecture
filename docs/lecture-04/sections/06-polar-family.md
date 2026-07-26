@@ -1,99 +1,46 @@
-## Ellipse, parabola, and hyperbola from one formula {#polar-family}
+## A conic as a trajectory is not yet a law of motion {#geometric-models}
+
+Conics occur as possible trajectories in an idealized two-body gravitational model. This statement must be read carefully.
+
+There are three different levels of description:
+
+1. **Geometric path** — the set of points forming a circle, ellipse, parabola, or hyperbola.
+2. **Motion on the path** — a rule that assigns a position to each time.
+3. **Physical law** — assumptions and equations that determine which motions are possible.
+
+A curve equation supplies the first level. A parametrization supplies an ordering of points and may be used to display motion, but it becomes a physical time law only after additional justification.
 
 <figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
-  <div class="figure-toolbar"><div><span class="figure-title">One radial law, three conic regimes</span><span class="figure-step-title" data-conic-family-readout>$r=p/(1+e\cos\theta)$</span></div><button class="icon-button" type="button" data-fullscreen aria-label="Open polar conic family in full screen">⛶</button></div>
-  <div class="figure-stage jsx-stage"><div id="polar-conic-family-board" class="jxgbox" data-polar-conic-family></div></div>
-  <div class="parameter-controls" style="--parameter-count:2"><label class="parameter-control"><span>$p$ = <output data-conic-p>2.4</output></span><input type="range" min="0.5" max="4" step="0.1" value="2.4" data-conic-p-slider></label><label class="parameter-control"><span>$e$ = <output data-conic-e>0.6</output></span><input type="range" min="0" max="2" step="0.02" value="0.6" data-conic-e-slider></label></div>
-  <figcaption class="figure-caption">The focal scale $p$ changes size. The eccentricity $e$ changes the type and shape.</figcaption>
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">The path can be classified before the motion is derived</span>
+      <span class="figure-step-title" data-orbit-type>ellipse — bounded geometric path</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open geometric trajectory model in full screen">⛶</button>
+  </div>
+  <div class="curve-switcher" role="group" aria-label="Choose a geometric trajectory">
+    <button class="curve-mode is-active" type="button" data-orbit-mode="ellipse">Ellipse</button>
+    <button class="curve-mode" type="button" data-orbit-mode="parabola">Parabola</button>
+    <button class="curve-mode" type="button" data-orbit-mode="hyperbola">Hyperbola</button>
+  </div>
+  <div class="figure-stage jsx-stage"><div id="orbit-model-board" class="jxgbox" data-orbit-models></div></div>
+  <label class="parameter-control single-parameter"><span>display parameter $\theta$ = <output data-orbit-theta>0</output></span><input type="range" min="0" max="6.283" step="0.01" value="0" data-orbit-theta-slider></label>
+  <div class="relation-readout"><span data-orbit-motion-note>The slider chooses a point on the path; it is not yet a physical time law.</span></div>
+  <figcaption class="figure-caption">The moving point is an illustration of a parametrized path. Its displayed speed is not presented as the physical speed of an orbiting body.</figcaption>
 </figure>
 
-### Ellipse from the polar formula
+At the qualitative level used in this lecture:
 
-Assume $0<e<1$. Then
+| Geometric type | Interpretation in the idealized model |
+|---|---|
+| circle or ellipse | bounded trajectory |
+| parabola | limiting case between bounded and unbounded motion |
+| hyperbola | unbounded passage |
 
-$$
-1-e\le1+e\cos\theta\le1+e,
-$$
+No energy calculation, Kepler-law derivation, or differential equation is introduced here. Those belong to a mechanics course or to the later synthesis after calculus.
 
-so the denominator is positive for every angle. The radius is finite in every direction and the curve closes around the focus.
+!!! warning "A curve is not a theory of gravity"
+    The statement “the trajectory is an ellipse” does not by itself specify how fast the body moves, why it follows that path, or which assumptions were used. The mathematical model includes the law and the assumptions, not only the shape.
 
-The nearest and farthest points occur at $\theta=0$ and $\theta=\pi$:
-
-$$
-\boxed{r_{\min}=\frac{p}{1+e}},
-\qquad
-\boxed{r_{\max}=\frac{p}{1-e}}.
-$$
-
-Thus increasing $e$ makes the two extreme focal distances more unequal.
-
-For a Cartesian ellipse with semimajor axis $a$ and semiminor axis $b$,
-
-$$
-e=\sqrt{1-\frac{b^2}{a^2}},
-\qquad
-p=a(1-e^2)=\frac{b^2}{a}.
-$$
-
-Therefore
-
-$$
-\boxed{r(\theta)=\frac{a(1-e^2)}{1+e\cos\theta}}.
-$$
-
-!!! interpretation "Why the focus-centred form matters"
-    The Cartesian equation displays the centre and semiaxes. The polar equation displays the distance from a focus as the direction changes.
-
-### Parabola from the polar formula
-
-Set $e=1$. Then
-
-$$
-\boxed{r(\theta)=\frac{p}{1+\cos\theta}}.
-$$
-
-For directions near $\theta=\pi$, the denominator approaches zero and the radius grows without bound. This is the geometric reason the curve is open.
-
-Using $1+\cos\theta=2\cos^2(\theta/2)$,
-
-$$
-r=\frac{p}{2\cos^2(\theta/2)}.
-$$
-
-The vertex lies on the positive polar axis at
-
-$$
-\boxed{r=\frac p2}.
-$$
-
-!!! interpretation "The exact transition"
-    For an ellipse, the denominator stays away from zero. At $e=1$ it reaches zero in one limiting direction. The closed orbit has opened into a parabola.
-
-### Hyperbola from the polar formula
-
-Assume $e>1$. The denominator $1+e\cos\theta$ vanishes at two angles satisfying
-
-$$
-\cos\theta=-\frac1e.
-$$
-
-These limiting directions are the asymptotic directions of the branch described from the chosen focus.
-
-For $r\ge0$,
-
-$$
-\boxed{r=\frac{p}{1+e\cos\theta}}
-$$
-
-traces the branch lying on the same side of the directrix as the chosen focus. It does not silently represent the entire two-branch hyperbola.
-
-To recover the complete hyperbola, return to the two-focus geometry or use
-
-$$
-\boxed{\frac{x^2}{a^2}-\frac{y^2}{b^2}=1},
-$$
-
-which displays both branches at once.
-
-!!! interpretation "Why the polar and Cartesian pictures differ"
-    The polar equation is adapted to one chosen focus and one directrix. The Cartesian equation is adapted to the centre and displays both branches symmetrically. Neither description is incomplete when its viewpoint is stated correctly.
+!!! note "Continued in the exercise set"
+    Students will classify paths, separate geometric data from parametrization and physical assumptions, identify idealizations of the two-body model and prepare a short note titled “A trajectory is not a law of motion”.
