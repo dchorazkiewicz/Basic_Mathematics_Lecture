@@ -92,3 +92,5 @@ jobs:
           git add diagnostics/latest-deploy-metadata.json diagnostics/latest-deploy-log.txt
           git commit -m "Record latest failed deploy log"
           git push
+
+# Triggered after the workflow existed on the default branch.
