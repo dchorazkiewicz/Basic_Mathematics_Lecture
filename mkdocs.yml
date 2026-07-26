@@ -70,7 +70,28 @@ nav:
       - Problem 19 · Coordinates change: exercises-02/problem-19/index.md
       - Problem 20 · Vector decomposition note: exercises-02/problem-20/index.md
   - Lecture 03 · Lines and Planes: lecture-03/index.md
-  - Exercises 03 · Lines and Planes: exercises-03/index.md
+  - Exercises 03 · Lines and Planes:
+      - Exercise set overview: exercises-03/index.md
+      - Problem 01 · Generating line points: exercises-03/problem-01/index.md
+      - Problem 02 · Line through two points: exercises-03/problem-02/index.md
+      - Problem 03 · Direction to normal equation: exercises-03/problem-03/index.md
+      - Problem 04 · Slope and vertical line: exercises-03/problem-04/index.md
+      - Problem 05 · Line intersection: exercises-03/problem-05/index.md
+      - Problem 06 · Classifying lines: exercises-03/problem-06/index.md
+      - Problem 07 · Point-line distance: exercises-03/problem-07/index.md
+      - Problem 08 · Generating plane points: exercises-03/problem-08/index.md
+      - Problem 09 · Plane normal vector: exercises-03/problem-09/index.md
+      - Problem 10 · Plane through three points: exercises-03/problem-10/index.md
+      - Problem 11 · Many parametrizations: exercises-03/problem-11/index.md
+      - Problem 12 · Vertical line representations: exercises-03/problem-12/index.md
+      - Problem 13 · Three line descriptions: exercises-03/problem-13/index.md
+      - Problem 14 · Two intersection methods: exercises-03/problem-14/index.md
+      - Problem 15 · Shortest distance: exercises-03/problem-15/index.md
+      - Problem 16 · Fixed-distance locus: exercises-03/problem-16/index.md
+      - Problem 17 · One direction or two: exercises-03/problem-17/index.md
+      - Problem 18 · Collinear triples: exercises-03/problem-18/index.md
+      - Problem 19 · Line-plane intersection: exercises-03/problem-19/index.md
+      - Problem 20 · Choosing a representation: exercises-03/problem-20/index.md
   - Lecture 04 · Conic Sections and Mathematical Models: lecture-04/index.md
   - Exercises 04 · Conic Sections and Mathematical Models: exercises-04/index.md
   - Exercise Set Template: exercises/template.md
