@@ -1,55 +1,60 @@
-## Polar coordinates as coordinates adapted to a focus {#polar-coordinates}
+## A radial description adapted to a distinguished point {#radial-description}
 
-### A point described by direction and distance
+Cartesian coordinates answer two questions: how far horizontally and how far vertically?
 
-Choose a point $O$, called the pole, and a directed ray from $O$, called the polar axis. A point $P$ is described by
+When one point is geometrically distinguished, another description is often more natural:
 
-$$
-\boxed{(r,\theta)},
-$$
+- choose a direction by an angle $\theta$;
+- travel a distance $r$ from the distinguished point.
 
-where $r$ is the distance from $O$ to $P$ and $\theta$ is the directed angle from the polar axis to the ray $OP$.
-
-For this chapter we use $r\ge0$ and $0\le\theta<2\pi$. The pole is represented by $r=0$; its angle is geometrically irrelevant.
-
-!!! interpretation "Why this is adapted to a focus"
-    If the pole is placed at a focus, then the first coordinate $r$ is already the focal distance. No square root is needed to recover it from $x$ and $y$.
-
-The coordinate curves also change character. The equation $\theta=\text{constant}$ is a ray, while $r=\text{constant}$ is a circle centred at the pole.
+The point is then described by $(r,\theta)$.
 
 <figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
-  <div class="figure-toolbar"><div><span class="figure-title">Direction and distance</span><span class="figure-step-title" data-polar-readout>Move the point to compare $(r,\theta)$ with $(x,y)$.</span></div><button class="icon-button" type="button" data-fullscreen aria-label="Open polar coordinate figure in full screen">⛶</button></div>
+  <div class="figure-toolbar"><div><span class="figure-title">Direction and distance</span><span class="figure-step-title" data-polar-readout>Move the point to compare $(r,\theta)$ with $(x,y)$.</span></div><button class="icon-button" type="button" data-fullscreen aria-label="Open radial coordinate figure in full screen">⛶</button></div>
   <div class="figure-stage jsx-stage"><div id="polar-coordinate-board" class="jxgbox" data-polar-coordinate></div></div>
   <div class="relation-readout"><span data-polar-r></span><span data-polar-theta></span><span data-polar-xy></span></div>
-  <figcaption class="figure-caption">The same point is described either by horizontal and vertical displacement or by direction and distance from the pole.</figcaption>
+  <figcaption class="figure-caption">Changing coordinates changes the description, not the point. The pole is chosen because the distance from it matters.</figcaption>
 </figure>
 
-### Converting between Cartesian and polar descriptions
-
-The right triangle formed by the ray $OP$ gives
+The right triangle gives
 
 $$
-\boxed{x=r\cos\theta,\qquad y=r\sin\theta}.
+x=r\cos\theta,\qquad y=r\sin\theta.
 $$
 
 Conversely,
 
 $$
-\boxed{r=\sqrt{x^2+y^2}}.
+r=\sqrt{x^2+y^2}.
 $$
 
-The angle is determined by the direction of $(x,y)$; in computation this is the role of the two-argument function $\operatorname{atan2}(y,x)$.
+Only one elementary conversion is performed on the lecture. For $(r,\theta)=(4,\pi/3)$,
 
-!!! example "Example"
-    For $(r,\theta)=(4,\pi/3)$,
+$$
+x=2,\qquad y=2\sqrt3.
+$$
 
-    $$
-    x=4\cos\frac\pi3=2,
-    \qquad
-    y=4\sin\frac\pi3=2\sqrt3.
-    $$
+The essential idea is not the conversion algorithm. It is the operational reading of a radial equation:
 
-    Thus the same point has Cartesian coordinates $(2,2\sqrt3)$.
+> Choose a direction $\theta$, calculate $r(\theta)$, and place the point at that distance from the pole.
 
-!!! principle "Coordinates are descriptions, not objects"
-    Changing from $(x,y)$ to $(r,\theta)$ does not move the point. Cartesian coordinates expose horizontal and vertical displacement; polar coordinates expose direction and distance from a chosen point.
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar"><div><span class="figure-title">A radial rule draws a curve</span><span class="figure-step-title" data-polar-graph-readout>$r=2R\cos\theta$</span></div><button class="icon-button" type="button" data-fullscreen aria-label="Open radial graph figure in full screen">⛶</button></div>
+  <div class="figure-stage jsx-stage"><div id="polar-graph-board" class="jxgbox" data-polar-graph></div></div>
+  <label class="parameter-control"><span>$\theta$ = <output data-polar-angle>0.8</output></span><input type="range" min="0" max="6.283" step="0.01" value="0.8" data-polar-angle-slider></label>
+  <figcaption class="figure-caption">The rotating ray and the changing radial distance materialize the meaning of $r=f(\theta)$.</figcaption>
+</figure>
+
+The example
+
+$$
+r=2R\cos\theta
+$$
+
+generates a circle that passes through the pole. We do not spend the lecture converting many radial equations to Cartesian form. One conversion is enough to verify that two descriptions can generate the same curve.
+
+!!! principle "Why this coordinate system appears now"
+    A focus or a central body is a distinguished point. A radial description records distance from that point directly instead of reconstructing it from horizontal and vertical coordinates.
+
+!!! note "Continued in the exercise set"
+    Students will convert several simple points, read radial equations operationally, generate tables of $r(\theta)$ and compare one radial description with a Cartesian description of the same curve.
