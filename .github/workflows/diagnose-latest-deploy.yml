@@ -74,3 +74,5 @@ jobs:
             git commit -m "Record latest deploy run"
             git push
           fi
+
+# Refreshed after exercise normalization.
