@@ -24,7 +24,7 @@ Pełna technika przestrzenna, płaszczyzna przez trzy punkty, iloczyn wektorowy 
 
 ## Liniowy plan wykładu i ćwiczeń
 
-### 1. Prosta jako punkt i dozwolony kierunek — około 20 minut
+### 1. Prosta jako punkt i dozwolony kierunek — około 18 minut
 
 #### Na wykładzie
 
@@ -79,7 +79,7 @@ W `solution.md` muszą pozostać: tabela wartości parametru, rysunek generowani
 
 ---
 
-### 2. Różne reprezentacje tej samej prostej — około 25 minut
+### 2. Różne reprezentacje tej samej prostej — około 22 minut
 
 #### Na wykładzie
 
@@ -157,7 +157,7 @@ W workbooku pozostają pełne przekształcenia, rysunek z kierunkiem i normalną
 
 ---
 
-### 3. Przecięcie i wzajemne położenie dwóch prostych — około 20 minut
+### 3. Przecięcie i wzajemne położenie dwóch prostych — około 18 minut
 
 #### Na wykładzie
 
@@ -203,7 +203,7 @@ W `solution.md` musi znaleźć się co najmniej jedno pełne „książkowe” r
 
 ---
 
-### 4. Odległość punktu od prostej — około 15 minut
+### 4. Odległość punktu od prostej — około 12 minut
 
 #### Na wykładzie
 
@@ -238,7 +238,7 @@ W workbooku pozostają rachunek, konstrukcja geometryczna, test prostopadłości
 
 ---
 
-### 5. Płaszczyzna jako naturalne rozszerzenie — około 10 minut
+### 5. Płaszczyzna jako naturalne rozszerzenie — około 15 minut
 
 #### Na wykładzie
 
