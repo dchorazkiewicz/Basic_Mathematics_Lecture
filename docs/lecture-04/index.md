@@ -1,20 +1,21 @@
 ---
-title: Conic Sections Through Cartesian and Polar Eyes
-description: Lecture 4 — Conic Sections Through Cartesian and Polar Eyes
+title: Conic Sections and Mathematical Models
+description: Lecture 4 — Conic Sections and Mathematical Models
 lecture: "04"
-eyebrow: Lecture 04 · Analytical Geometry
-lecture_title: Conic Sections Through Cartesian and Polar Eyes
-intro: We begin with the classical Cartesian curves, construct polar coordinates from direction and distance, and then derive one focus–directrix formula whose eccentricity determines the conic.
+eyebrow: Lecture 04 · Objects and Geometry
+lecture_title: Conic Sections and Mathematical Models
+intro: We move from linear objects to parameterized curves, organize conics as one family, and distinguish a geometric trajectory from a parametrization and from the physical law that produces motion.
+exercise_link: exercises-04/
 section_links:
-  - { id: why-conics, title: Why second degree }
-  - { id: classical-conics, title: Classical conics }
-  - { id: polar-coordinates, title: Polar coordinates }
-  - { id: polar-graphs, title: Reading polar graphs }
-  - { id: focus-directrix, title: Focus and directrix }
-  - { id: polar-family, title: One polar family }
-  - { id: orientation, title: Orientation and mechanics }
+  - { id: why-conics, title: From lines to curves }
+  - { id: classical-conics, title: Parameters and classical forms }
+  - { id: polar-coordinates, title: Radial coordinates }
+  - { id: polar-graphs, title: Reading radial graphs }
+  - { id: focus-directrix, title: Focus, directrix and eccentricity }
+  - { id: polar-family, title: One conic family }
+  - { id: orientation, title: Geometry and physical models }
   - { id: computational-model, title: Computational model }
-  - { id: exercises, title: Exercises }
+  - { id: exercises, title: Existing exercises }
 ---
 
 --8<-- "lecture-04/sections/01-why-conics.md"
