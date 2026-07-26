@@ -75,4 +75,4 @@ jobs:
             git push
           fi
 
-# Refreshed after exercise normalization.
+# Refreshed after the explicit rebuild commit.
