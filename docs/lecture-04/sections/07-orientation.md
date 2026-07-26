@@ -1,31 +1,32 @@
-## Orientation, one formula, and the bridge to mechanics {#orientation}
+## What the first four lectures have built {#block-summary}
 
-The equation
+The first block of the course now forms one chain.
 
-$$
-r=\frac{p}{1+e\cos\theta}
-$$
+1. Geometry supplied points, constructions, distances, and shapes.
+2. Coordinates encoded points numerically.
+3. Vectors encoded changes and directions.
+4. Points and directions generated lines and planes.
+5. Parameters generated curved paths and organized families of curves.
+6. Those curves became components of mathematical models.
 
-places the nearest point on the positive polar axis. Rotating the entire conic by an angle $\theta_0$ gives
+Two distinctions from this lecture must remain explicit.
 
-$$
-\boxed{r=\frac{p}{1+e\cos(\theta-\theta_0)}}.
-$$
+!!! principle "Parameter on a curve versus parameter of a family"
+    The parameter $t$ or $\theta$ may select a point on one curve. A parameter such as $a$, $b$, or $e$ may instead change the entire curve.
 
-| Parameter | Geometric role |
-|---|---|
-| $p$ | overall focal scale |
-| $e$ | shape and conic type |
-| $\theta_0$ | orientation in the plane |
+!!! principle "Geometry versus model"
+    A geometric trajectory is one object inside a model. It is not the motion law, the force law, or the physical phenomenon itself.
 
-| $e$ | Conic | Focal motion suggested by the geometry |
-|---|---|---|
-| $0\le e<1$ | circle or ellipse | bounded |
-| $e=1$ | parabola | threshold between bounded and unbounded |
-| $e>1$ | hyperbola | unbounded passage |
+The conic family also demonstrates a general method that will recur throughout mathematics:
 
-!!! summary "What has been achieved"
-    The chapter did not merely list four equations. It changed the viewpoint until three apparently different curves became outcomes of one radial law. This is the analytic-geometric preparation needed before a later mechanics course derives the same law from a central force.
+> Choose a representation adapted to the question, identify the parameters, and observe which properties change and which remain invariant.
 
-!!! principle "Choose coordinates adapted to the question"
-    Cartesian coordinates are best for centres, axes, vertices, and complete symmetric pictures. Polar coordinates centred at a focus are best for radial distance, orientation, eccentricity, and orbital interpretation. Analytic geometry works by choosing the representation in which the geometry speaks most clearly.
+Cartesian coordinates are useful when centres, axes, and translations are important. A radial description is useful when one focus or central point is distinguished. Neither coordinate system changes the curve; each exposes different information.
+
+## Bridge to linear algebra
+
+The first block concentrated on describing objects and families of objects. The next question concerns an action performed on the entire space:
+
+> How can one rule move every point and every vector at once?
+
+That question leads to linear transformations and matrices.
