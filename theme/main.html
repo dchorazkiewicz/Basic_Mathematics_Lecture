@@ -111,13 +111,15 @@
       </main>
     </div>
   {% elif page.meta.exercise_problem %}
+    {% set previous_problem_page = page.previous_page if page.previous_page and page.previous_page.meta.exercise_set_number == page.meta.exercise_set_number else none %}
+    {% set next_problem_page = page.next_page if page.next_page and page.next_page.meta.exercise_set_number == page.meta.exercise_set_number else none %}
     <div class="lecture-shell">
       <aside class="lecture-nav" aria-label="Exercise problem navigation">
         <div class="nav-label">Exercises {{ page.meta.exercise_set_number }}</div>
         <a class="companion-link" href="{{ page.meta.exercise_index_link | url }}">← All problems</a>
         <a href="{{ page.meta.lecture_link | url }}">Return to lecture</a>
-        {% if page.meta.previous_problem %}<a href="{{ page.meta.previous_problem | url }}">← Previous problem</a>{% endif %}
-        {% if page.meta.next_problem %}<a href="{{ page.meta.next_problem | url }}">Next problem →</a>{% endif %}
+        {% if previous_problem_page %}<a href="{{ previous_problem_page.url | url }}">← Problem {{ previous_problem_page.meta.exercise_problem }}</a>{% endif %}
+        {% if next_problem_page %}<a href="{{ next_problem_page.url | url }}">Problem {{ next_problem_page.meta.exercise_problem }} →</a>{% endif %}
       </aside>
       <main class="lecture-main exercise-problem-main">
         <header class="lecture-header">
@@ -131,9 +133,9 @@
         </header>
         {{ page.content }}
         <nav class="problem-footer-nav" aria-label="Problem navigation">
-          {% if page.meta.previous_problem %}<a href="{{ page.meta.previous_problem | url }}">← Previous</a>{% else %}<span></span>{% endif %}
+          {% if previous_problem_page %}<a href="{{ previous_problem_page.url | url }}">← Problem {{ previous_problem_page.meta.exercise_problem }}</a>{% else %}<span></span>{% endif %}
           <a href="{{ page.meta.exercise_index_link | url }}">All problems</a>
-          {% if page.meta.next_problem %}<a href="{{ page.meta.next_problem | url }}">Next →</a>{% else %}<span></span>{% endif %}
+          {% if next_problem_page %}<a href="{{ next_problem_page.url | url }}">Problem {{ next_problem_page.meta.exercise_problem }} →</a>{% else %}<span></span>{% endif %}
         </nav>
       </main>
     </div>
