@@ -26,10 +26,10 @@ Każdy wykład ma osobny plik w katalogu `lecture-plan/`. Dzięki temu jego konc
 2. [Wykład 02 — Vectors, Bases, and Coordinate Systems](lecture-plan/02-vectors-bases-and-coordinate-systems.md)
 3. [Wykład 03 — Lines and Planes](lecture-plan/03-lines-and-planes.md)
 4. [Wykład 04 — Conic Sections and Mathematical Models](lecture-plan/04-conic-sections-and-mathematical-models.md)
-5. Wykład 05 — Matrices as Transformations
-6. Wykład 06 — Systems of Linear Equations
-7. Wykład 07 — Determinants and Orientation
-8. Wykład 08 — Basis and Change of Coordinates
+5. [Wykład 05 — Matrices as Transformations](lecture-plan/05-matrices-as-transformations.md)
+6. [Wykład 06 — Composition of Transformations](lecture-plan/06-composition-of-transformations.md)
+7. [Wykład 07 — Determinants and Invertibility](lecture-plan/07-determinants-and-invertibility.md)
+8. [Wykład 08 — Linear Systems as Inverse Problems](lecture-plan/08-linear-systems-as-inverse-problems.md)
 9. Wykład 09 — Functions and Their Graphs
 10. Wykład 10 — Limits and Continuity
 11. Wykład 11 — Derivative and Local Change
@@ -44,4 +44,25 @@ Pierwsze cztery wykłady tworzą zamknięty blok pokazujący stopniowe rozszerza
 3. punkty i kierunki pozwalają generować proste i płaszczyzny;
 4. równania i parametry opisują całe rodziny krzywych, które mogą być używane jako modele rzeczywistych trajektorii.
 
-Blok rozpoczyna się od geometrii bez współrzędnych, a kończy pokazaniem, że algebraiczny opis geometrii umożliwia ilościowy opis świata fizycznego. Następny blok powinien rozpocząć się od pytania, jak opisywać w zwartej postaci przekształcenia całych układów, wektorów i figur.
+Blok rozpoczyna się od geometrii bez współrzędnych, a kończy pokazaniem, że algebraiczny opis geometrii umożliwia ilościowy opis świata fizycznego.
+
+## Narracja drugiego bloku
+
+Wykłady 5–8 przechodzą od opisu obiektów do opisu operacji wykonywanych na obiektach. Nie tworzą pełnego kursu algebry liniowej. Mają wydobyć jej pojęciową esencję w czterech wykładach i pozostawić techniczną biegłość rachunkową przede wszystkim ćwiczeniom.
+
+Blok odpowiada kolejno na cztery pytania:
+
+1. Jak opisać jedną regułę działającą na całej przestrzeni? — przez przekształcenie liniowe i jego macierz.
+2. Jak opisać kilka działań wykonywanych kolejno? — przez składanie przekształceń i mnożenie macierzy.
+3. Kiedy działanie można cofnąć? — przez pojęcia utraty informacji, wyznacznika i macierzy odwrotnej.
+4. Jak odzyskać dane wejściowe ze znanego wyniku? — przez układ liniowy zapisany jako problem odwrotny \(Ax=b\).
+
+Macierze nie powinny pojawiać się jako tablice przeznaczone do wykonywania algorytmów. Najpierw pojawia się działanie geometryczne, następnie potrzeba jego zwartego zapisu, a dopiero potem macierz.
+
+Mnożenie macierzy wynika ze składania działań. Wyznacznik wynika z pytania o odwracalność i utratę wymiaru. Macierz odwrotna opisuje cofnięcie działania. Układ równań liniowych jest pytaniem o przyczynę na podstawie znanego skutku.
+
+Ze względu na ograniczenie czasu główna narracja pozostaje w wymiarze dwa i opiera się na niewielkiej liczbie dobrze dobranych przykładów. Rozbudowane algorytmy, większe macierze, metoda Gaussa–Jordana, reguła Cramera oraz większa liczba technicznych obliczeń mogą zostać przeniesione do ćwiczeń.
+
+Blok kończy się pytaniem prowadzącym do rachunku różniczkowego:
+
+> Jak opisywać zjawiska nieliniowe, które w dostatecznie małej skali można przybliżyć przekształceniem liniowym?
