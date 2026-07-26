@@ -1,10 +1,10 @@
 ## Exercises {#exercises}
 
-The companion set will contain twenty separate problems:
+The companion set contains twenty separate problems:
 
-- **Problems 01–10** will consolidate point generation, parameter reading, radial calculations and direct verification;
-- **Problems 11–20** will require comparison of parametrizations, interpretation of eccentricity, construction of diagrams and separation of geometry from physical modelling.
+- **Problems 01–10** consolidate point generation, parameter reading, radial calculations and direct focus-directrix checks;
+- **Problems 11–20** require comparison of parametrizations, interpretation of eccentricity, documented constructions and separation of geometry from physical modelling.
 
 [Open Exercise Set 04 →](../../exercises-04/){ .companion-button }
 
-The concrete problems will be written after the lecture structure is accepted. Each problem will be stored in its own Markdown file, as in Exercise Sets 01–03.
+Each problem is stored in its own Markdown file so that individual tasks can be revised, replaced or removed without rewriting the entire set.
