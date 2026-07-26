@@ -1,84 +1,151 @@
 # Wykład 04 — Conic Sections and Mathematical Models
 
-## Status tej części planu
-
-Ten wykład wymaga przebudowy względem obecnej wersji kursu. Dotychczasowa treść zawiera potrzebne składniki, ale ich kolejność i rola nie tworzą jeszcze jednej konsekwentnej opowieści.
-
-Nie chcemy budować wykładu przede wszystkim wokół klasycznej konstrukcji stożkowych przez ognisko i kierownicę ani wokół katalogu osobnych definicji okręgu, elipsy, paraboli i hiperboli. Konstrukcje geometryczne mogą się pojawić, lecz nie powinny zdominować narracji.
-
-Główny ciężar ma zostać przeniesiony na algebraiczny i parametryczny opis krzywych, ich dynamiczną wizualizację oraz pierwszą wyraźną demonstrację tego, że zbudowany wcześniej aparat matematyczny pozwala opisywać rzeczywisty świat.
-
 ## Rola wykładu w całym kursie
 
-Pierwsze trzy wykłady budowały język:
+Pierwsze trzy wykłady zbudowały język opisu:
 
-- współrzędne pozwoliły kodować punkty,
-- wektory pozwoliły kodować zmiany,
-- równania pozwoliły opisywać proste i płaszczyzny jako całe zbiory punktów.
+- współrzędne kodują punkty;
+- wektory kodują zmiany i kierunki;
+- równania generują proste i płaszczyzny.
 
-Czwarty wykład powinien odpowiedzieć na pytanie:
+Czwarty wykład ma pokazać, że ten aparat nie służy wyłącznie do opisu obiektów liniowych. Równania i parametry mogą organizować całe rodziny krzywych, a te krzywe mogą następnie występować w modelach rzeczywistych zjawisk.
 
-> Po co budowaliśmy ten język i co możemy dzięki niemu zobaczyć poza prostymi przypadkami liniowymi?
-
-To ma być pierwszy wyraźny wykład o sile modelu matematycznego. Stożkowe są tutaj nie tylko rodziną krzywych do sklasyfikowania, ale przykładem tego, że prosty aparat algebraiczny potrafi opisać ważne zjawiska geometryczne i fizyczne.
+Wykład nie jest katalogiem czterech osobnych stożkowych ani kursem mechaniki nieba.
 
 ## Główne pytanie
 
-> Jak równania i parametry opisują całe rodziny krzywych oraz dlaczego właśnie te krzywe pojawiają się w ruchu ciał niebieskich?
+> Jak parametry organizują całe rodziny krzywych i jak odróżnić geometryczny kształt trajektorii od ruchu oraz prawa fizycznego, które ten ruch wyznacza?
 
-## Centralna idea
+## Centralne idee
 
-> Równanie nie musi opisywać jednego nieruchomego obiektu. Może opisywać rodzinę obiektów, a zmiana parametrów ujawnia strukturę całej rodziny.
+1. Krzywa może być generowana przez parametr, ponieważ jej kierunek nie musi być stały.
+2. Jeden parametr może sterować całą rodziną geometrycznych kształtów.
+3. Kształt trajektorii, sposób poruszania się po niej i prawo fizyczne są trzema różnymi poziomami opisu.
 
-Druga, równie ważna idea brzmi:
+## Zakładany czas
 
-> Matematyka nie tylko zapisuje znane kształty. Pozwala budować modele, które opisują i przewidują zachowanie świata fizycznego.
+Około \(2\times45\) minut. Rachunki muszą pozostać elementarne. Dynamiczne wizualizacje mają wykonać znaczną część pracy związanej z rozpoznawaniem wpływu parametrów.
 
-Stożkowe mają więc zamknąć pierwszy blok kursu przez pokazanie, że kartezjańskie połączenie geometrii i algebry nie jest wyłącznie techniką obliczeniową. Daje język zdolny opisać orbity planet, trajektorie komet oraz tory ciał poruszających się w polu grawitacyjnym.
+## Liniowy plan wykładu i ćwiczeń
 
-## Proponowana narracja wykładu
+### 1. Od prostej do krzywej parametrycznej — około 15 minut
 
-### 1. Od obiektów liniowych do krzywych
+#### Na wykładzie
 
-Zaczynamy od ograniczenia dotychczasowego aparatu. Prosta powstaje przez ruch w jednym stałym kierunku. Tym sposobem nie opiszemy trajektorii, która zmienia kierunek.
+Przypominamy prostą
 
-Potrzebujemy bardziej ogólnego sposobu generowania punktów. Naturalnym językiem jest opis parametryczny:
+\[
+P(t)=P_0+tv.
+\]
+
+Stały wektor \(v\) oznacza stały kierunek. Taki mechanizm generuje prostą, ale nie może wygenerować trajektorii, której kierunek zmienia się w trakcie ruchu.
+
+Wprowadzamy więc ogólniejszy zapis
 
 \[
 x=x(t),\qquad y=y(t).
 \]
 
-Parametr może być tylko narzędziem porządkującym punkty, ale w zastosowaniach fizycznych może również oznaczać czas.
+Parametr \(t\) porządkuje punkty krzywej. Może być tylko zmienną sterującą, ale w modelu ruchu może również oznaczać czas. Na tym etapie trzeba jawnie odróżnić:
 
-### 2. Równania algebraiczne ożywają
+- parametr wybierający punkt krzywej;
+- czas jako wielkość fizyczną;
+- sam geometryczny zbiór punktów.
 
-Należy wykorzystać przewagę formatu HTML. Krzywa nie powinna być pokazywana wyłącznie jako gotowy rysunek pod wzorem. Powinna być generowana i przekształcana na oczach studenta.
+#### Wizualizacja HTML
 
-Suwaki mogą zmieniać współczynniki i parametry. Student powinien obserwować:
+Najpierw punkt porusza się po prostej ze stałym kierunkiem. Następnie przełączamy zapis na
 
-- przesunięcie środka,
-- rozciąganie i ściskanie,
-- zmianę orientacji,
-- przejścia między różnymi kształtami,
-- ruch punktu po krzywej zgodnie z parametrem.
+\[
+x(t)=\cos t,\qquad y(t)=\sin t,
+\]
 
-Wizualizacja ma pokazać, że równanie jest mechanizmem generującym geometrię, a parametr steruje tym mechanizmem.
+a punkt zaczyna kreślić okrąg. Widoczne są aktualne wartości \(t,x(t),y(t)\) oraz ślad punktu.
 
-### 3. Jedna rodzina zamiast katalogu figur
+#### Minimalny przykład
 
-Nie chcemy przedstawiać okręgu, elipsy, paraboli i hiperboli jako czterech niepowiązanych tematów. Należy możliwie szybko dojść do wspólnej struktury.
+Dla \(t=0,\frac{\pi}{2},\pi,\frac{3\pi}{2}\) wyznaczamy cztery punkty okręgu jednostkowego. Nie rozwijamy jeszcze rachunku trygonometrycznego poza tymi wartościami.
 
-Najpierw można rozpoznać klasyczne równania kartezjańskie i ich podstawowe parametry, ale tylko w zakresie potrzebnym do odczytywania kształtu i do zbudowania wspólnej rodziny.
+#### Bezpośrednia kontynuacja na ćwiczeniach
 
-Istotne jest pytanie:
+Student ma:
 
-> Które elementy równania odpowiadają za położenie, skalę, orientację i typ krzywej?
+1. wygenerować tabele punktów dla kilku prostych krzywych parametrycznych;
+2. narysować otrzymane krzywe;
+3. porównać dwie różne parametryzacje tego samego zbioru punktów;
+4. wskazać, które własności zależą od parametryzacji, a które od samej krzywej;
+5. przygotować przykład, w którym zmiana zakresu parametru daje tylko fragment krzywej;
+6. sprawdzić przez podstawienie, czy wygenerowane punkty spełniają odpowiednie równanie kartezjańskie.
 
-### 4. Opis radialny jako język wspólnej rodziny
+W `solution.md` muszą znaleźć się tabela wartości, wykres, sprawdzenie równania i komentarz rozróżniający krzywą od sposobu jej parametryzowania.
 
-Głównym celem powinno być możliwie szybkie przejście do opisu radialnego, w którym punkt krzywej jest określony przez kierunek i odległość od wyróżnionego punktu.
+---
 
-Współrzędne biegunowe nie powinny być osobnym dodatkiem oderwanym od stożkowych. Mają pojawić się dlatego, że dla trajektorii orbitujących wokół wyróżnionego centrum opis przez kąt i promień jest naturalniejszy niż opis przez dwie niezależne współrzędne kartezjańskie.
+### 2. Parametry sterujące położeniem, skalą i kształtem — około 15 minut
+
+#### Na wykładzie
+
+Pokazujemy, że litera w równaniu może pełnić różne role. Na prostym przykładzie elipsy
+
+\[
+\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1
+\]
+
+identyfikujemy:
+
+- \((h,k)\) jako położenie środka;
+- \(a,b\) jako skale w dwóch kierunkach.
+
+Nie wyprowadzamy wzorów ani nie omawiamy wszystkich przypadków osobno. Celem jest nauczenie studentów czytania wpływu parametru na geometrię.
+
+Następnie rozróżniamy dwa typy parametrów:
+
+- parametr \(t\) lub \(	heta\), który wybiera punkt na jednej krzywej;
+- parametr \(a,b,e,\ldots\), który zmienia całą krzywą lub rodzinę krzywych.
+
+#### Wizualizacja HTML
+
+Suwaki \(h,k,a,b\) sterują elipsą. Student ma kolejno przewidzieć, co zmieni każdy parametr, zanim suwak zostanie poruszony.
+
+#### Minimalny przykład
+
+Porównujemy
+
+\[
+\frac{x^2}{4}+y^2=1
+\]
+
+oraz
+
+\[
+\frac{(x-2)^2}{4}+(y+1)^2=1.
+\]
+
+Wykład ogranicza się do odczytania przesunięcia i skali z równania.
+
+#### Bezpośrednia kontynuacja na ćwiczeniach
+
+Student ma:
+
+1. rozpoznawać podstawowe postacie kartezjańskie okręgu, elipsy, paraboli i hiperboli;
+2. odczytywać położenie i skalę z prostych równań;
+3. przygotować serię wykresów pokazującą zmianę jednego parametru przy pozostałych ustalonych;
+4. opisać słownie wpływ każdego parametru;
+5. znaleźć przykład dwóch różnych równań, których wykresy różnią się tylko przesunięciem;
+6. sprawdzić wybrane punkty przez podstawienie do równania.
+
+W workbooku pozostają wykresy, tabela „parametr — efekt geometryczny”, sprawdzenia punktów i krótki wniosek. Techniczna klasyfikacja ogólnego równania drugiego stopnia nie należy do tego bloku.
+
+---
+
+### 3. Opis radialny i jedna rodzina stożkowych — około 25 minut
+
+#### Na wykładzie
+
+Dla zjawiska z wyróżnionym centrum naturalny jest opis przez:
+
+- kierunek wybrany kątem \(	heta\);
+- odległość \(r\) od wyróżnionego punktu.
 
 Przejście
 
@@ -86,114 +153,181 @@ Przejście
 x=r\cos\theta,\qquad y=r\sin\theta
 \]
 
-ma być interpretowane geometrycznie. Kąt wybiera kierunek, a \(r\) określa położenie punktu wzdłuż tego kierunku.
+jest interpretowane geometrycznie. Kąt wybiera półprostą, a promień wybiera punkt na tej półprostej.
 
-Następnie dochodzimy do jednej rodziny równań radialnych, na przykład postaci
+Następnie pokazujemy rodzinę
 
 \[
-r(\theta)=\frac{p}{1+e\cos\theta},
+r(\theta)=\frac{p}{1+e\cos\theta}
 \]
 
-z odpowiednim omówieniem orientacji i możliwych wariantów znaku lub przesunięcia kąta.
+w jednej ustalonej orientacji. Nie skupiamy się na przekształceniach wzoru. Najważniejsza jest obserwacja dynamiczna:
 
-Najważniejszy nie jest sam wzór, lecz fakt, że jeden parametr \(e\) zmienia typ krzywej:
+- \(e=0\) — okrąg;
+- \(0<e<1\) — elipsa;
+- \(e=1\) — parabola;
+- \(e>1\) — hiperbola.
 
-- \(e=0\): okrąg,
-- \(0<e<1\): elipsa,
-- \(e=1\): parabola,
-- \(e>1\): hiperbola.
+Student ma zobaczyć, że cztery nazwy opisują jakościowo różne stany jednej rodziny kontrolowanej przez parametr \(e\).
 
-Ta klasyfikacja powinna być pokazana dynamicznie. Student ma zobaczyć płynne przejście przez rodzinę, a nie cztery statyczne obrazki.
+#### Wizualizacja HTML
 
-### 5. Geometryczna interpretacja jako wyjaśnienie, nie punkt wyjścia
+Jedna zintegrowana animacja:
 
-Ognisko, kierownica i mimośród mogą zostać użyte do wyjaśnienia wspólnej struktury stożkowych. Nie powinny jednak rozpoczynać długiej konstrukcyjnej części wykładu.
+- suwak steruje \(e\);
+- aktualny promień \(r(\theta)\) jest rysowany od ogniska;
+- punkt kreśli krzywą;
+- obok widoczne są wartość \(e\), typ stożkowej i aktualne równanie.
 
-Ich rola ma być następująca:
+Animację zatrzymujemy przed wartościami granicznymi \(e=1\), aby student najpierw przewidział zmianę typu krzywej.
 
-- nadać geometryczne znaczenie parametrowi \(e\),
-- pokazać, dlaczego różne krzywe należą do jednej rodziny,
-- uzasadnić radialną postać równania,
-- połączyć algebraiczny opis z geometryczną definicją.
+#### Minimalny przykład
 
-Konstrukcja ma służyć wspólnemu modelowi, a nie zastępować go.
+Dla ustalonego \(p\) obliczamy ręcznie tylko kilka wartości \(r(\theta)\) dla prostych kątów, na przykład \(	heta=0\) i \(	heta=\pi\). Celem jest odczytanie, co robi wzór, nie ręczne kreślenie całej krzywej.
 
-### 6. Grawitacja jako pierwsze pełne zastosowanie języka kursu
+#### Bezpośrednia kontynuacja na ćwiczeniach
 
-Po zbudowaniu matematycznej rodziny należy pokazać, że te same krzywe opisują trajektorie w problemie grawitacyjnym dwóch ciał.
+Student ma:
 
-Nie jest konieczne przeprowadzenie pełnego wyprowadzenia praw Keplera ani rozwiązanie równania ruchu na poziomie zaawansowanego rachunku różniczkowego. Celem jest pokazanie struktury modelu:
+1. obliczyć wybrane wartości \(r(\theta)\) dla kilku mimośrodów;
+2. przygotować tabelę porównującą przypadki \(e=0\), \(0<e<1\), \(e=1\), \(e>1\);
+3. wygenerować lub narysować odpowiadające krzywe;
+4. opisać, co dzieje się z kształtem przy zbliżaniu się \(e\) do \(1\) z obu stron;
+5. porównać opis radialny z prostym opisem kartezjańskim tej samej krzywej;
+6. wyjaśnić, dlaczego opis radialny jest naturalny przy wyróżnionym centrum;
+7. przygotować prostą interaktywną wizualizację albo sekwencję czterech dobrze opisanych rysunków.
 
-- wyróżniamy ciało centralne,
-- opis radialny wykorzystuje odległość od tego ciała i kierunek,
-- parametr energii i warunków ruchu prowadzi do różnych typów orbit,
-- związane trajektorie są elipsami, z okręgiem jako przypadkiem szczególnym,
-- trajektoria graniczna jest parabolą,
-- trajektorie niezwiązane są hiperbolami.
+W `solution.md` pozostają obliczenia kontrolne, tabela klasyfikacji, wykresy i interpretacja roli mimośrodu. Kod lub wizualizacja wygenerowana przy pomocy AI musi zostać sprawdzona na konkretnych wartościach i opatrzona komentarzem studenta.
 
-Należy bardzo uważać, aby nie sugerować, że sama klasyfikacja stożkowych stanowi już teorię grawitacji. Matematyczne krzywe są rozwiązaniami modelu fizycznego dopiero po przyjęciu odpowiednich praw ruchu i oddziaływania. Wykład ma pokazać współpracę matematyki i fizyki, a nie zacierać różnicę między nimi.
+---
 
-### 7. Jedna matematyka, różne zjawiska ruchu
+### 4. Ognisko, kierownica i geometryczny sens mimośrodu — około 15 minut
 
-Warto podkreślić, że okrąg, elipsa, parabola i hiperbola nie są tylko kolejnymi figurami geometrycznymi. W modelu grawitacyjnym odpowiadają jakościowo różnym rodzajom ruchu.
+#### Na wykładzie
 
-To daje studentowi przykład, w którym wartość parametru nie zmienia jedynie wyglądu wykresu, ale rozstrzyga o charakterze zjawiska fizycznego.
+Definicja ognisko–kierownica nie rozpoczyna wykładu. Pojawia się dopiero po zobaczeniu rodziny radialnej, aby nadać parametrowi \(e\) znaczenie geometryczne.
 
-Właśnie tutaj można sprzedać ideę parametru jako wielkości organizującej całą klasę zachowań.
+Dla punktu \(P\) stożkowej porównujemy:
 
-### 8. Powrót do idei Kartezjusza
+- odległość od ogniska \(F\);
+- odległość od kierownicy \(d(P,l)\).
 
-Zakończenie powinno jawnie domknąć narrację pierwszych czterech wykładów.
+Mimośród jest stałym stosunkiem
 
-Zaczęliśmy od geometrii bez liczb. Następnie zakodowaliśmy punkty, zmiany i obiekty geometryczne. Teraz ten język pozwala opisać trajektorie realnych ciał.
+\[
+\frac{d(P,F)}{d(P,l)}=e.
+\]
 
-Kartezjańskie połączenie geometrii z algebrą nie tylko upraszcza rysowanie krzywych. Umożliwia ilościowy opis świata.
+Na wykładzie pokazujemy tę zależność na jednym punkcie i animujemy ruch punktu po krzywej. Student obserwuje, że obie odległości się zmieniają, ale ich stosunek pozostaje stały.
 
-## Proponowane wizualizacje HTML
+Nie przeprowadzamy pełnego algebraicznego wyprowadzenia równania każdej stożkowej.
 
-### Dynamiczna rodzina stożkowych
+#### Wizualizacja HTML
 
-Suwak steruje mimośrodem \(e\), a rysunek płynnie przechodzi przez okrąg, elipsy, parabolę i hiperbole. Jednocześnie powinny być widoczne aktualne równanie i wartość parametru.
+Ognisko, kierownica, ruchomy punkt \(P\), dwa odcinki reprezentujące odległości oraz dynamicznie wyświetlany ich iloraz.
 
-### Punkt generowany radialnie
+#### Minimalny przykład
 
-Kąt \(\theta\) zmienia się, promień \(r(\theta)\) jest obliczany z równania, a punkt kreśli krzywą. Powinny być widoczne promień wodzący, aktualny kąt i ślad punktu.
+Wybieramy prostą konfigurację paraboli, dla której \(e=1\). Student widzi równość odległości od ogniska i kierownicy.
 
-### Porównanie opisu kartezjańskiego i radialnego
+#### Bezpośrednia kontynuacja na ćwiczeniach
 
-Ten sam punkt i ta sama krzywa są opisywane równolegle przez \((x,y)\) oraz \((r,\theta)\). Student widzi, że zmienia się reprezentacja, nie obiekt.
+Student ma:
 
-### Orbity w modelu grawitacyjnym
+1. sprawdzić warunek ognisko–kierownica dla kilku punktów na podanej krzywej;
+2. porównać przypadki \(e<1\), \(e=1\) i \(e>1\);
+3. przygotować rysunek z poprawnie zaznaczonymi odległościami;
+4. wyjaśnić, dlaczego sam kształt rysunku nie wystarcza do ustalenia wartości \(e\);
+5. odtworzyć jakościowo krzywą na podstawie zadanego ogniska, kierownicy i mimośrodu;
+6. wskazać, które elementy definicji są geometryczne, a które zależą od wybranego układu współrzędnych.
 
-Interaktywna animacja pokazuje ciało centralne i różne trajektorie zależne od parametru. Należy jasno opisać, że jest to wizualizacja matematycznego modelu, a nie pełna symulacja wszystkich efektów fizycznych.
+W workbooku pozostają obliczenia odległości, tabela ilorazów, rysunek i wniosek o stałości mimośrodu.
 
-### Zmiana orientacji i parametrów
+---
 
-Student może obracać oś stożkowej, zmieniać skalę oraz położenie. Pozwala to oddzielić cechy istotne dla typu krzywej od cech wynikających jedynie z położenia w układzie współrzędnych.
+### 5. Stożkowe jako trajektorie w modelu grawitacyjnym — około 15 minut
 
-## Zakres i dyscyplina
+#### Na wykładzie
 
-Wykład nie powinien stać się kursem mechaniki nieba ani pełną teorią równań drugiego stopnia. Należy ograniczyć rachunki do minimum potrzebnego dla zrozumienia:
+Po zbudowaniu rodziny geometrycznej pokazujemy, że stożkowe występują jako możliwe trajektorie w idealizowanym problemie dwóch ciał.
 
-- jak równanie generuje krzywą,
-- jak parametr organizuje rodzinę krzywych,
-- dlaczego opis radialny jest naturalny,
-- jak stożkowe pojawiają się jako trajektorie w modelu grawitacyjnym.
+Prowadzący musi jawnie rozdzielić trzy poziomy:
 
-Nie należy przeciążać wykładu długimi przekształceniami algebraicznymi, klasyfikacją wszystkich ogólnych równań kwadratowych ani technicznym wyprowadzeniem dynamiki orbitalnej.
+1. **kształt geometryczny** — zbiór punktów tworzących stożkową;
+2. **ruch po trajektorii** — zależność położenia od czasu;
+3. **prawo fizyczne** — założenia o ruchu i oddziaływaniu, z których trajektoria wynika.
 
-Najprostsze przykłady są pożądane, ale uproszczenie rachunków nie może prowadzić do trywializacji idei. Student ma zobaczyć prawdziwą strukturę matematyczną, nawet jeśli pokazujemy ją na szczególnie czytelnym przypadku.
+Na tym wykładzie nie wyprowadzamy praw Keplera ani równania ruchu. Pokazujemy tylko jakościową klasyfikację:
 
-## Co student powinien zapamiętać po latach
+- orbity związane — elipsy, z okręgiem jako przypadkiem szczególnym;
+- przypadek graniczny — parabola;
+- trajektorie niezwiązane — hiperbole.
 
-> Równania i parametry opisują nie tylko pojedyncze krzywe, lecz całe rodziny możliwych kształtów. Te same rodziny mogą następnie opisywać jakościowo różne zachowania rzeczywistych układów fizycznych.
+Nie wolno sugerować, że sama definicja stożkowej stanowi teorię grawitacji.
 
-oraz:
+#### Wizualizacja HTML
 
-> Połączenie geometrii z algebrą pozwala matematyce przejść od rysunku do ilościowego modelu świata.
+Ciało centralne i kilka trajektorii. Przełącznik zmienia typ krzywej, a obok widoczne są etykiety:
 
-## Most do dalszej części kursu
+- model geometryczny;
+- parametr kształtu;
+- informacja jakościowa o ruchu.
 
-Pierwszy blok kursu pokazał, jak kodować i opisywać obiekty geometryczne. Pojawia się teraz pytanie, jak systematycznie przekształcać całe układy współrzędnych, wektory i figury oraz jak zapisywać takie przekształcenia w zwartej postaci.
+Ruch punktu po krzywej może być pokazany wyłącznie ilustracyjnie, bez twierdzenia, że jego prędkość odpowiada pełnemu rozwiązaniu fizycznemu.
 
-To prowadzi do macierzy jako narzędzi opisujących transformacje.
+#### Minimalny przykład
+
+Porównujemy elipsę i hiperbolę jako dwa jakościowo różne typy trajektorii względem ciała centralnego. Nie wykonujemy rachunku energii.
+
+#### Bezpośrednia kontynuacja na ćwiczeniach
+
+Student ma:
+
+1. przypisać podane trajektorie do typów stożkowych;
+2. rozdzielić informacje opisujące kształt, parametryzację i prawo fizyczne;
+3. wskazać założenia idealizowanego modelu dwóch ciał;
+4. wyjaśnić, czego model nie uwzględnia;
+5. porównać statyczne równanie elipsy z przykładową parametryzacją ruchu po elipsie;
+6. przygotować krótką notatkę „krzywa nie jest prawem ruchu”;
+7. przedstawić jeden przypadek na ćwiczeniach, używając rysunku i nie więcej niż dwóch podstawowych wzorów.
+
+W `solution.md` muszą pozostać: klasyfikacja, tabela trzech poziomów modelu, lista założeń i krótka interpretacja fizyczna bez nieuzasadnionych wniosków.
+
+---
+
+### 6. Domknięcie pierwszego bloku — około 5 minut
+
+#### Na wykładzie
+
+Wracamy do narracji pierwszych czterech spotkań:
+
+1. geometria istniała przed liczbami;
+2. współrzędne zakodowały punkty;
+3. wektory zakodowały zmiany;
+4. punkty i kierunki wygenerowały obiekty liniowe;
+5. parametry i równania zaczęły organizować rodziny krzywych;
+6. te krzywe mogą występować jako elementy modeli świata fizycznego.
+
+Student zapisuje dwie końcowe zasady:
+
+> Parametr może wybierać punkt jednej krzywej albo zmieniać kształt całej rodziny krzywych.
+
+> Model matematyczny łączy obiekty i zależności na podstawie określonych założeń; nie jest samym zjawiskiem fizycznym.
+
+## Materiał opcjonalny w HTML
+
+Jako materiał rozszerzający mogą pozostać:
+
+- pełne wyprowadzenie równań z definicji ognisko–kierownica;
+- klasyfikacja ogólnego równania drugiego stopnia;
+- szczegółowe prawa Keplera;
+- wyprowadzenie orbit z równań ruchu;
+- dodatkowe warianty orientacji równania radialnego.
+
+Żaden z tych elementów nie jest wymagany do zamknięcia obowiązkowej narracji wykładu.
+
+## Most do wykładu 05
+
+Pierwszy blok pokazał, jak opisywać obiekty i rodziny obiektów. Kolejne pytanie dotyczy już nie samych figur, lecz działań wykonywanych jednocześnie na całej przestrzeni:
+
+> Jak zapisać jedną regułę, która przekształca wszystkie punkty i wektory?
