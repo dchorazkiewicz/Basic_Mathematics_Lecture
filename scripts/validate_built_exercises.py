@@ -13,6 +13,17 @@ NON_CONTENT_BLOCKS = re.compile(
     r"<(script|style|pre|code)\b[^>]*>.*?</\1>",
     flags=re.IGNORECASE | re.DOTALL,
 )
+MARKDOWN_CODE_FENCE = re.compile(r"```.*?```", flags=re.DOTALL)
+
+
+def source_path_for(html_path: Path) -> Path:
+    relative = html_path.relative_to("site_build")
+    return Path("docs") / relative.parent / "index.md"
+
+
+def source_contains_math(source: str) -> bool:
+    without_code = MARKDOWN_CODE_FENCE.sub("", source)
+    return "$" in without_code or "\\[" in without_code or "\\]" in without_code
 
 
 def main() -> int:
@@ -44,9 +55,14 @@ def main() -> int:
         if 'class="verification-box"' not in problem_html:
             errors.append(f"{path}: missing Verification block")
 
-        if 'class="arithmatex"' not in problem_html:
-            # Every current problem contains at least one mathematical expression.
-            errors.append(f"{path}: no rendered mathematics block or span found")
+        source_path = source_path_for(path)
+        if not source_path.exists():
+            errors.append(f"{path}: corresponding Markdown source is missing: {source_path}")
+            continue
+
+        source = source_path.read_text(encoding="utf-8")
+        if source_contains_math(source) and 'class="arithmatex"' not in problem_html:
+            errors.append(f"{path}: mathematical source was not rendered by Arithmatex")
 
     if errors:
         print("\n".join(errors), file=sys.stderr)
