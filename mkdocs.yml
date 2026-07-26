@@ -24,7 +24,28 @@ nav:
       - How the Course Works: introduction/how-the-course-works.md
       - How to Prepare Mathematical Notes: introduction/how-to-prepare-mathematical-notes.md
   - Lecture 01 · Cartesian Geometry and Coordinates: lecture-01/index.md
-  - Exercises 01 · Cartesian Geometry and Coordinates: exercises-01/index.md
+  - Exercises 01 · Cartesian Geometry and Coordinates:
+      - Exercise set overview: exercises-01/index.md
+      - Problem 01 · Plotting points: exercises-01/problem-01/index.md
+      - Problem 02 · Changing the origin: exercises-01/problem-02/index.md
+      - Problem 03 · Changing the scale: exercises-01/problem-03/index.md
+      - Problem 04 · Distance triangle: exercises-01/problem-04/index.md
+      - Problem 05 · Unknown coordinate: exercises-01/problem-05/index.md
+      - Problem 06 · Function graph: exercises-01/problem-06/index.md
+      - Problem 07 · Membership tests: exercises-01/problem-07/index.md
+      - Problem 08 · Circle relation: exercises-01/problem-08/index.md
+      - Problem 09 · Parametrized segment: exercises-01/problem-09/index.md
+      - Problem 10 · Intersections and inequalities: exercises-01/problem-10/index.md
+      - Problem 11 · Two coordinate systems: exercises-01/problem-11/index.md
+      - Problem 12 · Designing a system: exercises-01/problem-12/index.md
+      - Problem 13 · Distance formula: exercises-01/problem-13/index.md
+      - Problem 14 · Circle from distance: exercises-01/problem-14/index.md
+      - Problem 15 · Three circle descriptions: exercises-01/problem-15/index.md
+      - Problem 16 · Segment parametrization: exercises-01/problem-16/index.md
+      - Problem 17 · Two parametrizations: exercises-01/problem-17/index.md
+      - Problem 18 · Line-circle intersections: exercises-01/problem-18/index.md
+      - Problem 19 · Region by inequalities: exercises-01/problem-19/index.md
+      - Problem 20 · Equations generate geometry: exercises-01/problem-20/index.md
   - Lecture 02 · Vectors, Bases, and Coordinate Systems: lecture-02/index.md
   - Exercises 02 · Vectors, Bases, and Coordinate Systems: exercises-02/index.md
   - Lecture 03 · Lines and Planes: lecture-03/index.md
