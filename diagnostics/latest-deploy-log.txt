@@ -1,0 +1,30 @@
+deploy	Validate generated exercise pages	﻿2026-07-26T13:01:46.7921798Z ##[group]Run python scripts/validate_built_exercises.py
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7922257Z ^[[36;1mpython scripts/validate_built_exercises.py^[[0m
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7966906Z shell: /usr/bin/bash -e {0}
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7967163Z env:
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7967434Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7967867Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7968546Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7968977Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7969373Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7969762Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.7970284Z ##[endgroup]
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8330459Z site_build/exercises-01/problem-06/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8332021Z site_build/exercises-01/problem-08/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8333361Z site_build/exercises-01/problem-09/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8334517Z site_build/exercises-01/problem-10/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8335562Z site_build/exercises-01/problem-13/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8336357Z site_build/exercises-01/problem-14/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8337176Z site_build/exercises-01/problem-15/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8337962Z site_build/exercises-01/problem-16/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8338975Z site_build/exercises-01/problem-17/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8339719Z site_build/exercises-01/problem-19/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8340467Z site_build/exercises-01/problem-20/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8341206Z site_build/exercises-02/problem-08/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8341944Z site_build/exercises-02/problem-09/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8342678Z site_build/exercises-02/problem-10/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8343410Z site_build/exercises-02/problem-11/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8344148Z site_build/exercises-02/problem-15/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8344888Z site_build/exercises-02/problem-16/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8345622Z site_build/exercises-02/problem-20/index.html: raw $$ delimiter remains in rendered problem content
+deploy	Validate generated exercise pages	2026-07-26T13:01:46.8380250Z ##[error]Process completed with exit code 1.
