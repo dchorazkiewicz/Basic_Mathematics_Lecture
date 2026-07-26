@@ -37,3 +37,5 @@ jobs:
           git add docs/exercises-*/problem-*/index.md
           git commit -m "Normalize exercise math delimiters"
           git push
+
+# Triggered after creation so the normalizer runs on the default branch.
