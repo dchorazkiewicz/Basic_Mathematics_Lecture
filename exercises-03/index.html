@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Exercise design complementing Lecture 03.">
-  <title>Exercises 03 · Lines and Planes · Basic Mathematics</title>
+  <meta name="description" content="A course in analytical geometry, linear algebra and calculus.">
+  <title>Exercise set overview · Basic Mathematics</title>
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/home.css">
   <link rel="stylesheet" href="../assets/css/lecture.css">
@@ -36,150 +36,149 @@
   </header>
 
   
-    <div class="lecture-shell">
-      <aside class="lecture-nav" aria-label="Exercise set contents">
-        <div class="nav-label">Exercises 03</div>
-        <a class="companion-link" href="../lecture-03/">← Return to lecture</a>
-        
-          <a href="#generating-lines">Generating lines</a>
-        
-          <a href="#representations">Equivalent representations</a>
-        
-          <a href="#intersections">Intersections</a>
-        
-          <a href="#distance">Point-line distance</a>
-        
-          <a href="#planes">Planes and space</a>
-        
-          <a href="#set-audit">Set audit</a>
-        
-      </aside>
-      <main class="lecture-main exercise-plan-main">
-        <header class="lecture-header">
-          <p class="eyebrow">Exercises · Lecture 03</p>
-          <h1>Lines and Planes</h1>
-          <p class="lecture-author">Damian Chorążkiewicz</p>
-          <p>The lecture develops one line in several representations; the exercises expand the technique, verification and three-dimensional extension without turning the lecture into a catalogue of formulas.</p>
-          <div class="companion-actions">
-            <a class="companion-button" href="../lecture-03/">← Return to Lecture 03</a>
-          </div>
-        </header>
-        <h1 id="exercise-design">Exercise design</h1>
-<h2 id="generating-lines">Generating lines</h2>
-<h3 id="connection-to-the-lecture">Connection to the lecture</h3>
-<p>The lecture constructs a line from a point <span class="arithmatex">\(P_0\)</span>, a nonzero direction <span class="arithmatex">\(v\)</span> and the parameter <span class="arithmatex">\(t\)</span>.</p>
-<h3 id="boundary-of-the-lecture">Boundary of the lecture</h3>
-<p>One line and a few values of <span class="arithmatex">\(t\)</span> are shown. Membership tests and alternative parameterizations are transferred.</p>
-<h3 id="work-transferred-to-exercises">Work transferred to exercises</h3>
-<p>Students should generate points, recover an equation from a point and direction, test point membership, determine the parameter of a given point and construct distinct parameterizations of the same line.</p>
-<h3 id="planned-problem-types">Planned problem types</h3>
+    <main class="standalone-page"><hr />
+<p>title: Exercises 03 — Lines and Planes
+description: Twenty exercises complementing Lecture 03: ten required practice problems and ten developing problems.
+exercise_set: "03"
+exercise_title: Lines and Planes
+lecture_link: lecture-03/
+intro: Problems 01–10 consolidate the generation, representation, intersection and distance of lines, followed by elementary plane constructions. Problems 11–20 require comparison, explanation, visualization and concise mathematical documentation.
+section_links:
+  - { id: required-practice, title: Problems 01–10 }
+  - { id: developing-problems, title: Problems 11–20 }
+  - { id: structure, title: Set structure }</p>
+<hr />
+<h1 id="exercise-set-03">Exercise Set 03</h1>
+<p>The set follows the division intended for the later student workbook:</p>
 <ul>
-<li>direct point generation;</li>
-<li>point-membership tests;</li>
-<li>reconstruction from geometric data;</li>
-<li>comparison of two parameterizations;</li>
-<li>one drawing or animation task.</li>
+<li><strong>Problems 01–10 — required practice:</strong> calculate, convert, draw and verify;</li>
+<li><strong>Problems 11–20 — developing work:</strong> compare representations, justify constructions, explain geometry and prepare a mathematical note.</li>
 </ul>
-<h3 id="required-workbook-result">Required workbook result</h3>
-<p>A parameter table, a line drawing, membership calculations and a conclusion explaining why a line has many valid parameterizations.</p>
-<h3 id="verification">Verification</h3>
-<p>At least two generated points must be substituted into every claimed equivalent equation.</p>
-<h2 id="representations">Equivalent representations</h2>
-<h3 id="connection-to-the-lecture_1">Connection to the lecture</h3>
-<p>One concrete line is followed through parametric, slope and normal descriptions.</p>
-<h3 id="boundary-of-the-lecture_1">Boundary of the lecture</h3>
-<p>The lecture performs only one full conversion. Repeated conversion and exceptional cases belong to exercises.</p>
-<h3 id="work-transferred-to-exercises_1">Work transferred to exercises</h3>
-<p>Students should:</p>
-<ol>
-<li>convert between parametric, slope and normal forms for simple data;</li>
-<li>interpret <span class="arithmatex">\(m=\tan\alpha\)</span> geometrically;</li>
-<li>identify direction and normal vectors;</li>
-<li>recognize vertical lines where <span class="arithmatex">\(y=mx+b\)</span> is not appropriate;</li>
-<li>determine whether two equations describe the same set;</li>
-<li>prepare one compact presentation card with three descriptions of one line.</li>
-</ol>
-<h3 id="planned-problem-types_1">Planned problem types</h3>
-<ul>
-<li>three short conversions;</li>
-<li>one vertical-line case;</li>
-<li>one equivalence test;</li>
-<li>one visual presentation problem.</li>
-</ul>
-<h3 id="required-workbook-result_1">Required workbook result</h3>
-<p>Full conversions, a line with its slope triangle and normal vector, and substitution checks.</p>
-<h3 id="verification_1">Verification</h3>
-<p>Two points generated by the parametric form must satisfy the normal equation.</p>
-<h2 id="intersections">Intersections</h2>
-<h3 id="connection-to-the-lecture_2">Connection to the lecture</h3>
-<p>The lecture defines intersection as simultaneous membership and shows one book-style calculation.</p>
-<h3 id="boundary-of-the-lecture_2">Boundary of the lecture</h3>
-<p>Only one intersecting pair is solved fully. Classification and comparison of methods are transferred.</p>
-<h3 id="work-transferred-to-exercises_2">Work transferred to exercises</h3>
-<p>Students should solve elementary intersections, check the point in both lines, classify intersecting, parallel and coincident cases, compare parametric and Cartesian methods, and build a decision scheme based on directions and common points.</p>
-<h3 id="planned-problem-types_2">Planned problem types</h3>
-<ul>
-<li>several small systems with integer solutions;</li>
-<li>one parallel pair;</li>
-<li>one coincident pair;</li>
-<li>one method-comparison problem;</li>
-<li>one decision-diagram task.</li>
-</ul>
-<h3 id="required-workbook-result_2">Required workbook result</h3>
-<p>At least one complete solution containing equations, imposed equality, solution, geometric point and verification in both objects.</p>
-<h3 id="verification_2">Verification</h3>
-<p>No intersection answer is accepted without substitution into both line descriptions.</p>
-<h2 id="distance">Point-line distance</h2>
-<h3 id="connection-to-the-lecture_3">Connection to the lecture</h3>
-<p>The lecture visualizes the shortest connecting segment and relates it to the normal direction and projection.</p>
-<h3 id="boundary-of-the-lecture_3">Boundary of the lecture</h3>
-<p>One transparent example is calculated. General practice and inverse questions move to exercises.</p>
-<h3 id="work-transferred-to-exercises_3">Work transferred to exercises</h3>
-<p>Students should calculate distances, construct perpendicular feet, verify orthogonality, compare the coordinate formula with a projection calculation and solve one inverse locus problem.</p>
-<h3 id="planned-problem-types_3">Planned problem types</h3>
-<ul>
-<li>direct distance calculations;</li>
-<li>construction of the nearest point;</li>
-<li>comparison of two methods;</li>
-<li>one inverse problem describing points at a fixed distance from a line;</li>
-<li>one explanatory diagram.</li>
-</ul>
-<h3 id="required-workbook-result_3">Required workbook result</h3>
-<p>A calculation, geometric construction, orthogonality test and interpretation of the minimum.</p>
-<h3 id="verification_3">Verification</h3>
-<p>The foot must belong to the line and the connecting vector must be perpendicular to its direction.</p>
-<h2 id="planes">Planes and space</h2>
-<h3 id="connection-to-the-lecture_4">Connection to the lecture</h3>
-<p>The lecture only extends the generating idea: one point plus two independent directions produces a plane; a normal gives an equivalent condition.</p>
-<h3 id="boundary-of-the-lecture_4">Boundary of the lecture</h3>
-<p>This is the major transfer point. The cross product, a plane through three points and the full classification of spatial relations are not developed fully during the lecture.</p>
-<h3 id="work-transferred-to-exercises_4">Work transferred to exercises</h3>
-<p>Students should:</p>
-<ol>
-<li>generate and test points of a parametric plane;</li>
-<li>detect when two supposed directions are dependent;</li>
-<li>construct two directions from three noncollinear points;</li>
-<li>compute a normal with the cross product and verify both dot products vanish;</li>
-<li>write parametric and normal equations of one plane;</li>
-<li>compare line-plane and plane-plane positions in simple cases;</li>
-<li>prepare a three-dimensional visualization or a sequence of labelled views.</li>
-</ol>
-<h3 id="planned-problem-types_4">Planned problem types</h3>
-<ul>
-<li>elementary point-generation tasks;</li>
-<li>one dependence test;</li>
-<li>one full plane-through-three-points problem;</li>
-<li>one line-plane intersection;</li>
-<li>one visual or presentation task.</li>
-</ul>
-<h3 id="required-workbook-result_4">Required workbook result</h3>
-<p>Full construction from three points, parametric and normal equations, cross-product checks, a diagram and a short classification argument.</p>
-<h3 id="verification_4">Verification</h3>
-<p>All three original points must satisfy the final plane equation, and the normal must be orthogonal to both generating directions.</p>
-<h2 id="set-audit">Set audit</h2>
-<p>The exercise set must preserve the lecture’s hierarchy: the line is the primary object, while the plane is a controlled extension. Spatial technique may be substantial in the workbook, but it must always point back to the same generating principle rather than become an unrelated formula list.</p>
-      </main>
-    </div>
+<p>Each problem has its own Markdown file. Separate editable <code>solution.md</code> files will be added only in the forkable student workbook.</p>
+<h2 id="required-practice">Problems 01–10 — required practice</h2>
+<div class="problem-list">
+<p><a class="problem-card problem-card--required" href="problem-01/">
+<strong>Problem 01 — Generating points of a line</strong>
+<span>Use a parameter to generate points, test membership and connect the equation with a drawing.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-02/">
+<strong>Problem 02 — Line through two points</strong>
+<span>Construct two parametric descriptions from the same pair of points and verify their equivalence.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-03/">
+<strong>Problem 03 — From a direction to a normal equation</strong>
+<span>Convert one parametric line to normal and implicit forms and check generated points.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-04/">
+<strong>Problem 04 — Slope, direction and a vertical line</strong>
+<span>Interpret slope geometrically and compare ordinary and vertical-line representations.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-05/">
+<strong>Problem 05 — Intersection of two lines</strong>
+<span>Find one intersection algebraically, verify it and compare the result with the graph.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-06/">
+<strong>Problem 06 — Classifying pairs of lines</strong>
+<span>Distinguish intersecting, parallel and coincident lines from their directions and equations.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-07/">
+<strong>Problem 07 — Distance from a point to a line</strong>
+<span>Compute the distance, construct the perpendicular foot and verify orthogonality.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-08/">
+<strong>Problem 08 — Generating points of a plane</strong>
+<span>Use two parameters to generate and test points of a plane.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-09/">
+<strong>Problem 09 — Normal vector of a plane</strong>
+<span>Compute a normal with the cross product and derive a normal equation.</span>
+</a></p>
+<p><a class="problem-card problem-card--required" href="problem-10/">
+<strong>Problem 10 — Plane through three points</strong>
+<span>Construct parametric and normal descriptions and verify all original points.</span>
+</a></p>
+</div>
+<h2 id="developing-problems">Problems 11–20 — developing work</h2>
+<div class="problem-list">
+<p><a class="problem-card problem-card--developing" href="problem-11/">
+<strong>Problem 11 — Many parametrizations of one line</strong>
+<span>Document how different initial points and direction multiples describe the same set.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-12/">
+<strong>Problem 12 — The vertical line and its representations</strong>
+<span>Compare parametric and normal descriptions with the limitation of slope-intercept form.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-13/">
+<strong>Problem 13 — Three descriptions of one line</strong>
+<span>Prepare a compact presentation card connecting parametric, slope and normal forms.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-14/">
+<strong>Problem 14 — Two methods for one intersection</strong>
+<span>Solve one intersection parametrically and in Cartesian form, then compare the methods.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-15/">
+<strong>Problem 15 — Why the perpendicular gives the shortest distance</strong>
+<span>Combine numerical comparison, a general expression and a right-triangle argument.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-16/">
+<strong>Problem 16 — Points at a fixed distance from a line</strong>
+<span>Derive and interpret the two parallel lines forming a fixed-distance locus.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-17/">
+<strong>Problem 17 — One direction or two?</strong>
+<span>Compare line and plane generation using dependent and independent directions.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-18/">
+<strong>Problem 18 — Collinear and noncollinear triples</strong>
+<span>Use dependence and the cross product to compare triples of points.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-19/">
+<strong>Problem 19 — Intersection of a line and a plane</strong>
+<span>Find and classify a simple line-plane intersection and prepare a spatial visualization.</span>
+</a></p>
+<p><a class="problem-card problem-card--developing" href="problem-20/">
+<strong>Problem 20 — Choosing a representation</strong>
+<span>Build a verified decision guide for selecting parametric, slope or normal descriptions.</span>
+</a></p>
+</div>
+<h2 id="structure">Structure of the set</h2>
+<table>
+<thead>
+<tr>
+<th>Lecture component</th>
+<th>Required practice</th>
+<th>Developing work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Line generation and membership</td>
+<td>01–02</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Equivalent line representations</td>
+<td>03–04</td>
+<td>12–13</td>
+</tr>
+<tr>
+<td>Intersections and relative position</td>
+<td>05–06</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Point-line distance</td>
+<td>07</td>
+<td>15–16</td>
+</tr>
+<tr>
+<td>Plane generation and normal</td>
+<td>08–10</td>
+<td>17–20</td>
+</tr>
+</tbody>
+</table>
+<p>Every developing problem requires a visible mathematical product: a labelled diagram, a comparison table, a verified construction or a concise explanatory note.</p></main>
   
 </body>
 </html>
