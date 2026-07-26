@@ -100,7 +100,7 @@ Nie wyprowadzamy wzorów ani nie omawiamy wszystkich przypadków osobno. Celem j
 
 Następnie rozróżniamy dwa typy parametrów:
 
-- parametr \(t\) lub \(	heta\), który wybiera punkt na jednej krzywej;
+- parametr \(t\) lub \(\theta\), który wybiera punkt na jednej krzywej;
 - parametr \(a,b,e,\ldots\), który zmienia całą krzywą lub rodzinę krzywych.
 
 #### Wizualizacja HTML
@@ -144,7 +144,7 @@ W workbooku pozostają wykresy, tabela „parametr — efekt geometryczny”, sp
 
 Dla zjawiska z wyróżnionym centrum naturalny jest opis przez:
 
-- kierunek wybrany kątem \(	heta\);
+- kierunek wybrany kątem \(\theta\);
 - odległość \(r\) od wyróżnionego punktu.
 
 Przejście
@@ -183,7 +183,7 @@ Animację zatrzymujemy przed wartościami granicznymi \(e=1\), aby student najpi
 
 #### Minimalny przykład
 
-Dla ustalonego \(p\) obliczamy ręcznie tylko kilka wartości \(r(\theta)\) dla prostych kątów, na przykład \(	heta=0\) i \(	heta=\pi\). Celem jest odczytanie, co robi wzór, nie ręczne kreślenie całej krzywej.
+Dla ustalonego \(p\) obliczamy ręcznie tylko kilka wartości \(r(\theta)\) dla prostych kątów, na przykład \(\theta=0\) i \(\theta=\pi\). Celem jest odczytanie, co robi wzór, nie ręczne kreślenie całej krzywej.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
