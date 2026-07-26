@@ -354,144 +354,96 @@ d(P,F)=d(P,D).
 <p class="admonition-title">Continued in the exercise set</p>
 <p>Students will verify the ratio for selected points, draw the two relevant distances correctly and compare the regimes <span class="arithmatex">\(e&lt;1\)</span>, <span class="arithmatex">\(e=1\)</span>, and <span class="arithmatex">\(e&gt;1\)</span>. A full derivation of the radial equation may appear as a developing exercise, not as the centre of the lecture.</p>
 </div>
-<h2 id="polar-family">Ellipse, parabola, and hyperbola from one formula</h2>
+<h2 id="geometric-models">A conic as a trajectory is not yet a law of motion</h2>
+<p>Conics occur as possible trajectories in an idealized two-body gravitational model. This statement must be read carefully.</p>
+<p>There are three different levels of description:</p>
+<ol>
+<li><strong>Geometric path</strong> — the set of points forming a circle, ellipse, parabola, or hyperbola.</li>
+<li><strong>Motion on the path</strong> — a rule that assigns a position to each time.</li>
+<li><strong>Physical law</strong> — assumptions and equations that determine which motions are possible.</li>
+</ol>
+<p>A curve equation supplies the first level. A parametrization supplies an ordering of points and may be used to display motion, but it becomes a physical time law only after additional justification.</p>
 <figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
-  <div class="figure-toolbar"><div><span class="figure-title">One radial law, three conic regimes</span><span class="figure-step-title" data-conic-family-readout>$r=p/(1+e\cos\theta)$</span></div><button class="icon-button" type="button" data-fullscreen aria-label="Open polar conic family in full screen">⛶</button></div>
-  <div class="figure-stage jsx-stage"><div id="polar-conic-family-board" class="jxgbox" data-polar-conic-family></div></div>
-  <div class="parameter-controls" style="--parameter-count:2"><label class="parameter-control"><span>$p$ = <output data-conic-p>2.4</output></span><input type="range" min="0.5" max="4" step="0.1" value="2.4" data-conic-p-slider></label><label class="parameter-control"><span>$e$ = <output data-conic-e>0.6</output></span><input type="range" min="0" max="2" step="0.02" value="0.6" data-conic-e-slider></label></div>
-  <figcaption class="figure-caption">The focal scale $p$ changes size. The eccentricity $e$ changes the type and shape.</figcaption>
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">The path can be classified before the motion is derived</span>
+      <span class="figure-step-title" data-orbit-type>ellipse — bounded geometric path</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open geometric trajectory model in full screen">⛶</button>
+  </div>
+  <div class="curve-switcher" role="group" aria-label="Choose a geometric trajectory">
+    <button class="curve-mode is-active" type="button" data-orbit-mode="ellipse">Ellipse</button>
+    <button class="curve-mode" type="button" data-orbit-mode="parabola">Parabola</button>
+    <button class="curve-mode" type="button" data-orbit-mode="hyperbola">Hyperbola</button>
+  </div>
+  <div class="figure-stage jsx-stage"><div id="orbit-model-board" class="jxgbox" data-orbit-models></div></div>
+  <label class="parameter-control single-parameter"><span>display parameter $\theta$ = <output data-orbit-theta>0</output></span><input type="range" min="0" max="6.283" step="0.01" value="0" data-orbit-theta-slider></label>
+  <div class="relation-readout"><span data-orbit-motion-note>The slider chooses a point on the path; it is not yet a physical time law.</span></div>
+  <figcaption class="figure-caption">The moving point is an illustration of a parametrized path. Its displayed speed is not presented as the physical speed of an orbiting body.</figcaption>
 </figure>
 
-<h3 id="ellipse-from-the-polar-formula">Ellipse from the polar formula</h3>
-<p>Assume <span class="arithmatex">\(0&lt;e&lt;1\)</span>. Then</p>
-<div class="arithmatex">\[
-1-e\le1+e\cos\theta\le1+e,
-\]</div>
-<p>so the denominator is positive for every angle. The radius is finite in every direction and the curve closes around the focus.</p>
-<p>The nearest and farthest points occur at <span class="arithmatex">\(\theta=0\)</span> and <span class="arithmatex">\(\theta=\pi\)</span>:</p>
-<div class="arithmatex">\[
-\boxed{r_{\min}=\frac{p}{1+e}},
-\qquad
-\boxed{r_{\max}=\frac{p}{1-e}}.
-\]</div>
-<p>Thus increasing <span class="arithmatex">\(e\)</span> makes the two extreme focal distances more unequal.</p>
-<p>For a Cartesian ellipse with semimajor axis <span class="arithmatex">\(a\)</span> and semiminor axis <span class="arithmatex">\(b\)</span>,</p>
-<div class="arithmatex">\[
-e=\sqrt{1-\frac{b^2}{a^2}},
-\qquad
-p=a(1-e^2)=\frac{b^2}{a}.
-\]</div>
-<p>Therefore</p>
-<div class="arithmatex">\[
-\boxed{r(\theta)=\frac{a(1-e^2)}{1+e\cos\theta}}.
-\]</div>
-<div class="admonition interpretation">
-<p class="admonition-title">Why the focus-centred form matters</p>
-<p>The Cartesian equation displays the centre and semiaxes. The polar equation displays the distance from a focus as the direction changes.</p>
-</div>
-<h3 id="parabola-from-the-polar-formula">Parabola from the polar formula</h3>
-<p>Set <span class="arithmatex">\(e=1\)</span>. Then</p>
-<div class="arithmatex">\[
-\boxed{r(\theta)=\frac{p}{1+\cos\theta}}.
-\]</div>
-<p>For directions near <span class="arithmatex">\(\theta=\pi\)</span>, the denominator approaches zero and the radius grows without bound. This is the geometric reason the curve is open.</p>
-<p>Using <span class="arithmatex">\(1+\cos\theta=2\cos^2(\theta/2)\)</span>,</p>
-<div class="arithmatex">\[
-r=\frac{p}{2\cos^2(\theta/2)}.
-\]</div>
-<p>The vertex lies on the positive polar axis at</p>
-<div class="arithmatex">\[
-\boxed{r=\frac p2}.
-\]</div>
-<div class="admonition interpretation">
-<p class="admonition-title">The exact transition</p>
-<p>For an ellipse, the denominator stays away from zero. At <span class="arithmatex">\(e=1\)</span> it reaches zero in one limiting direction. The closed orbit has opened into a parabola.</p>
-</div>
-<h3 id="hyperbola-from-the-polar-formula">Hyperbola from the polar formula</h3>
-<p>Assume <span class="arithmatex">\(e&gt;1\)</span>. The denominator <span class="arithmatex">\(1+e\cos\theta\)</span> vanishes at two angles satisfying</p>
-<div class="arithmatex">\[
-\cos\theta=-\frac1e.
-\]</div>
-<p>These limiting directions are the asymptotic directions of the branch described from the chosen focus.</p>
-<p>For <span class="arithmatex">\(r\ge0\)</span>,</p>
-<div class="arithmatex">\[
-\boxed{r=\frac{p}{1+e\cos\theta}}
-\]</div>
-<p>traces the branch lying on the same side of the directrix as the chosen focus. It does not silently represent the entire two-branch hyperbola.</p>
-<p>To recover the complete hyperbola, return to the two-focus geometry or use</p>
-<div class="arithmatex">\[
-\boxed{\frac{x^2}{a^2}-\frac{y^2}{b^2}=1},
-\]</div>
-<p>which displays both branches at once.</p>
-<div class="admonition interpretation">
-<p class="admonition-title">Why the polar and Cartesian pictures differ</p>
-<p>The polar equation is adapted to one chosen focus and one directrix. The Cartesian equation is adapted to the centre and displays both branches symmetrically. Neither description is incomplete when its viewpoint is stated correctly.</p>
-</div>
-<h2 id="orientation">Orientation, one formula, and the bridge to mechanics</h2>
-<p>The equation</p>
-<div class="arithmatex">\[
-r=\frac{p}{1+e\cos\theta}
-\]</div>
-<p>places the nearest point on the positive polar axis. Rotating the entire conic by an angle <span class="arithmatex">\(\theta_0\)</span> gives</p>
-<div class="arithmatex">\[
-\boxed{r=\frac{p}{1+e\cos(\theta-\theta_0)}}.
-\]</div>
+<p>At the qualitative level used in this lecture:</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Geometric role</th>
+<th>Geometric type</th>
+<th>Interpretation in the idealized model</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(p\)</span></td>
-<td>overall focal scale</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(e\)</span></td>
-<td>shape and conic type</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\theta_0\)</span></td>
-<td>orientation in the plane</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th><span class="arithmatex">\(e\)</span></th>
-<th>Conic</th>
-<th>Focal motion suggested by the geometry</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(0\le e&lt;1\)</span></td>
 <td>circle or ellipse</td>
-<td>bounded</td>
+<td>bounded trajectory</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(e=1\)</span></td>
 <td>parabola</td>
-<td>threshold between bounded and unbounded</td>
+<td>limiting case between bounded and unbounded motion</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(e&gt;1\)</span></td>
 <td>hyperbola</td>
 <td>unbounded passage</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition summary">
-<p class="admonition-title">What has been achieved</p>
-<p>The chapter did not merely list four equations. It changed the viewpoint until three apparently different curves became outcomes of one radial law. This is the analytic-geometric preparation needed before a later mechanics course derives the same law from a central force.</p>
+<p>No energy calculation, Kepler-law derivation, or differential equation is introduced here. Those belong to a mechanics course or to the later synthesis after calculus.</p>
+<div class="admonition warning">
+<p class="admonition-title">A curve is not a theory of gravity</p>
+<p>The statement “the trajectory is an ellipse” does not by itself specify how fast the body moves, why it follows that path, or which assumptions were used. The mathematical model includes the law and the assumptions, not only the shape.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Continued in the exercise set</p>
+<p>Students will classify paths, separate geometric data from parametrization and physical assumptions, identify idealizations of the two-body model and prepare a short note titled “A trajectory is not a law of motion”.</p>
+</div>
+<h2 id="block-summary">What the first four lectures have built</h2>
+<p>The first block of the course now forms one chain.</p>
+<ol>
+<li>Geometry supplied points, constructions, distances, and shapes.</li>
+<li>Coordinates encoded points numerically.</li>
+<li>Vectors encoded changes and directions.</li>
+<li>Points and directions generated lines and planes.</li>
+<li>Parameters generated curved paths and organized families of curves.</li>
+<li>Those curves became components of mathematical models.</li>
+</ol>
+<p>Two distinctions from this lecture must remain explicit.</p>
+<div class="admonition principle">
+<p class="admonition-title">Parameter on a curve versus parameter of a family</p>
+<p>The parameter <span class="arithmatex">\(t\)</span> or <span class="arithmatex">\(\theta\)</span> may select a point on one curve. A parameter such as <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, or <span class="arithmatex">\(e\)</span> may instead change the entire curve.</p>
 </div>
 <div class="admonition principle">
-<p class="admonition-title">Choose coordinates adapted to the question</p>
-<p>Cartesian coordinates are best for centres, axes, vertices, and complete symmetric pictures. Polar coordinates centred at a focus are best for radial distance, orientation, eccentricity, and orbital interpretation. Analytic geometry works by choosing the representation in which the geometry speaks most clearly.</p>
+<p class="admonition-title">Geometry versus model</p>
+<p>A geometric trajectory is one object inside a model. It is not the motion law, the force law, or the physical phenomenon itself.</p>
 </div>
+<p>The conic family also demonstrates a general method that will recur throughout mathematics:</p>
+<blockquote>
+<p>Choose a representation adapted to the question, identify the parameters, and observe which properties change and which remain invariant.</p>
+</blockquote>
+<p>Cartesian coordinates are useful when centres, axes, and translations are important. A radial description is useful when one focus or central point is distinguished. Neither coordinate system changes the curve; each exposes different information.</p>
+<h2 id="bridge-to-linear-algebra">Bridge to linear algebra</h2>
+<p>The first block concentrated on describing objects and families of objects. The next question concerns an action performed on the entire space:</p>
+<blockquote>
+<p>How can one rule move every point and every vector at once?</p>
+</blockquote>
+<p>That question leads to linear transformations and matrices.</p>
 <h2 id="computational-model">Computational interlude: Cartesian and polar conics</h2>
 <p>The planar classes <code>Point</code>, <code>AnchoredVector</code>, and <code>FreeVector</code> are those defined in Lecture 2. Polar directions are therefore constructed from points on the unit circle and only then converted into free vectors.</p>
 <details class="example">
