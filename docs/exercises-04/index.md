@@ -1,10 +1,10 @@
 ---
 title: Exercises 04 — Conic Sections and Mathematical Models
-description: Twenty exercises complementing Lecture 04: ten required practice problems and ten developing problems.
+description: "Twenty exercises complementing Lecture 04: ten required practice problems and ten developing problems."
 exercise_set: "04"
 exercise_title: Conic Sections and Mathematical Models
 lecture_link: lecture-04/
-intro: Problems 01–10 consolidate parametrized curves, parameter reading, radial calculations and focus-directrix checks. Problems 11–20 require comparison, derivation, documentation and separation of geometry from physical modelling.
+intro: "Problems 01–10 consolidate parametrized curves, parameter reading, radial calculations and focus-directrix checks. Problems 11–20 require comparison, derivation, documentation and separation of geometry from physical modelling."
 section_links:
   - { id: required-practice, title: Problems 01–10 }
   - { id: developing-problems, title: Problems 11–20 }
