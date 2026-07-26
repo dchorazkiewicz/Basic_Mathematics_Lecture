@@ -2,168 +2,319 @@
 
 ## Rola wykładu w całym kursie
 
-Pierwszy wykład dał liczbowy opis punktów. Drugi dał algebraiczny opis zmian i kierunków. Trzeci wykład łączy oba języki i pokazuje, jak z punktów oraz kierunków budować całe obiekty geometryczne.
+Pierwszy wykład dał liczbowy opis punktów. Drugi dał algebraiczny opis zmian i kierunków. Trzeci łączy te dwa języki.
 
-To nie powinien być wykład o katalogu równań prostej i płaszczyzny. Jego celem jest zmiana sposobu patrzenia na obiekt geometryczny.
+> Obiekt geometryczny można opisać przez sposób jego generowania z punktu i dozwolonych kierunków.
+
+Prosta jest głównym obiektem rozwijanym w pełni. Płaszczyzna pojawia się na końcu jako bezpośrednie uogólnienie tej samej idei, a nie jako drugi katalog wzorów do opanowania podczas jednego spotkania.
 
 ## Główne pytanie
 
 > Jak opisać cały zbiór punktów, jeżeli znamy punkt początkowy i kierunki, w których wolno się poruszać?
 
-## Centralna idea
+## Zakładany czas
 
-> Obiekt geometryczny można rozumieć przez sposób jego generowania.
+Około \(2\times45\) minut. Trzy główne idee wykładu to:
 
-Prosta nie jest przede wszystkim kreską na rysunku. Jest zbiorem wszystkich punktów dostępnych z jednego punktu przy użyciu jednego kierunku.
+1. prosta jest zbiorem generowanym przez punkt i kierunek;
+2. różne równania mogą opisywać ten sam obiekt;
+3. przecięcie i odległość wynikają z geometrycznych relacji między zbiorami i kierunkami.
 
-Płaszczyzna jest zbiorem wszystkich punktów dostępnych z jednego punktu przy użyciu dwóch niezależnych kierunków.
+Pełna technika przestrzenna, płaszczyzna przez trzy punkty, iloczyn wektorowy oraz katalog wzajemnych położeń zostają rozwinięte na ćwiczeniach.
 
-Równania parametryczne, kartezjańskie i normalne są różnymi opisami tej samej konstrukcji. Nie są osobnymi obiektami ani niepowiązanymi wzorami.
+## Liniowy plan wykładu i ćwiczeń
 
-## Narracja wykładu
+### 1. Prosta jako punkt i dozwolony kierunek — około 20 minut
 
-### 1. Prosta jako punkt i dozwolony kierunek
+#### Na wykładzie
 
-Zaczynamy od punktu \(P_0\) i niezerowego wektora kierunkowego \(v\). Wszystkie punkty prostej mają postać
-
-\[
-P(t)=P_0+t v.
-\]
-
-To równanie powinno zostać odczytane jako instrukcja generowania punktów. Parametr \(t\) mówi, jak daleko i w którą stronę przesuwamy się od punktu początkowego wzdłuż kierunku \(v\).
-
-Współrzędne są konsekwencją tej konstrukcji:
+Zaczynamy od punktu \(P_0\) i niezerowego wektora kierunkowego \(v\). Punkt porusza się od \(P_0\) wzdłuż kierunku \(v\), a jego położenie opisuje
 
 \[
-x=x_0+t v_1,\qquad y=y_0+t v_2.
+P(t)=P_0+tv.
 \]
 
-### 2. Różne dane wyznaczające tę samą prostą
+Parametr \(t\) nie jest abstrakcyjną literą. Określa:
 
-Należy pokazać, że ten sam obiekt może być opisany przez różne punkty początkowe i różne wielokrotności tego samego kierunku. To wzmacnia wcześniejsze rozróżnienie między obiektem a jego reprezentacją.
+- stronę ruchu przez znak;
+- odległość w jednostkach wektora \(v\) przez wartość bezwzględną;
+- punkt początkowy dla \(t=0\).
 
-Istotne pytanie brzmi nie „czy wzory wyglądają tak samo?”, lecz „czy generują ten sam zbiór punktów?”.
-
-### 3. Od opisu parametrycznego do kartezjańskiego
-
-Postacie \(y=mx+b\), \(Ax+By=C\) i inne znane równania powinny wynikać z konstrukcji parametrycznej, a nie pojawiać się jako niezależny katalog.
-
-Nachylenie ma otrzymać jasną interpretację geometryczną:
+Dopiero potem zapisujemy postać współrzędnościową
 
 \[
-m=\tan\alpha,
+x=x_0+tv_1,\qquad y=y_0+tv_2.
 \]
 
-gdzie \(\alpha\) jest kątem nachylenia prostej do dodatniego kierunku osi \(x\), o ile opis ten ma sens.
+#### Wizualizacja HTML
 
-Trójkąt ilustrujący zmianę współrzędnych powinien być zaczepiony na badanej prostej, najlepiej w punkcie \(P_0\), aby było wyraźne, że mierzymy zmianę wzdłuż tej prostej, a nie w przypadkowym miejscu układu.
+Punkt \(P_0\), wektor \(v\), suwak \(t\) i poruszający się punkt \(P(t)\). Na ekranie jednocześnie zmieniają się:
 
-### 4. Przecięcie jako wspólny punkt
+- wartość parametru;
+- współrzędne punktu;
+- długość i kierunek przesunięcia \(tv\).
 
-Przecięcie dwóch prostych należy najpierw zdefiniować geometrycznie: jest to punkt należący do obu zbiorów.
+Prowadzący zatrzymuje animację dla \(t=0\), \(t=1\), \(t=-1\) i jednej wartości ułamkowej.
 
-Dopiero potem przechodzimy do obliczeń. Szukamy takich wartości parametrów lub takich współrzędnych, które spełniają oba opisy jednocześnie.
-
-Metoda powinna być pokazana książkowo i etapami:
-
-1. zapisujemy oba obiekty,
-2. narzucamy warunek, że opisują ten sam punkt,
-3. rozwiązujemy powstałe równania,
-4. sprawdzamy, jaki punkt otrzymaliśmy i czy rzeczywiście należy do obu prostych.
-
-### 5. Równoległość, zgodność i brak przecięcia
-
-Wektory kierunkowe pozwalają rozpoznać równoległość. Jeżeli są proporcjonalne, proste mają ten sam kierunek. Następnie trzeba odróżnić dwie sytuacje:
-
-- proste są różne i nie mają punktów wspólnych,
-- opisy dotyczą tej samej prostej.
-
-Klasyfikacja ma wynikać z geometrii i testów, nie z pamięciowego schematu.
-
-### 6. Kierunek prostopadły i opis normalny
-
-W płaszczyźnie prostą można opisać również przez wektor normalny \(n\), prostopadły do wszystkich jej kierunków. Warunek
+#### Minimalny przykład
 
 \[
-n\cdot(P-P_0)=0
+P_0=(1,2),\qquad v=(2,1).
 \]
 
-mówi, że przesunięcie od punktu \(P_0\) do dowolnego punktu \(P\) na prostej nie ma składowej w kierunku normalnym.
+Wyznaczamy punkty dla \(t=0,1,-1,2\) i zaznaczamy je na jednej prostej.
 
-Równanie \(Ax+By=C\) powinno być interpretowane właśnie w ten sposób. Współczynniki \((A,B)\) nie są przypadkowymi liczbami; tworzą wektor normalny.
+#### Bezpośrednia kontynuacja na ćwiczeniach
 
-### 7. Odległość punktu od prostej
+Student ma:
 
-Odległość należy rozumieć jako długość najkrótszego przesunięcia z punktu do prostej. Najkrótsze przesunięcie jest prostopadłe do prostej, więc problem naturalnie prowadzi do rzutu na kierunek normalny.
+1. generować punkty prostych dla podanych wartości parametru;
+2. odtwarzać równanie parametryczne z punktu i kierunku;
+3. sprawdzać, czy dany punkt należy do prostej;
+4. znaleźć parametr odpowiadający podanemu punktowi;
+5. porównać równania używające różnych punktów początkowych i wielokrotności tego samego kierunku;
+6. zbudować przykład dwóch różnych zapisów tej samej prostej.
 
-Wzór ma być konsekwencją geometrii wektorowej, a nie formułą podaną bez uzasadnienia.
+W `solution.md` muszą pozostać: tabela wartości parametru, rysunek generowania prostej, sprawdzenie przynależności punktu i krótki wniosek o niejednoznaczności reprezentacji.
 
-### 8. Płaszczyzna jako dwa niezależne kierunki
+---
 
-Przechodzimy do przestrzeni przez dokładne rozszerzenie wcześniejszego pomysłu. Punkt \(P_0\) oraz dwa niezależne wektory \(u,v\) generują płaszczyznę:
+### 2. Różne reprezentacje tej samej prostej — około 25 minut
+
+#### Na wykładzie
+
+Na jednej konkretnej prostej przechodzimy kolejno przez trzy opisy.
+
+#### Opis parametryczny
 
 \[
-P(s,t)=P_0+s u+t v.
+P(t)=P_0+tv.
 \]
 
-Nie wprowadzamy płaszczyzny jako nowego, niepowiązanego obiektu. Jest ona naturalnym skutkiem idei kombinacji liniowej z wykładu drugiego.
+Pokazuje, jak generować punkty.
 
-Niezależność kierunków jest konieczna: jeśli \(u\) i \(v\) są równoległe, nie generują płaszczyzny, lecz tylko prostą.
+#### Nachylenie
 
-### 9. Wektor normalny płaszczyzny
+Jeżeli \(v=(v_1,v_2)\) i \(v_1\neq0\), to
 
-Płaszczyznę można opisać również przez wektor prostopadły do obu kierunków generujących. Iloczyn wektorowy może pojawić się jako sposób otrzymania takiego wektora w przestrzeni trójwymiarowej.
+\[
+m=\frac{v_2}{v_1}=\tan\alpha.
+\]
 
-Nie należy nadmiernie rozbudowywać wyprowadzenia iloczynu wektorowego. Wystarczy pokazać jego rolę, sprawdzić najważniejsze własności i zastosować go do konstrukcji normalnej.
+Trójkąt zmian współrzędnych musi być zaczepiony na badanej prostej, najlepiej w punkcie \(P_0\). Nachylenie opisuje zmianę \(y\) przypadającą na jednostkę zmiany \(x\), a geometrycznie jest tangensem kąta nachylenia.
 
-Warunek normalny ma postać
+#### Opis normalny
+
+Wektor \(n\) prostopadły do kierunku \(v\) pozwala zapisać
 
 \[
 n\cdot(P-P_0)=0.
 \]
 
-Jest to dokładnie ta sama idea co dla prostej w płaszczyźnie.
+Po rozwinięciu otrzymujemy postać
 
-### 10. Płaszczyzna przez trzy punkty
+\[
+Ax+By=C,
+\]
 
-Trzy niewspółliniowe punkty wyznaczają dwa niezależne kierunki. Wybieramy jeden punkt jako początek, budujemy dwa wektory różnicowe, a następnie generujemy płaszczyznę albo wyznaczamy wektor normalny.
+w której \((A,B)\) jest wektorem normalnym. Współczynniki równania otrzymują zatem interpretację geometryczną.
 
-Ta procedura pokazuje, jak dane geometryczne są przekształcane w konstrukcję algebraiczną.
+Nie tworzymy osobnego katalogu wzorów. Przez cały czas śledzimy tę samą prostą.
 
-### 11. Wzajemne położenie płaszczyzn i prostych
+#### Wizualizacja HTML
 
-Relacje między obiektami powinny być analizowane przez ich kierunki i wektory normalne. Równoległość, prostopadłość, przecięcie i zgodność wynikają z warunków na te wektory oraz z istnienia wspólnych punktów.
+Jedna prosta, przy której można przełączać widoczną reprezentację:
 
-Nie jest potrzebny rozbudowany katalog przypadków bez idei przewodniej. Każdy przypadek ma zostać wyprowadzony z pytania:
+- punkt i wektor kierunkowy;
+- trójkąt nachylenia;
+- wektor normalny;
+- równanie parametryczne i kartezjańskie.
 
-> Jak porównują się dozwolone kierunki tych obiektów i czy istnieje punkt spełniający oba opisy?
+Przełączenie opisu nie zmienia rysunku prostej.
 
-## Minimalne środki dydaktyczne
+#### Minimalny przykład
 
-Rachunki powinny być krótkie, a konfiguracje czytelne. Każdy przykład ma odsłaniać konstrukcję:
+Dla
 
-- punkt plus jeden kierunek daje prostą,
-- punkt plus dwa niezależne kierunki daje płaszczyznę,
-- normalna daje równoważny opis,
-- przecięcie oznacza wspólne spełnienie warunków,
-- odległość wynika z najkrótszego, prostopadłego przesunięcia.
+\[
+P_0=(1,1),\qquad v=(2,1)
+\]
 
-## Rola wizualizacji HTML
+odczytujemy nachylenie \(m=\frac12\), wybieramy prosty wektor normalny, na przykład \(n=(1,-2)\), i zapisujemy równanie normalne.
 
-Interaktywna wizualizacja może pokazywać punkt początkowy, zmienny parametr i generowany punkt poruszający się po prostej. Dla płaszczyzny dwa suwaki mogą sterować dwoma kierunkami generującymi.
+#### Bezpośrednia kontynuacja na ćwiczeniach
 
-Warto umożliwić przełączanie między opisem parametrycznym i normalnym przy zachowaniu tego samego obiektu na rysunku. Student powinien zobaczyć, że zmienia się język, a nie geometria.
+Student ma:
 
-Animacje przecięć powinny wizualizować poszukiwanie wspólnego punktu, a rzut prostopadły powinien ożywiać pojęcie odległości.
+1. przechodzić między postacią parametryczną, kierunkową i normalną dla prostych danych;
+2. odczytywać wektor kierunkowy i normalny z równania;
+3. wyznaczać kąt nachylenia tylko w przypadkach o prostych wartościach tangensa;
+4. rozpoznawać, kiedy postać \(y=mx+b\) nie jest wygodna lub nie istnieje;
+5. sprawdzać równoważność dwóch równań przez porównanie generowanego zbioru punktów;
+6. przygotować jedną kartę prezentacyjną pokazującą trzy reprezentacje tej samej prostej.
 
-## Co student powinien zapamiętać po latach
+W workbooku pozostają pełne przekształcenia, rysunek z kierunkiem i normalną oraz kontrola przez podstawienie dwóch punktów.
 
-> Prosta i płaszczyzna nie są przede wszystkim rysunkami ani wzorami. Są zbiorami punktów generowanymi przez dozwolone kierunki, a różne równania są różnymi opisami tych samych obiektów.
+---
+
+### 3. Przecięcie i wzajemne położenie dwóch prostych — około 20 minut
+
+#### Na wykładzie
+
+Przecięcie najpierw definiujemy geometrycznie:
+
+> Punkt przecięcia należy jednocześnie do obu prostych.
+
+Dopiero potem zapisujemy procedurę:
+
+1. opisujemy obie proste;
+2. narzucamy warunek, że ich opisy mają dać ten sam punkt;
+3. rozwiązujemy otrzymane równania;
+4. sprawdzamy wynik w obu prostych.
+
+Na jednym rysunku pokazujemy trzy możliwe sytuacje:
+
+- jeden punkt wspólny;
+- brak punktów wspólnych dla prostych równoległych różnych;
+- nieskończenie wiele punktów wspólnych dla dwóch opisów tej samej prostej.
+
+Klasyfikacja ma wynikać z porównania kierunków i sprawdzenia wspólnego punktu, nie z pamięciowej tabeli.
+
+#### Wizualizacja HTML
+
+Dwie proste z ruchomym jednym wektorem kierunkowym. Student obserwuje przejście od przecięcia do równoległości. Po ustawieniu kierunków równoległych można przesuwać punkt początkowy i przejść od prostych różnych do zgodnych.
+
+#### Minimalny przykład
+
+Dwie proste o małych współczynnikach, których punkt przecięcia ma całkowite współrzędne. Rozwiązanie zapisujemy etapami i na końcu podstawiamy punkt do obu równań.
+
+#### Bezpośrednia kontynuacja na ćwiczeniach
+
+Student ma:
+
+1. rozwiązać kilka elementarnych problemów przecięcia;
+2. dla każdego wyniku wykonać sprawdzenie w obu prostych;
+3. sklasyfikować pary prostych jako przecinające się, równoległe różne albo zgodne;
+4. porównać metodę wykorzystującą parametry z metodą wykorzystującą równania kartezjańskie;
+5. znaleźć przykład dwóch różnych równań opisujących tę samą prostą;
+6. przygotować schemat decyzyjny oparty na pytaniach o kierunki i wspólne punkty.
+
+W `solution.md` musi znaleźć się co najmniej jedno pełne „książkowe” rozwiązanie: zapis obiektów, narzucenie warunku, rozwiązanie, punkt i sprawdzenie.
+
+---
+
+### 4. Odległość punktu od prostej — około 15 minut
+
+#### Na wykładzie
+
+Odległość nie zaczyna się od gotowego wzoru. Stawiamy pytanie:
+
+> Które przesunięcie prowadzące z punktu do prostej jest najkrótsze?
+
+Animacja pokazuje różne odcinki łączące punkt z prostą. Najkrótszy z nich jest prostopadły do prostej, a więc równoległy do jej wektora normalnego.
+
+Odległość interpretujemy jako długość odpowiedniej składowej przesunięcia w kierunku normalnym. Wzór współrzędnościowy może zostać zapisany po tej konstrukcji, ale na wykładzie obliczamy tylko jeden prosty przypadek.
+
+#### Wizualizacja HTML
+
+Punkt poza prostą oraz ruchomy punkt na prostej. Długość łączącego odcinka zmienia się, a minimum pojawia się przy prostopadłości. Następnie wyświetlany jest rzut na kierunek normalny.
+
+#### Minimalny przykład
+
+Prosta pozioma lub prosta o prostym wektorze normalnym, aby student najpierw zobaczył wynik bez rachunku, a następnie potwierdził go wzorem.
+
+#### Bezpośrednia kontynuacja na ćwiczeniach
+
+Student ma:
+
+1. obliczać odległości punktu od prostych o prostych współczynnikach;
+2. konstruować punkt rzutu prostopadłego;
+3. sprawdzać, że otrzymany odcinek jest prostopadły do prostej;
+4. porównywać wynik wzoru z długością rzutu na wektor normalny;
+5. rozwiązać zadanie odwrotne: znaleźć punkty w ustalonej odległości od prostej;
+6. przygotować rysunek wyjaśniający, dlaczego inny odcinek łączący punkt z prostą jest dłuższy.
+
+W workbooku pozostają rachunek, konstrukcja geometryczna, test prostopadłości i interpretacja minimum.
+
+---
+
+### 5. Płaszczyzna jako naturalne rozszerzenie — około 10 minut
+
+#### Na wykładzie
+
+Płaszczyzna nie jest nowym katalogiem. Powtarzamy schemat prostej:
+
+- punkt \(P_0\);
+- dwa niezależne kierunki \(u,v\);
+- wszystkie ich kombinacje.
+
+\[
+P(s,t)=P_0+su+tv.
+\]
+
+Pokazujemy, że dwa równoległe kierunki nie generują płaszczyzny, lecz tylko prostą. Następnie sygnalizujemy opis normalny
+
+\[
+n\cdot(P-P_0)=0,
+\]
+
+jako dokładnie tę samą ideę co dla prostej w płaszczyźnie.
+
+Nie wyprowadzamy na wykładzie pełnej techniki iloczynu wektorowego ani płaszczyzny przez trzy punkty.
+
+#### Wizualizacja HTML
+
+Punkt \(P_0\), dwa wektory \(u,v\) i dwa suwaki \(s,t\). Student obserwuje generowanie fragmentu płaszczyzny. Po ustawieniu kierunków równoległych wizualizacja zapada się do prostej.
+
+#### Bezpośrednia kontynuacja na ćwiczeniach
+
+Cała technika przestrzenna zostaje rozwinięta w workbooku.
+
+Student ma:
+
+1. generować punkty płaszczyzny z równania parametrycznego;
+2. sprawdzać przynależność punktu;
+3. badać niezależność dwóch kierunków;
+4. z trzech niewspółliniowych punktów utworzyć dwa wektory kierunkowe;
+5. poznać iloczyn wektorowy jako narzędzie do otrzymania normalnej i sprawdzić prostopadłość wyniku do obu kierunków;
+6. zapisać płaszczyznę w postaci parametrycznej i normalnej;
+7. klasyfikować proste przypadki wzajemnego położenia prostej i płaszczyzny oraz dwóch płaszczyzn;
+8. przygotować prostą wizualizację albo serię rysunków pokazującą generowanie płaszczyzny.
+
+W `solution.md` powinny pozostać: konstrukcja z trzech punktów, obliczenie normalnej, dwie reprezentacje płaszczyzny, sprawdzenie oraz krótki opis procedury własnymi słowami.
+
+---
+
+### 6. Domknięcie wykładu — około 5 minut
+
+#### Na wykładzie
+
+Podsumowujemy jeden wspólny schemat:
+
+\[
+\text{punkt}
++
+\text{dozwolone kierunki}
+\longrightarrow
+\text{zbiór punktów}.
+\]
+
+- jeden kierunek generuje prostą;
+- dwa niezależne kierunki generują płaszczyznę;
+- normalna daje równoważny opis ograniczenia ruchu;
+- przecięcie oznacza jednoczesne spełnienie warunków;
+- odległość wynika z najkrótszego przesunięcia prostopadłego.
+
+Student zapisuje zasadę:
+
+> Prosta i płaszczyzna są obiektami generowanymi przez punkt i kierunki, a ich równania są różnymi reprezentacjami tej samej geometrii.
+
+## Materiał opcjonalny w HTML
+
+Pełny katalog kątów i odległości w przestrzeni, rozbudowana klasyfikacja wzajemnego położenia oraz dodatkowe dowody dotyczące iloczynu wektorowego mogą pozostać jako rozszerzenie. Nie są częścią obowiązkowej realizacji ustnej.
 
 ## Most do wykładu 04
 
-Potrafimy już opisywać punkty, zmiany, proste i płaszczyzny. Są to jednak obiekty liniowe, generowane przez kierunki w najprostszy możliwy sposób.
+Potrafimy generować obiekty liniowe za pomocą stałych kierunków.
 
-Naturalne pytanie brzmi:
-
-> Jak opisywać krzywe, których nie można otrzymać przez ruch wzdłuż jednego stałego kierunku, i co takie opisy pozwalają powiedzieć o rzeczywistym świecie?
+> Jak opisywać krzywe, których kierunek zmienia się wraz z położeniem, oraz jak takie krzywe stają się modelami rzeczywistych trajektorii?
