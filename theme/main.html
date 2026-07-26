@@ -66,10 +66,13 @@
       ] %}
     {% elif page.meta.lecture == '04' %}
       {% set scripts = scripts + [
-        'assets/js/lecture-04/01-classical-conics/classical-conics.js',
+        'assets/js/lecture-01/07-parametric-curves/parametric-curves.js',
+        'assets/js/lecture-04/02-parameter-roles/ellipse-parameters.js',
         'assets/js/lecture-04/04-polar-coordinates/polar-coordinate.js',
         'assets/js/lecture-04/05-polar-graphs/polar-graph.js',
-        'assets/js/lecture-04/06-polar-conic-family/polar-conic-family.js'
+        'assets/js/lecture-04/06-polar-conic-family/polar-conic-family.js',
+        'assets/js/lecture-04/07-focus-directrix/focus-directrix.js',
+        'assets/js/lecture-04/08-geometric-models/orbit-models.js'
       ] %}
     {% endif %}
     {% for script in scripts %}<script defer src="{{ script | url }}"></script>{% endfor %}
