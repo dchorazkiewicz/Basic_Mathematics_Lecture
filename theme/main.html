@@ -110,6 +110,33 @@
         {{ page.content }}
       </main>
     </div>
+  {% elif page.meta.exercise_problem %}
+    <div class="lecture-shell">
+      <aside class="lecture-nav" aria-label="Exercise problem navigation">
+        <div class="nav-label">Exercises {{ page.meta.exercise_set_number }}</div>
+        <a class="companion-link" href="{{ page.meta.exercise_index_link | url }}">← All problems</a>
+        <a href="{{ page.meta.lecture_link | url }}">Return to lecture</a>
+        {% if page.meta.previous_problem %}<a href="{{ page.meta.previous_problem | url }}">← Previous problem</a>{% endif %}
+        {% if page.meta.next_problem %}<a href="{{ page.meta.next_problem | url }}">Next problem →</a>{% endif %}
+      </aside>
+      <main class="lecture-main exercise-problem-main">
+        <header class="lecture-header">
+          <p class="eyebrow">Exercise set {{ page.meta.exercise_set_number }} · {{ page.meta.problem_level }}</p>
+          <h1>Problem {{ page.meta.exercise_problem }} — {{ page.meta.problem_title }}</h1>
+          <p class="lecture-author">{{ config.extra.author }}</p>
+          <div class="companion-actions">
+            <a class="companion-button" href="{{ page.meta.exercise_index_link | url }}">← Exercise set {{ page.meta.exercise_set_number }}</a>
+            <a class="companion-button companion-button--secondary" href="{{ page.meta.lecture_link | url }}">Lecture {{ page.meta.exercise_set_number }}</a>
+          </div>
+        </header>
+        {{ page.content }}
+        <nav class="problem-footer-nav" aria-label="Problem navigation">
+          {% if page.meta.previous_problem %}<a href="{{ page.meta.previous_problem | url }}">← Previous</a>{% else %}<span></span>{% endif %}
+          <a href="{{ page.meta.exercise_index_link | url }}">All problems</a>
+          {% if page.meta.next_problem %}<a href="{{ page.meta.next_problem | url }}">Next →</a>{% else %}<span></span>{% endif %}
+        </nav>
+      </main>
+    </div>
   {% elif page.meta.exercise_set %}
     <div class="lecture-shell">
       <aside class="lecture-nav" aria-label="Exercise set contents">
@@ -121,7 +148,7 @@
       </aside>
       <main class="lecture-main exercise-plan-main">
         <header class="lecture-header">
-          <p class="eyebrow">Exercise design · Lecture {{ page.meta.exercise_set }}</p>
+          <p class="eyebrow">Exercises · Lecture {{ page.meta.exercise_set }}</p>
           <h1>{{ page.meta.exercise_title }}</h1>
           <p class="lecture-author">{{ config.extra.author }}</p>
           <p>{{ page.meta.intro }}</p>
