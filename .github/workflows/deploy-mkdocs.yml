@@ -45,5 +45,8 @@ jobs:
       - name: Validate MkDocs build
         run: mkdocs build --strict
 
+      - name: Validate generated exercise pages
+        run: python scripts/validate_built_exercises.py
+
       - name: Deploy to gh-pages
         run: mkdocs gh-deploy --force --clean
