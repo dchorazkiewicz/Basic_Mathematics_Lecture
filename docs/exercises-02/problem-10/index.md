@@ -24,9 +24,9 @@ u=(4,2),\qquad v=(-2,6),\qquad w=(5,-1),
 $$
 
 1. find coefficients $\alpha,\beta$ such that
-   $$
+$$
    u=\alpha b_1+\beta b_2
-   $$
+$$
    and similarly for $v$ and $w$;
 2. write the coordinate vectors $[u]_B$, $[v]_B$ and $[w]_B$;
 3. reconstruct each original vector from its basis coordinates;

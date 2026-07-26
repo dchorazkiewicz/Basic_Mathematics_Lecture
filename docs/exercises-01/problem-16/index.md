@@ -22,22 +22,22 @@ $$
 Construct a parametrization of the segment joining $P$ to $Q$.
 
 1. Starting from the idea of moving a fraction $t$ of the way from $P$ to $Q$, derive
-   $$
+$$
    x(t)=p_1+t(q_1-p_1),
-   $$
-   $$
+$$
+$$
    y(t)=p_2+t(q_2-p_2),
-   $$
+$$
    for $0\le t\le1$.
 2. Explain the geometric meanings of $t=0$, $t=1$ and $t=\frac12$.
 3. Apply the formula to
-   $$
+$$
    P=(-1,2),\qquad Q=(5,-1).
-   $$
+$$
 4. Generate points for
-   $$
+$$
    t=0,\frac14,\frac12,\frac34,1.
-   $$
+$$
 5. Draw the segment and label the generated points in parameter order.
 6. Explain what points are generated when $t<0$ and when $t>1$.
 7. Show directly that the midpoint obtained from $t=\frac12$ has coordinates equal to the averages of the endpoint coordinates.

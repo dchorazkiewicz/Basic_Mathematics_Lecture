@@ -29,9 +29,9 @@ $$
 2. Find the two points at which the line meets the circle.
 3. Shade precisely the points satisfying both inequalities.
 4. Classify the points
-   $$
+$$
    (0,0),\quad (0,2),\quad (2,2),\quad (3,1),\quad (-2,1)
-   $$
+$$
    as belonging or not belonging to the region.
 5. Describe the boundary of the region. Distinguish the circular part from the line-segment part.
 6. State which boundary points satisfy both boundary equations simultaneously.

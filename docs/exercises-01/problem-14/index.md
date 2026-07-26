@@ -18,20 +18,20 @@ Let $C=(2,-1)$ and let $r=3$.
 A circle is the set of all points $P=(x,y)$ whose distance from $C$ equals $r$.
 
 1. Write the condition
-   $$
+$$
    d(P,C)=3.
-   $$
+$$
 2. Use the distance formula to derive the Cartesian equation of the circle.
 3. Draw the centre, radius and circle.
 4. Find four simple points on the circle and verify them by substitution.
 5. Decide whether each point below lies inside, on or outside the circle:
-   $$
+$$
    (2,-1),\quad (5,-1),\quad (2,3),\quad (0,0),\quad (6,-1).
-   $$
+$$
 6. Explain why replacing equality by
-   $$
+$$
    (x-2)^2+(y+1)^2\le9
-   $$
+$$
    describes the closed disk.
 7. Explain which parts of the equation encode the centre and which encode the radius.
 

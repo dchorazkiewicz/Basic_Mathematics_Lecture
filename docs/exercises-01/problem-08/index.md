@@ -20,9 +20,9 @@ x^2+y^2=9.
 $$
 
 1. Find all real values of $y$ corresponding to each of the inputs
-   $$
+$$
    x=-3,-2,0,2,3,4.
-   $$
+$$
 2. Record the results in a table.
 3. State for which listed values of $x$ there are two outputs, one output or no real output.
 4. Plot all obtained points.

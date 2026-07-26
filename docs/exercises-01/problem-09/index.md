@@ -20,15 +20,15 @@ x(t)=-2+6t,\qquad y(t)=1+3t,\qquad 0\le t\le1.
 $$
 
 1. Compute the generated point for
-   $$
+$$
    t=0,\frac14,\frac12,\frac34,1.
-   $$
+$$
 2. Plot the five points and join them in parameter order.
 3. Identify the endpoints of the generated segment.
 4. Show that every generated point satisfies
-   $$
+$$
    2y-x=4.
-   $$
+$$
 5. Decide whether the point $(2,3)$ belongs to the segment and, if so, find the corresponding value of $t$.
 6. Explain what would change if the parameter interval were replaced by $-1\le t\le2$.
 

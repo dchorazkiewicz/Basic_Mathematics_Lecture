@@ -20,9 +20,9 @@ y=2x-1.
 $$
 
 1. Complete a table of values for
-   $$
+$$
    x=-3,-2,-1,0,1,2,3.
-   $$
+$$
 2. Write the seven corresponding points $(x,y)$.
 3. Plot the points and draw the line determined by them.
 4. Use the formula to decide whether $(4,7)$ and $(-2,-5)$ belong to the graph.
