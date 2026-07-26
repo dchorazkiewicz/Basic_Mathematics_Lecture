@@ -1,119 +1,58 @@
-## The classical conics before polar coordinates {#classical-conics}
+## Parameters that move, scale, and reshape a curve {#parameter-roles}
 
-### Circle and ellipse: from one scale to two
+The letter appearing in a formula may play two very different roles.
 
-A circle centred at the origin is described by
+- A parameter such as $t$ selects a point on one fixed curve.
+- A parameter such as $a$, $b$, $h$, or $k$ changes the curve itself.
 
-$$
-\boxed{x^2+y^2=R^2}.
-$$
-
-Its equation treats every direction equally. The parameterisation
+We use one ellipse to read these roles directly:
 
 $$
-\boxed{x=R\cos t,\qquad y=R\sin t}
+\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1,\qquad a>0,\quad b>0.
 $$
 
-makes this symmetry visible: one angle determines one point on the circle.
+The equation is not introduced as a pattern to memorize. It is read geometrically:
 
-An ellipse introduces two perpendicular scales:
+- $(h,k)$ determines the centre;
+- $a$ determines the horizontal scale;
+- $b$ determines the vertical scale.
 
-$$
-\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1},\qquad a\ge b>0.
-$$
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">Read parameters through their geometric effect</span>
+      <span class="figure-step-title" data-ellipse-parameter-readout>centre $(0,0)$, horizontal scale $4$, vertical scale $2$</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open ellipse parameter figure in full screen">⛶</button>
+  </div>
+  <div class="figure-stage jsx-stage">
+    <div id="ellipse-parameter-board" class="jxgbox" data-ellipse-parameters aria-label="Interactive ellipse controlled by centre and scale parameters"></div>
+  </div>
+  <div class="parameter-controls" style="--parameter-count:4">
+    <label class="parameter-control"><span>$h$ = <output data-ellipse-h>0</output></span><input type="range" min="-3" max="3" step="0.5" value="0" data-ellipse-h-slider></label>
+    <label class="parameter-control"><span>$k$ = <output data-ellipse-k>0</output></span><input type="range" min="-2" max="2" step="0.5" value="0" data-ellipse-k-slider></label>
+    <label class="parameter-control"><span>$a$ = <output data-ellipse-a>4</output></span><input type="range" min="1" max="5" step="0.5" value="4" data-ellipse-a-slider></label>
+    <label class="parameter-control"><span>$b$ = <output data-ellipse-b>2</output></span><input type="range" min="1" max="4" step="0.5" value="2" data-ellipse-b-slider></label>
+  </div>
+  <figcaption class="figure-caption">Before moving a slider, predict whether the centre, width, or height will change. The animation checks the prediction.</figcaption>
+</figure>
 
-It is parameterised by
-
-$$
-\boxed{x=a\cos t,\qquad y=b\sin t}.
-$$
-
-The same circular parameter is stretched by different factors in the two coordinate directions.
-
-Define $c=\sqrt{a^2-b^2}$. The foci are $F_1=(-c,0)$ and $F_2=(c,0)$, and every point $P$ on the ellipse satisfies
-
-$$
-\boxed{d(P,F_1)+d(P,F_2)=2a}.
-$$
-
-!!! note "Two useful descriptions"
-    The centre-based equation exposes symmetry and semiaxes. The focal description exposes distances from the points that later become natural locations of a central force source.
-
-### Parabola: equal distance from a focus and a line
-
-Fix a focus $F=(p,0)$ and a directrix $D:x=-p$, where $p>0$. The parabola is the set of points $P=(x,y)$ satisfying
-
-$$
-\boxed{d(P,F)=d(P,D)}.
-$$
-
-!!! derivation "Deriving the Cartesian equation"
-    Since
-
-    $$
-    d(P,F)=\sqrt{(x-p)^2+y^2},
-    \qquad
-    d(P,D)=x+p,
-    $$
-
-    squaring gives
-
-    $$
-    (x-p)^2+y^2=(x+p)^2,
-    $$
-
-    and therefore
-
-    $$
-    \boxed{y^2=4px}.
-    $$
-
-A convenient parameterisation is
+For example, compare
 
 $$
-\boxed{x=pt^2,\qquad y=2pt}.
+\frac{x^2}{4}+y^2=1
 $$
 
-Substitution gives $y^2=4p^2t^2=4px$, so every parameter value produces a point on the curve.
-
-!!! interpretation "Why the parabola is the boundary case"
-    The parabola is neither closed like an ellipse nor split into two branches like a hyperbola. It will later appear exactly at the transition between bounded and unbounded focal motion.
-
-### Hyperbola: two complete branches and two asymptotes
-
-For $a>0$ and $b>0$, the standard hyperbola is
+with
 
 $$
-\boxed{\frac{x^2}{a^2}-\frac{y^2}{b^2}=1}.
+\frac{(x-2)^2}{4}+(y+1)^2=1.
 $$
 
-Define $c=\sqrt{a^2+b^2}$. The foci are $F_1=(-c,0)$ and $F_2=(c,0)$, and the geometric condition is
+The second curve has the same horizontal and vertical scales as the first. Only its centre has moved from $(0,0)$ to $(2,-1)$.
 
-$$
-\boxed{|d(P,F_1)-d(P,F_2)|=2a}.
-$$
+!!! warning "Do not turn this into a catalogue"
+    The lecture does not derive every standard equation of a circle, ellipse, parabola, and hyperbola. The purpose is to learn how parameters control position, scale, and shape. Repeated recognition and drawing belong to the exercises.
 
-The absolute value is essential: one sign describes the right branch and the opposite sign describes the left branch.
-
-The asymptotes
-
-$$
-\boxed{y=\pm\frac ba x}
-$$
-
-are not parts of the hyperbola. They record the directions approached by both branches far from the centre.
-
-!!! warning "Do not confuse a branch with the whole hyperbola"
-    A focus-centred polar equation naturally describes the branch visible from the chosen focus and directrix. The Cartesian equation remains the cleanest single picture of the complete two-branch curve.
-
-### Four familiar shapes, one geometric problem
-
-| Curve | Distinguished data | Large-scale behaviour |
-|---|---|---|
-| circle | one centre and one radius | closed |
-| ellipse | two foci, fixed sum | closed |
-| parabola | one focus and one directrix | one open branch |
-| hyperbola | two foci, fixed difference | two open branches |
-
-!!! principle "The need for a new coordinate system"
-    From a focus, a point on a conic is determined by two questions: in which direction do we look, and how far must we travel in that direction before reaching the curve? These are exactly the questions answered by polar coordinates.
+!!! note "Continued in the exercise set"
+    Students will read simple Cartesian equations, vary one parameter at a time, produce a sequence of graphs and document the rule “parameter — geometric effect”. General classification of second-degree equations is outside this lecture.
