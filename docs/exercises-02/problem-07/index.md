@@ -19,10 +19,7 @@ $$
 
 1. Compute $\operatorname{proj}_{e_1}u$.
 2. Compute $\operatorname{proj}_{e_2}u$.
-3. Verify that
-   $$
-   u=\operatorname{proj}_{e_1}u+\operatorname{proj}_{e_2}u.
-   $$
+3. Verify that $u=\operatorname{proj}_{e_1}u+\operatorname{proj}_{e_2}u$.
 4. For each projection, compute the corresponding remainder and verify that it is perpendicular to the target axis.
 5. Draw the decomposition of $u$ into horizontal and vertical components.
 
