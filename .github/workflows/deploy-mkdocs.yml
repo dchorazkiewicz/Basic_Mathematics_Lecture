@@ -50,3 +50,5 @@ jobs:
 
       - name: Deploy to gh-pages
         run: mkdocs gh-deploy --force --clean
+
+# Rebuild after normalizing list-adjacent exercise mathematics.
