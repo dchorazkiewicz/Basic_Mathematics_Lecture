@@ -1,0 +1,94 @@
+name: Diagnose latest deploy failure
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/diagnose-latest-deploy.yml"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download latest failed deploy log
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPOSITORY: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+          from pathlib import Path
+
+          repo = os.environ["GH_REPOSITORY"]
+          token = os.environ["GH_TOKEN"]
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {token}",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "exercise-deploy-diagnostics",
+          }
+
+          def get_json(url):
+              request = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(request) as response:
+                  return json.load(response)
+
+          runs_url = (
+              f"https://api.github.com/repos/{repo}/actions/workflows/"
+              "deploy-mkdocs.yml/runs?status=completed&per_page=20"
+          )
+          runs = get_json(runs_url)["workflow_runs"]
+          failed = [run for run in runs if run.get("conclusion") == "failure"]
+          if not failed:
+              raise SystemExit("No failed deploy run found.")
+
+          run = failed[0]
+          jobs = get_json(run["jobs_url"])["jobs"]
+          failed_jobs = [job for job in jobs if job.get("conclusion") == "failure"]
+          if not failed_jobs:
+              raise SystemExit(f"Run {run['id']} failed but no failed job was returned.")
+
+          job = failed_jobs[0]
+          log_url = f"https://api.github.com/repos/{repo}/actions/jobs/{job['id']}/logs"
+          request = urllib.request.Request(log_url, headers=headers)
+          with urllib.request.urlopen(request) as response:
+              log_text = response.read().decode("utf-8", errors="replace")
+
+          output = Path("diagnostics")
+          output.mkdir(exist_ok=True)
+          metadata = {
+              "run_id": run["id"],
+              "run_number": run["run_number"],
+              "run_attempt": run["run_attempt"],
+              "head_sha": run["head_sha"],
+              "display_title": run["display_title"],
+              "created_at": run["created_at"],
+              "updated_at": run["updated_at"],
+              "job_id": job["id"],
+              "job_name": job["name"],
+              "job_conclusion": job["conclusion"],
+          }
+          (output / "latest-deploy-metadata.json").write_text(
+              json.dumps(metadata, indent=2) + "\n", encoding="utf-8"
+          )
+          (output / "latest-deploy-log.txt").write_text(log_text, encoding="utf-8")
+          print(json.dumps(metadata, indent=2))
+          PY
+
+      - name: Commit diagnostic files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add diagnostics/latest-deploy-metadata.json diagnostics/latest-deploy-log.txt
+          git commit -m "Record latest failed deploy log"
+          git push
