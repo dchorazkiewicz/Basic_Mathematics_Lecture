@@ -1,4 +1,4 @@
-name: Diagnose latest deploy failure
+name: Diagnose latest deploy run
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Collect latest failed deploy log
+      - name: Collect latest deploy metadata and logs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPOSITORY: ${{ github.repository }}
@@ -29,9 +29,8 @@ jobs:
           gh run list \
             --repo "$GH_REPOSITORY" \
             --workflow deploy-mkdocs.yml \
-            --status failure \
             --limit 1 \
-            --json databaseId,number,headSha,displayTitle,conclusion,createdAt,updatedAt,url \
+            --json databaseId,number,headSha,displayTitle,status,conclusion,createdAt,updatedAt,url \
             > diagnostics/latest-deploy-list.json 2> diagnostics/latest-deploy-command-error.txt
 
           RUN_ID=$(python - <<'PY'
@@ -48,17 +47,17 @@ jobs:
           )
 
           if [ -z "$RUN_ID" ]; then
-            printf '%s\n' "No failed deploy run could be resolved." > diagnostics/latest-deploy-log.txt
+            printf '%s\n' "No deploy run could be resolved." > diagnostics/latest-deploy-log.txt
             printf '%s\n' '{}' > diagnostics/latest-deploy-metadata.json
           else
             gh run view "$RUN_ID" \
               --repo "$GH_REPOSITORY" \
-              --json databaseId,number,attempt,headSha,displayTitle,conclusion,createdAt,updatedAt,url,jobs \
+              --json databaseId,number,attempt,headSha,displayTitle,status,conclusion,createdAt,updatedAt,url,jobs \
               > diagnostics/latest-deploy-metadata.json 2>> diagnostics/latest-deploy-command-error.txt
 
             gh run view "$RUN_ID" \
               --repo "$GH_REPOSITORY" \
-              --log-failed \
+              --log \
               > diagnostics/latest-deploy-log.txt 2>> diagnostics/latest-deploy-command-error.txt
           fi
 
@@ -72,6 +71,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No diagnostic changes to commit."
           else
-            git commit -m "Record latest failed deploy log"
+            git commit -m "Record latest deploy run"
             git push
           fi
