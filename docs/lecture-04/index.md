@@ -27,3 +27,5 @@ section_links:
 --8<-- "lecture-04/sections/07-orientation.md"
 --8<-- "lecture-04/sections/computational-model.md"
 --8<-- "lecture-04/sections/08-exercises.md"
+
+<!-- Rebuilt after the final lecture-04 navigation and content alignment. -->
