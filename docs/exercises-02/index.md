@@ -1,180 +1,145 @@
 ---
 title: Exercises 02 — Vectors, Bases, and Coordinate Systems
-description: Exercise design complementing Lecture 02.
+description: Twenty exercises complementing Lecture 02: ten required practice problems and ten developing problems.
 exercise_set: "02"
 exercise_title: Vectors, Bases, and Coordinate Systems
 lecture_link: lecture-02/
-intro: The lecture builds the algebra of change; the exercises turn each geometric interpretation into a checked calculation, drawing and short explanation.
+intro: Problems 01–10 consolidate vector calculations and direct geometric checks. Problems 11–20 require comparison, explanation, construction and concise mathematical documentation.
 section_links:
-  - { id: vectors-as-changes, title: Vectors as changes }
-  - { id: algebra-of-changes, title: Algebra of changes }
-  - { id: dot-product, title: Length and dot product }
-  - { id: projection, title: Projection }
-  - { id: basis, title: Linear combinations and basis }
-  - { id: set-audit, title: Set audit }
+  - { id: required-practice, title: Problems 01–10 }
+  - { id: developing-problems, title: Problems 11–20 }
+  - { id: structure, title: Set structure }
 ---
 
-# Exercise design
-
-## Vectors as changes {#vectors-as-changes}
-
-### Connection to the lecture
-
-The lecture constructs a vector from two points and shows several translated arrows representing the same change.
-
-### Boundary of the lecture
-
-Only one numerical example is needed on the lecture. The classification of many representations belongs to exercises.
-
-### Work transferred to exercises
-
-Students should calculate vectors between points, find different point pairs producing the same vector, draw several representatives and distinguish a free vector from one directed segment.
-
-### Planned problem types
-
-- short coordinate calculations;
-- one matching problem between arrows and vectors;
-- one drawing task;
-- one definition-in-own-words task.
-
-### Required workbook result
-
-Calculations, a shared diagram with several representatives and a concise statement of the equivalence condition.
-
-### Verification
-
-Each claimed representative must have the same coordinate difference.
-
-## Algebra of changes {#algebra-of-changes}
-
-### Connection to the lecture
-
-Addition is shown as consecutive motion, negation as reversing motion and scalar multiplication as controlling magnitude and orientation.
-
-### Boundary of the lecture
-
-The lecture demonstrates one animated path and one simple sum. Repetition and comparison are transferred.
-
-### Work transferred to exercises
-
-Students should:
-
-1. compute sums, differences and scalar multiples;
-2. draw the corresponding paths;
-3. compare different sequences of changes leading to the same endpoint;
-4. verify commutativity geometrically;
-5. interpret negative and zero scalars.
-
-### Planned problem types
-
-- elementary calculations;
-- path construction;
-- comparison of two routes;
-- one interpretation problem involving a negative scalar.
-
-### Required workbook result
-
-Calculations, a broken-line diagram, endpoint checks and one explanatory paragraph.
-
-### Verification
-
-The final point obtained from the drawing must agree with the coordinate sum.
-
-## Length and dot product {#dot-product}
-
-### Connection to the lecture
-
-The lecture derives length geometrically and presents the dot product as a numerical measure of directional agreement.
-
-### Boundary of the lecture
-
-The lecture interprets the sign and performs only elementary examples. General angle computation is not the main activity.
-
-### Work transferred to exercises
-
-Students should calculate lengths, normalize simple vectors, compute dot products, classify angles by sign and determine actual angles only in selected simple cases.
-
-### Planned problem types
-
-- length and normalization calculations;
-- sign-based angle classification;
-- one table relating geometry to the dot product;
-- one visual explanation.
-
-### Required workbook result
-
-Calculations, an interpretation table and at least one drawing used to check the sign.
-
-### Verification
-
-Normalized vectors must be checked to have length $1$, and classifications must be compared with a sketch.
-
-## Projection {#projection}
-
-### Connection to the lecture
-
-The lecture visualizes a vector as a parallel component plus a perpendicular remainder and states the projection formula.
-
-### Boundary of the lecture
-
-Full projection technique is intentionally transferred to exercises.
-
-### Work transferred to exercises
-
-Students should:
-
-1. calculate projections onto coordinate and non-coordinate directions;
-2. construct the decomposition $u=\operatorname{proj}_v u+u_\perp$;
-3. check $u_\perp\cdot v=0$;
-4. compare projection onto $v$ and $-v$;
-5. identify zero and oppositely directed projections;
-6. prepare a clear visual explanation.
-
-### Planned problem types
-
-- two direct calculations;
-- one decomposition problem;
-- one comparison problem;
-- one visualization or short presentation.
-
-### Required workbook result
-
-Full calculations, a decomposition diagram and an explicit orthogonality check.
-
-### Verification
-
-The two components must add back to the original vector and the remainder must be orthogonal to the target direction.
-
-## Linear combinations and basis {#basis}
-
-### Connection to the lecture
-
-The lecture uses two sliders to show which vectors can be generated from chosen directions and introduces a basis as independent directions spanning the plane.
-
-### Boundary of the lecture
-
-Only one simple nonstandard basis is treated. General change-of-basis machinery is deferred.
-
-### Work transferred to exercises
-
-Students should compare dependent and independent generating vectors, solve simple coordinate decompositions, express one vector in two bases and verify both descriptions geometrically.
-
-### Planned problem types
-
-- generation by one or two directions;
-- simple linear-combination calculations;
-- one change-of-basis example with small coefficients;
-- one comparison of the vector with its coordinate descriptions;
-- one student-prepared visual explanation.
-
-### Required workbook result
-
-A generating diagram, solved coefficients in two bases, reconstruction checks and a statement that coordinates depend on the basis while the vector does not.
-
-### Verification
-
-Every coordinate vector must be reconstructed from the stated basis vectors.
-
-## Set audit {#set-audit}
-
-Check that the set preserves one narrative: vector as change → algebra of changes → measurement of directions → extraction of a component → representation in a basis. Technical repetition should support this narrative rather than replace it.
+# Exercise Set 02
+
+The set follows the division intended for the later student workbook:
+
+- **Problems 01–10 — required practice:** calculate, draw, reconstruct and verify;
+- **Problems 11–20 — developing work:** compare representations, explain geometric meaning, design a construction and prepare a concise mathematical note.
+
+Each problem has its own Markdown file. Separate editable `solution.md` files will be added only in the forkable student workbook.
+
+## Problems 01–10 — required practice {#required-practice}
+
+<div class="problem-list" markdown>
+
+<a class="problem-card problem-card--required" href="problem-01/">
+<strong>Problem 01 — Vectors determined by two points</strong>
+<span>Compute directed changes and draw several representatives of the same free vector.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-02/">
+<strong>Problem 02 — Addition, subtraction and scalar multiples</strong>
+<span>Perform elementary vector operations and connect each result with a geometric arrow.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-03/">
+<strong>Problem 03 — A chain of translations</strong>
+<span>Follow several consecutive changes and verify the endpoint using one combined vector.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-04/">
+<strong>Problem 04 — Length and normalization</strong>
+<span>Compute lengths, construct unit vectors and verify that normalization preserves direction.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-05/">
+<strong>Problem 05 — Parallel, opposite and perpendicular directions</strong>
+<span>Classify vector pairs using scalar multiples and dot products.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-06/">
+<strong>Problem 06 — Dot product and angle type</strong>
+<span>Use the sign of the dot product to recognize acute, right and obtuse angles.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-07/">
+<strong>Problem 07 — Projection onto a coordinate axis</strong>
+<span>Extract horizontal and vertical components and check the perpendicular remainder.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-08/">
+<strong>Problem 08 — Projection onto an oblique direction</strong>
+<span>Compute a non-axis projection, reconstruct the original vector and verify orthogonality.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-09/">
+<strong>Problem 09 — Linear combinations and generated directions</strong>
+<span>Decide what can be generated from one or two prescribed vectors.</span>
+</a>
+
+<a class="problem-card problem-card--required" href="problem-10/">
+<strong>Problem 10 — Coordinates in a nonstandard basis</strong>
+<span>Find basis coordinates with small integer coefficients and reconstruct the vector.</span>
+</a>
+
+</div>
+
+## Problems 11–20 — developing work {#developing-problems}
+
+<div class="problem-list" markdown>
+
+<a class="problem-card problem-card--developing" href="problem-11/">
+<strong>Problem 11 — One change, many arrows</strong>
+<span>Prepare a documented comparison between a directed segment and a free vector.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-12/">
+<strong>Problem 12 — Different routes, the same displacement</strong>
+<span>Compare several paths with the same total change and explain what vector addition retains.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-13/">
+<strong>Problem 13 — Reading scalar multiplication geometrically</strong>
+<span>Build a visual catalogue showing how sign and magnitude of a scalar affect a vector.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-14/">
+<strong>Problem 14 — The dot product as directional agreement</strong>
+<span>Create and interpret a table connecting relative direction, angle type and dot-product sign.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-15/">
+<strong>Problem 15 — Measuring motion along a chosen direction</strong>
+<span>Use projection to separate useful motion from sideways motion in a simple geometric model.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-16/">
+<strong>Problem 16 — Projection onto a direction and its opposite</strong>
+<span>Compare vector and scalar projections onto $v$ and $-v$ and explain the difference.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-17/">
+<strong>Problem 17 — When do two vectors generate the plane?</strong>
+<span>Compare dependent and independent pairs through calculations and diagrams.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-18/">
+<strong>Problem 18 — Choosing a basis adapted to a problem</strong>
+<span>Compare two bases and decide which gives the simpler description of selected vectors.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-19/">
+<strong>Problem 19 — The vector is fixed; its coordinates change</strong>
+<span>Document one vector in two bases and distinguish the object from its coordinate description.</span>
+</a>
+
+<a class="problem-card problem-card--developing" href="problem-20/">
+<strong>Problem 20 — A complete note on vector decomposition</strong>
+<span>Combine change, addition, projection and basis coordinates in one verified mathematical document.</span>
+</a>
+
+</div>
+
+## Structure of the set {#structure}
+
+| Lecture component | Required practice | Developing work |
+|---|---|---|
+| Vector as change | 01 | 11 |
+| Algebra of changes | 02–03 | 12–13 |
+| Length and dot product | 04–06 | 14 |
+| Projection | 07–08 | 15–16 |
+| Linear combinations and basis | 09–10 | 17–20 |
+
+Every developing problem requires a visible mathematical product: an annotated diagram, a comparison table, a verified decomposition or a concise explanatory note.
