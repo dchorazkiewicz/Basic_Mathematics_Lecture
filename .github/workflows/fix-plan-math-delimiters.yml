@@ -75,3 +75,5 @@ jobs:
                   lecture-plan/04-conic-sections-and-mathematical-models.md
           git commit -m "Fix GitHub math rendering in lecture plans 1-4"
           git push
+
+# Triggered after workflow creation so the correction runs on the default branch.
