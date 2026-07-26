@@ -47,7 +47,28 @@ nav:
       - Problem 19 · Region by inequalities: exercises-01/problem-19/index.md
       - Problem 20 · Equations generate geometry: exercises-01/problem-20/index.md
   - Lecture 02 · Vectors, Bases, and Coordinate Systems: lecture-02/index.md
-  - Exercises 02 · Vectors, Bases, and Coordinate Systems: exercises-02/index.md
+  - Exercises 02 · Vectors, Bases, and Coordinate Systems:
+      - Exercise set overview: exercises-02/index.md
+      - Problem 01 · Vectors from points: exercises-02/problem-01/index.md
+      - Problem 02 · Vector operations: exercises-02/problem-02/index.md
+      - Problem 03 · Chain of translations: exercises-02/problem-03/index.md
+      - Problem 04 · Length and normalization: exercises-02/problem-04/index.md
+      - Problem 05 · Direction relations: exercises-02/problem-05/index.md
+      - Problem 06 · Dot product and angle: exercises-02/problem-06/index.md
+      - Problem 07 · Axis projection: exercises-02/problem-07/index.md
+      - Problem 08 · Oblique projection: exercises-02/problem-08/index.md
+      - Problem 09 · Linear combinations: exercises-02/problem-09/index.md
+      - Problem 10 · Basis coordinates: exercises-02/problem-10/index.md
+      - Problem 11 · One change, many arrows: exercises-02/problem-11/index.md
+      - Problem 12 · Same displacement: exercises-02/problem-12/index.md
+      - Problem 13 · Scalar multiplication: exercises-02/problem-13/index.md
+      - Problem 14 · Directional agreement: exercises-02/problem-14/index.md
+      - Problem 15 · Motion along a direction: exercises-02/problem-15/index.md
+      - Problem 16 · Opposite projection direction: exercises-02/problem-16/index.md
+      - Problem 17 · Generating the plane: exercises-02/problem-17/index.md
+      - Problem 18 · Adapted basis: exercises-02/problem-18/index.md
+      - Problem 19 · Coordinates change: exercises-02/problem-19/index.md
+      - Problem 20 · Vector decomposition note: exercises-02/problem-20/index.md
   - Lecture 03 · Lines and Planes: lecture-03/index.md
   - Exercises 03 · Lines and Planes: exercises-03/index.md
   - Lecture 04 · Conic Sections and Mathematical Models: lecture-04/index.md
