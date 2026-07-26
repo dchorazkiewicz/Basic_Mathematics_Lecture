@@ -18,10 +18,7 @@ u=(3,-1).
 $$
 
 1. Choose four different starting points $P_1,P_2,P_3,P_4$.
-2. For each starting point, construct an endpoint $Q_i$ such that
-$$
-   \overrightarrow{P_iQ_i}=u.
-$$
+2. For each starting point, construct an endpoint $Q_i$ such that $\overrightarrow{P_iQ_i}=u.$
 3. Draw all four directed segments on one coordinate diagram.
 4. Prepare a comparison table containing the starting point, endpoint and coordinate difference for every representative.
 5. Explain why the four directed segments are different geometric objects but represent the same free vector.

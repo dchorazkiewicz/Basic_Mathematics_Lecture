@@ -35,10 +35,7 @@ $$
 
 1. State the domain required in Description B.
 2. Explain why neither branch in Description B describes the entire circle.
-3. Use each description to generate or verify the points
-$$
-   (2,0),\quad (0,2),\quad (-2,0),\quad (0,-2).
-$$
+3. Use each description to generate or verify the points $(2,0),\quad (0,2),\quad (-2,0),\quad (0,-2).$
 4. Find all points of the circle having first coordinate $x=1$ using Description A or B.
 5. Find parameter values generating those points using Description C.
 6. Prepare a comparison table with the columns: description, input, output, what part of the circle is covered, principal limitation.

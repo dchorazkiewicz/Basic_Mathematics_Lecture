@@ -16,10 +16,7 @@ Prepare a one-page mathematical note about the circle with centre $(1,-1)$ and r
 
 Your note must present the same geometric object in several connected forms.
 
-1. Begin from the fixed-distance condition and derive the relation
-$$
-   (x-1)^2+(y+1)^2=4.
-$$
+1. Begin from the fixed-distance condition and derive the relation $(x-1)^2+(y+1)^2=4.$
 2. Write two function formulas describing the upper and lower halves of the circle, including their domain.
 3. Construct a parametrization of the entire circle.
 4. Write an inequality describing the closed disk bounded by the circle.

@@ -19,15 +19,9 @@ $$
 
 1. Compute $u\cdot v$ and $v\cdot v$.
 2. Compute $\operatorname{proj}_v u$.
-3. Find the remainder
-$$
-   u_\perp=u-\operatorname{proj}_v u.
-$$
+3. Find the remainder $u_\perp=u-\operatorname{proj}_v u.$
 4. Verify that $u_\perp\cdot v=0$.
-5. Verify that
-$$
-   u=\operatorname{proj}_v u+u_\perp.
-$$
+5. Verify that $u=\operatorname{proj}_v u+u_\perp.$
 6. Draw $u$, its projection and its perpendicular remainder.
 
 <div class="required-record" markdown>

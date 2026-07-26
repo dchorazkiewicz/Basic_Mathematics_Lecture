@@ -28,18 +28,9 @@ $$
 1. Find their intersection point.
 2. Check the obtained point in both equations.
 3. Draw both lines on one coordinate system.
-4. Shade the region described simultaneously by
-$$
-   y\ge x+1,
-$$
-   and
-$$
-   y\le -x+5.
-$$
-5. Decide whether each of the points
-$$
-   (0,2),\quad (2,3),\quad (3,3),\quad (1,5)
-$$
+4. Shade the region described simultaneously by $y\ge x+1,$
+   and $y\le -x+5.$
+5. Decide whether each of the points $(0,2),\quad (2,3),\quad (3,3),\quad (1,5)$
    belongs to the shaded region.
 6. State which parts of the two boundary lines belong to the boundary of the region.
 

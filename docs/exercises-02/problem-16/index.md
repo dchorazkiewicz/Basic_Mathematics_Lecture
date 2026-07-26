@@ -17,10 +17,7 @@ $$
 u=(4,2),\qquad v=(1,1).
 $$
 
-1. Compute the coefficient
-$$
-   c_v=\frac{u\cdot v}{v\cdot v}
-$$
+1. Compute the coefficient $c_v=\frac{u\cdot v}{v\cdot v}$
    and the vector projection $c_vv$.
 2. Repeat the calculation using the opposite direction $-v$.
 3. Compare the two coefficients.

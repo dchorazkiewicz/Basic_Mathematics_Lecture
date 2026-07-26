@@ -24,10 +24,7 @@ u=(5,0).
 $$
 
 1. Compute $\operatorname{proj}_v u$.
-2. Compute the perpendicular remainder
-$$
-   u_\perp=u-\operatorname{proj}_v u.
-$$
+2. Compute the perpendicular remainder $u_\perp=u-\operatorname{proj}_v u.$
 3. Verify that $u_\perp\cdot v=0$.
 4. Draw the path direction, actual displacement, projection and perpendicular remainder.
 5. Interpret the projection as the part of the displacement occurring along the path and the remainder as sideways displacement.

@@ -34,10 +34,7 @@ so that $B=(d,e)$ is a basis of the plane.
 Prepare a concise mathematical note containing the following steps.
 
 1. Draw the two-step route from $P$ and find the final point.
-2. Compute the total displacement
-$$
-   w=u+v.
-$$
+2. Compute the total displacement $w=u+v.$
 3. Compute $\operatorname{proj}_d w$ and the perpendicular remainder.
 4. Verify the orthogonality of the remainder to $d$.
 5. Find the coordinates $[w]_B$.
