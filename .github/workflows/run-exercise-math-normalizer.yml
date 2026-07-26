@@ -36,3 +36,5 @@ jobs:
             git commit -m "Normalize list-adjacent exercise mathematics"
             git push
           fi
+
+# Trigger after the workflow exists on the default branch.
