@@ -24,9 +24,14 @@ nav:
       - How the Course Works: introduction/how-the-course-works.md
       - How to Prepare Mathematical Notes: introduction/how-to-prepare-mathematical-notes.md
   - Lecture 01 · Cartesian Geometry and Coordinates: lecture-01/index.md
+  - Exercises 01 · Cartesian Geometry and Coordinates: exercises-01/index.md
   - Lecture 02 · Vectors, Bases, and Coordinate Systems: lecture-02/index.md
+  - Exercises 02 · Vectors, Bases, and Coordinate Systems: exercises-02/index.md
   - Lecture 03 · Lines and Planes: lecture-03/index.md
-  - Lecture 04 · Conic Sections: lecture-04/index.md
+  - Exercises 03 · Lines and Planes: exercises-03/index.md
+  - Lecture 04 · Conic Sections and Mathematical Models: lecture-04/index.md
+  - Exercises 04 · Conic Sections and Mathematical Models: exercises-04/index.md
+  - Exercise Set Template: exercises/template.md
   - Authoring and deployment: authoring-guide.md
 
 markdown_extensions:
