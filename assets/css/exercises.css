@@ -12,4 +12,20 @@
 .exercise-group li { padding-left: .45rem; margin: 0 0 15px; }
 .exercise-group li::marker { color: var(--blue); font-family: var(--sans); font-weight: 750; }
 .exercise-group--problems li::marker { color: #a66d20; }
-@media (max-width: 700px) { .exercises-heading { display: block; } .exercise-download { margin-top: 12px; } .exercise-group { padding: 17px 16px; } }
+
+.companion-actions { margin-top: 20px; }
+.companion-button { display: inline-flex; align-items: center; min-height: 42px; padding: 10px 16px; border: 1px solid var(--blue); border-radius: 999px; background: var(--blue-soft); color: var(--navy); font-family: var(--sans); font-size: .82rem; font-weight: 700; text-decoration: none; }
+.companion-button:hover { background: var(--surface); }
+.lecture-nav .companion-link { margin-bottom: 12px; border-color: var(--blue); background: var(--blue-soft); color: var(--navy); font-weight: 700; }
+.exercise-plan-main h2 { margin-top: 2.4rem; }
+.exercise-plan-main h3 { margin-top: 1.7rem; }
+.exercise-plan-main .exercise-transfer { margin: 1.2rem 0 1.8rem; padding: 18px 20px; border-left: 4px solid var(--blue); border-radius: 0 12px 12px 0; background: var(--blue-soft); }
+.exercise-plan-main .exercise-transfer > :first-child { margin-top: 0; }
+.exercise-plan-main .exercise-transfer > :last-child { margin-bottom: 0; }
+
+@media (max-width: 700px) {
+  .exercises-heading { display: block; }
+  .exercise-download { margin-top: 12px; }
+  .exercise-group { padding: 17px 16px; }
+  .companion-button { width: 100%; justify-content: center; text-align: center; }
+}
