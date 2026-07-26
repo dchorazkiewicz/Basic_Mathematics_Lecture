@@ -90,6 +90,7 @@
     <div class="lecture-shell">
       <aside class="lecture-nav" aria-label="Lecture contents">
         <div class="nav-label">Lecture {{ page.meta.lecture }}</div>
+        {% if page.meta.exercise_link %}<a class="companion-link" href="{{ page.meta.exercise_link | url }}">Exercise set {{ page.meta.lecture }} →</a>{% endif %}
         {% for section in page.meta.section_links %}
           <a href="#{{ section.id }}">{{ section.title }}</a>
         {% endfor %}
@@ -100,6 +101,33 @@
           <h1>{{ page.meta.lecture_title }}</h1>
           <p class="lecture-author">{{ config.extra.author }}</p>
           <p>{{ page.meta.intro }}</p>
+          {% if page.meta.exercise_link %}
+          <div class="companion-actions">
+            <a class="companion-button" href="{{ page.meta.exercise_link | url }}">Open exercises for Lecture {{ page.meta.lecture }} →</a>
+          </div>
+          {% endif %}
+        </header>
+        {{ page.content }}
+      </main>
+    </div>
+  {% elif page.meta.exercise_set %}
+    <div class="lecture-shell">
+      <aside class="lecture-nav" aria-label="Exercise set contents">
+        <div class="nav-label">Exercises {{ page.meta.exercise_set }}</div>
+        <a class="companion-link" href="{{ page.meta.lecture_link | url }}">← Return to lecture</a>
+        {% for section in page.meta.section_links %}
+          <a href="#{{ section.id }}">{{ section.title }}</a>
+        {% endfor %}
+      </aside>
+      <main class="lecture-main exercise-plan-main">
+        <header class="lecture-header">
+          <p class="eyebrow">Exercise design · Lecture {{ page.meta.exercise_set }}</p>
+          <h1>{{ page.meta.exercise_title }}</h1>
+          <p class="lecture-author">{{ config.extra.author }}</p>
+          <p>{{ page.meta.intro }}</p>
+          <div class="companion-actions">
+            <a class="companion-button" href="{{ page.meta.lecture_link | url }}">← Return to Lecture {{ page.meta.exercise_set }}</a>
+          </div>
         </header>
         {{ page.content }}
       </main>
