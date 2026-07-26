@@ -1,170 +1,147 @@
 ---
 title: Exercises 01 — Cartesian Geometry and Coordinates
-description: Exercise design complementing Lecture 01.
+description: Twenty exercises complementing Lecture 01: ten required practice problems and ten developing problems.
 exercise_set: "01"
 exercise_title: Cartesian Geometry and Coordinates
 lecture_link: lecture-01/
-intro: These exercises develop the parts that the lecture introduces conceptually but does not have time to practise in several representations and examples.
+intro: Problems 01–10 consolidate the basic calculations and representations introduced in the lecture. Problems 11–20 require explanation, comparison, construction and mathematical documentation.
 section_links:
-  - { id: representation, title: Object and representation }
-  - { id: coordinates, title: Coordinate systems }
-  - { id: distance, title: Distance }
-  - { id: generated-sets, title: Equations and generated sets }
-  - { id: set-audit, title: Set audit }
+  - { id: required-practice, title: Problems 01–10 }
+  - { id: developing-problems, title: Problems 11–20 }
+  - { id: structure, title: Set structure }
 ---
 
-# Exercise design
+# Exercise Set 01
 
-This is a **planning page**, not yet the final student workbook. Each block is tied to a precise part of the lecture and may later be converted into several individual workbook problems.
+The set follows the same division that will later be used in the student workbook:
 
-## Object and representation {#representation}
+- **Problems 01–10 — required practice:** short calculations, plotting, substitution and direct verification;
+- **Problems 11–20 — developing work:** argument, comparison of representations, construction of diagrams and preparation of concise mathematical notes.
 
-### Connection to the lecture
+Each problem has its own page. The present pages contain the final problem statements for the course design stage; separate editable solution files will be created only when the forkable student workbook is prepared.
 
-The lecture begins with geometry before coordinates and establishes that an object is not identical with its representation.
+## Problems 01–10 — required practice {#required-practice}
 
-### Boundary of the lecture
+<div class="problem-list" markdown>
 
-The lecture shows one scene and formulates the distinction. It does not spend time on many variants or on students constructing their own examples.
+<a class="problem-card problem-card--required" href="problem-01/">
+<strong>Problem 01 — Plotting points and reading coordinates</strong>
+<span>Plot five points, identify quadrants and axes, and reflect points across the coordinate axes.</span>
+</a>
 
-### Work transferred to exercises
+<a class="problem-card problem-card--required" href="problem-02/">
+<strong>Problem 02 — Changing the origin</strong>
+<span>Describe the same points after translating the origin while keeping axes, orientation and unit unchanged.</span>
+</a>
 
-Students should:
+<a class="problem-card problem-card--required" href="problem-03/">
+<strong>Problem 03 — Changing the unit scale</strong>
+<span>Convert coordinates when one new unit equals two old units and check that geometry is unchanged.</span>
+</a>
 
-1. identify geometric objects and relations in drawings without axes;
-2. distinguish statements that are geometric from statements that depend on coordinates;
-3. construct one example in which the representation changes while the object does not;
-4. explain the distinction in their own words.
+<a class="problem-card problem-card--required" href="problem-04/">
+<strong>Problem 04 — Distance from a right triangle</strong>
+<span>Compute a Euclidean distance and connect every term in the formula with a drawn right triangle.</span>
+</a>
 
-### Planned problem types
+<a class="problem-card problem-card--required" href="problem-05/">
+<strong>Problem 05 — Recovering an unknown coordinate</strong>
+<span>Use a prescribed distance to find all possible values of an unknown coordinate.</span>
+</a>
 
-- two interpretation problems based on drawings;
-- one drawing constructed by the student;
-- one short argument correcting the false statement “a point is a pair of numbers”;
-- one two-minute presentation.
+<a class="problem-card problem-card--required" href="problem-06/">
+<strong>Problem 06 — Generating a graph from a function</strong>
+<span>Build a value table, generate points and draw the graph of a simple linear function.</span>
+</a>
 
-### Required workbook result
+<a class="problem-card problem-card--required" href="problem-07/">
+<strong>Problem 07 — Testing membership in an equation</strong>
+<span>Use substitution to decide whether given points belong to two generated sets.</span>
+</a>
 
-A labelled drawing, a short classification table, and a concise explanation of object versus representation.
+<a class="problem-card problem-card--required" href="problem-08/">
+<strong>Problem 08 — A circle as a relation</strong>
+<span>Find all outputs associated with selected inputs and see why a circle is not one global function.</span>
+</a>
 
-### Verification
+<a class="problem-card problem-card--required" href="problem-09/">
+<strong>Problem 09 — A parametrized segment</strong>
+<span>Generate points from a parameter, draw the segment and verify a Cartesian condition.</span>
+</a>
 
-The student must show the same object in a second representation and identify what remains invariant.
+<a class="problem-card problem-card--required" href="problem-10/">
+<strong>Problem 10 — Intersections and inequalities</strong>
+<span>Find an elementary intersection and classify points in a region described by two inequalities.</span>
+</a>
 
-## Coordinate systems {#coordinates}
+</div>
 
-### Connection to the lecture
+## Problems 11–20 — developing work {#developing-problems}
 
-The lecture constructs origin, axes, orientation and scale and shows one point in two systems.
+<div class="problem-list" markdown>
 
-### Boundary of the lecture
+<a class="problem-card problem-card--developing" href="problem-11/">
+<strong>Problem 11 — The same geometry in two coordinate systems</strong>
+<span>Document how coordinates change while distances and the geometric triangle remain invariant.</span>
+</a>
 
-Only one elementary change of system is calculated. No general transformation formula is developed.
+<a class="problem-card problem-card--developing" href="problem-12/">
+<strong>Problem 12 — Designing a coordinate system</strong>
+<span>Choose an origin, axes, orientation and scale for a simple room plan and justify the choices.</span>
+</a>
 
-### Work transferred to exercises
+<a class="problem-card problem-card--developing" href="problem-13/">
+<strong>Problem 13 — Documenting the distance formula</strong>
+<span>Prepare a short derivation from a right triangle and explain the role of coordinate differences.</span>
+</a>
 
-Students should:
+<a class="problem-card problem-card--developing" href="problem-14/">
+<strong>Problem 14 — From fixed distance to a circle equation</strong>
+<span>Derive and interpret the equation of a circle from its geometric definition.</span>
+</a>
 
-1. read the coordinates of the same points in two simple systems;
-2. compare the effect of moving the origin and changing the scale;
-3. record dependent and invariant quantities;
-4. verify that geometric distances do not change.
+<a class="problem-card problem-card--developing" href="problem-15/">
+<strong>Problem 15 — One circle, three descriptions</strong>
+<span>Compare a relation, two function branches and a parametrization of the same circle.</span>
+</a>
 
-### Planned problem types
+<a class="problem-card problem-card--developing" href="problem-16/">
+<strong>Problem 16 — Constructing a segment parametrization</strong>
+<span>Build a general parametrization from two endpoints and verify its geometric meaning.</span>
+</a>
 
-- direct coordinate reading;
-- one table-completion problem;
-- one comparison problem;
-- one visual task showing a fixed point and moving axes.
+<a class="problem-card problem-card--developing" href="problem-17/">
+<strong>Problem 17 — Two parametrizations of the same curve</strong>
+<span>Show that two different parameter rules generate the same unit circle but traverse it differently.</span>
+</a>
 
-### Required workbook result
+<a class="problem-card problem-card--developing" href="problem-18/">
+<strong>Problem 18 — Intersections as simultaneous conditions</strong>
+<span>Compare a line that cuts, touches or misses a circle and justify each case algebraically.</span>
+</a>
 
-A two-system diagram, a coordinate table, one distance check and a conclusion: “the description changed, not the point”.
+<a class="problem-card problem-card--developing" href="problem-19/">
+<strong>Problem 19 — Describing a region by inequalities</strong>
+<span>Draw and document the intersection of a disk and a half-plane, including its boundary points.</span>
+</a>
 
-### Verification
+<a class="problem-card problem-card--developing" href="problem-20/">
+<strong>Problem 20 — Equations generate geometry</strong>
+<span>Create a one-page mathematical note combining a table, graph, parametrization, inequality and verification.</span>
+</a>
 
-Distances between at least two pairs of points must be computed in both systems.
+</div>
 
-## Distance {#distance}
+## Structure of the set {#structure}
 
-### Connection to the lecture
+The distribution is intentional:
 
-The lecture derives Euclidean distance from a right triangle and the Pythagorean theorem.
+| Lecture component | Required practice | Developing work |
+|---|---|---|
+| Object and representation | 01–03 | 11–12 |
+| Distance and coordinate calculation | 04–05 | 13–14 |
+| Equations generating sets | 06–08 | 15 |
+| Parametrization | 09 | 16–17 |
+| Intersections and regions | 10 | 18–20 |
 
-### Boundary of the lecture
-
-Only one $3$–$4$–$5$ example is completed in full.
-
-### Work transferred to exercises
-
-Students should:
-
-1. calculate distances for several small integer-coordinate examples;
-2. draw the corresponding right triangles;
-3. explain why signs disappear after squaring;
-4. find distinct pairs of points with the same distance;
-5. solve one elementary inverse problem involving an unknown coordinate.
-
-### Planned problem types
-
-- four short computations;
-- one comparison problem;
-- one inverse problem;
-- one explanation problem.
-
-### Required workbook result
-
-Complete calculations, at least one geometric construction, an explicit check and a one-paragraph interpretation.
-
-### Verification
-
-Every numerical distance must be compared with the lengths visible in the constructed triangle.
-
-## Equations and generated sets {#generated-sets}
-
-### Connection to the lecture
-
-The lecture shows that an equation can generate a set of points, distinguishes a function from a relation, and only signals intersections, inequalities and parametrizations.
-
-### Boundary of the lecture
-
-This is the principal transfer point. The lecture introduces the ideas but does not develop their technical use.
-
-### Work transferred to exercises
-
-Students should:
-
-1. generate points and a graph from a simple function;
-2. test whether given points satisfy an equation;
-3. explain why a circle is not globally the graph of one function $y=f(x)$;
-4. find an elementary intersection by imposing two conditions simultaneously;
-5. shade a region described by an inequality and identify its boundary;
-6. construct a simple parametrization of a segment or circle;
-7. compare function, relation and parametrization as three descriptions of sets.
-
-### Planned problem types
-
-- two table-and-graph problems;
-- two point-membership problems;
-- one intersection problem;
-- one inequality problem;
-- one parametrization problem;
-- one comparative note or presentation.
-
-### Required workbook result
-
-Graphs, generated-point tables, substitutions checking membership, and a comparison table with the columns “description”, “what it generates”, “restriction”.
-
-### Verification
-
-Points produced parametrically must be substituted into the corresponding Cartesian equation.
-
-## Set audit {#set-audit}
-
-Before turning this page into a final workbook set, verify that:
-
-- the first tasks remain elementary;
-- the central conceptual distinction is object versus representation;
-- relations and parametrizations are developed on exercises rather than becoming a second lecture inside Lecture 01;
-- every graph is accompanied by a numerical or algebraic check;
-- at least one task requires a student explanation or presentation.
+Every developing problem requires a visible mathematical product: an annotated diagram, a comparison table, a derivation, a verified construction or a concise explanatory note.
