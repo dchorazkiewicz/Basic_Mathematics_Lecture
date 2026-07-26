@@ -3,9 +3,10 @@ title: Vectors, Bases, and Coordinate Systems
 description: Lecture 2 — Vectors, Bases, and Coordinate Systems
 lecture: "02"
 python_editor: true
-eyebrow: Lecture 02 · Analytical Geometry
+eyebrow: Lecture 02 · Objects and Geometry
 lecture_title: Vectors, Bases, and Coordinate Systems
 intro: Coordinates first described locations. We now use coordinate differences to construct directed changes, identify when arrows represent the same vector, and derive the operations and tests used throughout analytical geometry.
+exercise_link: exercises-02/
 section_links:
   - { id: from-points, title: From points to vectors }
   - { id: addition, title: Addition and subtraction }
@@ -16,7 +17,7 @@ section_links:
   - { id: basis, title: Linear combinations and change of basis }
   - { id: computational-model, title: Computational model }
   - { id: python-lab, title: Live Python }
-  - { id: exercises, title: Exercises }
+  - { id: exercises, title: Existing exercises }
 ---
 
 --8<-- "lecture-02/sections/01-from-points.md"
