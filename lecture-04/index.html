@@ -140,119 +140,58 @@ x(t)=3\cos(2t),\qquad y(t)=3\sin(2t)
 <p class="admonition-title">Continued in the exercise set</p>
 <p>Students will generate points, compare two parametrizations of the same curve, restrict the parameter interval and verify generated points in a Cartesian equation. The lecture establishes the distinction; the exercises develop the technique.</p>
 </div>
-<h2 id="classical-conics">The classical conics before polar coordinates</h2>
-<h3 id="circle-and-ellipse-from-one-scale-to-two">Circle and ellipse: from one scale to two</h3>
-<p>A circle centred at the origin is described by</p>
+<h2 id="parameter-roles">Parameters that move, scale, and reshape a curve</h2>
+<p>The letter appearing in a formula may play two very different roles.</p>
+<ul>
+<li>A parameter such as <span class="arithmatex">\(t\)</span> selects a point on one fixed curve.</li>
+<li>A parameter such as <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(h\)</span>, or <span class="arithmatex">\(k\)</span> changes the curve itself.</li>
+</ul>
+<p>We use one ellipse to read these roles directly:</p>
 <div class="arithmatex">\[
-\boxed{x^2+y^2=R^2}.
+\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1,\qquad a&gt;0,\quad b&gt;0.
 \]</div>
-<p>Its equation treats every direction equally. The parameterisation</p>
+<p>The equation is not introduced as a pattern to memorize. It is read geometrically:</p>
+<ul>
+<li><span class="arithmatex">\((h,k)\)</span> determines the centre;</li>
+<li><span class="arithmatex">\(a\)</span> determines the horizontal scale;</li>
+<li><span class="arithmatex">\(b\)</span> determines the vertical scale.</li>
+</ul>
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">Read parameters through their geometric effect</span>
+      <span class="figure-step-title" data-ellipse-parameter-readout>centre $(0,0)$, horizontal scale $4$, vertical scale $2$</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open ellipse parameter figure in full screen">⛶</button>
+  </div>
+  <div class="figure-stage jsx-stage">
+    <div id="ellipse-parameter-board" class="jxgbox" data-ellipse-parameters aria-label="Interactive ellipse controlled by centre and scale parameters"></div>
+  </div>
+  <div class="parameter-controls" style="--parameter-count:4">
+    <label class="parameter-control"><span>$h$ = <output data-ellipse-h>0</output></span><input type="range" min="-3" max="3" step="0.5" value="0" data-ellipse-h-slider></label>
+    <label class="parameter-control"><span>$k$ = <output data-ellipse-k>0</output></span><input type="range" min="-2" max="2" step="0.5" value="0" data-ellipse-k-slider></label>
+    <label class="parameter-control"><span>$a$ = <output data-ellipse-a>4</output></span><input type="range" min="1" max="5" step="0.5" value="4" data-ellipse-a-slider></label>
+    <label class="parameter-control"><span>$b$ = <output data-ellipse-b>2</output></span><input type="range" min="1" max="4" step="0.5" value="2" data-ellipse-b-slider></label>
+  </div>
+  <figcaption class="figure-caption">Before moving a slider, predict whether the centre, width, or height will change. The animation checks the prediction.</figcaption>
+</figure>
+
+<p>For example, compare</p>
 <div class="arithmatex">\[
-\boxed{x=R\cos t,\qquad y=R\sin t}
+\frac{x^2}{4}+y^2=1
 \]</div>
-<p>makes this symmetry visible: one angle determines one point on the circle.</p>
-<p>An ellipse introduces two perpendicular scales:</p>
+<p>with</p>
 <div class="arithmatex">\[
-\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1},\qquad a\ge b&gt;0.
+\frac{(x-2)^2}{4}+(y+1)^2=1.
 \]</div>
-<p>It is parameterised by</p>
-<div class="arithmatex">\[
-\boxed{x=a\cos t,\qquad y=b\sin t}.
-\]</div>
-<p>The same circular parameter is stretched by different factors in the two coordinate directions.</p>
-<p>Define <span class="arithmatex">\(c=\sqrt{a^2-b^2}\)</span>. The foci are <span class="arithmatex">\(F_1=(-c,0)\)</span> and <span class="arithmatex">\(F_2=(c,0)\)</span>, and every point <span class="arithmatex">\(P\)</span> on the ellipse satisfies</p>
-<div class="arithmatex">\[
-\boxed{d(P,F_1)+d(P,F_2)=2a}.
-\]</div>
-<div class="admonition note">
-<p class="admonition-title">Two useful descriptions</p>
-<p>The centre-based equation exposes symmetry and semiaxes. The focal description exposes distances from the points that later become natural locations of a central force source.</p>
-</div>
-<h3 id="parabola-equal-distance-from-a-focus-and-a-line">Parabola: equal distance from a focus and a line</h3>
-<p>Fix a focus <span class="arithmatex">\(F=(p,0)\)</span> and a directrix <span class="arithmatex">\(D:x=-p\)</span>, where <span class="arithmatex">\(p&gt;0\)</span>. The parabola is the set of points <span class="arithmatex">\(P=(x,y)\)</span> satisfying</p>
-<div class="arithmatex">\[
-\boxed{d(P,F)=d(P,D)}.
-\]</div>
-<div class="admonition derivation">
-<p class="admonition-title">Deriving the Cartesian equation</p>
-<p>Since</p>
-<div class="arithmatex">\[
-d(P,F)=\sqrt{(x-p)^2+y^2},
-\qquad
-d(P,D)=x+p,
-\]</div>
-<p>squaring gives</p>
-<div class="arithmatex">\[
-(x-p)^2+y^2=(x+p)^2,
-\]</div>
-<p>and therefore</p>
-<div class="arithmatex">\[
-\boxed{y^2=4px}.
-\]</div>
-</div>
-<p>A convenient parameterisation is</p>
-<div class="arithmatex">\[
-\boxed{x=pt^2,\qquad y=2pt}.
-\]</div>
-<p>Substitution gives <span class="arithmatex">\(y^2=4p^2t^2=4px\)</span>, so every parameter value produces a point on the curve.</p>
-<div class="admonition interpretation">
-<p class="admonition-title">Why the parabola is the boundary case</p>
-<p>The parabola is neither closed like an ellipse nor split into two branches like a hyperbola. It will later appear exactly at the transition between bounded and unbounded focal motion.</p>
-</div>
-<h3 id="hyperbola-two-complete-branches-and-two-asymptotes">Hyperbola: two complete branches and two asymptotes</h3>
-<p>For <span class="arithmatex">\(a&gt;0\)</span> and <span class="arithmatex">\(b&gt;0\)</span>, the standard hyperbola is</p>
-<div class="arithmatex">\[
-\boxed{\frac{x^2}{a^2}-\frac{y^2}{b^2}=1}.
-\]</div>
-<p>Define <span class="arithmatex">\(c=\sqrt{a^2+b^2}\)</span>. The foci are <span class="arithmatex">\(F_1=(-c,0)\)</span> and <span class="arithmatex">\(F_2=(c,0)\)</span>, and the geometric condition is</p>
-<div class="arithmatex">\[
-\boxed{|d(P,F_1)-d(P,F_2)|=2a}.
-\]</div>
-<p>The absolute value is essential: one sign describes the right branch and the opposite sign describes the left branch.</p>
-<p>The asymptotes</p>
-<div class="arithmatex">\[
-\boxed{y=\pm\frac ba x}
-\]</div>
-<p>are not parts of the hyperbola. They record the directions approached by both branches far from the centre.</p>
+<p>The second curve has the same horizontal and vertical scales as the first. Only its centre has moved from <span class="arithmatex">\((0,0)\)</span> to <span class="arithmatex">\((2,-1)\)</span>.</p>
 <div class="admonition warning">
-<p class="admonition-title">Do not confuse a branch with the whole hyperbola</p>
-<p>A focus-centred polar equation naturally describes the branch visible from the chosen focus and directrix. The Cartesian equation remains the cleanest single picture of the complete two-branch curve.</p>
+<p class="admonition-title">Do not turn this into a catalogue</p>
+<p>The lecture does not derive every standard equation of a circle, ellipse, parabola, and hyperbola. The purpose is to learn how parameters control position, scale, and shape. Repeated recognition and drawing belong to the exercises.</p>
 </div>
-<h3 id="four-familiar-shapes-one-geometric-problem">Four familiar shapes, one geometric problem</h3>
-<table>
-<thead>
-<tr>
-<th>Curve</th>
-<th>Distinguished data</th>
-<th>Large-scale behaviour</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>circle</td>
-<td>one centre and one radius</td>
-<td>closed</td>
-</tr>
-<tr>
-<td>ellipse</td>
-<td>two foci, fixed sum</td>
-<td>closed</td>
-</tr>
-<tr>
-<td>parabola</td>
-<td>one focus and one directrix</td>
-<td>one open branch</td>
-</tr>
-<tr>
-<td>hyperbola</td>
-<td>two foci, fixed difference</td>
-<td>two open branches</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition principle">
-<p class="admonition-title">The need for a new coordinate system</p>
-<p>From a focus, a point on a conic is determined by two questions: in which direction do we look, and how far must we travel in that direction before reaching the curve? These are exactly the questions answered by polar coordinates.</p>
+<div class="admonition note">
+<p class="admonition-title">Continued in the exercise set</p>
+<p>Students will read simple Cartesian equations, vary one parameter at a time, produce a sequence of graphs and document the rule “parameter — geometric effect”. General classification of second-degree equations is outside this lecture.</p>
 </div>
 <h2 id="polar-coordinates">Polar coordinates as coordinates adapted to a focus</h2>
 <h3 id="a-point-described-by-direction-and-distance">A point described by direction and distance</h3>
