@@ -24,7 +24,7 @@ Wykład nie jest katalogiem czterech osobnych stożkowych ani kursem mechaniki n
 
 ## Zakładany czas
 
-Około \(2\times45\) minut. Rachunki muszą pozostać elementarne. Dynamiczne wizualizacje mają wykonać znaczną część pracy związanej z rozpoznawaniem wpływu parametrów.
+Około $2\times45$ minut. Rachunki muszą pozostać elementarne. Dynamiczne wizualizacje mają wykonać znaczną część pracy związanej z rozpoznawaniem wpływu parametrów.
 
 ## Liniowy plan wykładu i ćwiczeń
 
@@ -34,19 +34,19 @@ Około \(2\times45\) minut. Rachunki muszą pozostać elementarne. Dynamiczne wi
 
 Przypominamy prostą
 
-\[
+$$
 P(t)=P_0+tv.
-\]
+$$
 
-Stały wektor \(v\) oznacza stały kierunek. Taki mechanizm generuje prostą, ale nie może wygenerować trajektorii, której kierunek zmienia się w trakcie ruchu.
+Stały wektor $v$ oznacza stały kierunek. Taki mechanizm generuje prostą, ale nie może wygenerować trajektorii, której kierunek zmienia się w trakcie ruchu.
 
 Wprowadzamy więc ogólniejszy zapis
 
-\[
+$$
 x=x(t),\qquad y=y(t).
-\]
+$$
 
-Parametr \(t\) porządkuje punkty krzywej. Może być tylko zmienną sterującą, ale w modelu ruchu może również oznaczać czas. Na tym etapie trzeba jawnie odróżnić:
+Parametr $t$ porządkuje punkty krzywej. Może być tylko zmienną sterującą, ale w modelu ruchu może również oznaczać czas. Na tym etapie trzeba jawnie odróżnić:
 
 - parametr wybierający punkt krzywej;
 - czas jako wielkość fizyczną;
@@ -56,15 +56,15 @@ Parametr \(t\) porządkuje punkty krzywej. Może być tylko zmienną sterującą
 
 Najpierw punkt porusza się po prostej ze stałym kierunkiem. Następnie przełączamy zapis na
 
-\[
+$$
 x(t)=\cos t,\qquad y(t)=\sin t,
-\]
+$$
 
-a punkt zaczyna kreślić okrąg. Widoczne są aktualne wartości \(t,x(t),y(t)\) oraz ślad punktu.
+a punkt zaczyna kreślić okrąg. Widoczne są aktualne wartości $t,x(t),y(t)$ oraz ślad punktu.
 
 #### Minimalny przykład
 
-Dla \(t=0,\frac{\pi}{2},\pi,\frac{3\pi}{2}\) wyznaczamy cztery punkty okręgu jednostkowego. Nie rozwijamy jeszcze rachunku trygonometrycznego poza tymi wartościami.
+Dla $t=0,\frac{\pi}{2},\pi,\frac{3\pi}{2}$ wyznaczamy cztery punkty okręgu jednostkowego. Nie rozwijamy jeszcze rachunku trygonometrycznego poza tymi wartościami.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -87,39 +87,39 @@ W `solution.md` muszą znaleźć się tabela wartości, wykres, sprawdzenie rów
 
 Pokazujemy, że litera w równaniu może pełnić różne role. Na prostym przykładzie elipsy
 
-\[
+$$
 \frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1
-\]
+$$
 
 identyfikujemy:
 
-- \((h,k)\) jako położenie środka;
-- \(a,b\) jako skale w dwóch kierunkach.
+- $(h,k)$ jako położenie środka;
+- $a,b$ jako skale w dwóch kierunkach.
 
 Nie wyprowadzamy wzorów ani nie omawiamy wszystkich przypadków osobno. Celem jest nauczenie studentów czytania wpływu parametru na geometrię.
 
 Następnie rozróżniamy dwa typy parametrów:
 
-- parametr \(t\) lub \(\theta\), który wybiera punkt na jednej krzywej;
-- parametr \(a,b,e,\ldots\), który zmienia całą krzywą lub rodzinę krzywych.
+- parametr $t$ lub $\theta$, który wybiera punkt na jednej krzywej;
+- parametr $a,b,e,\ldots$, który zmienia całą krzywą lub rodzinę krzywych.
 
 #### Wizualizacja HTML
 
-Suwaki \(h,k,a,b\) sterują elipsą. Student ma kolejno przewidzieć, co zmieni każdy parametr, zanim suwak zostanie poruszony.
+Suwaki $h,k,a,b$ sterują elipsą. Student ma kolejno przewidzieć, co zmieni każdy parametr, zanim suwak zostanie poruszony.
 
 #### Minimalny przykład
 
 Porównujemy
 
-\[
+$$
 \frac{x^2}{4}+y^2=1
-\]
+$$
 
 oraz
 
-\[
+$$
 \frac{(x-2)^2}{4}+(y+1)^2=1.
-\]
+$$
 
 Wykład ogranicza się do odczytania przesunięcia i skali z równania.
 
@@ -144,55 +144,55 @@ W workbooku pozostają wykresy, tabela „parametr — efekt geometryczny”, sp
 
 Dla zjawiska z wyróżnionym centrum naturalny jest opis przez:
 
-- kierunek wybrany kątem \(\theta\);
-- odległość \(r\) od wyróżnionego punktu.
+- kierunek wybrany kątem $\theta$;
+- odległość $r$ od wyróżnionego punktu.
 
 Przejście
 
-\[
+$$
 x=r\cos\theta,\qquad y=r\sin\theta
-\]
+$$
 
 jest interpretowane geometrycznie. Kąt wybiera półprostą, a promień wybiera punkt na tej półprostej.
 
 Następnie pokazujemy rodzinę
 
-\[
+$$
 r(\theta)=\frac{p}{1+e\cos\theta}
-\]
+$$
 
 w jednej ustalonej orientacji. Nie skupiamy się na przekształceniach wzoru. Najważniejsza jest obserwacja dynamiczna:
 
-- \(e=0\) — okrąg;
-- \(0<e<1\) — elipsa;
-- \(e=1\) — parabola;
-- \(e>1\) — hiperbola.
+- $e=0$ — okrąg;
+- $0<e<1$ — elipsa;
+- $e=1$ — parabola;
+- $e>1$ — hiperbola.
 
-Student ma zobaczyć, że cztery nazwy opisują jakościowo różne stany jednej rodziny kontrolowanej przez parametr \(e\).
+Student ma zobaczyć, że cztery nazwy opisują jakościowo różne stany jednej rodziny kontrolowanej przez parametr $e$.
 
 #### Wizualizacja HTML
 
 Jedna zintegrowana animacja:
 
-- suwak steruje \(e\);
-- aktualny promień \(r(\theta)\) jest rysowany od ogniska;
+- suwak steruje $e$;
+- aktualny promień $r(\theta)$ jest rysowany od ogniska;
 - punkt kreśli krzywą;
-- obok widoczne są wartość \(e\), typ stożkowej i aktualne równanie.
+- obok widoczne są wartość $e$, typ stożkowej i aktualne równanie.
 
-Animację zatrzymujemy przed wartościami granicznymi \(e=1\), aby student najpierw przewidział zmianę typu krzywej.
+Animację zatrzymujemy przed wartościami granicznymi $e=1$, aby student najpierw przewidział zmianę typu krzywej.
 
 #### Minimalny przykład
 
-Dla ustalonego \(p\) obliczamy ręcznie tylko kilka wartości \(r(\theta)\) dla prostych kątów, na przykład \(\theta=0\) i \(\theta=\pi\). Celem jest odczytanie, co robi wzór, nie ręczne kreślenie całej krzywej.
+Dla ustalonego $p$ obliczamy ręcznie tylko kilka wartości $r(\theta)$ dla prostych kątów, na przykład $\theta=0$ i $\theta=\pi$. Celem jest odczytanie, co robi wzór, nie ręczne kreślenie całej krzywej.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
 Student ma:
 
-1. obliczyć wybrane wartości \(r(\theta)\) dla kilku mimośrodów;
-2. przygotować tabelę porównującą przypadki \(e=0\), \(0<e<1\), \(e=1\), \(e>1\);
+1. obliczyć wybrane wartości $r(\theta)$ dla kilku mimośrodów;
+2. przygotować tabelę porównującą przypadki $e=0$, $0<e<1$, $e=1$, $e>1$;
 3. wygenerować lub narysować odpowiadające krzywe;
-4. opisać, co dzieje się z kształtem przy zbliżaniu się \(e\) do \(1\) z obu stron;
+4. opisać, co dzieje się z kształtem przy zbliżaniu się $e$ do $1$ z obu stron;
 5. porównać opis radialny z prostym opisem kartezjańskim tej samej krzywej;
 6. wyjaśnić, dlaczego opis radialny jest naturalny przy wyróżnionym centrum;
 7. przygotować prostą interaktywną wizualizację albo sekwencję czterech dobrze opisanych rysunków.
@@ -205,18 +205,18 @@ W `solution.md` pozostają obliczenia kontrolne, tabela klasyfikacji, wykresy i 
 
 #### Na wykładzie
 
-Definicja ognisko–kierownica nie rozpoczyna wykładu. Pojawia się dopiero po zobaczeniu rodziny radialnej, aby nadać parametrowi \(e\) znaczenie geometryczne.
+Definicja ognisko–kierownica nie rozpoczyna wykładu. Pojawia się dopiero po zobaczeniu rodziny radialnej, aby nadać parametrowi $e$ znaczenie geometryczne.
 
-Dla punktu \(P\) stożkowej porównujemy:
+Dla punktu $P$ stożkowej porównujemy:
 
-- odległość od ogniska \(F\);
-- odległość od kierownicy \(d(P,l)\).
+- odległość od ogniska $F$;
+- odległość od kierownicy $d(P,l)$.
 
 Mimośród jest stałym stosunkiem
 
-\[
+$$
 \frac{d(P,F)}{d(P,l)}=e.
-\]
+$$
 
 Na wykładzie pokazujemy tę zależność na jednym punkcie i animujemy ruch punktu po krzywej. Student obserwuje, że obie odległości się zmieniają, ale ich stosunek pozostaje stały.
 
@@ -224,20 +224,20 @@ Nie przeprowadzamy pełnego algebraicznego wyprowadzenia równania każdej stoż
 
 #### Wizualizacja HTML
 
-Ognisko, kierownica, ruchomy punkt \(P\), dwa odcinki reprezentujące odległości oraz dynamicznie wyświetlany ich iloraz.
+Ognisko, kierownica, ruchomy punkt $P$, dwa odcinki reprezentujące odległości oraz dynamicznie wyświetlany ich iloraz.
 
 #### Minimalny przykład
 
-Wybieramy prostą konfigurację paraboli, dla której \(e=1\). Student widzi równość odległości od ogniska i kierownicy.
+Wybieramy prostą konfigurację paraboli, dla której $e=1$. Student widzi równość odległości od ogniska i kierownicy.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
 Student ma:
 
 1. sprawdzić warunek ognisko–kierownica dla kilku punktów na podanej krzywej;
-2. porównać przypadki \(e<1\), \(e=1\) i \(e>1\);
+2. porównać przypadki $e<1$, $e=1$ i $e>1$;
 3. przygotować rysunek z poprawnie zaznaczonymi odległościami;
-4. wyjaśnić, dlaczego sam kształt rysunku nie wystarcza do ustalenia wartości \(e\);
+4. wyjaśnić, dlaczego sam kształt rysunku nie wystarcza do ustalenia wartości $e$;
 5. odtworzyć jakościowo krzywą na podstawie zadanego ogniska, kierownicy i mimośrodu;
 6. wskazać, które elementy definicji są geometryczne, a które zależą od wybranego układu współrzędnych.
 

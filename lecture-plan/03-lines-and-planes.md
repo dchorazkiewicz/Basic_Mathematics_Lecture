@@ -14,7 +14,7 @@ Prosta jest głównym obiektem rozwijanym w pełni. Płaszczyzna pojawia się na
 
 ## Zakładany czas
 
-Około \(2\times45\) minut. Trzy główne idee wykładu to:
+Około $2\times45$ minut. Trzy główne idee wykładu to:
 
 1. prosta jest zbiorem generowanym przez punkt i kierunek;
 2. różne równania mogą opisywać ten sam obiekt;
@@ -28,41 +28,41 @@ Pełna technika przestrzenna, płaszczyzna przez trzy punkty, iloczyn wektorowy 
 
 #### Na wykładzie
 
-Zaczynamy od punktu \(P_0\) i niezerowego wektora kierunkowego \(v\). Punkt porusza się od \(P_0\) wzdłuż kierunku \(v\), a jego położenie opisuje
+Zaczynamy od punktu $P_0$ i niezerowego wektora kierunkowego $v$. Punkt porusza się od $P_0$ wzdłuż kierunku $v$, a jego położenie opisuje
 
-\[
+$$
 P(t)=P_0+tv.
-\]
+$$
 
-Parametr \(t\) nie jest abstrakcyjną literą. Określa:
+Parametr $t$ nie jest abstrakcyjną literą. Określa:
 
 - stronę ruchu przez znak;
-- odległość w jednostkach wektora \(v\) przez wartość bezwzględną;
-- punkt początkowy dla \(t=0\).
+- odległość w jednostkach wektora $v$ przez wartość bezwzględną;
+- punkt początkowy dla $t=0$.
 
 Dopiero potem zapisujemy postać współrzędnościową
 
-\[
+$$
 x=x_0+tv_1,\qquad y=y_0+tv_2.
-\]
+$$
 
 #### Wizualizacja HTML
 
-Punkt \(P_0\), wektor \(v\), suwak \(t\) i poruszający się punkt \(P(t)\). Na ekranie jednocześnie zmieniają się:
+Punkt $P_0$, wektor $v$, suwak $t$ i poruszający się punkt $P(t)$. Na ekranie jednocześnie zmieniają się:
 
 - wartość parametru;
 - współrzędne punktu;
-- długość i kierunek przesunięcia \(tv\).
+- długość i kierunek przesunięcia $tv$.
 
-Prowadzący zatrzymuje animację dla \(t=0\), \(t=1\), \(t=-1\) i jednej wartości ułamkowej.
+Prowadzący zatrzymuje animację dla $t=0$, $t=1$, $t=-1$ i jednej wartości ułamkowej.
 
 #### Minimalny przykład
 
-\[
+$$
 P_0=(1,2),\qquad v=(2,1).
-\]
+$$
 
-Wyznaczamy punkty dla \(t=0,1,-1,2\) i zaznaczamy je na jednej prostej.
+Wyznaczamy punkty dla $t=0,1,-1,2$ i zaznaczamy je na jednej prostej.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -87,37 +87,37 @@ Na jednej konkretnej prostej przechodzimy kolejno przez trzy opisy.
 
 #### Opis parametryczny
 
-\[
+$$
 P(t)=P_0+tv.
-\]
+$$
 
 Pokazuje, jak generować punkty.
 
 #### Nachylenie
 
-Jeżeli \(v=(v_1,v_2)\) i \(v_1\neq0\), to
+Jeżeli $v=(v_1,v_2)$ i $v_1\neq0$, to
 
-\[
+$$
 m=\frac{v_2}{v_1}=\tan\alpha.
-\]
+$$
 
-Trójkąt zmian współrzędnych musi być zaczepiony na badanej prostej, najlepiej w punkcie \(P_0\). Nachylenie opisuje zmianę \(y\) przypadającą na jednostkę zmiany \(x\), a geometrycznie jest tangensem kąta nachylenia.
+Trójkąt zmian współrzędnych musi być zaczepiony na badanej prostej, najlepiej w punkcie $P_0$. Nachylenie opisuje zmianę $y$ przypadającą na jednostkę zmiany $x$, a geometrycznie jest tangensem kąta nachylenia.
 
 #### Opis normalny
 
-Wektor \(n\) prostopadły do kierunku \(v\) pozwala zapisać
+Wektor $n$ prostopadły do kierunku $v$ pozwala zapisać
 
-\[
+$$
 n\cdot(P-P_0)=0.
-\]
+$$
 
 Po rozwinięciu otrzymujemy postać
 
-\[
+$$
 Ax+By=C,
-\]
+$$
 
-w której \((A,B)\) jest wektorem normalnym. Współczynniki równania otrzymują zatem interpretację geometryczną.
+w której $(A,B)$ jest wektorem normalnym. Współczynniki równania otrzymują zatem interpretację geometryczną.
 
 Nie tworzymy osobnego katalogu wzorów. Przez cały czas śledzimy tę samą prostą.
 
@@ -136,11 +136,11 @@ Przełączenie opisu nie zmienia rysunku prostej.
 
 Dla
 
-\[
+$$
 P_0=(1,1),\qquad v=(2,1)
-\]
+$$
 
-odczytujemy nachylenie \(m=\frac12\), wybieramy prosty wektor normalny, na przykład \(n=(1,-2)\), i zapisujemy równanie normalne.
+odczytujemy nachylenie $m=\frac12$, wybieramy prosty wektor normalny, na przykład $n=(1,-2)$, i zapisujemy równanie normalne.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -149,7 +149,7 @@ Student ma:
 1. przechodzić między postacią parametryczną, kierunkową i normalną dla prostych danych;
 2. odczytywać wektor kierunkowy i normalny z równania;
 3. wyznaczać kąt nachylenia tylko w przypadkach o prostych wartościach tangensa;
-4. rozpoznawać, kiedy postać \(y=mx+b\) nie jest wygodna lub nie istnieje;
+4. rozpoznawać, kiedy postać $y=mx+b$ nie jest wygodna lub nie istnieje;
 5. sprawdzać równoważność dwóch równań przez porównanie generowanego zbioru punktów;
 6. przygotować jedną kartę prezentacyjną pokazującą trzy reprezentacje tej samej prostej.
 
@@ -244,19 +244,19 @@ W workbooku pozostają rachunek, konstrukcja geometryczna, test prostopadłości
 
 Płaszczyzna nie jest nowym katalogiem. Powtarzamy schemat prostej:
 
-- punkt \(P_0\);
-- dwa niezależne kierunki \(u,v\);
+- punkt $P_0$;
+- dwa niezależne kierunki $u,v$;
 - wszystkie ich kombinacje.
 
-\[
+$$
 P(s,t)=P_0+su+tv.
-\]
+$$
 
 Pokazujemy, że dwa równoległe kierunki nie generują płaszczyzny, lecz tylko prostą. Następnie sygnalizujemy opis normalny
 
-\[
+$$
 n\cdot(P-P_0)=0,
-\]
+$$
 
 jako dokładnie tę samą ideę co dla prostej w płaszczyźnie.
 
@@ -264,7 +264,7 @@ Nie wyprowadzamy na wykładzie pełnej techniki iloczynu wektorowego ani płaszc
 
 #### Wizualizacja HTML
 
-Punkt \(P_0\), dwa wektory \(u,v\) i dwa suwaki \(s,t\). Student obserwuje generowanie fragmentu płaszczyzny. Po ustawieniu kierunków równoległych wizualizacja zapada się do prostej.
+Punkt $P_0$, dwa wektory $u,v$ i dwa suwaki $s,t$. Student obserwuje generowanie fragmentu płaszczyzny. Po ustawieniu kierunków równoległych wizualizacja zapada się do prostej.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -291,13 +291,13 @@ W `solution.md` powinny pozostać: konstrukcja z trzech punktów, obliczenie nor
 
 Podsumowujemy jeden wspólny schemat:
 
-\[
+$$
 \text{punkt}
 +
 \text{dozwolone kierunki}
 \longrightarrow
 \text{zbiór punktów}.
-\]
+$$
 
 - jeden kierunek generuje prostą;
 - dwa niezależne kierunki generują płaszczyznę;

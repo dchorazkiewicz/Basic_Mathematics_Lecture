@@ -14,7 +14,7 @@ Punktem wyjścia jest geometria euklidesowa istniejąca jeszcze bez współrzęd
 
 ## Zakładany czas
 
-Około \(2\times45\) minut. Strona HTML może zawierać materiał dodatkowy, ale podczas wykładu należy przeprowadzić w pełni tylko trzy zasadnicze idee:
+Około $2\times45$ minut. Strona HTML może zawierać materiał dodatkowy, ale podczas wykładu należy przeprowadzić w pełni tylko trzy zasadnicze idee:
 
 1. współrzędne są wyborem reprezentacji;
 2. geometria może zostać przekształcona w obliczenie;
@@ -69,7 +69,7 @@ Układ współrzędnych budujemy etapami. Każdy element pojawia się dlatego, �
 - orientacja rozróżnia strony dodatnie i ujemne;
 - skala zamienia długość geometryczną na liczbę.
 
-Dopiero po ustaleniu tych danych punkt otrzymuje zapis \((x,y)\).
+Dopiero po ustaleniu tych danych punkt otrzymuje zapis $(x,y)$.
 
 Następnie ten sam punkt pokazujemy w drugim układzie: przesuniętym albo z inną skalą. Punkt pozostaje ten sam, lecz jego współrzędne się zmieniają.
 
@@ -85,7 +85,7 @@ Prowadzący zatrzymuje animację w dwóch ustawieniach i pyta, co się zmieniło
 
 #### Minimalny przykład
 
-Punkt ma współrzędne \((2,1)\) w pierwszym układzie. Po przesunięciu początku o jedną jednostkę w prawo otrzymuje inne współrzędne. Przykład ma być policzony bez ogólnego wzoru zmiany współrzędnych.
+Punkt ma współrzędne $(2,1)$ w pierwszym układzie. Po przesunięciu początku o jedną jednostkę w prawo otrzymuje inne współrzędne. Przykład ma być policzony bez ogólnego wzoru zmiany współrzędnych.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -107,21 +107,21 @@ W `solution.md` muszą pozostać: rysunek, tabela współrzędnych, jedno sprawd
 
 #### Na wykładzie
 
-Dla dwóch punktów \(P=(x_1,y_1)\) i \(Q=(x_2,y_2)\) dobudowujemy trójkąt prostokątny. Długości przyprostokątnych są zmianami współrzędnych:
+Dla dwóch punktów $P=(x_1,y_1)$ i $Q=(x_2,y_2)$ dobudowujemy trójkąt prostokątny. Długości przyprostokątnych są zmianami współrzędnych:
 
-\[
+$$
 |x_2-x_1|,\qquad |y_2-y_1|.
-\]
+$$
 
 Z twierdzenia Pitagorasa otrzymujemy
 
-\[
+$$
 d(P,Q)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.
-\]
+$$
 
 Wzór nie może pojawić się przed rysunkiem. Celem jest pokazanie mechanizmu:
 
-\[
+$$
 \text{problem geometryczny}
 \longrightarrow
 \text{konstrukcja}
@@ -129,7 +129,7 @@ Wzór nie może pojawić się przed rysunkiem. Celem jest pokazanie mechanizmu:
 \text{równanie}
 \longrightarrow
 \text{wynik liczbowy}.
-\]
+$$
 
 #### Wizualizacja HTML
 
@@ -137,7 +137,7 @@ Dwa ruchome punkty, odcinek między nimi oraz automatycznie dobudowany trójkąt
 
 #### Minimalny przykład
 
-Punkty \(P=(1,1)\) i \(Q=(4,5)\). Przyprostokątne mają długości \(3\) i \(4\), więc odległość wynosi \(5\).
+Punkty $P=(1,1)$ i $Q=(4,5)$. Przyprostokątne mają długości $3$ i $4$, więc odległość wynosi $5$.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -163,40 +163,40 @@ Odwracamy dotychczasowy kierunek myślenia. Najpierw punkt otrzymywał liczby. T
 
 Zaczynamy od prostej funkcji, na przykład
 
-\[
+$$
 y=2x+1.
-\]
+$$
 
-Zmiana \(x\) generuje kolejne punkty \((x,2x+1)\), a ich zbiór tworzy wykres. Następnie pokazujemy drugi prosty warunek, na przykład
+Zmiana $x$ generuje kolejne punkty $(x,2x+1)$, a ich zbiór tworzy wykres. Następnie pokazujemy drugi prosty warunek, na przykład
 
-\[
+$$
 x^2+y^2=4,
-\]
+$$
 
-aby zasygnalizować, że nie każdy zbiór punktów jest wykresem jednej funkcji \(y=f(x)\).
+aby zasygnalizować, że nie każdy zbiór punktów jest wykresem jednej funkcji $y=f(x)$.
 
 Przecięcie dwóch obiektów zostaje krótko pokazane jako jednoczesne spełnienie dwóch warunków. Nie rozwijamy jeszcze pełnej techniki rozwiązywania układów.
 
 #### Wizualizacja HTML
 
-Pole wyboru wartości \(x\) generuje punkt na wykresie funkcji. Następnie przełącznik zmienia opis z funkcji na relację i pokazuje, że dla jednego \(x\) mogą istnieć dwie wartości \(y\).
+Pole wyboru wartości $x$ generuje punkt na wykresie funkcji. Następnie przełącznik zmienia opis z funkcji na relację i pokazuje, że dla jednego $x$ mogą istnieć dwie wartości $y$.
 
 #### Minimalny przykład
 
-Dla \(x=-1,0,1\) generujemy trzy punkty prostej \(y=2x+1\). Następnie sprawdzamy, które z kilku podanych punktów spełniają równanie okręgu \(x^2+y^2=4\).
+Dla $x=-1,0,1$ generujemy trzy punkty prostej $y=2x+1$. Następnie sprawdzamy, które z kilku podanych punktów spełniają równanie okręgu $x^2+y^2=4$.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
 Student ma samodzielnie rozwinąć trzy sposoby opisywania zbiorów punktów.
 
 1. **Funkcja:** wygenerować tabelę wartości i wykres prostej funkcji.
-2. **Relacja:** narysować okrąg albo inną prostą relację i wyjaśnić, dlaczego nie jest globalnie wykresem \(y=f(x)\).
+2. **Relacja:** narysować okrąg albo inną prostą relację i wyjaśnić, dlaczego nie jest globalnie wykresem $y=f(x)$.
 3. **Przecięcie:** znaleźć punkty spełniające dwa elementarne warunki jednocześnie.
 4. **Nierówność:** zaznaczyć obszar opisany prostą nierównością i wyjaśnić rolę brzegu.
 5. **Parametryzacja:** przygotować prosty zapis
-   \[
+   $$
    x=x(t),\qquad y=y(t)
-   \]
+   $$
    generujący odcinek albo okrąg oraz przedstawić kilka wartości parametru.
 
 W `solution.md` muszą znaleźć się wykresy, tabele lub lista wygenerowanych punktów oraz porównanie:

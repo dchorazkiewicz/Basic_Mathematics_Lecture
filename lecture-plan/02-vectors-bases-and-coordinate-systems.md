@@ -14,7 +14,7 @@ Wektor nie ma pojawić się jako para liczb pozbawiona znaczenia. Najpierw jest 
 
 ## Zakładany czas
 
-Około \(2\times45\) minut. Wykład ma przeprowadzić trzy główne idee:
+Około $2\times45$ minut. Wykład ma przeprowadzić trzy główne idee:
 
 1. wektor opisuje zmianę, a nie położenie;
 2. zmiany tworzą algebrę;
@@ -28,11 +28,11 @@ Iloczyn skalarny i rzut mają zostać pokazane pojęciowo, natomiast pełna tech
 
 #### Na wykładzie
 
-Zaczynamy od dwóch punktów \(P\) i \(Q\). Strzałka prowadząca z \(P\) do \(Q\) opisuje zmianę położenia:
+Zaczynamy od dwóch punktów $P$ i $Q$. Strzałka prowadząca z $P$ do $Q$ opisuje zmianę położenia:
 
-\[
+$$
 \overrightarrow{PQ}=Q-P.
-\]
+$$
 
 Współrzędne wektora odczytujemy jako informację:
 
@@ -43,7 +43,7 @@ Następnie tę samą strzałkę przesuwamy w inne miejsce. Zmienia się punkt za
 
 #### Wizualizacja HTML
 
-Dwa punkty \(P,Q\) oraz strzałka między nimi. Po naciśnięciu przycisku strzałka zostaje równolegle przesunięta w inne miejsce. Na ekranie pozostają te same współrzędne wektora.
+Dwa punkty $P,Q$ oraz strzałka między nimi. Po naciśnięciu przycisku strzałka zostaje równolegle przesunięta w inne miejsce. Na ekranie pozostają te same współrzędne wektora.
 
 Prowadzący pyta:
 
@@ -53,11 +53,11 @@ Prowadzący pyta:
 
 #### Minimalny przykład
 
-Dla \(P=(1,2)\) i \(Q=(4,3)\):
+Dla $P=(1,2)$ i $Q=(4,3)$:
 
-\[
+$$
 \overrightarrow{PQ}=(3,1).
-\]
+$$
 
 Tę samą zmianę pokazujemy od innego punktu początkowego.
 
@@ -79,16 +79,16 @@ W `solution.md` pozostają obliczenia, jeden wspólny rysunek i definicyjny kome
 
 #### Na wykładzie
 
-Dodawanie wektorów wprowadzamy jako wykonanie dwóch zmian kolejno. Jeżeli \(u\) prowadzi do punktu pośredniego, a \(v\) od punktu pośredniego do końcowego, to \(u+v\) opisuje zmianę całkowitą.
+Dodawanie wektorów wprowadzamy jako wykonanie dwóch zmian kolejno. Jeżeli $u$ prowadzi do punktu pośredniego, a $v$ od punktu pośredniego do końcowego, to $u+v$ opisuje zmianę całkowitą.
 
-Wektor przeciwny \(-u\) cofa zmianę. Odejmowanie jest dodawaniem zmiany przeciwnej.
+Wektor przeciwny $-u$ cofa zmianę. Odejmowanie jest dodawaniem zmiany przeciwnej.
 
 Mnożenie przez skalar pokazujemy jako sterowanie wielkością i zwrotem:
 
-- \(|a|>1\) zwiększa zmianę;
-- \(0<|a|<1\) ją zmniejsza;
-- \(a<0\) dodatkowo odwraca zwrot;
-- \(a=0\) usuwa zmianę.
+- $|a|>1$ zwiększa zmianę;
+- $0<|a|<1$ ją zmniejsza;
+- $a<0$ dodatkowo odwraca zwrot;
+- $a=0$ usuwa zmianę.
 
 Wzory współrzędnościowe pojawiają się dopiero po zrozumieniu ruchu geometrycznego.
 
@@ -96,22 +96,22 @@ Wzory współrzędnościowe pojawiają się dopiero po zrozumieniu ruchu geometr
 
 Jedna animowana historia ruchu punktu:
 
-1. wykonanie zmiany \(u\);
-2. wykonanie zmiany \(v\);
-3. pokazanie zmiany całkowitej \(u+v\);
-4. suwak sterujący skalarem \(a\) w wektorze \(au\).
+1. wykonanie zmiany $u$;
+2. wykonanie zmiany $v$;
+3. pokazanie zmiany całkowitej $u+v$;
+4. suwak sterujący skalarem $a$ w wektorze $au$.
 
 #### Minimalny przykład
 
-\[
+$$
 u=(2,1),\qquad v=(-1,2).
-\]
+$$
 
 Student najpierw przewiduje wynik na rysunku, a dopiero potem oblicza
 
-\[
+$$
 u+v=(1,3).
-\]
+$$
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -136,23 +136,23 @@ W workbooku muszą znaleźć się rachunki, rysunek łamanej oraz jedno sprawdze
 
 Długość wektora wynika z twierdzenia Pitagorasa:
 
-\[
+$$
 \|u\|=\sqrt{u_1^2+u_2^2}.
-\]
+$$
 
 Wektor jednostkowy oddziela kierunek od wielkości. Student ma zobaczyć, że można najpierw wybrać kierunek, a potem niezależnie sterować skalą.
 
 Iloczyn skalarny wprowadzamy jako liczbowy pomiar wzajemnego ustawienia dwóch kierunków:
 
-\[
+$$
 u\cdot v=\|u\|\,\|v\|\cos\alpha.
-\]
+$$
 
 Dopiero potem pokazujemy zapis współrzędnościowy
 
-\[
+$$
 u\cdot v=u_1v_1+u_2v_2.
-\]
+$$
 
 Najważniejsza na wykładzie jest interpretacja znaku:
 
@@ -173,11 +173,11 @@ Dwa wektory z możliwością obracania jednego z nich. Obok dynamicznie zmieniaj
 
 #### Minimalny przykład
 
-\[
+$$
 u=(1,0),\qquad v=(1,1),\qquad w=(0,1).
-\]
+$$
 
-Porównujemy \(u\cdot v\) oraz \(u\cdot w\), aby zobaczyć różnicę między kątem ostrym i prostym.
+Porównujemy $u\cdot v$ oraz $u\cdot w$, aby zobaczyć różnicę między kątem ostrym i prostym.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -201,15 +201,15 @@ W `solution.md` pozostają obliczenia, tabela interpretacyjna i co najmniej jede
 
 Rzut pojawia się jako odpowiedź na pytanie:
 
-> Jaka część wektora \(u\) odbywa się w kierunku wektora \(v\)?
+> Jaka część wektora $u$ odbywa się w kierunku wektora $v$?
 
-Na rysunku rozkładamy \(u\) na składową równoległą do \(v\) i składową prostopadłą. Pokazujemy jeden zapis:
+Na rysunku rozkładamy $u$ na składową równoległą do $v$ i składową prostopadłą. Pokazujemy jeden zapis:
 
-\[
+$$
 \operatorname{proj}_v u
 =
 \frac{u\cdot v}{v\cdot v}v.
-\]
+$$
 
 Nie przeprowadzamy pełnego katalogu przypadków ani wielu obliczeń. Wzór ma zostać odczytany jako:
 
@@ -218,7 +218,7 @@ Nie przeprowadzamy pełnego katalogu przypadków ani wielu obliczeń. Wzór ma z
 
 #### Wizualizacja HTML
 
-Wektor \(u\), obracany kierunek \(v\), opuszczona prostopadła i dynamicznie zmieniający się rzut. Student obserwuje, kiedy rzut jest dodatni, zerowy albo skierowany przeciwnie do \(v\).
+Wektor $u$, obracany kierunek $v$, opuszczona prostopadła i dynamicznie zmieniający się rzut. Student obserwuje, kiedy rzut jest dodatni, zerowy albo skierowany przeciwnie do $v$.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
@@ -228,11 +228,11 @@ Student ma:
 
 1. obliczyć kilka rzutów na kierunki osiowe i nieosiowe;
 2. narysować rozkład
-   \[
+   $$
    u=\operatorname{proj}_v u+u_\perp;
-   \]
-3. sprawdzić, że \(u_\perp\cdot v=0\);
-4. porównać rzut na \(v\) i na \(-v\);
+   $$
+3. sprawdzić, że $u_\perp\cdot v=0$;
+4. porównać rzut na $v$ i na $-v$;
 5. znaleźć przykład, w którym rzut jest wektorem zerowym;
 6. przygotować krótkie wyjaśnienie wizualne pojęcia rzutu.
 
@@ -250,9 +250,9 @@ Po dodawaniu i skalowaniu stawiamy pytanie:
 
 Kombinacja liniowa
 
-\[
+$$
 a_1v_1+\cdots+a_kv_k
-\]
+$$
 
 opisuje wszystkie zmiany tworzone z wybranych wektorów.
 
@@ -267,11 +267,11 @@ Następnie ten sam wektor zapisujemy w bazie standardowej oraz w jednej prostej 
 
 #### Wizualizacja HTML
 
-Dwa suwaki sterują współczynnikami \(a,b\) w wyrażeniu
+Dwa suwaki sterują współczynnikami $a,b$ w wyrażeniu
 
-\[
+$$
 av_1+bv_2.
-\]
+$$
 
 Student obserwuje punkt końcowy. Następnie jeden z wektorów bazowych obraca się, a współrzędne tej samej strzałki zmieniają się bez zmiany samego wektora.
 
@@ -279,11 +279,11 @@ Student obserwuje punkt końcowy. Następnie jeden z wektorów bazowych obraca s
 
 Dla
 
-\[
+$$
 v_1=(1,0),\qquad v_2=(1,1)
-\]
+$$
 
-zapisujemy prosty wektor, na przykład \((3,2)\), jako kombinację \(av_1+bv_2\).
+zapisujemy prosty wektor, na przykład $(3,2)$, jako kombinację $av_1+bv_2$.
 
 #### Bezpośrednia kontynuacja na ćwiczeniach
 
