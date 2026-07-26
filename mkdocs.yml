@@ -93,7 +93,28 @@ nav:
       - Problem 19 · Line-plane intersection: exercises-03/problem-19/index.md
       - Problem 20 · Choosing a representation: exercises-03/problem-20/index.md
   - Lecture 04 · Conic Sections and Mathematical Models: lecture-04/index.md
-  - Exercises 04 · Conic Sections and Mathematical Models: exercises-04/index.md
+  - Exercises 04 · Conic Sections and Mathematical Models:
+      - Exercise set overview: exercises-04/index.md
+      - Problem 01 · Parametrized circle: exercises-04/problem-01/index.md
+      - Problem 02 · Parametrized ellipse: exercises-04/problem-02/index.md
+      - Problem 03 · Parametrized parabola: exercises-04/problem-03/index.md
+      - Problem 04 · Parameter interval and arc: exercises-04/problem-04/index.md
+      - Problem 05 · Centres and semiaxes: exercises-04/problem-05/index.md
+      - Problem 06 · Ellipse parameter changes: exercises-04/problem-06/index.md
+      - Problem 07 · Cartesian and radial coordinates: exercises-04/problem-07/index.md
+      - Problem 08 · Radial ellipse: exercises-04/problem-08/index.md
+      - Problem 09 · Classifying radial conics: exercises-04/problem-09/index.md
+      - Problem 10 · Focus-directrix parabola: exercises-04/problem-10/index.md
+      - Problem 11 · Three circle parametrizations: exercises-04/problem-11/index.md
+      - Problem 12 · Parameters of curve and family: exercises-04/problem-12/index.md
+      - Problem 13 · Parametric to Cartesian: exercises-04/problem-13/index.md
+      - Problem 14 · Transition at eccentricity one: exercises-04/problem-14/index.md
+      - Problem 15 · Deriving radial conic equation: exercises-04/problem-15/index.md
+      - Problem 16 · Cartesian and focal ellipse: exercises-04/problem-16/index.md
+      - Problem 17 · Three eccentricities: exercises-04/problem-17/index.md
+      - Problem 18 · Same ellipse, different motions: exercises-04/problem-18/index.md
+      - Problem 19 · Trajectory model audit: exercises-04/problem-19/index.md
+      - Problem 20 · Complete conic-model note: exercises-04/problem-20/index.md
   - Exercise Set Template: exercises/template.md
   - Authoring and deployment: authoring-guide.md
 
