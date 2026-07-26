@@ -30,7 +30,7 @@ $$
 $$
 
 1. Record the results in one table.
-2. Explain numerically why $r(\pi)$ is not a finite radial point in cases C and D.
+2. Explain why $\theta=\pi$ does not produce an admissible radial point in cases C and D. Distinguish a zero denominator from a negative value of $r$.
 3. Draw a qualitative sketch of each conic or conic branch.
 
 <div class="required-record" markdown>
