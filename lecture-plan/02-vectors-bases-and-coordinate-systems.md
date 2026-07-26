@@ -2,95 +2,251 @@
 
 ## Rola wykładu w całym kursie
 
-Pierwszy wykład pokazał, jak opisywać położenie. Drugi ma pokazać, że matematyka potrzebuje osobnego języka do opisu zmiany. Punkt mówi, gdzie jesteśmy. Nie mówi jednak sam z siebie, jak przejść z jednego miejsca do drugiego, jaka jest wielkość tego przejścia ani jaki ma ono kierunek.
+Pierwszy wykład pokazał, jak opisywać położenie. Drugi wprowadza osobny język do opisu zmiany.
 
-Wektor pojawia się więc nie jako kolejna definicja z programu, lecz jako odpowiedź na realną lukę pojęciową pozostawioną przez współrzędne punktów.
+> Punkt opisuje stan, a wektor opisuje zmianę stanu.
+
+Wektor nie ma pojawić się jako para liczb pozbawiona znaczenia. Najpierw jest przesunięciem: prowadzi z jednego punktu do drugiego, ma kierunek, zwrot i wielkość. Dopiero później otrzymuje współrzędne i staje się obiektem, na którym można wykonywać działania algebraiczne.
 
 ## Główne pytanie
 
-> Jak opisać zmianę położenia tak, aby można ją było mierzyć, dodawać, skalować i rozkładać na prostsze kierunki?
+> Jak opisać zmianę tak, aby można ją było składać, odwracać, skalować, mierzyć i rozkładać na podstawowe kierunki?
 
-## Centralna idea
+## Zakładany czas
 
-> Punkt opisuje stan, a wektor opisuje zmianę.
+Około \(2\times45\) minut. Wykład ma przeprowadzić trzy główne idee:
 
-Wektor jest klasą równoważnych przesunięć. Dwie strzałki zaczepione w różnych miejscach mogą reprezentować ten sam wektor, jeśli mają ten sam kierunek, zwrot i długość. To odróżnienie obiektu od jego reprezentacji jest równie ważne jak rozróżnienie punktu i jego współrzędnych w wykładzie pierwszym.
+1. wektor opisuje zmianę, a nie położenie;
+2. zmiany tworzą algebrę;
+3. baza pozwala kodować dowolną zmianę za pomocą podstawowych kierunków.
 
-Druga wielka idea brzmi:
+Iloczyn skalarny i rzut mają zostać pokazane pojęciowo, natomiast pełna technika rachunkowa będzie rozwijana na ćwiczeniach.
 
-> Zmiany tworzą algebrę.
+## Liniowy plan wykładu i ćwiczeń
 
-Można je składać, odwracać, skalować, mierzyć, porównywać i rozkładać na składowe. W ten sposób algebra nie opisuje już tylko położenia, ale również działanie.
+### 1. Od dwóch punktów do jednej zmiany — około 15 minut
 
-## Narracja wykładu
+#### Na wykładzie
 
-### 1. Od dwóch punktów do jednej zmiany
-
-Zaczynamy od dwóch punktów \(P\) i \(Q\). Różnica ich współrzędnych opisuje przejście z \(P\) do \(Q\):
+Zaczynamy od dwóch punktów \(P\) i \(Q\). Strzałka prowadząca z \(P\) do \(Q\) opisuje zmianę położenia:
 
 \[
 \overrightarrow{PQ}=Q-P.
 \]
 
-To przejście należy interpretować geometrycznie, nie wyłącznie rachunkowo. Współrzędne wektora mówią, o ile zmieniamy każdą współrzędną punktu.
+Współrzędne wektora odczytujemy jako informację:
 
-### 2. Ten sam wektor w różnych miejscach
+- o ile zmienia się pierwsza współrzędna;
+- o ile zmienia się druga współrzędna.
 
-Należy wyraźnie pokazać, że wektor nie jest przywiązany do jednego punktu zaczepienia. Wektor opisuje zmianę, a nie konkretny odcinek w przestrzeni.
+Następnie tę samą strzałkę przesuwamy w inne miejsce. Zmienia się punkt zaczepienia reprezentacji, ale nie zmienia się sama zmiana.
 
-Jest to pierwszy krok w stronę abstrakcji: rezygnujemy z części informacji o reprezentacji i zachowujemy tylko to, co istotne dla zmiany.
+#### Wizualizacja HTML
 
-### 3. Dodawanie jako składanie zmian
+Dwa punkty \(P,Q\) oraz strzałka między nimi. Po naciśnięciu przycisku strzałka zostaje równolegle przesunięta w inne miejsce. Na ekranie pozostają te same współrzędne wektora.
 
-Dodawanie wektorów nie powinno być przedstawione jako arbitralne dodawanie współrzędnych. Najpierw powinno oznaczać wykonanie jednej zmiany, a następnie drugiej.
+Prowadzący pyta:
 
-Jeżeli \(u\) prowadzi z punktu początkowego do punktu pośredniego, a \(v\) z punktu pośredniego do końcowego, to \(u+v\) opisuje zmianę całkowitą.
+- czy zmienił się odcinek;
+- czy zmieniło się przesunięcie;
+- jaką informację zachowujemy, a jaką odrzucamy.
 
-W tym miejscu algebra otrzymuje sens operacyjny.
+#### Minimalny przykład
 
-### 4. Wektor przeciwny i odejmowanie
-
-Wektor \(-u\) odwraca zmianę. Odejmowanie \(u-v\) jest dodaniem zmiany przeciwnej. Te operacje należy osadzić w obrazie ruchu, aby student rozumiał ich znaczenie, zanim zacznie wykonywać działania na współrzędnych.
-
-### 5. Skalowanie jako zmiana intensywności i zwrotu
-
-Mnożenie wektora przez skalar zmienia jego długość, a dla skalaru ujemnego także zwrot. To najprostszy przykład parametrycznej rodziny wektorów i pierwszy kontakt z ideą, że jeden obiekt może generować całą prostą kierunkową.
-
-Ta obserwacja stanie się bezpośrednim fundamentem równania parametrycznego prostej w wykładzie trzecim.
-
-### 6. Długość i kierunek
-
-Długość wektora wynika z geometrii euklidesowej i twierdzenia Pitagorasa. Wektor jednostkowy oddziela kierunek od wielkości.
-
-Należy podkreślić, że rozdzielenie długości i kierunku jest matematycznie użyteczne: możemy zachować sam kierunek i niezależnie sterować skalą.
-
-### 7. Równoległość, prostopadłość i iloczyn skalarny
-
-Test równoległości wynika z pytania, czy jeden wektor jest skalarną wielokrotnością drugiego.
-
-Iloczyn skalarny powinien pojawić się jako narzędzie do badania wzajemnego ustawienia dwóch zmian. Jego związek z cosinusem kąta pozwala mierzyć zgodność kierunków, a przypadek zerowy daje test prostopadłości.
-
-Nie chodzi o sam wzór
+Dla \(P=(1,2)\) i \(Q=(4,3)\):
 
 \[
-u\cdot v=u_1v_1+u_2v_2,
+\overrightarrow{PQ}=(3,1).
 \]
 
-lecz o fakt, że relację geometryczną można wyrazić jedną liczbą.
+Tę samą zmianę pokazujemy od innego punktu początkowego.
 
-### 8. Rzut jako część zmiany w wybranym kierunku
+#### Bezpośrednia kontynuacja na ćwiczeniach
 
-Rzut wektora na inny wektor odpowiada na pytanie:
+Student ma:
 
-> Jaka część tej zmiany odbywa się w zadanym kierunku?
+1. obliczyć wektory między kilkoma parami punktów;
+2. znaleźć różne pary punktów wyznaczające ten sam wektor;
+3. narysować trzy reprezentacje jednej zmiany w różnych miejscach;
+4. rozstrzygnąć, kiedy dwie strzałki reprezentują ten sam wektor;
+5. zapisać własnymi słowami różnicę między odcinkiem skierowanym a wektorem swobodnym.
 
-To pojęcie jest ważne dla geometrii, mechaniki i późniejszej analizy danych. Powinno zostać pokazane za pomocą prostego rysunku oraz związku z iloczynem skalarnym.
+W `solution.md` pozostają obliczenia, jeden wspólny rysunek i definicyjny komentarz studenta.
 
-Rzut nie jest odrębnym dodatkiem do wykładu. Jest naturalną konsekwencją możliwości mierzenia zgodności kierunków.
+---
 
-### 9. Kombinacje liniowe i baza
+### 2. Dodawanie, odwracanie i skalowanie zmian — około 20 minut
 
-Po poznaniu dodawania i skalowania pojawia się pytanie, jakie zmiany można zbudować z kilku ustalonych kierunków.
+#### Na wykładzie
+
+Dodawanie wektorów wprowadzamy jako wykonanie dwóch zmian kolejno. Jeżeli \(u\) prowadzi do punktu pośredniego, a \(v\) od punktu pośredniego do końcowego, to \(u+v\) opisuje zmianę całkowitą.
+
+Wektor przeciwny \(-u\) cofa zmianę. Odejmowanie jest dodawaniem zmiany przeciwnej.
+
+Mnożenie przez skalar pokazujemy jako sterowanie wielkością i zwrotem:
+
+- \(|a|>1\) zwiększa zmianę;
+- \(0<|a|<1\) ją zmniejsza;
+- \(a<0\) dodatkowo odwraca zwrot;
+- \(a=0\) usuwa zmianę.
+
+Wzory współrzędnościowe pojawiają się dopiero po zrozumieniu ruchu geometrycznego.
+
+#### Wizualizacja HTML
+
+Jedna animowana historia ruchu punktu:
+
+1. wykonanie zmiany \(u\);
+2. wykonanie zmiany \(v\);
+3. pokazanie zmiany całkowitej \(u+v\);
+4. suwak sterujący skalarem \(a\) w wektorze \(au\).
+
+#### Minimalny przykład
+
+\[
+u=(2,1),\qquad v=(-1,2).
+\]
+
+Student najpierw przewiduje wynik na rysunku, a dopiero potem oblicza
+
+\[
+u+v=(1,3).
+\]
+
+#### Bezpośrednia kontynuacja na ćwiczeniach
+
+Pierwszy blok zadań ma rozwijać technikę, ale zachować interpretację ruchu.
+
+Student ma:
+
+1. obliczyć sumy, różnice i wielokrotności prostych wektorów;
+2. narysować drogę odpowiadającą kilku kolejnym zmianom;
+3. porównać wynik obliczony współrzędnościowo z końcem narysowanej drogi;
+4. znaleźć dwa różne ciągi zmian prowadzące do tego samego wyniku;
+5. sprawdzić na przykładzie przemienność dodawania oraz wyjaśnić ją geometrycznie;
+6. zbudować przykład, w którym skalar ujemny zmienia zwrot wektora.
+
+W workbooku muszą znaleźć się rachunki, rysunek łamanej oraz jedno sprawdzenie wyniku przez porównanie położenia początkowego i końcowego.
+
+---
+
+### 3. Długość, kierunek i iloczyn skalarny — około 20 minut
+
+#### Na wykładzie
+
+Długość wektora wynika z twierdzenia Pitagorasa:
+
+\[
+\|u\|=\sqrt{u_1^2+u_2^2}.
+\]
+
+Wektor jednostkowy oddziela kierunek od wielkości. Student ma zobaczyć, że można najpierw wybrać kierunek, a potem niezależnie sterować skalą.
+
+Iloczyn skalarny wprowadzamy jako liczbowy pomiar wzajemnego ustawienia dwóch kierunków:
+
+\[
+u\cdot v=\|u\|\,\|v\|\cos\alpha.
+\]
+
+Dopiero potem pokazujemy zapis współrzędnościowy
+
+\[
+u\cdot v=u_1v_1+u_2v_2.
+\]
+
+Najważniejsza na wykładzie jest interpretacja znaku:
+
+- dodatni — kąt ostry;
+- zero — prostopadłość;
+- ujemny — kąt rozwarty.
+
+Nie rozwijamy dużej liczby rachunków na kąty.
+
+#### Wizualizacja HTML
+
+Dwa wektory z możliwością obracania jednego z nich. Obok dynamicznie zmieniają się:
+
+- kąt;
+- wartość cosinusa;
+- wartość iloczynu skalarnego;
+- opis „dodatni / zero / ujemny”.
+
+#### Minimalny przykład
+
+\[
+u=(1,0),\qquad v=(1,1),\qquad w=(0,1).
+\]
+
+Porównujemy \(u\cdot v\) oraz \(u\cdot w\), aby zobaczyć różnicę między kątem ostrym i prostym.
+
+#### Bezpośrednia kontynuacja na ćwiczeniach
+
+Student ma:
+
+1. obliczać długości prostych wektorów;
+2. normalizować wybrane wektory i sprawdzać długość otrzymanego wyniku;
+3. obliczać iloczyny skalarne;
+4. klasyfikować kąt jako ostry, prosty lub rozwarty bez wyznaczania samego kąta;
+5. wyznaczać kąt tylko w kilku przypadkach o prostych wartościach;
+6. zbudować tabelę pokazującą zależność między znakiem iloczynu skalarnego a wzajemnym ustawieniem wektorów;
+7. sprawdzić wyniki na rysunku.
+
+W `solution.md` pozostają obliczenia, tabela interpretacyjna i co najmniej jeden rysunek kontrolny.
+
+---
+
+### 4. Rzut jako składowa zmiany w wybranym kierunku — około 10 minut
+
+#### Na wykładzie
+
+Rzut pojawia się jako odpowiedź na pytanie:
+
+> Jaka część wektora \(u\) odbywa się w kierunku wektora \(v\)?
+
+Na rysunku rozkładamy \(u\) na składową równoległą do \(v\) i składową prostopadłą. Pokazujemy jeden zapis:
+
+\[
+\operatorname{proj}_v u
+=
+\frac{u\cdot v}{v\cdot v}v.
+\]
+
+Nie przeprowadzamy pełnego katalogu przypadków ani wielu obliczeń. Wzór ma zostać odczytany jako:
+
+1. pomiar zgodności kierunków przez iloczyn skalarny;
+2. zamiana tej informacji na wielokrotność wybranego kierunku.
+
+#### Wizualizacja HTML
+
+Wektor \(u\), obracany kierunek \(v\), opuszczona prostopadła i dynamicznie zmieniający się rzut. Student obserwuje, kiedy rzut jest dodatni, zerowy albo skierowany przeciwnie do \(v\).
+
+#### Bezpośrednia kontynuacja na ćwiczeniach
+
+Pełna technika rzutów zostaje przeniesiona na ćwiczenia.
+
+Student ma:
+
+1. obliczyć kilka rzutów na kierunki osiowe i nieosiowe;
+2. narysować rozkład
+   \[
+   u=\operatorname{proj}_v u+u_\perp;
+   \]
+3. sprawdzić, że \(u_\perp\cdot v=0\);
+4. porównać rzut na \(v\) i na \(-v\);
+5. znaleźć przykład, w którym rzut jest wektorem zerowym;
+6. przygotować krótkie wyjaśnienie wizualne pojęcia rzutu.
+
+W workbooku muszą znaleźć się pełne rachunki, rozkład wektora, kontrola prostopadłości oraz rysunek.
+
+---
+
+### 5. Kombinacje liniowe i baza — około 20 minut
+
+#### Na wykładzie
+
+Po dodawaniu i skalowaniu stawiamy pytanie:
+
+> Jakie zmiany można zbudować z kilku ustalonych kierunków?
 
 Kombinacja liniowa
 
@@ -98,51 +254,76 @@ Kombinacja liniowa
 a_1v_1+\cdots+a_kv_k
 \]
 
-opisuje wszystkie zmiany konstruowane z wybranych wektorów.
+opisuje wszystkie zmiany tworzone z wybranych wektorów.
 
-Baza jest minimalnym zestawem niezależnych kierunków pozwalającym opisać każdą zmianę w danej przestrzeni. Nie powinna być przedstawiona jako formalizm sam dla siebie. Jest odpowiedzią na pytanie:
+Na płaszczyźnie pokazujemy dwa przypadki:
 
-> Jak opisać dowolną zmianę za pomocą niewielkiej liczby podstawowych zmian?
+- dwa równoległe kierunki generują tylko jedną prostą kierunkową;
+- dwa nierównoległe kierunki pozwalają opisać każdy wektor płaszczyzny.
 
-### 10. Współrzędne zależą od bazy
+Baza zostaje przedstawiona jako minimalny zestaw niezależnych kierunków wystarczający do opisu dowolnej zmiany.
 
-Tak jak współrzędne punktu zależały od układu współrzędnych, tak współrzędne wektora zależą od wybranej bazy. Sam wektor pozostaje ten sam, zmienia się jego opis.
+Następnie ten sam wektor zapisujemy w bazie standardowej oraz w jednej prostej bazie niestandardowej. Nie rozwijamy ogólnej teorii macierzy zmiany bazy.
 
-Na tym poziomie wystarczy prosty przykład numeryczny. Nie należy rozbudowywać ogólnej teorii zmiany bazy ponad to, co jest potrzebne do zobaczenia idei.
+#### Wizualizacja HTML
 
-## Zakres i dyscyplina
+Dwa suwaki sterują współczynnikami \(a,b\) w wyrażeniu
 
-Ten wykład jest szeroki, ale jego elementy tworzą jedną historię. Nie należy usuwać podstawowych operacji, długości, kierunku, iloczynu skalarnego, rzutu ani bazy, ponieważ każdy z tych elementów rozwija jedną wspólną ideę: algebra zmian.
+\[
+av_1+bv_2.
+\]
 
-Należy natomiast ograniczać formalizm, dowody techniczne i uogólnienia trójwymiarowe, jeśli nie służą bezpośrednio narracji. Przestrzeń trójwymiarowa może pojawiać się jako naturalne rozszerzenie, ale nie powinna dominować wykładu.
+Student obserwuje punkt końcowy. Następnie jeden z wektorów bazowych obraca się, a współrzędne tej samej strzałki zmieniają się bez zmiany samego wektora.
 
-## Minimalne środki dydaktyczne
+#### Minimalny przykład
 
-Przykłady powinny opierać się na małych współrzędnych i czytelnych konfiguracjach geometrycznych. Celem nie jest wykonywanie długich rachunków, lecz rozpoznawanie znaczenia operacji.
+Dla
 
-Student powinien na jednym prostym przykładzie zobaczyć:
+\[
+v_1=(1,0),\qquad v_2=(1,1)
+\]
 
-- różnicę między punktem a wektorem,
-- składanie dwóch zmian,
-- skalowanie kierunku,
-- pomiar długości i kąta,
-- wydzielanie składowej w zadanym kierunku,
-- zapis tej samej zmiany w innej bazie.
+zapisujemy prosty wektor, na przykład \((3,2)\), jako kombinację \(av_1+bv_2\).
 
-## Rola wizualizacji HTML
+#### Bezpośrednia kontynuacja na ćwiczeniach
 
-Interaktywne rysunki są szczególnie wartościowe w tym wykładzie. Można przesuwać punkty i obserwować niezmienność wektora, składać przesunięcia, zmieniać skalar suwakiem, obracać wektory i śledzić zmianę iloczynu skalarnego oraz rzutu.
+Student ma:
 
-Wizualizacja bazy powinna pozwalać zmieniać wektory bazowe i obserwować, jak współrzędne tej samej strzałki zmieniają się bez zmiany samego wektora.
+1. rozstrzygać, czy podany wektor jest kombinacją wybranych kierunków;
+2. porównywać przypadek kierunków niezależnych i równoległych;
+3. wyznaczać współczynniki kombinacji liniowej w prostych bazach;
+4. zapisywać ten sam wektor w dwóch bazach;
+5. sprawdzać wynik przez odtworzenie wektora z kombinacji;
+6. przygotować tabelę: „wektor geometryczny — baza — współrzędne”;
+7. wyjaśnić, dlaczego współrzędne zależą od bazy, choć wektor się nie zmienia.
 
-## Co student powinien zapamiętać po latach
+Jedno z zadań powinno zakończyć się krótką prezentacją przygotowaną przez studenta. W `solution.md` pozostają obliczenia, wizualizacja lub rysunek, kontrola wyniku i interpretacja.
 
-> Wektor jest matematycznym opisem zmiany. Zmiany można składać, skalować, mierzyć, porównywać i rozkładać na podstawowe kierunki.
+---
+
+### 6. Domknięcie wykładu — około 5 minut
+
+#### Na wykładzie
+
+Wracamy do jednej historii ruchu punktu i pokazujemy, że poznane pojęcia nie są osobnymi tematami:
+
+- wektor zapisuje zmianę;
+- dodawanie składa zmiany;
+- skalar steruje ich wielkością i zwrotem;
+- długość i iloczyn skalarny mierzą zmiany;
+- rzut wydziela składową;
+- baza pozwala budować każdą zmianę z podstawowych kierunków.
+
+Student zapisuje końcową zasadę:
+
+> Wektor jest matematycznym opisem zmiany, a współrzędne wektora są opisem tej zmiany względem wybranej bazy.
+
+## Materiał opcjonalny w HTML
+
+Uogólnienia trójwymiarowe i ogólna teoria przestrzeni liniowych mogą pozostać jako rozszerzenie. Iloczyn wektorowy nie jest częścią tego wykładu; pojawi się dopiero tam, gdzie będzie potrzebny do konstrukcji wektora normalnego płaszczyzny.
 
 ## Most do wykładu 03
 
-Mamy już punkty oraz kierunki. Możemy więc zadać pytanie:
+Mamy już punkty oraz kierunki i potrafimy tworzyć ich kombinacje.
 
 > Jak za pomocą punktu i dozwolonych kierunków generować całe obiekty geometryczne?
-
-To pytanie prowadzi bezpośrednio do prostych i płaszczyzn.
