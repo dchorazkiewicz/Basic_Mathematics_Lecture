@@ -48,5 +48,3 @@ Include the classification table, the special-angle calculations and four labell
 Check the sign of the denominator before accepting a value as a radial distance under the convention $r\ge0$.
 
 </div>
-
-<!-- Final validation trigger for Exercise Set 04. -->
