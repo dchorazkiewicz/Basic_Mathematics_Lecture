@@ -14,31 +14,78 @@ def normalize_text(text: str) -> tuple[str, list[str]]:
     normalized: list[str] = []
     changes: list[str] = []
     in_fence = False
+    index = 0
 
-    for number, line in enumerate(lines, start=1):
+    while index < len(lines):
+        line = lines[index]
         stripped = line.strip()
+        number = index + 1
 
         if stripped.startswith("```"):
             in_fence = not in_fence
             normalized.append(line)
+            index += 1
             continue
 
         if in_fence:
             normalized.append(line)
+            index += 1
             continue
 
         same_line = SAME_LINE_DISPLAY.match(line)
         if same_line:
             normalized.extend(["$$", same_line.group(1).strip(), "$$"])
             changes.append(f"line {number}: split a one-line display formula")
+            index += 1
             continue
 
-        if stripped == "$$" and line != "$$":
+        if stripped != "$$":
+            normalized.append(line)
+            index += 1
+            continue
+
+        closing = index + 1
+        while closing < len(lines) and lines[closing].strip() != "$$":
+            closing += 1
+
+        if closing >= len(lines):
             normalized.append("$$")
-            changes.append(f"line {number}: removed indentation around a display delimiter")
+            if line != "$$":
+                changes.append(
+                    f"line {number}: removed indentation around an unmatched display delimiter"
+                )
+            index += 1
             continue
 
-        normalized.append(line)
+        content = lines[index + 1 : closing]
+        previous_is_text = bool(normalized and normalized[-1].strip())
+
+        if previous_is_text and len(content) == 1 and content[0].strip():
+            formula = content[0].strip()
+            previous = normalized.pop().rstrip()
+            normalized.append(f"{previous} ${formula}$")
+            changes.append(
+                f"lines {number}-{closing + 1}: converted display math adjacent to text into inline math"
+            )
+            index = closing + 1
+            continue
+
+        if previous_is_text:
+            normalized.append("")
+            changes.append(
+                f"line {number}: inserted a blank line before a display-math block"
+            )
+
+        normalized.append("$$")
+        normalized.extend(content)
+        normalized.append("$$")
+
+        if line != "$$" or lines[closing] != "$$":
+            changes.append(
+                f"lines {number}-{closing + 1}: removed indentation around display delimiters"
+            )
+
+        index = closing + 1
 
     ending = "\n" if text.endswith("\n") else ""
     return "\n".join(normalized) + ending, changes
@@ -48,8 +95,11 @@ def validate_text(path: Path, text: str) -> list[str]:
     errors: list[str] = []
     display_markers = 0
     in_fence = False
+    in_display = False
+    lines = text.splitlines()
 
-    for number, line in enumerate(text.splitlines(), start=1):
+    for index, line in enumerate(lines):
+        number = index + 1
         stripped = line.strip()
 
         if stripped.startswith("```"):
@@ -61,13 +111,25 @@ def validate_text(path: Path, text: str) -> list[str]:
         if "\\[" in line or "\\]" in line:
             errors.append(f"{path}:{number}: use $$ delimiters instead of \\[ or \\]")
 
-        if "$$" in line:
-            if line != "$$":
+        if "$$" not in line:
+            continue
+
+        if line != "$$":
+            errors.append(
+                f"{path}:{number}: $$ must be the only characters on an unindented line"
+            )
+            continue
+
+        display_markers += 1
+        if not in_display:
+            previous = lines[index - 1] if index > 0 else ""
+            if previous.strip():
                 errors.append(
-                    f"{path}:{number}: $$ must be the only characters on an unindented line"
+                    f"{path}:{number}: display math must start after a blank line; use inline math after list text"
                 )
-            else:
-                display_markers += 1
+            in_display = True
+        else:
+            in_display = False
 
     if display_markers % 2:
         errors.append(f"{path}: unbalanced display-math delimiters")
