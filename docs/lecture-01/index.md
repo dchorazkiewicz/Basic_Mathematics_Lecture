@@ -2,9 +2,10 @@
 title: Cartesian Geometry and Coordinates
 description: Lecture 1 — Cartesian Geometry and Coordinates
 lecture: "01"
-eyebrow: Lecture 01 · Analytical Geometry
+eyebrow: Lecture 01 · Objects and Geometry
 lecture_title: Cartesian Geometry and Coordinates
 intro: We begin with Euclidean geometry and construct, step by step, the numerical language that turns points into ordered pairs and geometric relations into equations.
+exercise_link: exercises-01/
 section_links:
   - { id: before-coordinates, title: Before coordinates }
   - { id: construction, title: Constructing the system }
@@ -15,7 +16,7 @@ section_links:
   - { id: parametric-curves, title: Parametric curves }
   - { id: intersections-regions, title: Intersections and regions }
   - { id: cosine-difference, title: Cosine of an angle difference }
-  - { id: exercises, title: Exercises }
+  - { id: exercises, title: Existing exercises }
 ---
 
 --8<-- "lecture-01/sections/01-before-coordinates.md"
