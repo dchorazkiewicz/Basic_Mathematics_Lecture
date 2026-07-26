@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Template for planning exercise sets that complement a lecture.">
+  <title>Exercise Set Template · Basic Mathematics</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/home.css">
+  <link rel="stylesheet" href="../../assets/css/lecture.css">
+  <link rel="stylesheet" href="../../assets/css/figures.css">
+  <link rel="stylesheet" href="../../assets/css/exercises.css">
+  <link rel="stylesheet" href="../../assets/css/mkdocs-adapter.css">
+  
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        tags: 'ams'
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../..">Basic Mathematics</a>
+    <nav class="header-links" aria-label="Primary navigation">
+      <a href="../..#course-map">Course map</a>
+      <a href="https://github.com/dchorazkiewicz/basic_mathematics">GitHub</a>
+    </nav>
+  </header>
+
+  
+    <main class="standalone-page"><h1 id="exercise-set-design-template">Exercise Set Design Template</h1>
+<p>This template belongs to the <strong>lecture-design repository</strong>. It is used before the student workbook is created. Its purpose is to keep the lecture and exercises in one visible sequence.</p>
+<p>For every substantial lecture segment, add one corresponding exercise block immediately after it in the design page.</p>
+<h2 id="required-front-matter">Required front matter</h2>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exercises XX — Lecture title</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exercise design for Lecture XX.</span>
+<span class="nt">exercise_set</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;XX&quot;</span>
+<span class="nt">exercise_title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lecture title</span>
+<span class="nt">lecture_link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lecture-XX/</span>
+<span class="nt">intro</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">One sentence explaining how the exercises complement the lecture.</span>
+<span class="nt">section_links</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> id</span><span class="p">:</span><span class="w"> </span><span class="nv">block-one</span><span class="p p-Indicator">,</span><span class="nt"> title</span><span class="p">:</span><span class="w"> </span><span class="nv">First block</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> id</span><span class="p">:</span><span class="w"> </span><span class="nv">block-two</span><span class="p p-Indicator">,</span><span class="nt"> title</span><span class="p">:</span><span class="w"> </span><span class="nv">Second block</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="nn">---</span>
+</code></pre></div>
+<h2 id="required-structure-of-one-exercise-block">Required structure of one exercise block</h2>
+<h3 id="1-connection-to-the-lecture">1. Connection to the lecture</h3>
+<p>State exactly which lecture segment, definition, visualization or example this block continues.</p>
+<h3 id="2-boundary-of-the-lecture">2. Boundary of the lecture</h3>
+<p>State what is explained fully during the lecture and what is <strong>not</strong> developed there because of time.</p>
+<h3 id="3-work-transferred-to-exercises">3. Work transferred to exercises</h3>
+<p>Specify concrete actions. Use verbs such as:</p>
+<ul>
+<li>compute;</li>
+<li>draw;</li>
+<li>compare;</li>
+<li>predict;</li>
+<li>verify;</li>
+<li>find a counterexample;</li>
+<li>prepare a visualization;</li>
+<li>formulate a conclusion;</li>
+<li>present the result.</li>
+</ul>
+<h3 id="4-planned-problem-types">4. Planned problem types</h3>
+<p>Describe the intended sequence, for example:</p>
+<ol>
+<li>two or three elementary computational problems;</li>
+<li>one interpretation problem;</li>
+<li>one visual or constructive problem;</li>
+<li>one comparison or argument problem;</li>
+<li>one short presentation problem.</li>
+</ol>
+<p>Do not write twenty near-identical calculations before the mathematical role of the block is settled.</p>
+<h3 id="5-required-workbook-result">5. Required workbook result</h3>
+<p>State what must remain in the future <code>solution.md</code>, for example:</p>
+<ul>
+<li>calculations;</li>
+<li>a diagram;</li>
+<li>a table;</li>
+<li>a check by substitution;</li>
+<li>a comparison of two methods;</li>
+<li>a short conclusion in the student’s own words.</li>
+</ul>
+<h3 id="6-verification">6. Verification</h3>
+<p>Every conceptual task must require a check: substitution, a second example, comparison with a graph, or a counterexample.</p>
+<h3 id="7-presentation-element">7. Presentation element</h3>
+<p>Indicate whether students must present the problem, and what the presentation must contain:</p>
+<ul>
+<li>the question;</li>
+<li>the central picture or calculation;</li>
+<li>the conclusion;</li>
+<li>an answer to one control question.</li>
+</ul>
+<h2 id="end-of-set-audit">End-of-set audit</h2>
+<p>Before turning the design page into a student workbook set, verify:</p>
+<ul>
+<li>Does every transferred topic point back to a precise lecture segment?</li>
+<li>Is it clear why the topic was not developed fully during the lecture?</li>
+<li>Are computational and conceptual tasks both present?</li>
+<li>Is the expected result in <code>solution.md</code> explicit?</li>
+<li>Is there at least one verification step in every substantial task?</li>
+<li>Can a task be moved back to the lecture without rewriting the entire set?</li>
+</ul></main>
+  
+</body>
+</html>

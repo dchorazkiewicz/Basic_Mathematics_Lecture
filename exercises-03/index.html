@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Exercise design complementing Lecture 03.">
+  <title>Exercises 03 · Lines and Planes · Basic Mathematics</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/home.css">
+  <link rel="stylesheet" href="../assets/css/lecture.css">
+  <link rel="stylesheet" href="../assets/css/figures.css">
+  <link rel="stylesheet" href="../assets/css/exercises.css">
+  <link rel="stylesheet" href="../assets/css/mkdocs-adapter.css">
+  
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        tags: 'ams'
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="..">Basic Mathematics</a>
+    <nav class="header-links" aria-label="Primary navigation">
+      <a href="..#course-map">Course map</a>
+      <a href="https://github.com/dchorazkiewicz/basic_mathematics">GitHub</a>
+    </nav>
+  </header>
+
+  
+    <div class="lecture-shell">
+      <aside class="lecture-nav" aria-label="Exercise set contents">
+        <div class="nav-label">Exercises 03</div>
+        <a class="companion-link" href="../lecture-03/">← Return to lecture</a>
+        
+          <a href="#generating-lines">Generating lines</a>
+        
+          <a href="#representations">Equivalent representations</a>
+        
+          <a href="#intersections">Intersections</a>
+        
+          <a href="#distance">Point-line distance</a>
+        
+          <a href="#planes">Planes and space</a>
+        
+          <a href="#set-audit">Set audit</a>
+        
+      </aside>
+      <main class="lecture-main exercise-plan-main">
+        <header class="lecture-header">
+          <p class="eyebrow">Exercise design · Lecture 03</p>
+          <h1>Lines and Planes</h1>
+          <p class="lecture-author">Damian Chorążkiewicz</p>
+          <p>The lecture develops one line in several representations; the exercises expand the technique, verification and three-dimensional extension without turning the lecture into a catalogue of formulas.</p>
+          <div class="companion-actions">
+            <a class="companion-button" href="../lecture-03/">← Return to Lecture 03</a>
+          </div>
+        </header>
+        <h1 id="exercise-design">Exercise design</h1>
+<h2 id="generating-lines">Generating lines</h2>
+<h3 id="connection-to-the-lecture">Connection to the lecture</h3>
+<p>The lecture constructs a line from a point <span class="arithmatex">\(P_0\)</span>, a nonzero direction <span class="arithmatex">\(v\)</span> and the parameter <span class="arithmatex">\(t\)</span>.</p>
+<h3 id="boundary-of-the-lecture">Boundary of the lecture</h3>
+<p>One line and a few values of <span class="arithmatex">\(t\)</span> are shown. Membership tests and alternative parameterizations are transferred.</p>
+<h3 id="work-transferred-to-exercises">Work transferred to exercises</h3>
+<p>Students should generate points, recover an equation from a point and direction, test point membership, determine the parameter of a given point and construct distinct parameterizations of the same line.</p>
+<h3 id="planned-problem-types">Planned problem types</h3>
+<ul>
+<li>direct point generation;</li>
+<li>point-membership tests;</li>
+<li>reconstruction from geometric data;</li>
+<li>comparison of two parameterizations;</li>
+<li>one drawing or animation task.</li>
+</ul>
+<h3 id="required-workbook-result">Required workbook result</h3>
+<p>A parameter table, a line drawing, membership calculations and a conclusion explaining why a line has many valid parameterizations.</p>
+<h3 id="verification">Verification</h3>
+<p>At least two generated points must be substituted into every claimed equivalent equation.</p>
+<h2 id="representations">Equivalent representations</h2>
+<h3 id="connection-to-the-lecture_1">Connection to the lecture</h3>
+<p>One concrete line is followed through parametric, slope and normal descriptions.</p>
+<h3 id="boundary-of-the-lecture_1">Boundary of the lecture</h3>
+<p>The lecture performs only one full conversion. Repeated conversion and exceptional cases belong to exercises.</p>
+<h3 id="work-transferred-to-exercises_1">Work transferred to exercises</h3>
+<p>Students should:</p>
+<ol>
+<li>convert between parametric, slope and normal forms for simple data;</li>
+<li>interpret <span class="arithmatex">\(m=\tan\alpha\)</span> geometrically;</li>
+<li>identify direction and normal vectors;</li>
+<li>recognize vertical lines where <span class="arithmatex">\(y=mx+b\)</span> is not appropriate;</li>
+<li>determine whether two equations describe the same set;</li>
+<li>prepare one compact presentation card with three descriptions of one line.</li>
+</ol>
+<h3 id="planned-problem-types_1">Planned problem types</h3>
+<ul>
+<li>three short conversions;</li>
+<li>one vertical-line case;</li>
+<li>one equivalence test;</li>
+<li>one visual presentation problem.</li>
+</ul>
+<h3 id="required-workbook-result_1">Required workbook result</h3>
+<p>Full conversions, a line with its slope triangle and normal vector, and substitution checks.</p>
+<h3 id="verification_1">Verification</h3>
+<p>Two points generated by the parametric form must satisfy the normal equation.</p>
+<h2 id="intersections">Intersections</h2>
+<h3 id="connection-to-the-lecture_2">Connection to the lecture</h3>
+<p>The lecture defines intersection as simultaneous membership and shows one book-style calculation.</p>
+<h3 id="boundary-of-the-lecture_2">Boundary of the lecture</h3>
+<p>Only one intersecting pair is solved fully. Classification and comparison of methods are transferred.</p>
+<h3 id="work-transferred-to-exercises_2">Work transferred to exercises</h3>
+<p>Students should solve elementary intersections, check the point in both lines, classify intersecting, parallel and coincident cases, compare parametric and Cartesian methods, and build a decision scheme based on directions and common points.</p>
+<h3 id="planned-problem-types_2">Planned problem types</h3>
+<ul>
+<li>several small systems with integer solutions;</li>
+<li>one parallel pair;</li>
+<li>one coincident pair;</li>
+<li>one method-comparison problem;</li>
+<li>one decision-diagram task.</li>
+</ul>
+<h3 id="required-workbook-result_2">Required workbook result</h3>
+<p>At least one complete solution containing equations, imposed equality, solution, geometric point and verification in both objects.</p>
+<h3 id="verification_2">Verification</h3>
+<p>No intersection answer is accepted without substitution into both line descriptions.</p>
+<h2 id="distance">Point-line distance</h2>
+<h3 id="connection-to-the-lecture_3">Connection to the lecture</h3>
+<p>The lecture visualizes the shortest connecting segment and relates it to the normal direction and projection.</p>
+<h3 id="boundary-of-the-lecture_3">Boundary of the lecture</h3>
+<p>One transparent example is calculated. General practice and inverse questions move to exercises.</p>
+<h3 id="work-transferred-to-exercises_3">Work transferred to exercises</h3>
+<p>Students should calculate distances, construct perpendicular feet, verify orthogonality, compare the coordinate formula with a projection calculation and solve one inverse locus problem.</p>
+<h3 id="planned-problem-types_3">Planned problem types</h3>
+<ul>
+<li>direct distance calculations;</li>
+<li>construction of the nearest point;</li>
+<li>comparison of two methods;</li>
+<li>one inverse problem describing points at a fixed distance from a line;</li>
+<li>one explanatory diagram.</li>
+</ul>
+<h3 id="required-workbook-result_3">Required workbook result</h3>
+<p>A calculation, geometric construction, orthogonality test and interpretation of the minimum.</p>
+<h3 id="verification_3">Verification</h3>
+<p>The foot must belong to the line and the connecting vector must be perpendicular to its direction.</p>
+<h2 id="planes">Planes and space</h2>
+<h3 id="connection-to-the-lecture_4">Connection to the lecture</h3>
+<p>The lecture only extends the generating idea: one point plus two independent directions produces a plane; a normal gives an equivalent condition.</p>
+<h3 id="boundary-of-the-lecture_4">Boundary of the lecture</h3>
+<p>This is the major transfer point. The cross product, a plane through three points and the full classification of spatial relations are not developed fully during the lecture.</p>
+<h3 id="work-transferred-to-exercises_4">Work transferred to exercises</h3>
+<p>Students should:</p>
+<ol>
+<li>generate and test points of a parametric plane;</li>
+<li>detect when two supposed directions are dependent;</li>
+<li>construct two directions from three noncollinear points;</li>
+<li>compute a normal with the cross product and verify both dot products vanish;</li>
+<li>write parametric and normal equations of one plane;</li>
+<li>compare line-plane and plane-plane positions in simple cases;</li>
+<li>prepare a three-dimensional visualization or a sequence of labelled views.</li>
+</ol>
+<h3 id="planned-problem-types_4">Planned problem types</h3>
+<ul>
+<li>elementary point-generation tasks;</li>
+<li>one dependence test;</li>
+<li>one full plane-through-three-points problem;</li>
+<li>one line-plane intersection;</li>
+<li>one visual or presentation task.</li>
+</ul>
+<h3 id="required-workbook-result_4">Required workbook result</h3>
+<p>Full construction from three points, parametric and normal equations, cross-product checks, a diagram and a short classification argument.</p>
+<h3 id="verification_4">Verification</h3>
+<p>All three original points must satisfy the final plane equation, and the normal must be orthogonal to both generating directions.</p>
+<h2 id="set-audit">Set audit</h2>
+<p>The exercise set must preserve the lecture’s hierarchy: the line is the primary object, while the plane is a controlled extension. Spatial technique may be substantial in the workbook, but it must always point back to the same generating principle rather than become an unrelated formula list.</p>
+      </main>
+    </div>
+  
+</body>
+</html>
