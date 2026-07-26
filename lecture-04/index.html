@@ -313,70 +313,46 @@ r(\pi)=\frac{2.4}{0.4}=6.
 <p class="admonition-title">Continued in the exercise set</p>
 <p>Students will calculate selected radii, create a four-case comparison table, plot representative curves and explain what changes when <span class="arithmatex">\(e\)</span> approaches <span class="arithmatex">\(1\)</span> from below and above.</p>
 </div>
-<h2 id="focus-directrix">One geometric rule and one shape parameter</h2>
+<h2 id="focus-directrix">Focus, directrix, and the geometric meaning of eccentricity</h2>
+<p>The parameter <span class="arithmatex">\(e\)</span> has so far been observed through the changing shape of the radial family. We now give it a geometric meaning.</p>
 <p>Fix a focus <span class="arithmatex">\(F\)</span> and a directrix <span class="arithmatex">\(D\)</span>. A point <span class="arithmatex">\(P\)</span> belongs to the conic when</p>
 <div class="arithmatex">\[
-\boxed{d(P,F)=e\,d(P,D)},
+d(P,F)=e\,d(P,D).
 \]</div>
-<p>where <span class="arithmatex">\(e&gt;0\)</span> is the eccentricity.</p>
-<table>
-<thead>
-<tr>
-<th>Eccentricity</th>
-<th>Conic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(0&lt;e&lt;1\)</span></td>
-<td>ellipse</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(e=1\)</span></td>
-<td>parabola</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(e&gt;1\)</span></td>
-<td>hyperbola</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition interpretation">
-<p class="admonition-title">Why eccentricity measures shape</p>
-<p>Small <span class="arithmatex">\(e\)</span> keeps the focal distance relatively short compared with the distance to the directrix, producing a closed curve. At <span class="arithmatex">\(e=1\)</span> the two distances balance. For <span class="arithmatex">\(e&gt;1\)</span> the focal distance may dominate, producing an open hyperbolic branch.</p>
-</div>
-<h3 id="deriving-the-common-polar-equation">Deriving the common polar equation</h3>
-<p>Place the pole at the focus <span class="arithmatex">\(F=(0,0)\)</span> and choose the directrix</p>
+<p>Equivalently,</p>
 <div class="arithmatex">\[
-D:x=d,\qquad d&gt;0.
+\frac{d(P,F)}{d(P,D)}=e.
 \]</div>
-<p>For a point <span class="arithmatex">\(P=(r,\theta)\)</span>, <span class="arithmatex">\(x=r\cos\theta\)</span>. Its distance from the directrix is therefore</p>
+<p>Both distances change as <span class="arithmatex">\(P\)</span> moves, but their ratio remains constant.</p>
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">Eccentricity as a constant distance ratio</span>
+      <span class="figure-step-title"><span data-focus-type>parabola</span>, measured ratio <span data-focus-ratio>1</span></span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open focus-directrix construction in full screen">⛶</button>
+  </div>
+  <div class="figure-stage jsx-stage"><div id="focus-directrix-board" class="jxgbox" data-focus-directrix></div></div>
+  <div class="parameter-controls" style="--parameter-count:2">
+    <label class="parameter-control"><span>$e$ = <output data-focus-e>1</output></span><input type="range" min="0.4" max="1.6" step="0.05" value="1" data-focus-e-slider></label>
+    <label class="parameter-control"><span>$\theta$ = <output data-focus-theta>0.4</output></span><input type="range" min="-1.2" max="1.2" step="0.01" value="0.4" data-focus-theta-slider></label>
+  </div>
+  <figcaption class="figure-caption">The brown segment is the distance to the focus. The green segment is the perpendicular distance to the directrix. Their ratio remains equal to $e$.</figcaption>
+</figure>
+
+<p>The parabola gives the most transparent first example. When <span class="arithmatex">\(e=1\)</span>,</p>
 <div class="arithmatex">\[
-d(P,D)=d-r\cos\theta
+d(P,F)=d(P,D).
 \]</div>
-<p>for the branch lying to the left of the directrix.</p>
-<div class="admonition derivation">
-<p class="admonition-title">Collecting the radial terms</p>
-<p>The focus--directrix condition becomes</p>
-<div class="arithmatex">\[
-r=e(d-r\cos\theta).
-\]</div>
-<p>Hence</p>
-<div class="arithmatex">\[
-r(1+e\cos\theta)=ed.
-\]</div>
-<p>Define the focal parameter</p>
-<div class="arithmatex">\[
-\boxed{p=ed}.
-\]</div>
-<p>Then</p>
-<div class="arithmatex">\[
-\boxed{r(\theta)=\frac{p}{1+e\cos\theta}}.
-\]</div>
-</div>
+<p>For <span class="arithmatex">\(e&lt;1\)</span>, the focal distance is smaller than the corresponding multiple of the directrix distance and the curve is an ellipse. For <span class="arithmatex">\(e&gt;1\)</span>, the hyperbolic regime appears.</p>
+<p>The lecture does <strong>not</strong> derive separate Cartesian equations for all conics from this condition. It uses the construction to explain why the same parameter <span class="arithmatex">\(e\)</span> classifies the shapes seen in the preceding animation.</p>
 <div class="admonition principle">
-<p class="admonition-title">The central idea</p>
-<p>The formula is not an algebraic trick. The denominator records how the distance to the directrix changes when the viewing ray turns. Changing <span class="arithmatex">\(e\)</span> changes the balance between the two distances and therefore changes the type of conic.</p>
+<p class="admonition-title">Geometry before algebraic elimination</p>
+<p>The definition compares two distances. Coordinates are introduced only when we need to calculate or draw the condition. The focus, directrix, and ratio are geometric objects independent of a particular coordinate notation.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Continued in the exercise set</p>
+<p>Students will verify the ratio for selected points, draw the two relevant distances correctly and compare the regimes <span class="arithmatex">\(e&lt;1\)</span>, <span class="arithmatex">\(e=1\)</span>, and <span class="arithmatex">\(e&gt;1\)</span>. A full derivation of the radial equation may appear as a developing exercise, not as the centre of the lecture.</p>
 </div>
 <h2 id="polar-family">Ellipse, parabola, and hyperbola from one formula</h2>
 <figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
