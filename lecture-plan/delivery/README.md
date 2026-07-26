@@ -13,6 +13,8 @@ Wspólne zasady znajdują się w pliku [`../TEACHING_AND_WORKBOOK_MODEL.md`](../
 
 ## Etap 1 — opis obiektów
 
+Najpierw należy przeczytać [syntetyczną mapę realizacyjną pierwszego bloku](FIRST_BLOCK_OVERVIEW.md). Grupuje ona szczegółowe elementy w najwyżej trzy idee dominujące na wykład i pokazuje trwałe rezultaty pracy studentów.
+
 1. [Wykład 01 — Cartesian Geometry and Coordinates](01-cartesian-geometry-and-coordinates.md)
 2. [Wykład 02 — Vectors, Bases, and Coordinate Systems](02-vectors-bases-and-coordinate-systems.md)
 3. [Wykład 03 — Lines and Planes](03-lines-and-planes.md)
