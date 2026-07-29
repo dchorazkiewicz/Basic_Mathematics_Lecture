@@ -1,6 +1,6 @@
 ## Three consecutive actions can be grouped without changing the journey {#three-actions}
 
-Suppose that $C$ acts first, then $B$, then $A$. The vector follows
+Suppose that $C$ acts first, then $B$, then $A$. The chronological journey is
 
 $$
 \mathbf x
@@ -12,27 +12,38 @@ B(C\mathbf x)
 A(B(C\mathbf x)).
 $$
 
-We may first combine $A$ with $B$:
+There are two convenient ways to calculate one matrix for this three-stage action.
+
+### First combine $A$ and $B$
 
 $$
-(AB)(C\mathbf x),
+\begin{aligned}
+((AB)C)\mathbf x
+&=(AB)(C\mathbf x)\\
+&=A(B(C\mathbf x)).
+\end{aligned}
 $$
 
-or first combine $B$ with $C$:
+### First combine $B$ and $C$
 
 $$
-A((BC)\mathbf x).
+\begin{aligned}
+(A(BC))\mathbf x
+&=A((BC)\mathbf x)\\
+&=A(B(C\mathbf x)).
+\end{aligned}
 $$
 
-Both expressions describe the same three-stage journey. Therefore
+Both grouped products send every input vector to the same final output. Therefore
 
 $$
 (AB)C=A(BC).
 $$
 
-!!! interpretation "Grouping is not ordering"
-    Parentheses tell us which product is calculated first. They do not change the chronological order of the actions. The rightmost matrix still acts first.
+This property is called **associativity**.
 
-This property is called **associativity**. It allows a long chain of transformations to be replaced step by step by one matrix.
+!!! interpretation "Parentheses change the calculation plan, not the action order"
+    In both calculations, $C$ still acts first, $B$ second and $A$ third. Parentheses only decide which pair of matrices is multiplied first.
 
-It does **not** imply that factors may be exchanged. Usually $AB\ne BA$.
+!!! warning "Associativity is not commutativity"
+    The factors keep their order. Associativity allows $(AB)C=A(BC)$, but it does not allow the matrices to be exchanged. Usually $AB\ne BA$.
