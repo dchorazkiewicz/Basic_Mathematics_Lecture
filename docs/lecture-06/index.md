@@ -10,7 +10,7 @@ section_links:
   - { id: consecutive-actions, title: Two actions in succession }
   - { id: two-stage-journey, title: Follow the two stages }
   - { id: one-matrix, title: One matrix for two steps }
-  - { id: product-columns, title: Columns of the product }
+  - { id: product-columns, title: Rows, columns, and indices }
   - { id: order-matters, title: Order matters }
   - { id: three-actions, title: Three consecutive actions }
   - { id: design-composition, title: Design a composition }
