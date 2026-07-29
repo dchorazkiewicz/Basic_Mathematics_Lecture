@@ -1,10 +1,10 @@
 ---
 title: Matrices as Transformations
-description: Lecture 5 — matrices as representations of linear transformations of the plane.
+description: "Lecture 5 — matrices as representations of linear transformations of the plane."
 lecture: "05"
 eyebrow: Lecture 05 · Actions and Linear Algebra
 lecture_title: Matrices as Transformations
-intro: A matrix is not introduced as a rectangular table of numbers. It records one action applied consistently to every vector in the plane: where the two basis vectors go, and therefore where every point and every shape goes.
+intro: "A matrix is not introduced as a rectangular table of numbers. It records one action applied consistently to every vector in the plane: where the two basis vectors go, and therefore where every point and every shape goes."
 exercise_link: exercises-05/
 section_links:
   - { id: one-action, title: One action on the plane }
@@ -14,7 +14,6 @@ section_links:
   - { id: geometry-under-action, title: What happens to shapes }
   - { id: collapse, title: When dimensions collapse }
   - { id: design-a-matrix, title: Build a matrix from a picture }
-  - { id: computational-model, title: Computational model }
   - { id: exercises, title: Exercises }
 ---
 
@@ -25,5 +24,4 @@ section_links:
 --8<-- "lecture-05/sections/05-geometry-under-action.md"
 --8<-- "lecture-05/sections/06-collapse.md"
 --8<-- "lecture-05/sections/07-design-a-matrix.md"
---8<-- "lecture-05/sections/computational-model.md"
 --8<-- "lecture-05/sections/08-exercises.md"
