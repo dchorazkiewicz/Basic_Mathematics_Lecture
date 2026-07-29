@@ -38,10 +38,11 @@
     const board = JXG.JSXGraph.initBoard(host.id, {
       boundingbox: VIEW,
       axis: true,
-      grid: true,
+      grid: false,
       keepAspectRatio: true,
       showNavigation: false,
       showCopyright: false,
+      showInfobox: false,
       pan: { enabled: false },
       zoom: { enabled: false }
     });
@@ -49,13 +50,13 @@
     const [x, y] = vector;
 
     board.create('segment', [[x, 0], [x, y]], {
-      strokeColor: '#aeb7c1',
+      strokeColor: '#c5cbd2',
       strokeWidth: 2,
       dash: 2,
       ...fixed
     });
     board.create('segment', [[0, y], [x, y]], {
-      strokeColor: '#aeb7c1',
+      strokeColor: '#c5cbd2',
       strokeWidth: 2,
       dash: 2,
       ...fixed
