@@ -1,6 +1,6 @@
-## The columns of the product are two completed journeys {#product-columns}
+## Rows meet columns: the indexed pattern {#product-columns}
 
-Lecture 05 established that a matrix is determined by the destinations of the two basis vectors. We use that fact again.
+Lecture 05 established that a matrix is determined by the destinations of the two basis vectors. We use that fact first, and then translate it into the indexed row-by-column rule.
 
 For the product $AB$,
 
@@ -68,82 +68,130 @@ AB=
 \end{bmatrix}.
 $$
 
-### The general column rule
+### Indexed notation
 
-Write
+For the general rule, write
 
 $$
-A=
-\begin{bmatrix}
-a&b\\c&d
-\end{bmatrix},
+A=(a_{ij}),
 \qquad
-B=
-\begin{bmatrix}
-e&f\\g&h
-\end{bmatrix}
-=
-\left[
-\begin{array}{c|c}
-\mathbf b_1&\mathbf b_2
-\end{array}
-\right].
+B=(b_{ij}),
+\qquad
+C=AB=(c_{ij}).
 $$
 
-Then
+The index $i$ identifies a **row**, while $j$ identifies a **column**. Each entry $c_{ij}$ is built from row $i$ of $A$ and column $j$ of $B$.
+
+<div class="matrix-pattern-board" aria-label="Colour coded row by column pattern for multiplying two by two matrices">
+  <div class="matrix-pattern-equation">
+    <div class="matrix-labelled">
+      <span class="matrix-name">A =</span>
+      <div class="matrix-grid-visual">
+        <span class="matrix-cell matrix-row-one"><i>a</i><sub>11</sub></span>
+        <span class="matrix-cell matrix-row-one"><i>a</i><sub>12</sub></span>
+        <span class="matrix-cell matrix-row-two"><i>a</i><sub>21</sub></span>
+        <span class="matrix-cell matrix-row-two"><i>a</i><sub>22</sub></span>
+      </div>
+    </div>
+
+    <span class="matrix-operator">·</span>
+
+    <div class="matrix-labelled">
+      <span class="matrix-name">B =</span>
+      <div class="matrix-grid-visual">
+        <span class="matrix-cell matrix-col-one"><i>b</i><sub>11</sub></span>
+        <span class="matrix-cell matrix-col-two"><i>b</i><sub>12</sub></span>
+        <span class="matrix-cell matrix-col-one"><i>b</i><sub>21</sub></span>
+        <span class="matrix-cell matrix-col-two"><i>b</i><sub>22</sub></span>
+      </div>
+    </div>
+
+    <span class="matrix-operator">=</span>
+
+    <div class="matrix-labelled">
+      <span class="matrix-name">C =</span>
+      <div class="matrix-grid-visual">
+        <span class="matrix-cell matrix-result-r1c1"><i>c</i><sub>11</sub></span>
+        <span class="matrix-cell matrix-result-r1c2"><i>c</i><sub>12</sub></span>
+        <span class="matrix-cell matrix-result-r2c1"><i>c</i><sub>21</sub></span>
+        <span class="matrix-cell matrix-result-r2c2"><i>c</i><sub>22</sub></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="matrix-pattern-legend">
+    <span class="matrix-pattern-chip matrix-pattern-chip--r1">row 1 of A</span>
+    <span class="matrix-pattern-chip matrix-pattern-chip--r2">row 2 of A</span>
+    <span class="matrix-pattern-chip matrix-pattern-chip--c1">column 1 of B</span>
+    <span class="matrix-pattern-chip matrix-pattern-chip--c2">column 2 of B</span>
+  </div>
+</div>
+
+### The four entries, one at a time
+
+<div class="matrix-entry-grid">
+  <article class="matrix-entry-card matrix-entry-card--r1c1">
+    <div class="matrix-entry-label"><i>c</i><sub>11</sub>: row 1 × column 1</div>
+    <div class="matrix-entry-formula">
+      <span class="row-factor"><i>a</i><sub>11</sub></span>·<span class="column-factor"><i>b</i><sub>11</sub></span>
+      +
+      <span class="row-factor"><i>a</i><sub>12</sub></span>·<span class="column-factor"><i>b</i><sub>21</sub></span>
+    </div>
+  </article>
+
+  <article class="matrix-entry-card matrix-entry-card--r1c2">
+    <div class="matrix-entry-label"><i>c</i><sub>12</sub>: row 1 × column 2</div>
+    <div class="matrix-entry-formula">
+      <span class="row-factor"><i>a</i><sub>11</sub></span>·<span class="column-factor"><i>b</i><sub>12</sub></span>
+      +
+      <span class="row-factor"><i>a</i><sub>12</sub></span>·<span class="column-factor"><i>b</i><sub>22</sub></span>
+    </div>
+  </article>
+
+  <article class="matrix-entry-card matrix-entry-card--r2c1">
+    <div class="matrix-entry-label"><i>c</i><sub>21</sub>: row 2 × column 1</div>
+    <div class="matrix-entry-formula">
+      <span class="row-factor"><i>a</i><sub>21</sub></span>·<span class="column-factor"><i>b</i><sub>11</sub></span>
+      +
+      <span class="row-factor"><i>a</i><sub>22</sub></span>·<span class="column-factor"><i>b</i><sub>21</sub></span>
+    </div>
+  </article>
+
+  <article class="matrix-entry-card matrix-entry-card--r2c2">
+    <div class="matrix-entry-label"><i>c</i><sub>22</sub>: row 2 × column 2</div>
+    <div class="matrix-entry-formula">
+      <span class="row-factor"><i>a</i><sub>21</sub></span>·<span class="column-factor"><i>b</i><sub>12</sub></span>
+      +
+      <span class="row-factor"><i>a</i><sub>22</sub></span>·<span class="column-factor"><i>b</i><sub>22</sub></span>
+    </div>
+  </article>
+</div>
+
+The compact indexed rule is
 
 $$
-AB=
-\left[
-\begin{array}{c|c}
-A\mathbf b_1&A\mathbf b_2
-\end{array}
-\right].
+\boxed{
+ c_{ij}
+ =a_{i1}b_{1j}+a_{i2}b_{2j}
+ =\sum_{k=1}^{2}a_{ik}b_{kj}
+}
 $$
 
-The first column is
-
-$$
-A\mathbf b_1
-=
-\begin{bmatrix}
-a&b\\c&d
-\end{bmatrix}
-\begin{bmatrix}
-e\\g
-\end{bmatrix}
-=
-\begin{bmatrix}
-ae+bg\\ce+dg
-\end{bmatrix},
-$$
-
-and the second column is
-
-$$
-A\mathbf b_2
-=
-\begin{bmatrix}
-a&b\\c&d
-\end{bmatrix}
-\begin{bmatrix}
-f\\h
-\end{bmatrix}
-=
-\begin{bmatrix}
-af+bh\\cf+dh
-\end{bmatrix}.
-$$
+<div class="matrix-index-note">
+  <div><strong>$i$ chooses the row</strong>Use row $i$ of $A$ and place the result in row $i$ of $C$.</div>
+  <div><strong>$j$ chooses the column</strong>Use column $j$ of $B$ and place the result in column $j$ of $C$.</div>
+  <div><strong>$k$ runs through matching positions</strong>For $2\times2$ matrices, $k=1,2$, so every entry contains two products.</div>
+</div>
 
 Therefore
 
 $$
 AB=
 \begin{bmatrix}
-ae+bg&af+bh\\
-ce+dg&cf+dh
+a_{11}b_{11}+a_{12}b_{21}&a_{11}b_{12}+a_{12}b_{22}\\
+a_{21}b_{11}+a_{22}b_{21}&a_{21}b_{12}+a_{22}b_{22}
 \end{bmatrix}.
 $$
 
 !!! interpretation "Row by column is the coordinate version of the column journey"
-    Each column of $B$ is treated as an input vector for $A$. The familiar row-by-column calculation simply computes the coordinates of those two output vectors.
+    Each column of $B$ is treated as an input vector for $A$. The indexed calculation computes the two coordinates of each output vector. The colours show which row of $A$ meets which column of $B$.
