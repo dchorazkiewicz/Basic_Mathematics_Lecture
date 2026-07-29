@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Exercise design for Lecture 05, connecting basis images, matrix-vector products and transformed grids.">
+  <title>Exercises 05 · Matrices as Transformations · Basic Mathematics</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/home.css">
+  <link rel="stylesheet" href="../assets/css/lecture.css">
+  <link rel="stylesheet" href="../assets/css/figures.css">
+  <link rel="stylesheet" href="../assets/css/exercises.css">
+  <link rel="stylesheet" href="../assets/css/mkdocs-adapter.css">
+  
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        tags: 'ams'
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="..">Basic Mathematics</a>
+    <nav class="header-links" aria-label="Primary navigation">
+      <a href="..#course-map">Course map</a>
+      <a href="https://github.com/dchorazkiewicz/basic_mathematics">GitHub</a>
+    </nav>
+  </header>
+
+  
+    <div class="lecture-shell">
+      <aside class="lecture-nav" aria-label="Exercise set contents">
+        <div class="nav-label">Exercises 05</div>
+        <a class="companion-link" href="../lecture-05/">← Return to lecture</a>
+        
+          <a href="#required-practice">Required practice</a>
+        
+          <a href="#developing-work">Developing work</a>
+        
+          <a href="#visual-standard">Visual standard</a>
+        
+      </aside>
+      <main class="lecture-main exercise-plan-main">
+        <header class="lecture-header">
+          <p class="eyebrow">Exercises · Lecture 05</p>
+          <h1>Matrices as Transformations</h1>
+          <p class="lecture-author">Damian Chorążkiewicz</p>
+          <p>This design page specifies the required practice and developing work for matrices understood as actions on the plane. Individual problem pages will be split out after the lecture narrative and visual controls are reviewed.</p>
+          <div class="companion-actions">
+            <a class="companion-button" href="../lecture-05/">← Return to Lecture 05</a>
+          </div>
+        </header>
+        <h1 id="exercise-set-05-design">Exercise Set 05 design</h1>
+<p>The set should preserve the lecture's central translation:</p>
+<div class="arithmatex">\[
+\text{columns}
+\longleftrightarrow
+\text{images of basis vectors}
+\longleftrightarrow
+\text{transformed grid and figures}.
+\]</div>
+<h2 id="required-practice">Required practice</h2>
+<table>
+<thead>
+<tr>
+<th>Proposed problem</th>
+<th>Main product</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01. Apply a matrix to four vectors</td>
+<td>coordinate calculations and plotted input-output arrows</td>
+</tr>
+<tr>
+<td>02. Read basis images from a matrix</td>
+<td>two labelled column vectors</td>
+</tr>
+<tr>
+<td>03. Build a matrix from basis images</td>
+<td>matrix plus one verification vector</td>
+</tr>
+<tr>
+<td>04. Transform a unit square</td>
+<td>four output vertices and a parallelogram</td>
+</tr>
+<tr>
+<td>05. Horizontal and vertical stretches</td>
+<td>matched formulas and sketches</td>
+</tr>
+<tr>
+<td>06. Reflections in coordinate axes</td>
+<td>basis-image table</td>
+</tr>
+<tr>
+<td>07. A simple shear</td>
+<td>transformed grid and one polygon</td>
+</tr>
+<tr>
+<td>08. Rotation through <span class="arithmatex">\(90^\circ\)</span></td>
+<td>basis construction and matrix</td>
+</tr>
+<tr>
+<td>09. Projection onto an axis</td>
+<td>calculation and explanation of lost information</td>
+</tr>
+<tr>
+<td>10. Classify an action from its picture</td>
+<td>identity, stretch, shear, reflection, rotation or collapse</td>
+</tr>
+</tbody>
+</table>
+<h2 id="developing-work">Developing work</h2>
+<table>
+<thead>
+<tr>
+<th>Proposed problem</th>
+<th>Main product</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11. One figure under three matrices</td>
+<td>comparison panel</td>
+</tr>
+<tr>
+<td>12. Recover a matrix from a transformed grid</td>
+<td>column reading and verification</td>
+</tr>
+<tr>
+<td>13. Design a matrix for a stated action</td>
+<td>basis-image construction</td>
+</tr>
+<tr>
+<td>14. Rows versus columns error audit</td>
+<td>corrected calculation and corrected picture</td>
+</tr>
+<tr>
+<td>15. Transform a general line</td>
+<td>parametric derivation</td>
+</tr>
+<tr>
+<td>16. Decide whether a plane collapses</td>
+<td>column-direction argument</td>
+</tr>
+<tr>
+<td>17. Two matrices with similar-looking formulas</td>
+<td>visual comparison</td>
+</tr>
+<tr>
+<td>18. Build a simple icon and transform it</td>
+<td>vertex table and drawing</td>
+</tr>
+<tr>
+<td>19. Explain why translations are absent</td>
+<td>origin test</td>
+</tr>
+<tr>
+<td>20. Complete transformation note</td>
+<td>formula, basis images, grid, figure and interpretation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visual-standard">Visual standard</h2>
+<p>Every problem beyond routine arithmetic should include at least one visible mathematical object:</p>
+<ul>
+<li>a labelled pair of basis vectors;</li>
+<li>an original and transformed grid;</li>
+<li>a unit square or triangle;</li>
+<li>a table of input and output vertices.</li>
+</ul>
+<p>The drawing is part of the solution, not decoration. Students must use it to check signs, column order and whether a direction has collapsed.</p>
+      </main>
+    </div>
+  
+</body>
+</html>

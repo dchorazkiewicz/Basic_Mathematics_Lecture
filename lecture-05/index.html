@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A course in analytical geometry, linear algebra and calculus.">
+  <title>Lecture 05 · Matrices as Transformations · Basic Mathematics</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/home.css">
+  <link rel="stylesheet" href="../assets/css/lecture.css">
+  <link rel="stylesheet" href="../assets/css/figures.css">
+  <link rel="stylesheet" href="../assets/css/exercises.css">
+  <link rel="stylesheet" href="../assets/css/mkdocs-adapter.css">
+  
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        tags: 'ams'
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="..">Basic Mathematics</a>
+    <nav class="header-links" aria-label="Primary navigation">
+      <a href="..#course-map">Course map</a>
+      <a href="https://github.com/dchorazkiewicz/basic_mathematics">GitHub</a>
+    </nav>
+  </header>
+
+  
+    <main class="standalone-page"><hr />
+<p>title: Matrices as Transformations
+description: Lecture 5 — matrices as representations of linear transformations of the plane.
+lecture: "05"
+eyebrow: Lecture 05 · Actions and Linear Algebra
+lecture_title: Matrices as Transformations
+intro: A matrix is not introduced as a rectangular table of numbers. It records one action applied consistently to every vector in the plane: where the two basis vectors go, and therefore where every point and every shape goes.
+exercise_link: exercises-05/
+section_links:
+  - { id: one-action, title: One action on the plane }
+  - { id: basis-images, title: The columns show the action }
+  - { id: matrix-vector-product, title: Matrix times vector }
+  - { id: transformation-gallery, title: A gallery of transformations }
+  - { id: geometry-under-action, title: What happens to shapes }
+  - { id: collapse, title: When dimensions collapse }
+  - { id: design-a-matrix, title: Build a matrix from a picture }
+  - { id: computational-model, title: Computational model }
+  - { id: exercises, title: Exercises }</p>
+<hr />
+<h2 id="one-action">One rule acts on every vector</h2>
+<p>In the previous lectures, vectors described changes, directions and combinations. We now study <strong>actions on vectors</strong>.</p>
+<p>An action receives an input vector and produces an output vector:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}x\\y\end{bmatrix}
+\longmapsto
+\begin{bmatrix}x'\\y'\end{bmatrix}.
+\]</div>
+<p>For example,</p>
+<div class="arithmatex">\[
+\begin{bmatrix}x\\y\end{bmatrix}
+\longmapsto
+\begin{bmatrix}2x\\y\end{bmatrix}
+\]</div>
+<p>doubles every horizontal component and leaves every vertical component unchanged. The same rule acts on every point, every arrow and every figure.</p>
+<div class="admonition principle">
+<p class="admonition-title">A matrix represents one consistent action</p>
+<p>We do not choose a new formula for each point. One matrix supplies one rule, and that rule is applied everywhere in the plane.</p>
+</div>
+<p>The general two-dimensional rule used in this lecture is</p>
+<div class="arithmatex">\[
+\begin{aligned}
+x' &amp;= ax+by,\\
+y' &amp;= cx+dy.
+\end{aligned}
+\]</div>
+<p>The four coefficients are written compactly as</p>
+<div class="arithmatex">\[
+A=
+\begin{bmatrix}
+a&amp;b\\
+c&amp;d
+\end{bmatrix},
+\qquad
+A
+\begin{bmatrix}x\\y\end{bmatrix}
+=
+\begin{bmatrix}
+ax+by\\
+cx+dy
+\end{bmatrix}.
+\]</div>
+<p>The output coordinates are linear combinations of the input coordinates. There are no constant terms such as <span class="arithmatex">\(+3\)</span> or <span class="arithmatex">\(-1\)</span>.</p>
+<div class="admonition consequence">
+<p class="admonition-title">The origin stays fixed</p>
+<p>For every matrix <span class="arithmatex">\(A\)</span>,</p>
+<div class="arithmatex">\[
+A\begin{bmatrix}0\\0\end{bmatrix}
+=
+\begin{bmatrix}0\\0\end{bmatrix}.
+\]</div>
+<p>A translation is therefore not represented by a <span class="arithmatex">\(2\times2\)</span> matrix acting on ordinary plane vectors. Translations will require a different representation later.</p>
+</div>
+<h3 id="first-reading-example">First reading example</h3>
+<p>Let</p>
+<div class="arithmatex">\[
+A=
+\begin{bmatrix}
+2&amp;1\\
+0&amp;1
+\end{bmatrix}.
+\]</div>
+<p>Then</p>
+<div class="arithmatex">\[
+A
+\begin{bmatrix}3\\2\end{bmatrix}
+=
+\begin{bmatrix}
+2\cdot3+1\cdot2\\
+0\cdot3+1\cdot2
+\end{bmatrix}
+=
+\begin{bmatrix}8\\2\end{bmatrix}.
+\]</div>
+<p>The arithmetic gives one transformed vector. The geometry asks a larger question: <strong>what does the same rule do to the whole plane?</strong></p>
+<h2 id="basis-images">The columns show where the basis vectors go</h2>
+<p>Recall the standard basis vectors</p>
+<div class="arithmatex">\[
+\mathbf e_1=
+\begin{bmatrix}1\\0\end{bmatrix},
+\qquad
+\mathbf e_2=
+\begin{bmatrix}0\\1\end{bmatrix}.
+\]</div>
+<p>Apply the matrix</p>
+<div class="arithmatex">\[
+A=
+\begin{bmatrix}
+a&amp;b\\
+c&amp;d
+\end{bmatrix}
+\]</div>
+<p>to each basis vector:</p>
+<div class="arithmatex">\[
+A\mathbf e_1
+=
+\begin{bmatrix}
+a\\c
+\end{bmatrix},
+\qquad
+A\mathbf e_2
+=
+\begin{bmatrix}
+b\\d
+\end{bmatrix}.
+\]</div>
+<p>These are exactly the two columns of the matrix.</p>
+<div class="admonition interpretation">
+<p class="admonition-title">Read a matrix as two destination arrows</p>
+<ul>
+<li>the first column is the image of <span class="arithmatex">\(\mathbf e_1\)</span>;</li>
+<li>the second column is the image of <span class="arithmatex">\(\mathbf e_2\)</span>.</li>
+</ul>
+<p>Once these two arrows are known, the action on every other vector is determined.</p>
+</div>
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">Build the matrix by moving its two columns</span>
+      <span class="figure-step-title" data-basis-matrix-readout>$A=\begin{bmatrix}2&1\\0&1\end{bmatrix}$</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open basis-image transformation in full screen">⛶</button>
+  </div>
+  <div class="figure-stage jsx-stage">
+    <div id="basis-image-board" class="jxgbox" data-basis-image-board aria-label="Interactive transformed grid with draggable images of the basis vectors"></div>
+  </div>
+  <div class="relation-readout">
+    <span>Drag the endpoints of $A\mathbf e_1$ and $A\mathbf e_2$. The entire grid and unit square follow those two choices.</span>
+  </div>
+  <figcaption class="figure-caption">The columns are not merely stored numbers. They are the two vectors that generate the transformed coordinate grid.</figcaption>
+</figure>
+
+<p>The original unit square has vertices</p>
+<div class="arithmatex">\[
+\mathbf 0,\quad \mathbf e_1,\quad \mathbf e_2,\quad \mathbf e_1+\mathbf e_2.
+\]</div>
+<p>After applying <span class="arithmatex">\(A\)</span>, its vertices become</p>
+<div class="arithmatex">\[
+\mathbf 0,\quad A\mathbf e_1,\quad A\mathbf e_2,\quad A\mathbf e_1+A\mathbf e_2.
+\]</div>
+<p>Therefore a unit square usually becomes a parallelogram. The picture is obtained by the same vector addition already used in Lecture 02.</p>
+<h2 id="matrix-vector-product">Matrix times vector is a linear combination of columns</h2>
+<p>Every vector can be written in the standard basis:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}x\\y\end{bmatrix}
+=
+x\mathbf e_1+y\mathbf e_2.
+\]</div>
+<p>A linear transformation respects this construction:</p>
+<div class="arithmatex">\[
+A(x\mathbf e_1+y\mathbf e_2)
+=
+xA\mathbf e_1+yA\mathbf e_2.
+\]</div>
+<p>If the columns of <span class="arithmatex">\(A\)</span> are</p>
+<div class="arithmatex">\[
+\mathbf u=
+\begin{bmatrix}a\\c\end{bmatrix},
+\qquad
+\mathbf v=
+\begin{bmatrix}b\\d\end{bmatrix},
+\]</div>
+<p>then</p>
+<div class="arithmatex">\[
+A
+\begin{bmatrix}x\\y\end{bmatrix}
+=
+x\mathbf u+y\mathbf v.
+\]</div>
+<p>This is the geometric meaning of matrix-vector multiplication.</p>
+<div class="admonition derivation">
+<p class="admonition-title">From columns to the coordinate formula</p>
+<div class="arithmatex">\[
+\begin{aligned}
+A
+\begin{bmatrix}x\\y\end{bmatrix}
+&amp;=
+x
+\begin{bmatrix}a\\c\end{bmatrix}
++
+y
+\begin{bmatrix}b\\d\end{bmatrix}\\[4pt]
+&amp;=
+\begin{bmatrix}
+ax\\cx
+\end{bmatrix}
++
+\begin{bmatrix}
+by\\dy
+\end{bmatrix}\\[4pt]
+&amp;=
+\begin{bmatrix}
+ax+by\\cx+dy
+\end{bmatrix}.
+\end{aligned}
+\]</div>
+</div>
+<h3 id="worked-example">Worked example</h3>
+<p>Let</p>
+<div class="arithmatex">\[
+A=
+\begin{bmatrix}
+2&amp;-1\\
+1&amp;1
+\end{bmatrix},
+\qquad
+\mathbf x=
+\begin{bmatrix}3\\2\end{bmatrix}.
+\]</div>
+<p>Read the columns first:</p>
+<div class="arithmatex">\[
+A\mathbf e_1=
+\begin{bmatrix}2\\1\end{bmatrix},
+\qquad
+A\mathbf e_2=
+\begin{bmatrix}-1\\1\end{bmatrix}.
+\]</div>
+<p>Because <span class="arithmatex">\(\mathbf x=3\mathbf e_1+2\mathbf e_2\)</span>,</p>
+<div class="arithmatex">\[
+A\mathbf x
+=
+3\begin{bmatrix}2\\1\end{bmatrix}
++
+2\begin{bmatrix}-1\\1\end{bmatrix}
+=
+\begin{bmatrix}4\\5\end{bmatrix}.
+\]</div>
+<p>The row calculation and the column calculation are the same operation viewed from two directions:</p>
+<ul>
+<li>rows compute the two output coordinates;</li>
+<li>columns explain how the output vector is assembled.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Do not multiply by position</p>
+<p>In a product <span class="arithmatex">\(A\mathbf x\)</span>, the vector is written as a column on the right. The dimensions are part of the notation, not decoration.</p>
+</div>
+<h2 id="transformation-gallery">A small gallery of transformations</h2>
+<p>The fastest way to learn elementary matrices is to connect each formula with a visible action. In the figure below, the faint grid is the original plane. The transformed grid and the small house show the result of one matrix.</p>
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">One matrix transforms the grid and every figure on it</span>
+      <span class="figure-step-title" data-gallery-readout>identity — nothing changes</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open transformation gallery in full screen">⛶</button>
+  </div>
+  <div class="curve-switcher" role="group" aria-label="Choose a matrix transformation">
+    <button class="curve-mode is-active" type="button" data-transform-mode="identity">Identity</button>
+    <button class="curve-mode" type="button" data-transform-mode="stretch">Stretch</button>
+    <button class="curve-mode" type="button" data-transform-mode="shear">Shear</button>
+    <button class="curve-mode" type="button" data-transform-mode="reflection">Reflection</button>
+    <button class="curve-mode" type="button" data-transform-mode="rotation">Rotation</button>
+  </div>
+  <div class="figure-stage jsx-stage">
+    <div id="transformation-gallery-board" class="jxgbox" data-transformation-gallery aria-label="Interactive gallery of elementary matrix transformations"></div>
+  </div>
+  <div class="relation-readout">
+    <span data-gallery-matrix>$A=\begin{bmatrix}1&0\\0&1\end{bmatrix}$</span>
+  </div>
+  <figcaption class="figure-caption">Watch the basis arrows, grid lines and house together. They are three views of the same action.</figcaption>
+</figure>
+
+<h3 id="identity">Identity</h3>
+<div class="arithmatex">\[
+I=
+\begin{bmatrix}
+1&amp;0\\
+0&amp;1
+\end{bmatrix}
+\]</div>
+<p>leaves every vector unchanged.</p>
+<h3 id="horizontal-stretch">Horizontal stretch</h3>
+<div class="arithmatex">\[
+S=
+\begin{bmatrix}
+2&amp;0\\
+0&amp;1
+\end{bmatrix}
+\]</div>
+<p>sends <span class="arithmatex">\(\mathbf e_1\)</span> to <span class="arithmatex">\(2\mathbf e_1\)</span> and keeps <span class="arithmatex">\(\mathbf e_2\)</span> fixed. Widths double; heights do not.</p>
+<h3 id="shear">Shear</h3>
+<div class="arithmatex">\[
+H=
+\begin{bmatrix}
+1&amp;1\\
+0&amp;1
+\end{bmatrix}
+\]</div>
+<p>keeps horizontal vectors horizontal but moves the top of a figure sideways. A square becomes a slanted parallelogram.</p>
+<h3 id="reflection-in-the-vertical-axis">Reflection in the vertical axis</h3>
+<div class="arithmatex">\[
+R_y=
+\begin{bmatrix}
+-1&amp;0\\
+0&amp;1
+\end{bmatrix}
+\]</div>
+<p>reverses the horizontal direction and keeps the vertical direction.</p>
+<h3 id="rotation-through-90circ-counterclockwise">Rotation through <span class="arithmatex">\(90^\circ\)</span> counterclockwise</h3>
+<div class="arithmatex">\[
+Q=
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;0
+\end{bmatrix}.
+\]</div>
+<p>It sends</p>
+<div class="arithmatex">\[
+\mathbf e_1\mapsto\mathbf e_2,
+\qquad
+\mathbf e_2\mapsto-\mathbf e_1.
+\]</div>
+<p>The matrix is reconstructed directly from these two destination vectors.</p>
+<h2 id="geometry-under-action">What happens to lines, grids and shapes?</h2>
+<p>A matrix acts point by point, but the results are organized.</p>
+<h3 id="lines-through-the-origin-remain-lines-through-the-origin">Lines through the origin remain lines through the origin</h3>
+<p>A line generated by a vector <span class="arithmatex">\(\mathbf v\)</span> has the form</p>
+<div class="arithmatex">\[
+\mathbf x(t)=t\mathbf v.
+\]</div>
+<p>After applying <span class="arithmatex">\(A\)</span>,</p>
+<div class="arithmatex">\[
+A\mathbf x(t)=A(t\mathbf v)=t(A\mathbf v).
+\]</div>
+<p>The transformed points are generated by the single direction <span class="arithmatex">\(A\mathbf v\)</span>. If <span class="arithmatex">\(A\mathbf v\ne\mathbf0\)</span>, the result is another line through the origin. If <span class="arithmatex">\(A\mathbf v=\mathbf0\)</span>, the whole line collapses to the origin.</p>
+<h3 id="general-lines-remain-lines-or-collapse">General lines remain lines or collapse</h3>
+<p>A line</p>
+<div class="arithmatex">\[
+\mathbf x(t)=\mathbf p+t\mathbf v
+\]</div>
+<p>is transformed into</p>
+<div class="arithmatex">\[
+A\mathbf x(t)=A\mathbf p+tA\mathbf v.
+\]</div>
+<p>This is again a point plus a direction, unless the direction is sent to zero.</p>
+<h3 id="parallel-grid-lines-remain-parallel-or-merge">Parallel grid lines remain parallel or merge</h3>
+<p>All lines with direction <span class="arithmatex">\(\mathbf v\)</span> are transformed using direction <span class="arithmatex">\(A\mathbf v\)</span>. They therefore stay parallel when <span class="arithmatex">\(A\mathbf v\ne\mathbf0\)</span>. Several distinct lines may merge when the transformation loses a direction.</p>
+<h3 id="polygons-are-transformed-by-their-vertices">Polygons are transformed by their vertices</h3>
+<p>For a triangle with vertices <span class="arithmatex">\(\mathbf p\)</span>, <span class="arithmatex">\(\mathbf q\)</span> and <span class="arithmatex">\(\mathbf r\)</span>, calculate</p>
+<div class="arithmatex">\[
+A\mathbf p,\qquad A\mathbf q,\qquad A\mathbf r
+\]</div>
+<p>and join the three output points. Straight edges remain straight because the points of each edge are linear combinations of its endpoints.</p>
+<div class="admonition principle">
+<p class="admonition-title">Transform the structure, not isolated dots</p>
+<p>A useful drawing should display at least two of the following together:</p>
+<ul>
+<li>basis vectors;</li>
+<li>coordinate grid;</li>
+<li>a simple figure;</li>
+<li>selected input and output points.</li>
+</ul>
+<p>Seeing only one transformed point hides the action on the plane.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Area scaling is visible but postponed</p>
+<p>The area of the transformed unit square is the area of the parallelogram generated by the two columns. A signed formula for this area is the determinant, which belongs to Lecture 07. Here we only observe whether the parallelogram expands, shrinks, flips orientation or collapses.</p>
+</div>
+<h2 id="collapse">When a transformation collapses dimensions</h2>
+<p>Not every matrix spreads the plane across another two-dimensional plane. Two different input directions may be sent into the same output direction.</p>
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">A plane can collapse to a line or a point</span>
+      <span class="figure-step-title" data-collapse-readout>projection onto the horizontal axis</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open dimension-collapse figure in full screen">⛶</button>
+  </div>
+  <div class="curve-switcher" role="group" aria-label="Choose a collapsing transformation">
+    <button class="curve-mode is-active" type="button" data-collapse-mode="projection">Projection</button>
+    <button class="curve-mode" type="button" data-collapse-mode="same-line">Both columns on one line</button>
+    <button class="curve-mode" type="button" data-collapse-mode="zero">Zero matrix</button>
+  </div>
+  <div class="figure-stage jsx-stage">
+    <div id="collapse-board" class="jxgbox" data-collapse-board aria-label="Interactive examples of matrices that collapse dimensions"></div>
+  </div>
+  <div class="relation-readout"><span data-collapse-matrix>$A=\begin{bmatrix}1&0\\0&0\end{bmatrix}$</span></div>
+  <figcaption class="figure-caption">The original triangle has area. Its image under these matrices lies on a line or at one point.</figcaption>
+</figure>
+
+<h3 id="projection-onto-the-horizontal-axis">Projection onto the horizontal axis</h3>
+<div class="arithmatex">\[
+P=
+\begin{bmatrix}
+1&amp;0\\
+0&amp;0
+\end{bmatrix}
+\]</div>
+<p>gives</p>
+<div class="arithmatex">\[
+P
+\begin{bmatrix}x\\y\end{bmatrix}
+=
+\begin{bmatrix}x\\0\end{bmatrix}.
+\]</div>
+<p>Every point is dropped vertically onto the horizontal axis. The vertical direction disappears because</p>
+<div class="arithmatex">\[
+P\mathbf e_2=\mathbf0.
+\]</div>
+<h3 id="two-columns-on-the-same-line">Two columns on the same line</h3>
+<p>For</p>
+<div class="arithmatex">\[
+C=
+\begin{bmatrix}
+1&amp;2\\
+1&amp;2
+\end{bmatrix},
+\]</div>
+<p>both columns are multiples of <span class="arithmatex">\(\begin{bmatrix}1\\1\end{bmatrix}\)</span>. Every output is therefore a multiple of that vector:</p>
+<div class="arithmatex">\[
+C
+\begin{bmatrix}x\\y\end{bmatrix}
+=
+(x+2y)
+\begin{bmatrix}1\\1\end{bmatrix}.
+\]</div>
+<p>The whole plane is compressed onto one line.</p>
+<h3 id="the-zero-matrix">The zero matrix</h3>
+<div class="arithmatex">\[
+O=
+\begin{bmatrix}
+0&amp;0\\
+0&amp;0
+\end{bmatrix}
+\]</div>
+<p>sends every vector to the origin.</p>
+<div class="admonition interpretation">
+<p class="admonition-title">Loss of dimension means loss of information</p>
+<p>After a plane has been collapsed to a line, many different inputs produce the same output. From the output alone, the original input cannot be recovered uniquely. Invertibility will be studied systematically in Lecture 07.</p>
+</div>
+<h2 id="design-a-matrix">Build a matrix from a picture</h2>
+<p>To construct a matrix, decide where the two basis vectors should go.</p>
+<p>Suppose an action is required to satisfy</p>
+<div class="arithmatex">\[
+\mathbf e_1\mapsto
+\begin{bmatrix}3\\1\end{bmatrix},
+\qquad
+\mathbf e_2\mapsto
+\begin{bmatrix}-1\\2\end{bmatrix}.
+\]</div>
+<p>Place these destination vectors as the columns:</p>
+<div class="arithmatex">\[
+A=
+\begin{bmatrix}
+3&amp;-1\\
+1&amp;2
+\end{bmatrix}.
+\]</div>
+<p>No system of equations is needed. The matrix is read directly from the drawing.</p>
+<h3 id="design-procedure">Design procedure</h3>
+<ol>
+<li>Draw <span class="arithmatex">\(\mathbf e_1\)</span> and <span class="arithmatex">\(\mathbf e_2\)</span>.</li>
+<li>Draw their required images.</li>
+<li>Put the image of <span class="arithmatex">\(\mathbf e_1\)</span> in the first column.</li>
+<li>Put the image of <span class="arithmatex">\(\mathbf e_2\)</span> in the second column.</li>
+<li>Test the matrix on one additional vector.</li>
+</ol>
+<p>For example,</p>
+<div class="arithmatex">\[
+\begin{bmatrix}1\\1\end{bmatrix}
+=
+\mathbf e_1+\mathbf e_2,
+\]</div>
+<p>so its image must be</p>
+<div class="arithmatex">\[
+A
+\begin{bmatrix}1\\1\end{bmatrix}
+=
+A\mathbf e_1+A\mathbf e_2
+=
+\begin{bmatrix}3\\1\end{bmatrix}
++
+\begin{bmatrix}-1\\2\end{bmatrix}
+=
+\begin{bmatrix}2\\3\end{bmatrix}.
+\]</div>
+<h3 id="reading-a-desired-transformation">Reading a desired transformation</h3>
+<table>
+<thead>
+<tr>
+<th>Desired action</th>
+<th style="text-align: right;">Image of <span class="arithmatex">\(\mathbf e_1\)</span></th>
+<th style="text-align: right;">Image of <span class="arithmatex">\(\mathbf e_2\)</span></th>
+<th style="text-align: right;">Matrix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>double all lengths</td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}2\\0\end{bmatrix}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}0\\2\end{bmatrix}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></td>
+</tr>
+<tr>
+<td>reflect in the horizontal axis</td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}1\\0\end{bmatrix}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}0\\-1\end{bmatrix}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}1&amp;0\\0&amp;-1\end{bmatrix}\)</span></td>
+</tr>
+<tr>
+<td>swap the coordinate axes</td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}0\\1\end{bmatrix}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}1\\0\end{bmatrix}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\)</span></td>
+</tr>
+<tr>
+<td>project onto the vertical axis</td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}0\\0\end{bmatrix}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}0\\1\end{bmatrix}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\begin{bmatrix}0&amp;0\\0&amp;1\end{bmatrix}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">The first row is not the first basis image</p>
+<p>Basis images are stored in <strong>columns</strong>. Confusing rows with columns usually produces a different transformation, often a reflection or shear in an unintended direction.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Quick visual test</p>
+<p>If the two columns point in exactly the same direction, can the image still fill the plane? Explain using linear combinations of the columns.</p>
+</div>
+<h2 id="computational-model">Optional computational model</h2>
+<p>A matrix transformation can be implemented without a matrix library. The code mirrors the coordinate formula exactly.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypeAlias</span>
+
+<span class="n">Vector2</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+<span class="n">Matrix2</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="n">matrix</span><span class="p">:</span> <span class="n">Matrix2</span><span class="p">,</span> <span class="n">vector</span><span class="p">:</span> <span class="n">Vector2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector2</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply a 2×2 matrix to a two-dimensional column vector.&quot;&quot;&quot;</span>
+    <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">=</span> <span class="n">matrix</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vector</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">y</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">transform_shape</span><span class="p">(</span><span class="n">matrix</span><span class="p">:</span> <span class="n">Matrix2</span><span class="p">,</span> <span class="n">vertices</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Vector2</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Vector2</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Transform every vertex of a polygon by the same matrix.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">transform</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">vertex</span><span class="p">)</span> <span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="n">vertices</span><span class="p">]</span>
+
+
+<span class="n">shear</span><span class="p">:</span> <span class="n">Matrix2</span> <span class="o">=</span> <span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="n">house</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Vector2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">transform</span><span class="p">(</span><span class="n">shear</span><span class="p">,</span> <span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transform_shape</span><span class="p">(</span><span class="n">shear</span><span class="p">,</span> <span class="n">house</span><span class="p">))</span>
+</code></pre></div>
+<p>The computational model should preserve the mathematical structure:</p>
+<ul>
+<li>the matrix is one action;</li>
+<li>the same function is applied to every vertex;</li>
+<li>no vertex receives a special rule;</li>
+<li>the order of the vertices is retained so that edges can be redrawn.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">What to verify</p>
+<p>For each implementation, test the basis vectors first. If the program does not return the two columns for <span class="arithmatex">\(\mathbf e_1\)</span> and <span class="arithmatex">\(\mathbf e_2\)</span>, the indexing convention is wrong.</p>
+</div>
+<p>This model prepares the next lecture. Applying one matrix and then another creates a new action; matrix multiplication will arise from composing those actions.</p>
+<h2 id="exercises">Exercises</h2>
+<p>The companion design page separates two levels of work:</p>
+<ul>
+<li><strong>required practice</strong> connects columns, basis images, matrix-vector products and elementary transformations;</li>
+<li><strong>developing work</strong> asks students to design matrices, compare pictures with formulas and diagnose dimension collapse.</li>
+</ul>
+<p><a class="companion-button" href="../../exercises-05/">Open Exercise Set 05 design page →</a></p>
+<p>The exercise set is deliberately visual. Every substantial calculation should be accompanied by a labelled grid, basis arrows or a transformed figure.</p></main>
+  
+</body>
+</html>
