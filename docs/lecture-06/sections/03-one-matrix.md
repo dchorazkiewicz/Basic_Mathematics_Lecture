@@ -90,14 +90,62 @@ $$
 The coefficient vector multiplying $x$ becomes the first column. The coefficient vector multiplying $y$ becomes the second column. Therefore
 
 $$
-AB=
+C=AB=
 \begin{bmatrix}
 0&-1\\
 1&1
 \end{bmatrix}.
 $$
 
-A direct check gives
+### Stage 4: verify the four entries one by one
+
+Write $C=(c_{ij})$. The first index selects the row of $A$ and the second index selects the column of $B$.
+
+$$
+\begin{aligned}
+c_{11}
+&=
+\begin{bmatrix}0&-1\end{bmatrix}
+\begin{bmatrix}1\\0\end{bmatrix}
+=0\cdot1+(-1)\cdot0
+=0,\\[6pt]
+c_{12}
+&=
+\begin{bmatrix}0&-1\end{bmatrix}
+\begin{bmatrix}1\\1\end{bmatrix}
+=0\cdot1+(-1)\cdot1
+=-1,\\[6pt]
+c_{21}
+&=
+\begin{bmatrix}1&0\end{bmatrix}
+\begin{bmatrix}1\\0\end{bmatrix}
+=1\cdot1+0\cdot0
+=1,\\[6pt]
+c_{22}
+&=
+\begin{bmatrix}1&0\end{bmatrix}
+\begin{bmatrix}1\\1\end{bmatrix}
+=1\cdot1+0\cdot1
+=1.
+\end{aligned}
+$$
+
+Thus the four separately calculated entries reconstruct the same matrix:
+
+$$
+C=
+\begin{bmatrix}
+c_{11}&c_{12}\\
+c_{21}&c_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&-1\\
+1&1
+\end{bmatrix}.
+$$
+
+A direct action check gives
 
 $$
 \begin{bmatrix}
@@ -125,4 +173,4 @@ which is exactly the output obtained from the two-stage calculation.
     for every input vector $\mathbf x$.
 
 !!! principle "Do not memorize the product before you can explain it"
-    The matrix $AB$ is correct because its two columns reproduce the coefficients of the final rule. The next section derives those same columns directly from the basis vectors.
+    The matrix $AB$ is correct because its action reproduces the complete two-stage rule. The indexed row-by-column calculation and the basis-vector journey are two ways to calculate the same matrix.
