@@ -29,7 +29,7 @@ The course map contains two linked layers. **Lecture** opens the teaching materi
 | Lecture | Topic | Scope | Lecture | Exercises |
 |---:|---|---|---|---|
 | **05** | Matrices as Transformations | A matrix as one action on the plane, read through basis images, transformed grids and figures. | [Open →](lecture-05/index.md) | [Design set 05 →](exercises-05/index.md) |
-| **06** | Composition of Transformations | Matrix multiplication arising from consecutive actions. | Planned | Planned |
+| **06** | Composition of Transformations | Consecutive linear actions represented by one product matrix, with order read through basis journeys, grids and figures. | [Open →](lecture-06/index.md) | [Design set 06 →](exercises-06/index.md) |
 | **07** | Determinants and Invertibility | Area scaling, loss of information and the possibility of reversing an action. | Planned | Planned |
 | **08** | Linear Systems as Inverse Problems | Recovering unknown input from a known output in $Ax=b$. | Planned | Planned |
 
