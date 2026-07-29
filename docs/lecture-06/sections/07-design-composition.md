@@ -1,20 +1,21 @@
 ## Design and check a composition {#design-composition}
 
-A reliable two-step solution should contain both the geometric story and the algebra.
+A reliable solution should tell the same story in words, in a drawing and in algebra.
 
 ### Procedure
 
 1. **Name the first action.** Call its matrix $B$.
 2. **Name the second action.** Call its matrix $A$.
-3. **Write the journey.**
+3. **Write the chronological journey.**
 
    $$
    \mathbf x\longmapsto B\mathbf x\longmapsto A(B\mathbf x).
    $$
 
-4. **Construct the product $AB$.** Use either the two basis-vector journeys or the row-by-column calculation.
-5. **Check one object.** Test a basis vector, a simple point, or one vertex of the figure.
-6. **Compare with the drawing.** Signs, directions and the order of the factors must agree with the picture.
+4. **Write the product in the correct order.** The combined matrix is $AB$.
+5. **Construct the first column.** Send $\mathbf e_1$ through $B$, then through $A$.
+6. **Construct the second column.** Send $\mathbf e_2$ through $B$, then through $A$.
+7. **Check one additional vector.** The one-step and two-step calculations must agree.
 
 ### Example: stretch, then rotate
 
@@ -40,7 +41,71 @@ $$
 
 rotate through $90^\circ$ counterclockwise.
 
-Then
+The first action is $B$, so $B$ stands next to the input vector. The combined matrix must therefore be $AB$.
+
+### First column
+
+The first column of $B$ is
+
+$$
+B\mathbf e_1=
+\begin{bmatrix}
+2\\0
+\end{bmatrix}.
+$$
+
+Apply the second action:
+
+$$
+A(B\mathbf e_1)
+=
+\begin{bmatrix}
+0&-1\\
+1&0
+\end{bmatrix}
+\begin{bmatrix}
+2\\0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\2
+\end{bmatrix}.
+$$
+
+This is the first column of $AB$.
+
+### Second column
+
+The second column of $B$ is
+
+$$
+B\mathbf e_2=
+\begin{bmatrix}
+0\\1
+\end{bmatrix}.
+$$
+
+Apply the second action:
+
+$$
+A(B\mathbf e_2)
+=
+\begin{bmatrix}
+0&-1\\
+1&0
+\end{bmatrix}
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1\\0
+\end{bmatrix}.
+$$
+
+This is the second column of $AB$.
+
+Put the two final columns together:
 
 $$
 AB=
@@ -50,21 +115,35 @@ AB=
 \end{bmatrix}.
 $$
 
-A quick basis check gives
+### One-vector check
+
+For $\mathbf x=\begin{bmatrix}1\\1\end{bmatrix}$, the one-step calculation gives
 
 $$
-AB\mathbf e_1=
+AB\mathbf x
+=
 \begin{bmatrix}
-0\\2
-\end{bmatrix},
-\qquad
-AB\mathbf e_2=
+0&-1\\
+2&0
+\end{bmatrix}
 \begin{bmatrix}
--1\\0
+1\\1
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1\\2
 \end{bmatrix}.
 $$
 
-The first basis direction is stretched to length $2$ and then rotated upward. The second basis direction is rotated left without changing length.
+The two-stage calculation gives the same result:
 
-!!! principle "A correct product must tell the same story as the picture"
-    If the product matrix predicts basis arrows that disagree with the two-stage drawing, the factors were probably reversed or a column was calculated incorrectly.
+$$
+\begin{bmatrix}1\\1\end{bmatrix}
+\overset{B}{\longmapsto}
+\begin{bmatrix}2\\1\end{bmatrix}
+\overset{A}{\longmapsto}
+\begin{bmatrix}-1\\2\end{bmatrix}.
+$$
+
+!!! principle "A correct product must agree with both checks"
+    The columns must match the two basis-vector journeys, and a test vector must have the same final image in the one-step and two-step calculations.
