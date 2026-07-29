@@ -4,13 +4,20 @@
   window.LectureJSX = window.LectureJSX || {};
 
   window.LectureJSX.keepBoardFitted = ({ board, host, boundingBox }) => {
+    const isMiniBoard = host.classList.contains('stage-mini-board');
     const stage = host.closest('.jsx-stage') || host.parentElement;
+    const observerTarget = isMiniBoard
+      ? (host.closest('.stage-card') || host.parentElement)
+      : stage;
+
     let scheduled = false;
     let resizing = false;
+    let lastWidth = 0;
+    let lastHeight = 0;
 
     /* JSXGraph may alter a bounding-box array while preserving aspect ratio.
-       Wrap the method once so repeated lecture steps never mutate their
-       shared FULL_VIEW or FOCUS_VIEW constants. */
+       Clone every box before passing it to JSXGraph so lecture constants are
+       never mutated between updates. */
     if (!board.__lectureBoundingBoxGuard) {
       const setBoundingBox = board.setBoundingBox.bind(board);
       board.setBoundingBox = (box, ...args) =>
@@ -23,35 +30,61 @@
       return Array.isArray(value) ? [...value] : value;
     };
 
+    const measure = () => {
+      host.style.removeProperty('width');
+      host.style.removeProperty('height');
+
+      if (isMiniBoard) {
+        const rect = host.getBoundingClientRect();
+        return {
+          width: rect.width,
+          height: rect.height
+        };
+      }
+
+      const rect = stage.getBoundingClientRect();
+      const styles = getComputedStyle(stage);
+      return {
+        width: rect.width - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight),
+        height: rect.height - parseFloat(styles.paddingTop) - parseFloat(styles.paddingBottom)
+      };
+    };
+
     const fit = async () => {
       if (scheduled || resizing) return;
       scheduled = true;
-      await nextFrame();
       await nextFrame();
       scheduled = false;
 
       if (!stage || !host.isConnected) return;
       resizing = true;
 
-      /* JSXGraph writes pixel dimensions inline. Remove stale fullscreen
-         dimensions before measuring the CSS-controlled stage. */
-      host.style.removeProperty('width');
-      host.style.removeProperty('height');
+      try {
+        const measured = measure();
+        const maximumWidth = isMiniBoard ? 900 : 2200;
+        const maximumHeight = isMiniBoard ? 420 : 1400;
+        const minimumHeight = isMiniBoard ? 180 : 240;
 
-      const rect = stage.getBoundingClientRect();
-      const styles = getComputedStyle(stage);
-      const width = Math.max(1, rect.width - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight));
-      const height = Math.max(1, rect.height - parseFloat(styles.paddingTop) - parseFloat(styles.paddingBottom));
+        const width = Math.round(Math.min(maximumWidth, Math.max(120, measured.width)));
+        const height = Math.round(Math.min(maximumHeight, Math.max(minimumHeight, measured.height)));
 
-      board.resizeContainer(Math.round(width), Math.round(height));
-      board.setBoundingBox(getBoundingBox(), true);
-      board.fullUpdate();
-      resizing = false;
+        /* A one-pixel tolerance prevents ResizeObserver from feeding the size
+           written by JSXGraph straight back into another resize operation. */
+        if (Math.abs(width - lastWidth) <= 1 && Math.abs(height - lastHeight) <= 1) return;
+
+        lastWidth = width;
+        lastHeight = height;
+        board.resizeContainer(width, height);
+        board.setBoundingBox(getBoundingBox(), true);
+        board.update();
+      } finally {
+        resizing = false;
+      }
     };
 
     const observer = new ResizeObserver(() => fit());
-    observer.observe(stage);
-    window.addEventListener('resize', fit);
+    if (observerTarget) observer.observe(observerTarget);
+    window.addEventListener('resize', fit, { passive: true });
     document.addEventListener('fullscreenchange', fit);
 
     fit();
