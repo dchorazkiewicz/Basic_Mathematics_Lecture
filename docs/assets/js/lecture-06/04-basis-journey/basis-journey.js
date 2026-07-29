@@ -1,92 +1,103 @@
 (() => {
-  const host = document.querySelector('[data-basis-journey-board]');
-  if (!host || !window.JXG) return;
+  if (!window.JXG) return;
 
-  const panel = host.closest('[data-fullscreen-panel]');
-  const buttons = [...panel.querySelectorAll('[data-basis-journey-preset]')];
-  const title = panel.querySelector('[data-basis-journey-title]');
-  const matrixReadout = panel.querySelector('[data-basis-journey-matrices]');
-  const VIEW = [-6, 6, 6, -6];
+  const B = [[1, 1], [0, 1]];
+  const A = [[0, -1], [1, 0]];
+  const VIEW = [-2.5, 2.5, 2.5, -2.5];
   const fixed = { fixed: true, highlight: false };
 
-  const presets = {
-    'shear-rotate': { B: [[1, 1], [0, 1]], A: [[0, -1], [1, 0]] },
-    'stretch-shear': { B: [[2, 0], [0, 1]], A: [[1, 1], [0, 1]] },
-    'reflect-rotate': { B: [[-1, 0], [0, 1]], A: [[0, -1], [1, 0]] }
-  };
-
-  const state = { preset: 'shear-rotate' };
   const apply = (M, [x, y]) => [
     M[0][0] * x + M[0][1] * y,
     M[1][0] * x + M[1][1] * y
   ];
-  const multiply = (A, B) => [
-    [A[0][0] * B[0][0] + A[0][1] * B[1][0], A[0][0] * B[0][1] + A[0][1] * B[1][1]],
-    [A[1][0] * B[0][0] + A[1][1] * B[1][0], A[1][0] * B[0][1] + A[1][1] * B[1][1]]
-  ];
 
-  const board = JXG.JSXGraph.initBoard(host.id, {
-    boundingbox: VIEW, axis: true, grid: true, keepAspectRatio: true,
-    showNavigation: false, showCopyright: false,
-    pan: { enabled: false }, zoom: { enabled: false }
-  });
-
-  const Bcol = index => {
-    const B = presets[state.preset].B;
-    return [B[0][index], B[1][index]];
-  };
-  const ABcol = index => {
-    const { A } = presets[state.preset];
-    return apply(A, Bcol(index));
+  const sameVector = ([x1, y1], [x2, y2]) => x1 === x2 && y1 === y2;
+  const labelStyle = options => window.LectureJSX?.pointLabelStyle?.(options) || {
+    display: 'html',
+    cssClass: 'vector-label-chip',
+    offset: [10, 10],
+    fontSize: 14,
+    ...options
   };
 
-  board.create('arrow', [[0, 0], () => Bcol(0)], {
-    strokeColor: '#b1782b', strokeWidth: 4, dash: 2, ...fixed
-  });
-  board.create('arrow', [[0, 0], () => Bcol(1)], {
-    strokeColor: '#b1782b', strokeWidth: 4, dash: 2, ...fixed
-  });
-  board.create('arrow', [[0, 0], () => ABcol(0)], {
-    strokeColor: '#2f6f9f', strokeWidth: 5, ...fixed
-  });
-  board.create('arrow', [[0, 0], () => ABcol(1)], {
-    strokeColor: '#7c8f3d', strokeWidth: 5, ...fixed
-  });
+  const createJourney = ({ host, basis, basisName, finalColor, finalName }) => {
+    if (!host) return;
 
-  board.create('point', [() => Bcol(0)[0], () => Bcol(0)[1]], {
-    name: 'B e₁', size: 4, fillColor: '#b1782b', strokeColor: '#b1782b', ...fixed
-  });
-  board.create('point', [() => Bcol(1)[0], () => Bcol(1)[1]], {
-    name: 'B e₂', size: 4, fillColor: '#b1782b', strokeColor: '#b1782b', ...fixed
-  });
-  board.create('point', [() => ABcol(0)[0], () => ABcol(0)[1]], {
-    name: 'AB e₁', size: 5, fillColor: '#2f6f9f', strokeColor: '#2f6f9f', ...fixed
-  });
-  board.create('point', [() => ABcol(1)[0], () => ABcol(1)[1]], {
-    name: 'AB e₂', size: 5, fillColor: '#7c8f3d', strokeColor: '#7c8f3d', ...fixed
-  });
-
-  const update = () => {
-    const { A, B } = presets[state.preset];
-    const AB = multiply(A, B);
-    buttons.forEach(button => {
-      button.classList.toggle('is-active', button.dataset.basisJourneyPreset === state.preset);
+    const intermediate = apply(B, basis);
+    const finalVector = apply(A, intermediate);
+    const board = JXG.JSXGraph.initBoard(host.id, {
+      boundingbox: VIEW,
+      axis: true,
+      grid: true,
+      keepAspectRatio: true,
+      showNavigation: false,
+      showCopyright: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
     });
-    title.textContent = 'orange: columns of B; blue and green: columns of AB';
-    window.LectureMath.set(
-      matrixReadout,
-      `${window.LectureMath.matrix('B', B)},\\qquad ${window.LectureMath.matrix('A', A)},\\qquad ${window.LectureMath.matrix('AB', AB)}`
-    );
-    board.fullUpdate();
+
+    if (!sameVector(basis, intermediate)) {
+      board.create('arrow', [[0, 0], basis], {
+        strokeColor: '#aeb7c1',
+        strokeWidth: 3,
+        dash: 2,
+        ...fixed
+      });
+      board.create('point', basis, {
+        name: basisName,
+        size: 3,
+        fillColor: '#aeb7c1',
+        strokeColor: '#aeb7c1',
+        ...fixed,
+        label: labelStyle({ offset: [8, -18], fontSize: 13 })
+      });
+    }
+
+    board.create('arrow', [[0, 0], intermediate], {
+      strokeColor: '#b1782b',
+      strokeWidth: 4,
+      dash: 2,
+      ...fixed
+    });
+    board.create('point', intermediate, {
+      name: sameVector(basis, intermediate) ? `B${basisName} = ${basisName}` : `B${basisName}`,
+      size: 4,
+      fillColor: '#b1782b',
+      strokeColor: '#b1782b',
+      ...fixed,
+      label: labelStyle({ offset: [10, 12], fontSize: 14 })
+    });
+
+    board.create('arrow', [[0, 0], finalVector], {
+      strokeColor: finalColor,
+      strokeWidth: 5,
+      ...fixed
+    });
+    board.create('point', finalVector, {
+      name: finalName,
+      size: 5,
+      fillColor: finalColor,
+      strokeColor: finalColor,
+      ...fixed,
+      label: labelStyle({ offset: [10, 12], fontSize: 14 })
+    });
+
+    window.LectureJSX?.keepBoardFitted?.({ board, host, boundingBox: VIEW });
   };
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      state.preset = button.dataset.basisJourneyPreset;
-      update();
-    });
+  createJourney({
+    host: document.querySelector('[data-basis-journey-e1-board]'),
+    basis: [1, 0],
+    basisName: 'e₁',
+    finalColor: '#2f6f9f',
+    finalName: '(AB)e₁'
   });
 
-  update();
-  window.LectureJSX?.keepBoardFitted?.({ board, host, boundingBox: VIEW });
+  createJourney({
+    host: document.querySelector('[data-basis-journey-e2-board]'),
+    basis: [0, 1],
+    basisName: 'e₂',
+    finalColor: '#7c8f3d',
+    finalName: '(AB)e₂'
+  });
 })();
