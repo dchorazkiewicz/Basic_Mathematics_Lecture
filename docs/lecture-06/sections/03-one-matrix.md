@@ -1,6 +1,8 @@
 ## One matrix records the two-step action {#one-matrix}
 
-Continue with
+We now replace the two consecutive actions by one matrix. The important step is not guessing the product formula. It is reading the coefficients of the final output rule.
+
+Keep
 
 $$
 B=
@@ -13,38 +15,79 @@ A=
 \begin{bmatrix}
 0&-1\\
 1&0
-\end{bmatrix}.
-$$
-
-For a general input vector,
-
-$$
+\end{bmatrix},
+\qquad
 \mathbf x=
 \begin{bmatrix}
 x\\y
-\end{bmatrix},
+\end{bmatrix}.
 $$
 
-the first action gives
+### Stage 1: write the output of $B$
 
 $$
-B\mathbf x=
+\begin{aligned}
+B\mathbf x
+&=
+\begin{bmatrix}
+1&1\\
+0&1
+\end{bmatrix}
+\begin{bmatrix}
+x\\y
+\end{bmatrix}\\[4pt]
+&=
 \begin{bmatrix}
 x+y\\y
 \end{bmatrix}.
+\end{aligned}
 $$
 
-The second action then gives
+### Stage 2: feed that output into $A$
 
 $$
+\begin{aligned}
 A(B\mathbf x)
-=
+&=
+\begin{bmatrix}
+0&-1\\
+1&0
+\end{bmatrix}
+\begin{bmatrix}
+x+y\\y
+\end{bmatrix}\\[4pt]
+&=
+\begin{bmatrix}
+0(x+y)-y\\
+(x+y)+0y
+\end{bmatrix}\\[4pt]
+&=
 \begin{bmatrix}
 -y\\x+y
 \end{bmatrix}.
+\end{aligned}
 $$
 
-This final rule is represented by one matrix:
+### Stage 3: separate the coefficients of $x$ and $y$
+
+The final vector can be rewritten as
+
+$$
+\begin{bmatrix}
+-y\\x+y
+\end{bmatrix}
+=
+x
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
++y
+\begin{bmatrix}
+-1\\1
+\end{bmatrix}.
+$$
+
+The coefficient vector multiplying $x$ becomes the first column. The coefficient vector multiplying $y$ becomes the second column. Therefore
 
 $$
 AB=
@@ -54,52 +97,32 @@ AB=
 \end{bmatrix}.
 $$
 
-Indeed,
+A direct check gives
 
 $$
-AB
+\begin{bmatrix}
+0&-1\\
+1&1
+\end{bmatrix}
 \begin{bmatrix}
 x\\y
 \end{bmatrix}
 =
 \begin{bmatrix}
 -y\\x+y
-\end{bmatrix}.
+\end{bmatrix},
 $$
 
-!!! definition "Matrix product"
-    The product $AB$ is the matrix whose action is equivalent to applying $B$ first and $A$ second:
+which is exactly the output obtained from the two-stage calculation.
+
+!!! definition "Matrix product as a combined action"
+    The product $AB$ is the matrix satisfying
 
     $$
     (AB)\mathbf x=A(B\mathbf x)
     $$
 
-    for every vector $\mathbf x$.
+    for every input vector $\mathbf x$.
 
-For general matrices
-
-$$
-A=
-\begin{bmatrix}
-a&b\\
-c&d
-\end{bmatrix},
-\qquad
-B=
-\begin{bmatrix}
-e&f\\
-g&h
-\end{bmatrix},
-$$
-
-the product is
-
-$$
-AB=
-\begin{bmatrix}
-ae+bg&af+bh\\
-ce+dg&cf+dh
-\end{bmatrix}.
-$$
-
-This formula is not introduced as an isolated pattern. Each column will now be derived from the journey of one basis vector.
+!!! principle "Do not memorize the product before you can explain it"
+    The matrix $AB$ is correct because its two columns reproduce the coefficients of the final rule. The next section derives those same columns directly from the basis vectors.
