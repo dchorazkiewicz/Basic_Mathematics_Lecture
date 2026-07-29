@@ -28,10 +28,11 @@
     const board = JXG.JSXGraph.initBoard(host.id, {
       boundingbox: VIEW,
       axis: true,
-      grid: true,
+      grid: false,
       keepAspectRatio: true,
       showNavigation: false,
       showCopyright: false,
+      showInfobox: false,
       pan: { enabled: false },
       zoom: { enabled: false }
     });
