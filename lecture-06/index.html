@@ -80,8 +80,8 @@
           
         </header>
         <h2 id="consecutive-actions">Two actions in succession</h2>
-<p>Lecture 05 treated a matrix as one action on the plane. Real procedures often contain several actions.</p>
-<p>Suppose that the matrix <span class="arithmatex">\(B\)</span> acts first and the matrix <span class="arithmatex">\(A\)</span> acts second. A vector follows the path</p>
+<p>Lecture 05 treated a matrix as one action on the plane. We now place two actions one after the other.</p>
+<p>Let <span class="arithmatex">\(B\)</span> act first and let <span class="arithmatex">\(A\)</span> act second. The input vector follows the journey</p>
 <div class="arithmatex">\[
 \mathbf x
 \overset{B}{\longmapsto}
@@ -90,90 +90,141 @@ B\mathbf x
 A(B\mathbf x).
 \]</div>
 <div class="admonition principle">
-<p class="admonition-title">Read the action from right to left</p>
-<p>In the expression <span class="arithmatex">\(A(B\mathbf x)\)</span>, the matrix nearest to <span class="arithmatex">\(\mathbf x\)</span> acts first. Therefore <span class="arithmatex">\(B\)</span> is applied first and <span class="arithmatex">\(A\)</span> second.</p>
+<p class="admonition-title">Read the journey from the vector outward</p>
+<p>In <span class="arithmatex">\(A(B\mathbf x)\)</span>, the matrix nearest to <span class="arithmatex">\(\mathbf x\)</span> acts first. Therefore <span class="arithmatex">\(B\)</span> is the first action and <span class="arithmatex">\(A\)</span> is the second action.</p>
 </div>
-<p>For example, let</p>
+<p>We use one example throughout the lecture:</p>
 <div class="arithmatex">\[
 B=
 \begin{bmatrix}
 1&amp;1\\
 0&amp;1
-\end{bmatrix},
-\qquad
+\end{bmatrix}
+\qquad\text{and}\qquad
 A=
 \begin{bmatrix}
 0&amp;-1\\
 1&amp;0
 \end{bmatrix}.
 \]</div>
-<p>The first action is a shear. The second action is a rotation through <span class="arithmatex">\(90^\circ\)</span> counterclockwise.</p>
-<p>Starting from</p>
+<p>The matrix <span class="arithmatex">\(B\)</span> is a shear. The matrix <span class="arithmatex">\(A\)</span> is a rotation through <span class="arithmatex">\(90^\circ\)</span> counterclockwise.</p>
+<p>Start with</p>
 <div class="arithmatex">\[
 \mathbf x=
 \begin{bmatrix}
 2\\1
-\end{bmatrix},
+\end{bmatrix}.
 \]</div>
-<p>we obtain</p>
+<h3 id="first-action-apply-b">First action: apply <span class="arithmatex">\(B\)</span></h3>
 <div class="arithmatex">\[
-B\mathbf x=
+\begin{aligned}
+B\mathbf x
+&amp;=
+\begin{bmatrix}
+1&amp;1\\
+0&amp;1
+\end{bmatrix}
+\begin{bmatrix}
+2\\1
+\end{bmatrix}\\[4pt]
+&amp;=
+\begin{bmatrix}
+1\cdot2+1\cdot1\\
+0\cdot2+1\cdot1
+\end{bmatrix}\\[4pt]
+&amp;=
 \begin{bmatrix}
 3\\1
-\end{bmatrix},
-\qquad
-A(B\mathbf x)=
+\end{bmatrix}.
+\end{aligned}
+\]</div>
+<p>The vector <span class="arithmatex">\(\begin{bmatrix}3\\1\end{bmatrix}\)</span> is the <strong>intermediate output</strong>. It is also the input received by the second matrix.</p>
+<h3 id="second-action-apply-a-to-the-intermediate-output">Second action: apply <span class="arithmatex">\(A\)</span> to the intermediate output</h3>
+<div class="arithmatex">\[
+\begin{aligned}
+A(B\mathbf x)
+&amp;=
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;0
+\end{bmatrix}
+\begin{bmatrix}
+3\\1
+\end{bmatrix}\\[4pt]
+&amp;=
+\begin{bmatrix}
+0\cdot3-1\cdot1\\
+1\cdot3+0\cdot1
+\end{bmatrix}\\[4pt]
+&amp;=
 \begin{bmatrix}
 -1\\3
 \end{bmatrix}.
+\end{aligned}
 \]</div>
-<p>The intermediate vector is part of the reasoning. It shows exactly what the second matrix receives as its input.</p>
+<p>The complete numerical journey is therefore</p>
+<div class="arithmatex">\[
+\begin{bmatrix}2\\1\end{bmatrix}
+\overset{B}{\longmapsto}
+\begin{bmatrix}3\\1\end{bmatrix}
+\overset{A}{\longmapsto}
+\begin{bmatrix}-1\\3\end{bmatrix}.
+\]</div>
 <div class="admonition warning">
-<p class="admonition-title">Do not apply both matrices to the original vector</p>
-<p>The second action is applied to the output of the first action, not again to the original vector.</p>
+<p class="admonition-title">Do not restart from the original vector</p>
+<p>The second matrix acts on <span class="arithmatex">\(B\mathbf x\)</span>, not on the original vector <span class="arithmatex">\(\mathbf x\)</span>. The intermediate vector must remain visible in the calculation.</p>
 </div>
-<h2 id="two-stage-journey">Follow a figure through both stages</h2>
-<p>A composition acts on every point of a figure in the same order. The panel below shows three views of one process:</p>
-<ol>
-<li>the original grid and house;</li>
-<li>the image after the first matrix <span class="arithmatex">\(B\)</span>;</li>
-<li>the final image after the second matrix <span class="arithmatex">\(A\)</span>.</li>
-</ol>
+<h2 id="two-stage-journey">Follow one vector through both stages</h2>
+<p>The previous calculation should also be readable as a picture. Instead of placing every stage on one crowded board, we separate the journey into three coordinate systems.</p>
 <figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
   <div class="figure-toolbar">
     <div>
-      <span class="figure-title">One figure, two consecutive actions</span>
-      <span class="figure-step-title" data-two-stage-title>first shear, then rotate</span>
+      <span class="figure-title">One input, one intermediate vector, one final vector</span>
+      <span class="figure-step-title">Read the panels from left to right</span>
     </div>
-    <button class="icon-button" type="button" data-fullscreen aria-label="Open two-stage transformation in full screen">⛶</button>
-  </div>
-  <div class="curve-switcher" role="group" aria-label="Choose a pair of transformations">
-    <button class="curve-mode is-active" type="button" data-two-stage-preset="shear-rotate">Shear → rotate</button>
-    <button class="curve-mode" type="button" data-two-stage-preset="stretch-shear">Stretch → shear</button>
-    <button class="curve-mode" type="button" data-two-stage-preset="reflect-rotate">Reflect → rotate</button>
-  </div>
-  <div class="curve-switcher" role="group" aria-label="Choose which stage is emphasized">
-    <button class="curve-mode is-active" type="button" data-two-stage-step="0">Input</button>
-    <button class="curve-mode" type="button" data-two-stage-step="1">After $B$</button>
-    <button class="curve-mode" type="button" data-two-stage-step="2">After $A\circ B$</button>
-  </div>
-  <div class="figure-stage jsx-stage">
-    <div id="two-stage-board" class="jxgbox" data-two-stage-board aria-label="Interactive two-stage transformation of a grid and house"></div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open the three-stage vector journey in full screen">⛶</button>
   </div>
   <div class="relation-readout">
-    <span data-two-stage-matrices>$B=\begin{bmatrix}1&1\\0&1\end{bmatrix},\quad A=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$</span>
+    <span>$B=\begin{bmatrix}1&1\\0&1\end{bmatrix}$</span>
+    <span>$A=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$</span>
   </div>
-  <figcaption class="figure-caption">The orange stage is the output of $B$ and simultaneously the input of $A$. The blue stage is the final image.</figcaption>
+  <div class="figure-stage stage-board-stage">
+    <div class="stage-board-grid stage-board-grid--three">
+      <section class="stage-card">
+        <div class="stage-card-title">1. Input vector</div>
+        <div id="two-stage-input-board" class="jxgbox stage-mini-board" data-two-stage-input-board aria-label="Input vector x equals two comma one"></div>
+        <div class="stage-card-math">$\mathbf x=\begin{bmatrix}2\\1\end{bmatrix}$</div>
+      </section>
+      <section class="stage-card">
+        <div class="stage-card-title">2. After the first action $B$</div>
+        <div id="two-stage-middle-board" class="jxgbox stage-mini-board" data-two-stage-middle-board aria-label="Intermediate vector Bx equals three comma one"></div>
+        <div class="stage-card-math">$B\mathbf x=\begin{bmatrix}3\\1\end{bmatrix}$</div>
+      </section>
+      <section class="stage-card">
+        <div class="stage-card-title">3. After the second action $A$</div>
+        <div id="two-stage-final-board" class="jxgbox stage-mini-board" data-two-stage-final-board aria-label="Final vector A of Bx equals minus one comma three"></div>
+        <div class="stage-card-math">$A(B\mathbf x)=\begin{bmatrix}-1\\3\end{bmatrix}$</div>
+      </section>
+    </div>
+  </div>
+  <figcaption class="figure-caption">Each panel contains only one vector. The middle panel is the bridge between the two actions: it is the output of $B$ and the input of $A$.</figcaption>
 </figure>
 
 <p>The notation</p>
 <div class="arithmatex">\[
 A\circ B
 \]</div>
-<p>means “first apply <span class="arithmatex">\(B\)</span>, then apply <span class="arithmatex">\(A\)</span>”. For linear transformations, the matrix of this composition will be written <span class="arithmatex">\(AB\)</span>.</p>
-<p>The circle symbol describes composition of actions. The product symbol describes the matrix that represents the same combined action.</p>
+<p>means “first apply <span class="arithmatex">\(B\)</span>, then apply <span class="arithmatex">\(A\)</span>”. For linear transformations, the single matrix representing this two-stage action will be written <span class="arithmatex">\(AB\)</span>.</p>
+<div class="admonition interpretation">
+<p class="admonition-title">Two notations, one process</p>
+<ul>
+<li><span class="arithmatex">\(A\circ B\)</span> names the composition of two actions;</li>
+<li><span class="arithmatex">\(AB\)</span> names the matrix that performs the same complete action in one step.</li>
+</ul>
+</div>
 <h2 id="one-matrix">One matrix records the two-step action</h2>
-<p>Continue with</p>
+<p>We now replace the two consecutive actions by one matrix. The important step is not guessing the product formula. It is reading the coefficients of the final output rule.</p>
+<p>Keep</p>
 <div class="arithmatex">\[
 B=
 \begin{bmatrix}
@@ -185,31 +236,71 @@ A=
 \begin{bmatrix}
 0&amp;-1\\
 1&amp;0
-\end{bmatrix}.
-\]</div>
-<p>For a general input vector,</p>
-<div class="arithmatex">\[
+\end{bmatrix},
+\qquad
 \mathbf x=
 \begin{bmatrix}
 x\\y
-\end{bmatrix},
+\end{bmatrix}.
 \]</div>
-<p>the first action gives</p>
+<h3 id="stage-1-write-the-output-of-b">Stage 1: write the output of <span class="arithmatex">\(B\)</span></h3>
 <div class="arithmatex">\[
-B\mathbf x=
+\begin{aligned}
+B\mathbf x
+&amp;=
+\begin{bmatrix}
+1&amp;1\\
+0&amp;1
+\end{bmatrix}
+\begin{bmatrix}
+x\\y
+\end{bmatrix}\\[4pt]
+&amp;=
 \begin{bmatrix}
 x+y\\y
 \end{bmatrix}.
+\end{aligned}
 \]</div>
-<p>The second action then gives</p>
+<h3 id="stage-2-feed-that-output-into-a">Stage 2: feed that output into <span class="arithmatex">\(A\)</span></h3>
 <div class="arithmatex">\[
+\begin{aligned}
 A(B\mathbf x)
-=
+&amp;=
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;0
+\end{bmatrix}
+\begin{bmatrix}
+x+y\\y
+\end{bmatrix}\\[4pt]
+&amp;=
+\begin{bmatrix}
+0(x+y)-y\\
+(x+y)+0y
+\end{bmatrix}\\[4pt]
+&amp;=
 \begin{bmatrix}
 -y\\x+y
 \end{bmatrix}.
+\end{aligned}
 \]</div>
-<p>This final rule is represented by one matrix:</p>
+<h3 id="stage-3-separate-the-coefficients-of-x-and-y">Stage 3: separate the coefficients of <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span></h3>
+<p>The final vector can be rewritten as</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+-y\\x+y
+\end{bmatrix}
+=
+x
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
++y
+\begin{bmatrix}
+-1\\1
+\end{bmatrix}.
+\]</div>
+<p>The coefficient vector multiplying <span class="arithmatex">\(x\)</span> becomes the first column. The coefficient vector multiplying <span class="arithmatex">\(y\)</span> becomes the second column. Therefore</p>
 <div class="arithmatex">\[
 AB=
 \begin{bmatrix}
@@ -217,40 +308,153 @@ AB=
 1&amp;1
 \end{bmatrix}.
 \]</div>
-<p>Indeed,</p>
+<p>A direct check gives</p>
 <div class="arithmatex">\[
-AB
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;1
+\end{bmatrix}
 \begin{bmatrix}
 x\\y
 \end{bmatrix}
 =
 \begin{bmatrix}
 -y\\x+y
-\end{bmatrix}.
+\end{bmatrix},
 \]</div>
+<p>which is exactly the output obtained from the two-stage calculation.</p>
 <div class="admonition definition">
-<p class="admonition-title">Matrix product</p>
-<p>The product <span class="arithmatex">\(AB\)</span> is the matrix whose action is equivalent to applying <span class="arithmatex">\(B\)</span> first and <span class="arithmatex">\(A\)</span> second:</p>
+<p class="admonition-title">Matrix product as a combined action</p>
+<p>The product <span class="arithmatex">\(AB\)</span> is the matrix satisfying</p>
 <div class="arithmatex">\[
 (AB)\mathbf x=A(B\mathbf x)
 \]</div>
-<p>for every vector <span class="arithmatex">\(\mathbf x\)</span>.</p>
+<p>for every input vector <span class="arithmatex">\(\mathbf x\)</span>.</p>
 </div>
-<p>For general matrices</p>
+<div class="admonition principle">
+<p class="admonition-title">Do not memorize the product before you can explain it</p>
+<p>The matrix <span class="arithmatex">\(AB\)</span> is correct because its two columns reproduce the coefficients of the final rule. The next section derives those same columns directly from the basis vectors.</p>
+</div>
+<h2 id="product-columns">The columns of the product are two completed journeys</h2>
+<p>Lecture 05 established that a matrix is determined by the destinations of the two basis vectors. We use that fact again.</p>
+<p>For the product <span class="arithmatex">\(AB\)</span>,</p>
+<div class="arithmatex">\[
+(AB)\mathbf e_1=A(B\mathbf e_1),
+\qquad
+(AB)\mathbf e_2=A(B\mathbf e_2).
+\]</div>
+<p>The first column of <span class="arithmatex">\(AB\)</span> is the completed journey of <span class="arithmatex">\(\mathbf e_1\)</span>. The second column is the completed journey of <span class="arithmatex">\(\mathbf e_2\)</span>.</p>
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">Construct the two columns separately</span>
+      <span class="figure-step-title">One board for $\mathbf e_1$, one board for $\mathbf e_2$</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open the two basis-vector journeys in full screen">⛶</button>
+  </div>
+  <div class="relation-readout">
+    <span>$B=\begin{bmatrix}1&1\\0&1\end{bmatrix}$</span>
+    <span>$A=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$</span>
+    <span>$AB=\begin{bmatrix}0&-1\\1&1\end{bmatrix}$</span>
+  </div>
+  <div class="figure-stage stage-board-stage">
+    <div class="stage-board-grid stage-board-grid--two">
+      <section class="stage-card">
+        <div class="stage-card-title">First column: journey of $\mathbf e_1$</div>
+        <div id="basis-journey-e1-board" class="jxgbox stage-mini-board" data-basis-journey-e1-board aria-label="Journey of the first basis vector through B and A"></div>
+        <div class="stage-card-math">$\mathbf e_1\overset{B}{\longmapsto}\begin{bmatrix}1\\0\end{bmatrix}\overset{A}{\longmapsto}\begin{bmatrix}0\\1\end{bmatrix}$</div>
+      </section>
+      <section class="stage-card">
+        <div class="stage-card-title">Second column: journey of $\mathbf e_2$</div>
+        <div id="basis-journey-e2-board" class="jxgbox stage-mini-board" data-basis-journey-e2-board aria-label="Journey of the second basis vector through B and A"></div>
+        <div class="stage-card-math">$\mathbf e_2\overset{B}{\longmapsto}\begin{bmatrix}1\\1\end{bmatrix}\overset{A}{\longmapsto}\begin{bmatrix}-1\\1\end{bmatrix}$</div>
+      </section>
+    </div>
+  </div>
+  <figcaption class="figure-caption">The dashed orange arrow is the intermediate image under $B$. The solid coloured arrow is the final image under $A$. The two final arrows become the two columns of $AB$.</figcaption>
+</figure>
+
+<p>For this example,</p>
+<div class="arithmatex">\[
+(AB)\mathbf e_1=
+\begin{bmatrix}0\\1\end{bmatrix},
+\qquad
+(AB)\mathbf e_2=
+\begin{bmatrix}-1\\1\end{bmatrix}.
+\]</div>
+<p>Placing these vectors next to each other gives</p>
+<div class="arithmatex">\[
+AB=
+\left[
+\begin{array}{c|c}
+(AB)\mathbf e_1&amp;(AB)\mathbf e_2
+\end{array}
+\right]
+=
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;1
+\end{bmatrix}.
+\]</div>
+<h3 id="the-general-column-rule">The general column rule</h3>
+<p>Write</p>
 <div class="arithmatex">\[
 A=
 \begin{bmatrix}
-a&amp;b\\
-c&amp;d
+a&amp;b\\c&amp;d
 \end{bmatrix},
 \qquad
 B=
 \begin{bmatrix}
-e&amp;f\\
-g&amp;h
+e&amp;f\\g&amp;h
+\end{bmatrix}
+=
+\left[
+\begin{array}{c|c}
+\mathbf b_1&amp;\mathbf b_2
+\end{array}
+\right].
+\]</div>
+<p>Then</p>
+<div class="arithmatex">\[
+AB=
+\left[
+\begin{array}{c|c}
+A\mathbf b_1&amp;A\mathbf b_2
+\end{array}
+\right].
+\]</div>
+<p>The first column is</p>
+<div class="arithmatex">\[
+A\mathbf b_1
+=
+\begin{bmatrix}
+a&amp;b\\c&amp;d
+\end{bmatrix}
+\begin{bmatrix}
+e\\g
+\end{bmatrix}
+=
+\begin{bmatrix}
+ae+bg\\ce+dg
 \end{bmatrix},
 \]</div>
-<p>the product is</p>
+<p>and the second column is</p>
+<div class="arithmatex">\[
+A\mathbf b_2
+=
+\begin{bmatrix}
+a&amp;b\\c&amp;d
+\end{bmatrix}
+\begin{bmatrix}
+f\\h
+\end{bmatrix}
+=
+\begin{bmatrix}
+af+bh\\cf+dh
+\end{bmatrix}.
+\]</div>
+<p>Therefore</p>
 <div class="arithmatex">\[
 AB=
 \begin{bmatrix}
@@ -258,113 +462,33 @@ ae+bg&amp;af+bh\\
 ce+dg&amp;cf+dh
 \end{bmatrix}.
 \]</div>
-<p>This formula is not introduced as an isolated pattern. Each column will now be derived from the journey of one basis vector.</p>
-<h2 id="product-columns">The columns of the product are two completed journeys</h2>
-<p>Recall from Lecture 05 that a matrix is determined by the images of <span class="arithmatex">\(\mathbf e_1\)</span> and <span class="arithmatex">\(\mathbf e_2\)</span>.</p>
-<p>For the composition <span class="arithmatex">\(AB\)</span>,</p>
-<div class="arithmatex">\[
-(AB)\mathbf e_1=A(B\mathbf e_1),
-\qquad
-(AB)\mathbf e_2=A(B\mathbf e_2).
-\]</div>
-<p>Therefore:</p>
-<ul>
-<li>the first column of <span class="arithmatex">\(AB\)</span> is obtained by sending the first column of <span class="arithmatex">\(B\)</span> through <span class="arithmatex">\(A\)</span>;</li>
-<li>the second column of <span class="arithmatex">\(AB\)</span> is obtained by sending the second column of <span class="arithmatex">\(B\)</span> through <span class="arithmatex">\(A\)</span>.</li>
-</ul>
-<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
-  <div class="figure-toolbar">
-    <div>
-      <span class="figure-title">Build $AB$ by following the two basis vectors</span>
-      <span class="figure-step-title" data-basis-journey-title>each column completes two stages</span>
-    </div>
-    <button class="icon-button" type="button" data-fullscreen aria-label="Open basis-vector composition figure in full screen">⛶</button>
-  </div>
-  <div class="curve-switcher" role="group" aria-label="Choose a matrix pair">
-    <button class="curve-mode is-active" type="button" data-basis-journey-preset="shear-rotate">Shear → rotate</button>
-    <button class="curve-mode" type="button" data-basis-journey-preset="stretch-shear">Stretch → shear</button>
-    <button class="curve-mode" type="button" data-basis-journey-preset="reflect-rotate">Reflect → rotate</button>
-  </div>
-  <div class="figure-stage jsx-stage">
-    <div id="basis-journey-board" class="jxgbox" data-basis-journey-board aria-label="Basis vectors followed through two transformations"></div>
-  </div>
-  <div class="relation-readout">
-    <span data-basis-journey-matrices>$AB=\begin{bmatrix}0&-1\\1&1\end{bmatrix}$</span>
-  </div>
-  <figcaption class="figure-caption">Orange arrows show the columns of $B$. Blue and green arrows show where $A$ sends those columns; they are the columns of $AB$.</figcaption>
-</figure>
-
-<p>Algebraically, the first column is</p>
-<div class="arithmatex">\[
-A
-\begin{bmatrix}
-e\\g
-\end{bmatrix}
-=
-\begin{bmatrix}
-ae+bg\\
-ce+dg
-\end{bmatrix},
-\]</div>
-<p>and the second column is</p>
-<div class="arithmatex">\[
-A
-\begin{bmatrix}
-f\\h
-\end{bmatrix}
-=
-\begin{bmatrix}
-af+bh\\
-cf+dh
-\end{bmatrix}.
-\]</div>
-<p>Placing these two output columns next to each other gives the usual multiplication formula.</p>
+<div class="admonition interpretation">
+<p class="admonition-title">Row by column is the coordinate version of the column journey</p>
+<p>Each column of <span class="arithmatex">\(B\)</span> is treated as an input vector for <span class="arithmatex">\(A\)</span>. The familiar row-by-column calculation simply computes the coordinates of those two output vectors.</p>
+</div>
 <h2 id="order-matters">Changing the order usually changes the result</h2>
-<p>The products <span class="arithmatex">\(AB\)</span> and <span class="arithmatex">\(BA\)</span> describe different procedures:</p>
+<p>The products <span class="arithmatex">\(AB\)</span> and <span class="arithmatex">\(BA\)</span> describe two different procedures:</p>
 <div class="arithmatex">\[
 AB:\quad \text{first }B,\text{ then }A,
 \]</div>
 <div class="arithmatex">\[
 BA:\quad \text{first }A,\text{ then }B.
 \]</div>
-<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
-  <div class="figure-toolbar">
-    <div>
-      <span class="figure-title">The same two actions in opposite orders</span>
-      <span class="figure-step-title" data-order-title>compare the final grid and house</span>
-    </div>
-    <button class="icon-button" type="button" data-fullscreen aria-label="Open order comparison in full screen">⛶</button>
-  </div>
-  <div class="curve-switcher" role="group" aria-label="Choose the order of transformations">
-    <button class="curve-mode is-active" type="button" data-order-mode="AB">First $B$, then $A$</button>
-    <button class="curve-mode" type="button" data-order-mode="BA">First $A$, then $B$</button>
-  </div>
-  <div class="figure-stage jsx-stage">
-    <div id="order-matters-board" class="jxgbox" data-order-matters-board aria-label="Comparison of AB and BA on the same grid and figure"></div>
-  </div>
-  <div class="relation-readout">
-    <span data-order-matrix>$AB=\begin{bmatrix}0&-1\\1&1\end{bmatrix}$</span>
-  </div>
-  <figcaption class="figure-caption">Switch the order and inspect both the matrix and the final picture. Matrix multiplication is generally not commutative.</figcaption>
-</figure>
-
-<p>For the shear</p>
+<p>We keep the same matrices</p>
 <div class="arithmatex">\[
 B=
 \begin{bmatrix}
 1&amp;1\\
 0&amp;1
-\end{bmatrix}
-\]</div>
-<p>and the rotation</p>
-<div class="arithmatex">\[
+\end{bmatrix},
+\qquad
 A=
 \begin{bmatrix}
 0&amp;-1\\
 1&amp;0
-\end{bmatrix},
+\end{bmatrix}.
 \]</div>
-<p>we obtain</p>
+<p>Their two products are</p>
 <div class="arithmatex">\[
 AB=
 \begin{bmatrix}
@@ -378,13 +502,79 @@ BA=
 1&amp;0
 \end{bmatrix}.
 \]</div>
-<p>These matrices are different, and their transformed figures are different.</p>
+<p>To compare them, use one simple input:</p>
+<div class="arithmatex">\[
+\mathbf x=
+\begin{bmatrix}
+1\\1
+\end{bmatrix}.
+\]</div>
+<figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
+  <div class="figure-toolbar">
+    <div>
+      <span class="figure-title">The same input under two different orders</span>
+      <span class="figure-step-title">Both results are visible at the same time</span>
+    </div>
+    <button class="icon-button" type="button" data-fullscreen aria-label="Open the order comparison in full screen">⛶</button>
+  </div>
+  <div class="figure-stage stage-board-stage">
+    <div class="stage-board-grid stage-board-grid--two">
+      <section class="stage-card">
+        <div class="stage-card-title">First $B$, then $A$: product $AB$</div>
+        <div id="order-ab-board" class="jxgbox stage-mini-board" data-order-ab-board aria-label="Input x and final vector ABx"></div>
+        <div class="stage-card-math">$AB\mathbf x=\begin{bmatrix}-1\\2\end{bmatrix}$</div>
+      </section>
+      <section class="stage-card">
+        <div class="stage-card-title">First $A$, then $B$: product $BA$</div>
+        <div id="order-ba-board" class="jxgbox stage-mini-board" data-order-ba-board aria-label="Input x and final vector BAx"></div>
+        <div class="stage-card-math">$BA\mathbf x=\begin{bmatrix}0\\1\end{bmatrix}$</div>
+      </section>
+    </div>
+  </div>
+  <figcaption class="figure-caption">The faint arrow is the same input vector in both panels. The final arrows are different because the actions were performed in different orders.</figcaption>
+</figure>
+
+<p>The algebra confirms the picture:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+AB\mathbf x
+&amp;=
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;1
+\end{bmatrix}
+\begin{bmatrix}
+1\\1
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1\\2
+\end{bmatrix},\\[10pt]
+BA\mathbf x
+&amp;=
+\begin{bmatrix}
+1&amp;-1\\
+1&amp;0
+\end{bmatrix}
+\begin{bmatrix}
+1\\1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\1
+\end{bmatrix}.
+\end{aligned}
+\]</div>
+<p>Since one input already produces two different outputs, the two transformations cannot be the same. Thus</p>
+<div class="arithmatex">\[
+AB\ne BA.
+\]</div>
 <div class="admonition warning">
-<p class="admonition-title">Do not reverse the factors</p>
-<p>The written order is not the chronological order. In <span class="arithmatex">\(AB\mathbf x\)</span>, the vector meets <span class="arithmatex">\(B\)</span> first because <span class="arithmatex">\(B\)</span> is closest to <span class="arithmatex">\(\mathbf x\)</span>.</p>
+<p class="admonition-title">The written order is opposite to the chronological reading</p>
+<p>In <span class="arithmatex">\(AB\mathbf x\)</span>, the vector meets <span class="arithmatex">\(B\)</span> first because <span class="arithmatex">\(B\)</span> is closest to <span class="arithmatex">\(\mathbf x\)</span>. Never decide the chronological order by reading the factors from left to right.</p>
 </div>
 <h2 id="three-actions">Three consecutive actions can be grouped without changing the journey</h2>
-<p>Suppose that <span class="arithmatex">\(C\)</span> acts first, then <span class="arithmatex">\(B\)</span>, then <span class="arithmatex">\(A\)</span>. The vector follows</p>
+<p>Suppose that <span class="arithmatex">\(C\)</span> acts first, then <span class="arithmatex">\(B\)</span>, then <span class="arithmatex">\(A\)</span>. The chronological journey is</p>
 <div class="arithmatex">\[
 \mathbf x
 \overset{C}{\longmapsto}
@@ -394,39 +584,52 @@ B(C\mathbf x)
 \overset{A}{\longmapsto}
 A(B(C\mathbf x)).
 \]</div>
-<p>We may first combine <span class="arithmatex">\(A\)</span> with <span class="arithmatex">\(B\)</span>:</p>
+<p>There are two convenient ways to calculate one matrix for this three-stage action.</p>
+<h3 id="first-combine-a-and-b">First combine <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span></h3>
 <div class="arithmatex">\[
-(AB)(C\mathbf x),
+\begin{aligned}
+((AB)C)\mathbf x
+&amp;=(AB)(C\mathbf x)\\
+&amp;=A(B(C\mathbf x)).
+\end{aligned}
 \]</div>
-<p>or first combine <span class="arithmatex">\(B\)</span> with <span class="arithmatex">\(C\)</span>:</p>
+<h3 id="first-combine-b-and-c">First combine <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span></h3>
 <div class="arithmatex">\[
-A((BC)\mathbf x).
+\begin{aligned}
+(A(BC))\mathbf x
+&amp;=A((BC)\mathbf x)\\
+&amp;=A(B(C\mathbf x)).
+\end{aligned}
 \]</div>
-<p>Both expressions describe the same three-stage journey. Therefore</p>
+<p>Both grouped products send every input vector to the same final output. Therefore</p>
 <div class="arithmatex">\[
 (AB)C=A(BC).
 \]</div>
+<p>This property is called <strong>associativity</strong>.</p>
 <div class="admonition interpretation">
-<p class="admonition-title">Grouping is not ordering</p>
-<p>Parentheses tell us which product is calculated first. They do not change the chronological order of the actions. The rightmost matrix still acts first.</p>
+<p class="admonition-title">Parentheses change the calculation plan, not the action order</p>
+<p>In both calculations, <span class="arithmatex">\(C\)</span> still acts first, <span class="arithmatex">\(B\)</span> second and <span class="arithmatex">\(A\)</span> third. Parentheses only decide which pair of matrices is multiplied first.</p>
 </div>
-<p>This property is called <strong>associativity</strong>. It allows a long chain of transformations to be replaced step by step by one matrix.</p>
-<p>It does <strong>not</strong> imply that factors may be exchanged. Usually <span class="arithmatex">\(AB\ne BA\)</span>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Associativity is not commutativity</p>
+<p>The factors keep their order. Associativity allows <span class="arithmatex">\((AB)C=A(BC)\)</span>, but it does not allow the matrices to be exchanged. Usually <span class="arithmatex">\(AB\ne BA\)</span>.</p>
+</div>
 <h2 id="design-composition">Design and check a composition</h2>
-<p>A reliable two-step solution should contain both the geometric story and the algebra.</p>
+<p>A reliable solution should tell the same story in words, in a drawing and in algebra.</p>
 <h3 id="procedure">Procedure</h3>
 <ol>
 <li><strong>Name the first action.</strong> Call its matrix <span class="arithmatex">\(B\)</span>.</li>
 <li><strong>Name the second action.</strong> Call its matrix <span class="arithmatex">\(A\)</span>.</li>
-<li><strong>Write the journey.</strong></li>
+<li><strong>Write the chronological journey.</strong></li>
 </ol>
 <p>$$
    \mathbf x\longmapsto B\mathbf x\longmapsto A(B\mathbf x).
    $$</p>
 <ol>
-<li><strong>Construct the product <span class="arithmatex">\(AB\)</span>.</strong> Use either the two basis-vector journeys or the row-by-column calculation.</li>
-<li><strong>Check one object.</strong> Test a basis vector, a simple point, or one vertex of the figure.</li>
-<li><strong>Compare with the drawing.</strong> Signs, directions and the order of the factors must agree with the picture.</li>
+<li><strong>Write the product in the correct order.</strong> The combined matrix is <span class="arithmatex">\(AB\)</span>.</li>
+<li><strong>Construct the first column.</strong> Send <span class="arithmatex">\(\mathbf e_1\)</span> through <span class="arithmatex">\(B\)</span>, then through <span class="arithmatex">\(A\)</span>.</li>
+<li><strong>Construct the second column.</strong> Send <span class="arithmatex">\(\mathbf e_2\)</span> through <span class="arithmatex">\(B\)</span>, then through <span class="arithmatex">\(A\)</span>.</li>
+<li><strong>Check one additional vector.</strong> The one-step and two-step calculations must agree.</li>
 </ol>
 <h3 id="example-stretch-then-rotate">Example: stretch, then rotate</h3>
 <p>Let</p>
@@ -446,7 +649,58 @@ A=
 \end{bmatrix}
 \]</div>
 <p>rotate through <span class="arithmatex">\(90^\circ\)</span> counterclockwise.</p>
-<p>Then</p>
+<p>The first action is <span class="arithmatex">\(B\)</span>, so <span class="arithmatex">\(B\)</span> stands next to the input vector. The combined matrix must therefore be <span class="arithmatex">\(AB\)</span>.</p>
+<h3 id="first-column">First column</h3>
+<p>The first column of <span class="arithmatex">\(B\)</span> is</p>
+<div class="arithmatex">\[
+B\mathbf e_1=
+\begin{bmatrix}
+2\\0
+\end{bmatrix}.
+\]</div>
+<p>Apply the second action:</p>
+<div class="arithmatex">\[
+A(B\mathbf e_1)
+=
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;0
+\end{bmatrix}
+\begin{bmatrix}
+2\\0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\2
+\end{bmatrix}.
+\]</div>
+<p>This is the first column of <span class="arithmatex">\(AB\)</span>.</p>
+<h3 id="second-column">Second column</h3>
+<p>The second column of <span class="arithmatex">\(B\)</span> is</p>
+<div class="arithmatex">\[
+B\mathbf e_2=
+\begin{bmatrix}
+0\\1
+\end{bmatrix}.
+\]</div>
+<p>Apply the second action:</p>
+<div class="arithmatex">\[
+A(B\mathbf e_2)
+=
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;0
+\end{bmatrix}
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1\\0
+\end{bmatrix}.
+\]</div>
+<p>This is the second column of <span class="arithmatex">\(AB\)</span>.</p>
+<p>Put the two final columns together:</p>
 <div class="arithmatex">\[
 AB=
 \begin{bmatrix}
@@ -454,22 +708,34 @@ AB=
 2&amp;0
 \end{bmatrix}.
 \]</div>
-<p>A quick basis check gives</p>
+<h3 id="one-vector-check">One-vector check</h3>
+<p>For <span class="arithmatex">\(\mathbf x=\begin{bmatrix}1\\1\end{bmatrix}\)</span>, the one-step calculation gives</p>
 <div class="arithmatex">\[
-AB\mathbf e_1=
+AB\mathbf x
+=
 \begin{bmatrix}
-0\\2
-\end{bmatrix},
-\qquad
-AB\mathbf e_2=
+0&amp;-1\\
+2&amp;0
+\end{bmatrix}
 \begin{bmatrix}
--1\\0
+1\\1
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1\\2
 \end{bmatrix}.
 \]</div>
-<p>The first basis direction is stretched to length <span class="arithmatex">\(2\)</span> and then rotated upward. The second basis direction is rotated left without changing length.</p>
+<p>The two-stage calculation gives the same result:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}1\\1\end{bmatrix}
+\overset{B}{\longmapsto}
+\begin{bmatrix}2\\1\end{bmatrix}
+\overset{A}{\longmapsto}
+\begin{bmatrix}-1\\2\end{bmatrix}.
+\]</div>
 <div class="admonition principle">
-<p class="admonition-title">A correct product must tell the same story as the picture</p>
-<p>If the product matrix predicts basis arrows that disagree with the two-stage drawing, the factors were probably reversed or a column was calculated incorrectly.</p>
+<p class="admonition-title">A correct product must agree with both checks</p>
+<p>The columns must match the two basis-vector journeys, and a test vector must have the same final image in the one-step and two-step calculations.</p>
 </div>
 <h2 id="later-questions">Questions reserved for later lectures</h2>
 <p>This lecture answers one question:</p>
