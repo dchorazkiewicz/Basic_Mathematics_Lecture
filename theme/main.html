@@ -74,6 +74,12 @@
         'assets/js/lecture-04/07-focus-directrix/focus-directrix.js',
         'assets/js/lecture-04/08-geometric-models/orbit-models.js'
       ] %}
+    {% elif page.meta.lecture == '05' %}
+      {% set scripts = scripts + [
+        'assets/js/lecture-05/02-basis-images/basis-images.js',
+        'assets/js/lecture-05/04-transformation-gallery/transformation-gallery.js',
+        'assets/js/lecture-05/06-collapse/collapse.js'
+      ] %}
     {% endif %}
     {% for script in scripts %}<script defer src="{{ script | url }}"></script>{% endfor %}
   {% endif %}
