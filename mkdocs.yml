@@ -115,6 +115,8 @@ nav:
       - Problem 18 · Same ellipse, different motions: exercises-04/problem-18/index.md
       - Problem 19 · Trajectory model audit: exercises-04/problem-19/index.md
       - Problem 20 · Complete conic-model note: exercises-04/problem-20/index.md
+  - Lecture 05 · Matrices as Transformations: lecture-05/index.md
+  - Exercises 05 · Matrices as Transformations: exercises-05/index.md
   - Exercise Set Template: exercises/template.md
   - Authoring and deployment: authoring-guide.md
 
