@@ -29,7 +29,7 @@ $$
 |---|---|
 | 01. Follow one vector through two matrices | two intermediate calculations and a plotted journey |
 | 02. Read the chronological order | translation between words, $A(B\mathbf x)$ and $AB\mathbf x$ |
-| 03. Multiply two simple $2\times2$ matrices | product plus one vector check |
+| 03. Multiply two simple $2\times2$ matrices | four labelled entries $c_{11},c_{12},c_{21},c_{22}$ plus one vector check |
 | 04. Build the first product column | journey of $\mathbf e_1$ |
 | 05. Build the second product column | journey of $\mathbf e_2$ |
 | 06. Transform a unit square in two stages | original, intermediate and final vertices |
@@ -42,8 +42,8 @@ $$
 
 | Proposed problem | Main product |
 |---|---|
-| 11. Derive the product formula from columns | two basis-vector derivations |
-| 12. Compute a product in two ways | row-by-column and basis-image methods |
+| 11. Derive the indexed product rule | explanation of $c_{ij}=\sum_{k=1}^{2}a_{ik}b_{kj}$ from rows and columns |
+| 12. Compute a product in two ways | indexed row-by-column and basis-image methods |
 | 13. Design a stated two-step action | named stages, product and drawing |
 | 14. Audit a reversed-order solution | corrected notation, matrix and figure |
 | 15. Compose three transformations | staged journey and two groupings |
@@ -60,7 +60,7 @@ Every problem beyond routine arithmetic should show at least two of the followin
 - an input, intermediate and final arrow;
 - the original, intermediate and final figure;
 - the images of $\mathbf e_1$ and $\mathbf e_2$ after each stage;
-- a transformed grid;
+- a colour-coded row–column diagram for the entries $c_{ij}$;
 - a table of vertices before and after each matrix.
 
-The intermediate stage is not decoration. It is the evidence that the matrices were applied in the correct order.
+The intermediate stage is not decoration. It is the evidence that the matrices were applied in the correct order. In multiplication problems, indices and row–column highlighting are part of the explanation, not optional styling.
