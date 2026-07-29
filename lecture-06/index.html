@@ -335,8 +335,8 @@ x\\y
 <p class="admonition-title">Do not memorize the product before you can explain it</p>
 <p>The matrix <span class="arithmatex">\(AB\)</span> is correct because its two columns reproduce the coefficients of the final rule. The next section derives those same columns directly from the basis vectors.</p>
 </div>
-<h2 id="product-columns">The columns of the product are two completed journeys</h2>
-<p>Lecture 05 established that a matrix is determined by the destinations of the two basis vectors. We use that fact again.</p>
+<h2 id="product-columns">Rows meet columns: the indexed pattern</h2>
+<p>Lecture 05 established that a matrix is determined by the destinations of the two basis vectors. We use that fact first, and then translate it into the indexed row-by-column rule.</p>
 <p>For the product <span class="arithmatex">\(AB\)</span>,</p>
 <div class="arithmatex">\[
 (AB)\mathbf e_1=A(B\mathbf e_1),
@@ -396,75 +396,125 @@ AB=
 1&amp;1
 \end{bmatrix}.
 \]</div>
-<h3 id="the-general-column-rule">The general column rule</h3>
-<p>Write</p>
+<h3 id="indexed-notation">Indexed notation</h3>
+<p>For the general rule, write</p>
 <div class="arithmatex">\[
-A=
-\begin{bmatrix}
-a&amp;b\\c&amp;d
-\end{bmatrix},
+A=(a_{ij}),
 \qquad
-B=
-\begin{bmatrix}
-e&amp;f\\g&amp;h
-\end{bmatrix}
-=
-\left[
-\begin{array}{c|c}
-\mathbf b_1&amp;\mathbf b_2
-\end{array}
-\right].
+B=(b_{ij}),
+\qquad
+C=AB=(c_{ij}).
 \]</div>
-<p>Then</p>
+<p>The index <span class="arithmatex">\(i\)</span> identifies a <strong>row</strong>, while <span class="arithmatex">\(j\)</span> identifies a <strong>column</strong>. Each entry <span class="arithmatex">\(c_{ij}\)</span> is built from row <span class="arithmatex">\(i\)</span> of <span class="arithmatex">\(A\)</span> and column <span class="arithmatex">\(j\)</span> of <span class="arithmatex">\(B\)</span>.</p>
+<div class="matrix-pattern-board" aria-label="Colour coded row by column pattern for multiplying two by two matrices">
+  <div class="matrix-pattern-equation">
+    <div class="matrix-labelled">
+      <span class="matrix-name">A =</span>
+      <div class="matrix-grid-visual">
+        <span class="matrix-cell matrix-row-one"><i>a</i><sub>11</sub></span>
+        <span class="matrix-cell matrix-row-one"><i>a</i><sub>12</sub></span>
+        <span class="matrix-cell matrix-row-two"><i>a</i><sub>21</sub></span>
+        <span class="matrix-cell matrix-row-two"><i>a</i><sub>22</sub></span>
+      </div>
+    </div>
+
+    <span class="matrix-operator">·</span>
+
+    <div class="matrix-labelled">
+      <span class="matrix-name">B =</span>
+      <div class="matrix-grid-visual">
+        <span class="matrix-cell matrix-col-one"><i>b</i><sub>11</sub></span>
+        <span class="matrix-cell matrix-col-two"><i>b</i><sub>12</sub></span>
+        <span class="matrix-cell matrix-col-one"><i>b</i><sub>21</sub></span>
+        <span class="matrix-cell matrix-col-two"><i>b</i><sub>22</sub></span>
+      </div>
+    </div>
+
+    <span class="matrix-operator">=</span>
+
+    <div class="matrix-labelled">
+      <span class="matrix-name">C =</span>
+      <div class="matrix-grid-visual">
+        <span class="matrix-cell matrix-result-r1c1"><i>c</i><sub>11</sub></span>
+        <span class="matrix-cell matrix-result-r1c2"><i>c</i><sub>12</sub></span>
+        <span class="matrix-cell matrix-result-r2c1"><i>c</i><sub>21</sub></span>
+        <span class="matrix-cell matrix-result-r2c2"><i>c</i><sub>22</sub></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="matrix-pattern-legend">
+    <span class="matrix-pattern-chip matrix-pattern-chip--r1">row 1 of A</span>
+    <span class="matrix-pattern-chip matrix-pattern-chip--r2">row 2 of A</span>
+    <span class="matrix-pattern-chip matrix-pattern-chip--c1">column 1 of B</span>
+    <span class="matrix-pattern-chip matrix-pattern-chip--c2">column 2 of B</span>
+  </div>
+</div>
+
+<h3 id="the-four-entries-one-at-a-time">The four entries, one at a time</h3>
+<div class="matrix-entry-grid">
+  <article class="matrix-entry-card matrix-entry-card--r1c1">
+    <div class="matrix-entry-label"><i>c</i><sub>11</sub>: row 1 × column 1</div>
+    <div class="matrix-entry-formula">
+      <span class="row-factor"><i>a</i><sub>11</sub></span>·<span class="column-factor"><i>b</i><sub>11</sub></span>
+      +
+      <span class="row-factor"><i>a</i><sub>12</sub></span>·<span class="column-factor"><i>b</i><sub>21</sub></span>
+    </div>
+  </article>
+
+  <article class="matrix-entry-card matrix-entry-card--r1c2">
+    <div class="matrix-entry-label"><i>c</i><sub>12</sub>: row 1 × column 2</div>
+    <div class="matrix-entry-formula">
+      <span class="row-factor"><i>a</i><sub>11</sub></span>·<span class="column-factor"><i>b</i><sub>12</sub></span>
+      +
+      <span class="row-factor"><i>a</i><sub>12</sub></span>·<span class="column-factor"><i>b</i><sub>22</sub></span>
+    </div>
+  </article>
+
+  <article class="matrix-entry-card matrix-entry-card--r2c1">
+    <div class="matrix-entry-label"><i>c</i><sub>21</sub>: row 2 × column 1</div>
+    <div class="matrix-entry-formula">
+      <span class="row-factor"><i>a</i><sub>21</sub></span>·<span class="column-factor"><i>b</i><sub>11</sub></span>
+      +
+      <span class="row-factor"><i>a</i><sub>22</sub></span>·<span class="column-factor"><i>b</i><sub>21</sub></span>
+    </div>
+  </article>
+
+  <article class="matrix-entry-card matrix-entry-card--r2c2">
+    <div class="matrix-entry-label"><i>c</i><sub>22</sub>: row 2 × column 2</div>
+    <div class="matrix-entry-formula">
+      <span class="row-factor"><i>a</i><sub>21</sub></span>·<span class="column-factor"><i>b</i><sub>12</sub></span>
+      +
+      <span class="row-factor"><i>a</i><sub>22</sub></span>·<span class="column-factor"><i>b</i><sub>22</sub></span>
+    </div>
+  </article>
+</div>
+
+<p>The compact indexed rule is</p>
 <div class="arithmatex">\[
-AB=
-\left[
-\begin{array}{c|c}
-A\mathbf b_1&amp;A\mathbf b_2
-\end{array}
-\right].
+\boxed{
+ c_{ij}
+ =a_{i1}b_{1j}+a_{i2}b_{2j}
+ =\sum_{k=1}^{2}a_{ik}b_{kj}
+}
 \]</div>
-<p>The first column is</p>
-<div class="arithmatex">\[
-A\mathbf b_1
-=
-\begin{bmatrix}
-a&amp;b\\c&amp;d
-\end{bmatrix}
-\begin{bmatrix}
-e\\g
-\end{bmatrix}
-=
-\begin{bmatrix}
-ae+bg\\ce+dg
-\end{bmatrix},
-\]</div>
-<p>and the second column is</p>
-<div class="arithmatex">\[
-A\mathbf b_2
-=
-\begin{bmatrix}
-a&amp;b\\c&amp;d
-\end{bmatrix}
-\begin{bmatrix}
-f\\h
-\end{bmatrix}
-=
-\begin{bmatrix}
-af+bh\\cf+dh
-\end{bmatrix}.
-\]</div>
+<div class="matrix-index-note">
+  <div><strong>$i$ chooses the row</strong>Use row $i$ of $A$ and place the result in row $i$ of $C$.</div>
+  <div><strong>$j$ chooses the column</strong>Use column $j$ of $B$ and place the result in column $j$ of $C$.</div>
+  <div><strong>$k$ runs through matching positions</strong>For $2\times2$ matrices, $k=1,2$, so every entry contains two products.</div>
+</div>
+
 <p>Therefore</p>
 <div class="arithmatex">\[
 AB=
 \begin{bmatrix}
-ae+bg&amp;af+bh\\
-ce+dg&amp;cf+dh
+a_{11}b_{11}+a_{12}b_{21}&amp;a_{11}b_{12}+a_{12}b_{22}\\
+a_{21}b_{11}+a_{22}b_{21}&amp;a_{21}b_{12}+a_{22}b_{22}
 \end{bmatrix}.
 \]</div>
 <div class="admonition interpretation">
 <p class="admonition-title">Row by column is the coordinate version of the column journey</p>
-<p>Each column of <span class="arithmatex">\(B\)</span> is treated as an input vector for <span class="arithmatex">\(A\)</span>. The familiar row-by-column calculation simply computes the coordinates of those two output vectors.</p>
+<p>Each column of <span class="arithmatex">\(B\)</span> is treated as an input vector for <span class="arithmatex">\(A\)</span>. The indexed calculation computes the two coordinates of each output vector. The colours show which row of <span class="arithmatex">\(A\)</span> meets which column of <span class="arithmatex">\(B\)</span>.</p>
 </div>
 <h2 id="order-matters">Changing the order usually changes the result</h2>
 <p>The products <span class="arithmatex">\(AB\)</span> and <span class="arithmatex">\(BA\)</span> describe two different procedures:</p>
