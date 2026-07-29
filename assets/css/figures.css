@@ -56,18 +56,56 @@
 .relation-readout { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 14px; }
 .relation-readout span { padding: 7px 10px; border-radius: 999px; background: var(--blue-soft); color: var(--navy); font-size: .82rem; }
 
-/* Clear, low-density layouts for consecutive transformation stages. */
-.stage-board-stage { display: block; min-height: 0; padding: 12px; overflow: visible; }
+/* Clear, bounded layouts for consecutive transformation stages. */
+.stage-board-stage { display: block; min-height: 0; padding: 12px; overflow: hidden; contain: layout paint; }
 .stage-board-grid { display: grid; width: 100%; gap: 14px; align-items: stretch; }
 .stage-board-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .stage-board-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.stage-card { min-width: 0; padding: 12px; border: 1px solid rgba(24,33,43,.11); border-radius: 12px; background: rgba(255,255,255,.72); }
+.stage-card { min-width: 0; overflow: hidden; padding: 12px; border: 1px solid rgba(24,33,43,.11); border-radius: 12px; background: rgba(255,255,255,.72); }
 .stage-card-title { margin-bottom: 8px; color: var(--ink); font-size: .8rem; font-weight: 750; letter-spacing: .01em; }
-.stage-mini-board { width: 100%; height: 280px; border: 0; background: transparent; touch-action: none; }
+.stage-mini-board { width: 100%; height: 260px; min-height: 260px; max-height: 260px; overflow: hidden; contain: strict; border: 0; background: transparent; touch-action: none; }
 .stage-card-math { min-height: 2.8em; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(24,33,43,.09); color: var(--navy); font-family: var(--serif); font-size: .88rem; text-align: center; overflow-x: auto; }
 .stage-explanation { display: grid; gap: 8px; margin: 14px 0 0; }
 .stage-explanation > div { padding: 10px 12px; border-left: 3px solid var(--blue); background: rgba(47,111,159,.06); }
 .stage-explanation strong { display: block; margin-bottom: 3px; font-size: .78rem; }
+
+/* Indexed row-by-column pattern used in Lecture 06. */
+.matrix-pattern-board { margin: 22px 0; padding: 18px; border: 1px solid rgba(24,33,43,.12); border-radius: 16px; background: rgba(255,255,255,.6); box-shadow: 0 10px 28px rgba(24,33,43,.07); }
+.matrix-pattern-equation { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; }
+.matrix-labelled { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
+.matrix-name, .matrix-operator { color: var(--ink); font-family: var(--serif); font-size: 1.15rem; }
+.matrix-grid-visual { position: relative; display: grid; grid-template-columns: repeat(2,minmax(52px,auto)); gap: 5px 10px; padding: 8px 15px; font-family: var(--serif); font-size: 1rem; }
+.matrix-grid-visual::before, .matrix-grid-visual::after { content: ''; position: absolute; top: 0; bottom: 0; width: 7px; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+.matrix-grid-visual::before { left: 0; border-left: 2px solid var(--ink); }
+.matrix-grid-visual::after { right: 0; border-right: 2px solid var(--ink); }
+.matrix-cell { min-width: 42px; padding: 6px 8px; border-radius: 7px; text-align: center; white-space: nowrap; }
+.matrix-row-one { color: #7b511d; background: rgba(177,120,43,.16); }
+.matrix-row-two { color: #536121; background: rgba(124,143,61,.18); }
+.matrix-col-one { color: #244f73; background: rgba(47,111,159,.16); }
+.matrix-col-two { color: #654876; background: rgba(139,95,159,.16); }
+.matrix-result-r1c1 { box-shadow: inset 4px 0 #b1782b, inset 0 4px #2f6f9f; }
+.matrix-result-r1c2 { box-shadow: inset 4px 0 #b1782b, inset 0 4px #8b5f9f; }
+.matrix-result-r2c1 { box-shadow: inset 4px 0 #7c8f3d, inset 0 4px #2f6f9f; }
+.matrix-result-r2c2 { box-shadow: inset 4px 0 #7c8f3d, inset 0 4px #8b5f9f; }
+.matrix-pattern-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 16px 0 0; }
+.matrix-pattern-chip { padding: 6px 10px; border-radius: 999px; font-size: .76rem; font-weight: 700; }
+.matrix-pattern-chip--r1 { color: #7b511d; background: rgba(177,120,43,.16); }
+.matrix-pattern-chip--r2 { color: #536121; background: rgba(124,143,61,.18); }
+.matrix-pattern-chip--c1 { color: #244f73; background: rgba(47,111,159,.16); }
+.matrix-pattern-chip--c2 { color: #654876; background: rgba(139,95,159,.16); }
+.matrix-entry-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 16px 0; }
+.matrix-entry-card { --row-color: #b1782b; --column-color: #2f6f9f; min-width: 0; padding: 14px; border: 1px solid rgba(24,33,43,.11); border-left: 4px solid var(--row-color); border-top: 4px solid var(--column-color); border-radius: 12px; background: rgba(255,255,255,.72); }
+.matrix-entry-card--r1c1 { --row-color: #b1782b; --column-color: #2f6f9f; }
+.matrix-entry-card--r1c2 { --row-color: #b1782b; --column-color: #8b5f9f; }
+.matrix-entry-card--r2c1 { --row-color: #7c8f3d; --column-color: #2f6f9f; }
+.matrix-entry-card--r2c2 { --row-color: #7c8f3d; --column-color: #8b5f9f; }
+.matrix-entry-label { margin-bottom: 9px; color: var(--ink); font-size: .8rem; font-weight: 750; }
+.matrix-entry-formula { overflow-x: auto; color: var(--ink); font-family: var(--serif); font-size: 1rem; line-height: 1.8; white-space: nowrap; }
+.matrix-entry-formula .row-factor { color: var(--row-color); font-weight: 700; }
+.matrix-entry-formula .column-factor { color: var(--column-color); font-weight: 700; }
+.matrix-index-note { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin: 14px 0; }
+.matrix-index-note > div { padding: 10px 12px; border-radius: 10px; background: rgba(47,111,159,.06); }
+.matrix-index-note strong { display: block; margin-bottom: 3px; }
 
 .figure-panel:fullscreen { width: 100vw; height: 100vh; margin: 0; padding: 18px; border: 0; border-radius: 0; background: #f4f1eb; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
 .figure-panel:fullscreen .figure-toolbar,
@@ -81,7 +119,7 @@
 .figure-panel:fullscreen .jsx-stage > .jxgbox { width: 100%; height: 100%; min-height: 0; }
 .figure-panel:fullscreen .stage-board-grid { height: 100%; }
 .figure-panel:fullscreen .stage-card { display: flex; flex-direction: column; min-height: 0; }
-.figure-panel:fullscreen .stage-mini-board { flex: 1 1 auto; height: auto; min-height: 0; }
+.figure-panel:fullscreen .stage-mini-board { flex: 1 1 auto; height: 100%; min-height: 180px; max-height: none; contain: layout paint; }
 .figure-panel:fullscreen .figure-caption { display: none; }
 .figure-panel:fullscreen .figure-step-title { font-size: 1.05rem; }
 
@@ -90,7 +128,8 @@
   .jsx-stage > .jxgbox { height: 410px; }
   .function-workflow { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .stage-board-grid--three, .stage-board-grid--two { grid-template-columns: 1fr; }
-  .stage-mini-board { height: 320px; }
+  .stage-mini-board { height: 280px; min-height: 280px; max-height: 280px; }
+  .matrix-entry-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
   .figure-panel { padding: 10px; border-radius: 12px; }
@@ -102,5 +141,9 @@
   .vector-label-chip { padding: 2px 6px !important; }
   .stage-board-stage { padding: 6px; }
   .stage-card { padding: 8px; }
-  .stage-mini-board { height: 270px; }
+  .stage-mini-board { height: 250px; min-height: 250px; max-height: 250px; }
+  .matrix-pattern-board { padding: 12px; }
+  .matrix-pattern-equation { gap: 9px; }
+  .matrix-grid-visual { grid-template-columns: repeat(2,minmax(42px,auto)); gap: 4px 6px; padding: 7px 12px; font-size: .9rem; }
+  .matrix-index-note { grid-template-columns: 1fr; }
 }
