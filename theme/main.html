@@ -29,7 +29,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
   {% if page.meta.lecture %}
     <script defer src="https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js"></script>
-    {% set scripts = ['assets/js/shared/fullscreen.js', 'assets/js/shared/jsx-board-layout.js', 'assets/js/shared/vector-label-style.js'] %}
+    {% set scripts = ['assets/js/shared/fullscreen.js', 'assets/js/shared/jsx-board-layout.js', 'assets/js/shared/vector-label-style.js', 'assets/js/shared/math-readout.js'] %}
     {% if page.meta.lecture == '01' %}
       {% set scripts = scripts + [
         'assets/js/lecture-01/01-before-coordinates/euclidean-constructions.js',
@@ -78,6 +78,12 @@
       {% set scripts = scripts + [
         'assets/js/lecture-05/02-basis-images/basis-images.js',
         'assets/js/lecture-05/04-transformation-gallery/transformation-gallery.js'
+      ] %}
+    {% elif page.meta.lecture == '06' %}
+      {% set scripts = scripts + [
+        'assets/js/lecture-06/02-two-stage/two-stage.js',
+        'assets/js/lecture-06/04-basis-journey/basis-journey.js',
+        'assets/js/lecture-06/05-order-matters/order-matters.js'
       ] %}
     {% endif %}
     {% for script in scripts %}<script defer src="{{ script | url }}"></script>{% endfor %}
