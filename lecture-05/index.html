@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A course in analytical geometry, linear algebra and calculus.">
+  <meta name="description" content="Lecture 5 — matrices as representations of linear transformations of the plane.">
   <title>Lecture 05 · Matrices as Transformations · Basic Mathematics</title>
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/home.css">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../assets/css/exercises.css">
   <link rel="stylesheet" href="../assets/css/mkdocs-adapter.css">
   
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css">
   <script>
     window.MathJax = {
       tex: {
@@ -25,6 +25,13 @@
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
   
+    <script defer src="https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js"></script>
+    
+    
+      
+    
+    <script defer src="../assets/js/shared/fullscreen.js"></script><script defer src="../assets/js/shared/jsx-board-layout.js"></script><script defer src="../assets/js/shared/vector-label-style.js"></script><script defer src="../assets/js/lecture-05/02-basis-images/basis-images.js"></script><script defer src="../assets/js/lecture-05/04-transformation-gallery/transformation-gallery.js"></script><script defer src="../assets/js/lecture-05/06-collapse/collapse.js"></script>
+  
 </head>
 <body>
   <header class="site-header">
@@ -36,26 +43,41 @@
   </header>
 
   
-    <main class="standalone-page"><hr />
-<p>title: Matrices as Transformations
-description: Lecture 5 — matrices as representations of linear transformations of the plane.
-lecture: "05"
-eyebrow: Lecture 05 · Actions and Linear Algebra
-lecture_title: Matrices as Transformations
-intro: A matrix is not introduced as a rectangular table of numbers. It records one action applied consistently to every vector in the plane: where the two basis vectors go, and therefore where every point and every shape goes.
-exercise_link: exercises-05/
-section_links:
-  - { id: one-action, title: One action on the plane }
-  - { id: basis-images, title: The columns show the action }
-  - { id: matrix-vector-product, title: Matrix times vector }
-  - { id: transformation-gallery, title: A gallery of transformations }
-  - { id: geometry-under-action, title: What happens to shapes }
-  - { id: collapse, title: When dimensions collapse }
-  - { id: design-a-matrix, title: Build a matrix from a picture }
-  - { id: computational-model, title: Computational model }
-  - { id: exercises, title: Exercises }</p>
-<hr />
-<h2 id="one-action">One rule acts on every vector</h2>
+    <div class="lecture-shell">
+      <aside class="lecture-nav" aria-label="Lecture contents">
+        <div class="nav-label">Lecture 05</div>
+        <a class="companion-link" href="../exercises-05/">Exercise set 05 →</a>
+        
+          <a href="#one-action">One action on the plane</a>
+        
+          <a href="#basis-images">The columns show the action</a>
+        
+          <a href="#matrix-vector-product">Matrix times vector</a>
+        
+          <a href="#transformation-gallery">A gallery of transformations</a>
+        
+          <a href="#geometry-under-action">What happens to shapes</a>
+        
+          <a href="#collapse">When dimensions collapse</a>
+        
+          <a href="#design-a-matrix">Build a matrix from a picture</a>
+        
+          <a href="#exercises">Exercises</a>
+        
+      </aside>
+      <main class="lecture-main">
+        <header class="lecture-header">
+          <p class="eyebrow">Lecture 05 · Actions and Linear Algebra</p>
+          <h1>Matrices as Transformations</h1>
+          <p class="lecture-author">Damian Chorążkiewicz</p>
+          <p>A matrix is not introduced as a rectangular table of numbers. It records one action applied consistently to every vector in the plane: where the two basis vectors go, and therefore where every point and every shape goes.</p>
+          
+          <div class="companion-actions">
+            <a class="companion-button" href="../exercises-05/">Open exercises for Lecture 05 →</a>
+          </div>
+          
+        </header>
+        <h2 id="one-action">One rule acts on every vector</h2>
 <p>In the previous lectures, vectors described changes, directions and combinations. We now study <strong>actions on vectors</strong>.</p>
 <p>An action receives an input vector and produces an output vector:</p>
 <div class="arithmatex">\[
@@ -576,51 +598,6 @@ A\mathbf e_1+A\mathbf e_2
 <p class="admonition-title">Quick visual test</p>
 <p>If the two columns point in exactly the same direction, can the image still fill the plane? Explain using linear combinations of the columns.</p>
 </div>
-<h2 id="computational-model">Optional computational model</h2>
-<p>A matrix transformation can be implemented without a matrix library. The code mirrors the coordinate formula exactly.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypeAlias</span>
-
-<span class="n">Vector2</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
-<span class="n">Matrix2</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="n">matrix</span><span class="p">:</span> <span class="n">Matrix2</span><span class="p">,</span> <span class="n">vector</span><span class="p">:</span> <span class="n">Vector2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector2</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply a 2×2 matrix to a two-dimensional column vector.&quot;&quot;&quot;</span>
-    <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">=</span> <span class="n">matrix</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vector</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">y</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">transform_shape</span><span class="p">(</span><span class="n">matrix</span><span class="p">:</span> <span class="n">Matrix2</span><span class="p">,</span> <span class="n">vertices</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Vector2</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Vector2</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Transform every vertex of a polygon by the same matrix.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">transform</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">vertex</span><span class="p">)</span> <span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="n">vertices</span><span class="p">]</span>
-
-
-<span class="n">shear</span><span class="p">:</span> <span class="n">Matrix2</span> <span class="o">=</span> <span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
-<span class="n">house</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Vector2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">),</span>
-    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">),</span>
-    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
-    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span>
-    <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
-<span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">transform</span><span class="p">(</span><span class="n">shear</span><span class="p">,</span> <span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">transform_shape</span><span class="p">(</span><span class="n">shear</span><span class="p">,</span> <span class="n">house</span><span class="p">))</span>
-</code></pre></div>
-<p>The computational model should preserve the mathematical structure:</p>
-<ul>
-<li>the matrix is one action;</li>
-<li>the same function is applied to every vertex;</li>
-<li>no vertex receives a special rule;</li>
-<li>the order of the vertices is retained so that edges can be redrawn.</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">What to verify</p>
-<p>For each implementation, test the basis vectors first. If the program does not return the two columns for <span class="arithmatex">\(\mathbf e_1\)</span> and <span class="arithmatex">\(\mathbf e_2\)</span>, the indexing convention is wrong.</p>
-</div>
-<p>This model prepares the next lecture. Applying one matrix and then another creates a new action; matrix multiplication will arise from composing those actions.</p>
 <h2 id="exercises">Exercises</h2>
 <p>The companion design page separates two levels of work:</p>
 <ul>
@@ -628,7 +605,9 @@ A\mathbf e_1+A\mathbf e_2
 <li><strong>developing work</strong> asks students to design matrices, compare pictures with formulas and diagnose dimension collapse.</li>
 </ul>
 <p><a class="companion-button" href="../../exercises-05/">Open Exercise Set 05 design page →</a></p>
-<p>The exercise set is deliberately visual. Every substantial calculation should be accompanied by a labelled grid, basis arrows or a transformed figure.</p></main>
+<p>The exercise set is deliberately visual. Every substantial calculation should be accompanied by a labelled grid, basis arrows or a transformed figure.</p>
+      </main>
+    </div>
   
 </body>
 </html>
