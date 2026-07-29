@@ -302,13 +302,56 @@ x
 \]</div>
 <p>The coefficient vector multiplying <span class="arithmatex">\(x\)</span> becomes the first column. The coefficient vector multiplying <span class="arithmatex">\(y\)</span> becomes the second column. Therefore</p>
 <div class="arithmatex">\[
-AB=
+C=AB=
 \begin{bmatrix}
 0&amp;-1\\
 1&amp;1
 \end{bmatrix}.
 \]</div>
-<p>A direct check gives</p>
+<h3 id="stage-4-verify-the-four-entries-one-by-one">Stage 4: verify the four entries one by one</h3>
+<p>Write <span class="arithmatex">\(C=(c_{ij})\)</span>. The first index selects the row of <span class="arithmatex">\(A\)</span> and the second index selects the column of <span class="arithmatex">\(B\)</span>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+c_{11}
+&amp;=
+\begin{bmatrix}0&amp;-1\end{bmatrix}
+\begin{bmatrix}1\\0\end{bmatrix}
+=0\cdot1+(-1)\cdot0
+=0,\\[6pt]
+c_{12}
+&amp;=
+\begin{bmatrix}0&amp;-1\end{bmatrix}
+\begin{bmatrix}1\\1\end{bmatrix}
+=0\cdot1+(-1)\cdot1
+=-1,\\[6pt]
+c_{21}
+&amp;=
+\begin{bmatrix}1&amp;0\end{bmatrix}
+\begin{bmatrix}1\\0\end{bmatrix}
+=1\cdot1+0\cdot0
+=1,\\[6pt]
+c_{22}
+&amp;=
+\begin{bmatrix}1&amp;0\end{bmatrix}
+\begin{bmatrix}1\\1\end{bmatrix}
+=1\cdot1+0\cdot1
+=1.
+\end{aligned}
+\]</div>
+<p>Thus the four separately calculated entries reconstruct the same matrix:</p>
+<div class="arithmatex">\[
+C=
+\begin{bmatrix}
+c_{11}&amp;c_{12}\\
+c_{21}&amp;c_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&amp;-1\\
+1&amp;1
+\end{bmatrix}.
+\]</div>
+<p>A direct action check gives</p>
 <div class="arithmatex">\[
 \begin{bmatrix}
 0&amp;-1\\
@@ -333,7 +376,7 @@ x\\y
 </div>
 <div class="admonition principle">
 <p class="admonition-title">Do not memorize the product before you can explain it</p>
-<p>The matrix <span class="arithmatex">\(AB\)</span> is correct because its two columns reproduce the coefficients of the final rule. The next section derives those same columns directly from the basis vectors.</p>
+<p>The matrix <span class="arithmatex">\(AB\)</span> is correct because its action reproduces the complete two-stage rule. The indexed row-by-column calculation and the basis-vector journey are two ways to calculate the same matrix.</p>
 </div>
 <h2 id="product-columns">Rows meet columns: the indexed pattern</h2>
 <p>Lecture 05 established that a matrix is determined by the destinations of the two basis vectors. We use that fact first, and then translate it into the indexed row-by-column rule.</p>
