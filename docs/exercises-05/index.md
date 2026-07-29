@@ -35,8 +35,8 @@ $$
 | 06. Reflections in coordinate axes | basis-image table |
 | 07. A simple shear | transformed grid and one polygon |
 | 08. Rotation through $90^\circ$ | basis construction and matrix |
-| 09. Projection onto an axis | calculation and explanation of lost information |
-| 10. Classify an action from its picture | identity, stretch, shear, reflection, rotation or collapse |
+| 09. Match matrices to transformed grids | matched diagrams with short justifications |
+| 10. Classify an action from its picture | identity, stretch, shear, reflection or rotation |
 
 ## Developing work {#developing-work}
 
@@ -47,7 +47,7 @@ $$
 | 13. Design a matrix for a stated action | basis-image construction |
 | 14. Rows versus columns error audit | corrected calculation and corrected picture |
 | 15. Transform a general line | parametric derivation |
-| 16. Decide whether a plane collapses | column-direction argument |
+| 16. Compare two actions through basis images | basis-image tables and geometric interpretation |
 | 17. Two matrices with similar-looking formulas | visual comparison |
 | 18. Build a simple icon and transform it | vertex table and drawing |
 | 19. Explain why translations are absent | origin test |
@@ -62,4 +62,4 @@ Every problem beyond routine arithmetic should include at least one visible math
 - a unit square or triangle;
 - a table of input and output vertices.
 
-The drawing is part of the solution, not decoration. Students must use it to check signs, column order and whether a direction has collapsed.
+The drawing is part of the solution, not decoration. Students must use it to check signs, column order, directions and the visible effect of the action.
