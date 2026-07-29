@@ -44,15 +44,13 @@
     }
   });
 
-  const matrix = () => ({
-    a: e1Image.X(),
-    b: e2Image.X(),
-    c: e1Image.Y(),
-    d: e2Image.Y()
-  });
+  const matrix = () => [
+    [e1Image.X(), e2Image.X()],
+    [e1Image.Y(), e2Image.Y()]
+  ];
 
   const transform = (x, y) => {
-    const { a, b, c, d } = matrix();
+    const [[a, b], [c, d]] = matrix();
     return [a * x + b * y, c * x + d * y];
   };
 
@@ -117,19 +115,15 @@
     ...fixed
   });
 
-  const fmt = value => {
-    const rounded = Math.round(value * 2) / 2;
-    return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
-  };
-
   function update() {
-    const { a, b, c, d } = matrix();
-    readout.textContent = `A = [[${fmt(a)}, ${fmt(b)}], [${fmt(c)}, ${fmt(d)}]]`;
+    window.LectureMath?.set(readout, window.LectureMath.matrix('A', matrix()));
     board.fullUpdate();
   }
 
   e1Image.on('drag', update);
   e2Image.on('drag', update);
+  e1Image.on('up', update);
+  e2Image.on('up', update);
   update();
   window.LectureJSX?.keepBoardFitted?.({ board, host, boundingBox: VIEW });
 })();

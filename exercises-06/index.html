@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Exercise design for Lecture 06, connecting consecutive actions, matrix products, basis-vector journeys and order.">
+  <title>Exercises 06 · Composition of Transformations · Basic Mathematics</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/home.css">
+  <link rel="stylesheet" href="../assets/css/lecture.css">
+  <link rel="stylesheet" href="../assets/css/figures.css">
+  <link rel="stylesheet" href="../assets/css/exercises.css">
+  <link rel="stylesheet" href="../assets/css/mkdocs-adapter.css">
+  
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        tags: 'ams'
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="..">Basic Mathematics</a>
+    <nav class="header-links" aria-label="Primary navigation">
+      <a href="..#course-map">Course map</a>
+      <a href="https://github.com/dchorazkiewicz/basic_mathematics">GitHub</a>
+    </nav>
+  </header>
+
+  
+    <div class="lecture-shell">
+      <aside class="lecture-nav" aria-label="Exercise set contents">
+        <div class="nav-label">Exercises 06</div>
+        <a class="companion-link" href="../lecture-06/">← Return to lecture</a>
+        
+          <a href="#required-practice">Required practice</a>
+        
+          <a href="#developing-work">Developing work</a>
+        
+          <a href="#visual-standard">Visual standard</a>
+        
+      </aside>
+      <main class="lecture-main exercise-plan-main">
+        <header class="lecture-header">
+          <p class="eyebrow">Exercises · Lecture 06</p>
+          <h1>Composition of Transformations</h1>
+          <p class="lecture-author">Damian Chorążkiewicz</p>
+          <p>Problems 01–10 consolidate two-stage calculations and product construction. Problems 11–20 require comparison, design, error analysis and documented visual reasoning.</p>
+          <div class="companion-actions">
+            <a class="companion-button" href="../lecture-06/">← Return to Lecture 06</a>
+          </div>
+        </header>
+        <h1 id="exercise-set-06-design">Exercise Set 06 design</h1>
+<p>The set preserves the central translation</p>
+<div class="arithmatex">\[
+\text{two consecutive actions}
+\longleftrightarrow
+\text{one product matrix}
+\longleftrightarrow
+\text{one final transformed picture}.
+\]</div>
+<h2 id="required-practice">Required practice</h2>
+<table>
+<thead>
+<tr>
+<th>Proposed problem</th>
+<th>Main product</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01. Follow one vector through two matrices</td>
+<td>two intermediate calculations and a plotted journey</td>
+</tr>
+<tr>
+<td>02. Read the chronological order</td>
+<td>translation between words, <span class="arithmatex">\(A(B\mathbf x)\)</span> and <span class="arithmatex">\(AB\mathbf x\)</span></td>
+</tr>
+<tr>
+<td>03. Multiply two simple <span class="arithmatex">\(2\times2\)</span> matrices</td>
+<td>product plus one vector check</td>
+</tr>
+<tr>
+<td>04. Build the first product column</td>
+<td>journey of <span class="arithmatex">\(\mathbf e_1\)</span></td>
+</tr>
+<tr>
+<td>05. Build the second product column</td>
+<td>journey of <span class="arithmatex">\(\mathbf e_2\)</span></td>
+</tr>
+<tr>
+<td>06. Transform a unit square in two stages</td>
+<td>original, intermediate and final vertices</td>
+</tr>
+<tr>
+<td>07. Stretch then rotate</td>
+<td>matrix, basis arrows and sketch</td>
+</tr>
+<tr>
+<td>08. Shear then reflect</td>
+<td>matrix, basis arrows and sketch</td>
+</tr>
+<tr>
+<td>09. Compare <span class="arithmatex">\(AB\)</span> with <span class="arithmatex">\(BA\)</span></td>
+<td>two products and two final figures</td>
+</tr>
+<tr>
+<td>10. Recover a product from its final basis images</td>
+<td>matrix plus verification</td>
+</tr>
+</tbody>
+</table>
+<h2 id="developing-work">Developing work</h2>
+<table>
+<thead>
+<tr>
+<th>Proposed problem</th>
+<th>Main product</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11. Derive the product formula from columns</td>
+<td>two basis-vector derivations</td>
+</tr>
+<tr>
+<td>12. Compute a product in two ways</td>
+<td>row-by-column and basis-image methods</td>
+</tr>
+<tr>
+<td>13. Design a stated two-step action</td>
+<td>named stages, product and drawing</td>
+</tr>
+<tr>
+<td>14. Audit a reversed-order solution</td>
+<td>corrected notation, matrix and figure</td>
+</tr>
+<tr>
+<td>15. Compose three transformations</td>
+<td>staged journey and two groupings</td>
+</tr>
+<tr>
+<td>16. Transform a parametrized line twice</td>
+<td>final parametrization and geometric check</td>
+</tr>
+<tr>
+<td>17. Compare two procedures with the same first action</td>
+<td>matrix and visual comparison</td>
+</tr>
+<tr>
+<td>18. Transform a simple icon in two stages</td>
+<td>three vertex tables and drawings</td>
+</tr>
+<tr>
+<td>19. Explain non-commutativity geometrically</td>
+<td>concise comparison note</td>
+</tr>
+<tr>
+<td>20. Complete composition note</td>
+<td>stages, product, basis check, figure and interpretation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visual-standard">Visual standard</h2>
+<p>Every problem beyond routine arithmetic should show at least two of the following:</p>
+<ul>
+<li>an input, intermediate and final arrow;</li>
+<li>the original, intermediate and final figure;</li>
+<li>the images of <span class="arithmatex">\(\mathbf e_1\)</span> and <span class="arithmatex">\(\mathbf e_2\)</span> after each stage;</li>
+<li>a transformed grid;</li>
+<li>a table of vertices before and after each matrix.</li>
+</ul>
+<p>The intermediate stage is not decoration. It is the evidence that the matrices were applied in the correct order.</p>
+      </main>
+    </div>
+  
+</body>
+</html>
