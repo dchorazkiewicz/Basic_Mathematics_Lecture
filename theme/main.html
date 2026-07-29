@@ -77,8 +77,7 @@
     {% elif page.meta.lecture == '05' %}
       {% set scripts = scripts + [
         'assets/js/lecture-05/02-basis-images/basis-images.js',
-        'assets/js/lecture-05/04-transformation-gallery/transformation-gallery.js',
-        'assets/js/lecture-05/06-collapse/collapse.js'
+        'assets/js/lecture-05/04-transformation-gallery/transformation-gallery.js'
       ] %}
     {% endif %}
     {% for script in scripts %}<script defer src="{{ script | url }}"></script>{% endfor %}
