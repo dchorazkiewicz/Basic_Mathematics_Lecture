@@ -122,7 +122,11 @@ x=x(t),\qquad y=y(t).
 <div class="arithmatex">\[
 x(t)=3\cos t,\qquad y(t)=3\sin t,
 \]</div>
-<p>we calculate only the four transparent values <span class="arithmatex">\(t=0,\frac{\pi}{2},\pi,\frac{3\pi}{2}\)</span>. They produce the four axis points of the circle.</p>
+<p>the values</p>
+<div class="arithmatex">\[
+t=0,\quad \frac{\pi}{2},\quad \pi,\quad \frac{3\pi}{2}
+\]</div>
+<p>produce the four axis points of the circle.</p>
 <p>The comparison with</p>
 <div class="arithmatex">\[
 x(t)=3\cos(2t),\qquad y(t)=3\sin(2t)
@@ -136,21 +140,17 @@ x(t)=3\cos(2t),\qquad y(t)=3\sin(2t)
 <li><strong>time</strong> is a physical interpretation of the parameter that requires additional assumptions.</li>
 </ul>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Continued in the exercise set</p>
-<p>Students will generate points, compare two parametrizations of the same curve, restrict the parameter interval and verify generated points in a Cartesian equation. The lecture establishes the distinction; the exercises develop the technique.</p>
-</div>
 <h2 id="parameter-roles">Parameters that move, scale, and reshape a curve</h2>
 <p>The letter appearing in a formula may play two very different roles.</p>
 <ul>
 <li>A parameter such as <span class="arithmatex">\(t\)</span> selects a point on one fixed curve.</li>
 <li>A parameter such as <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(h\)</span>, or <span class="arithmatex">\(k\)</span> changes the curve itself.</li>
 </ul>
-<p>We use one ellipse to read these roles directly:</p>
+<p>Consider the ellipse</p>
 <div class="arithmatex">\[
 \frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1,\qquad a&gt;0,\quad b&gt;0.
 \]</div>
-<p>The equation is not introduced as a pattern to memorize. It is read geometrically:</p>
+<p>Its parameters have direct geometric meanings:</p>
 <ul>
 <li><span class="arithmatex">\((h,k)\)</span> determines the centre;</li>
 <li><span class="arithmatex">\(a\)</span> determines the horizontal scale;</li>
@@ -185,13 +185,34 @@ x(t)=3\cos(2t),\qquad y(t)=3\sin(2t)
 \frac{(x-2)^2}{4}+(y+1)^2=1.
 \]</div>
 <p>The second curve has the same horizontal and vertical scales as the first. Only its centre has moved from <span class="arithmatex">\((0,0)\)</span> to <span class="arithmatex">\((2,-1)\)</span>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Do not turn this into a catalogue</p>
-<p>The lecture does not derive every standard equation of a circle, ellipse, parabola, and hyperbola. The purpose is to learn how parameters control position, scale, and shape. Repeated recognition and drawing belong to the exercises.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Continued in the exercise set</p>
-<p>Students will read simple Cartesian equations, vary one parameter at a time, produce a sequence of graphs and document the rule “parameter — geometric effect”. General classification of second-degree equations is outside this lecture.</p>
+<div class="admonition summary">
+<p class="admonition-title">Parameter and geometric effect</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(h\)</span></td>
+<td>horizontal position of the centre</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(k\)</span></td>
+<td>vertical position of the centre</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(a\)</span></td>
+<td>horizontal scale</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(b\)</span></td>
+<td>vertical scale</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h2 id="radial-description">A radial description adapted to a distinguished point</h2>
 <p>Cartesian coordinates answer two questions: how far horizontally and how far vertically?</p>
@@ -216,11 +237,13 @@ x=r\cos\theta,\qquad y=r\sin\theta.
 <div class="arithmatex">\[
 r=\sqrt{x^2+y^2}.
 \]</div>
-<p>Only one elementary conversion is performed on the lecture. For <span class="arithmatex">\((r,\theta)=(4,\pi/3)\)</span>,</p>
+<p>For <span class="arithmatex">\((r,\theta)=(4,\pi/3)\)</span>,</p>
 <div class="arithmatex">\[
-x=2,\qquad y=2\sqrt3.
+x=4\cos\frac{\pi}{3}=2,
+\qquad
+y=4\sin\frac{\pi}{3}=2\sqrt3.
 \]</div>
-<p>The essential idea is not the conversion algorithm. It is the operational reading of a radial equation:</p>
+<p>A radial equation is read operationally:</p>
 <blockquote>
 <p>Choose a direction <span class="arithmatex">\(\theta\)</span>, calculate <span class="arithmatex">\(r(\theta)\)</span>, and place the point at that distance from the pole.</p>
 </blockquote>
@@ -231,18 +254,22 @@ x=2,\qquad y=2\sqrt3.
   <figcaption class="figure-caption">The rotating ray and the changing radial distance materialize the meaning of $r=f(\theta)$.</figcaption>
 </figure>
 
-<p>The example</p>
+<p>The equation</p>
 <div class="arithmatex">\[
 r=2R\cos\theta
 \]</div>
-<p>generates a circle that passes through the pole. We do not spend the lecture converting many radial equations to Cartesian form. One conversion is enough to verify that two descriptions can generate the same curve.</p>
+<p>generates a circle passing through the pole. Substituting <span class="arithmatex">\(r^2=x^2+y^2\)</span> and <span class="arithmatex">\(r\cos\theta=x\)</span> gives</p>
+<div class="arithmatex">\[
+x^2+y^2=2Rx,
+\]</div>
+<p>or</p>
+<div class="arithmatex">\[
+(x-R)^2+y^2=R^2.
+\]</div>
+<p>Thus the radial and Cartesian equations describe the same circle.</p>
 <div class="admonition principle">
-<p class="admonition-title">Why this coordinate system appears now</p>
+<p class="admonition-title">Why radial coordinates are useful</p>
 <p>A focus or a central body is a distinguished point. A radial description records distance from that point directly instead of reconstructing it from horizontal and vertical coordinates.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Continued in the exercise set</p>
-<p>Students will convert several simple points, read radial equations operationally, generate tables of <span class="arithmatex">\(r(\theta)\)</span> and compare one radial description with a Cartesian description of the same curve.</p>
 </div>
 <h2 id="conic-family">One parameter organizes a family of conics</h2>
 <p>With the pole placed at a focus, consider the radial family</p>
@@ -267,7 +294,7 @@ r(\theta)=\frac{p}{1+e\cos\theta},\qquad p&gt;0,\quad e\ge0.
   <figcaption class="figure-caption">Move $\theta$ to read the formula as a radial instruction. Then vary $e$ and observe how the entire curve changes.</figcaption>
 </figure>
 
-<p>The lecture stops at four qualitative cases:</p>
+<p>The value of <span class="arithmatex">\(e\)</span> determines four qualitative cases:</p>
 <table>
 <thead>
 <tr>
@@ -294,8 +321,8 @@ r(\theta)=\frac{p}{1+e\cos\theta},\qquad p&gt;0,\quad e\ge0.
 </tr>
 </tbody>
 </table>
-<p>This is not a list of four unrelated formulas. It is one family with a shape parameter.</p>
-<p>For a transparent numerical reading, fix <span class="arithmatex">\(p=2.4\)</span> and <span class="arithmatex">\(e=0.6\)</span>. Then</p>
+<p>These are not four unrelated formulas. They are four regimes of one family.</p>
+<p>For <span class="arithmatex">\(p=2.4\)</span> and <span class="arithmatex">\(e=0.6\)</span>,</p>
 <div class="arithmatex">\[
 r(0)=\frac{2.4}{1.6}=1.5,
 \]</div>
@@ -307,11 +334,6 @@ r(\pi)=\frac{2.4}{0.4}=6.
 <div class="admonition interpretation">
 <p class="admonition-title">The transition at <span class="arithmatex">\(e=1\)</span></p>
 <p>For <span class="arithmatex">\(e&lt;1\)</span>, the denominator stays positive for every direction and the curve closes. At <span class="arithmatex">\(e=1\)</span>, it can approach zero in one limiting direction. For <span class="arithmatex">\(e&gt;1\)</span>, some directions no longer produce a finite nonnegative radius, and an open hyperbolic branch appears.</p>
-</div>
-<p>No general second-degree classification and no lengthy algebraic conversion are needed here. The animation carries the qualitative argument; the two hand calculations show how the formula is read.</p>
-<div class="admonition note">
-<p class="admonition-title">Continued in the exercise set</p>
-<p>Students will calculate selected radii, create a four-case comparison table, plot representative curves and explain what changes when <span class="arithmatex">\(e\)</span> approaches <span class="arithmatex">\(1\)</span> from below and above.</p>
 </div>
 <h2 id="focus-directrix">Focus, directrix, and the geometric meaning of eccentricity</h2>
 <p>The parameter <span class="arithmatex">\(e\)</span> has so far been observed through the changing shape of the radial family. We now give it a geometric meaning.</p>
@@ -344,15 +366,10 @@ d(P,F)=e\,d(P,D).
 <div class="arithmatex">\[
 d(P,F)=d(P,D).
 \]</div>
-<p>For <span class="arithmatex">\(e&lt;1\)</span>, the focal distance is smaller than the corresponding multiple of the directrix distance and the curve is an ellipse. For <span class="arithmatex">\(e&gt;1\)</span>, the hyperbolic regime appears.</p>
-<p>The lecture does <strong>not</strong> derive separate Cartesian equations for all conics from this condition. It uses the construction to explain why the same parameter <span class="arithmatex">\(e\)</span> classifies the shapes seen in the preceding animation.</p>
+<p>For <span class="arithmatex">\(e&lt;1\)</span>, the focal distance is smaller than the directrix distance multiplied by <span class="arithmatex">\(e^{-1}\)</span>, and the curve is an ellipse. For <span class="arithmatex">\(e&gt;1\)</span>, the focal distance is larger relative to the directrix distance, and the hyperbolic regime appears.</p>
 <div class="admonition principle">
-<p class="admonition-title">Geometry before algebraic elimination</p>
-<p>The definition compares two distances. Coordinates are introduced only when we need to calculate or draw the condition. The focus, directrix, and ratio are geometric objects independent of a particular coordinate notation.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Continued in the exercise set</p>
-<p>Students will verify the ratio for selected points, draw the two relevant distances correctly and compare the regimes <span class="arithmatex">\(e&lt;1\)</span>, <span class="arithmatex">\(e=1\)</span>, and <span class="arithmatex">\(e&gt;1\)</span>. A full derivation of the radial equation may appear as a developing exercise, not as the centre of the lecture.</p>
+<p class="admonition-title">Geometry before coordinate elimination</p>
+<p>The defining relation compares two distances. Coordinates are introduced only when the condition must be calculated or drawn. The focus, directrix, and constant ratio do not depend on a particular coordinate notation.</p>
 </div>
 <h2 id="geometric-models">A conic as a trajectory is not yet a law of motion</h2>
 <p>Conics occur as possible trajectories in an idealized two-body gravitational model. This statement must be read carefully.</p>
@@ -379,10 +396,9 @@ d(P,F)=d(P,D).
   <div class="figure-stage jsx-stage"><div id="orbit-model-board" class="jxgbox" data-orbit-models></div></div>
   <label class="parameter-control single-parameter"><span>display parameter $\theta$ = <output data-orbit-theta>0</output></span><input type="range" min="0" max="6.283" step="0.01" value="0" data-orbit-theta-slider></label>
   <div class="relation-readout"><span data-orbit-motion-note>The slider chooses a point on the path; it is not yet a physical time law.</span></div>
-  <figcaption class="figure-caption">The moving point is an illustration of a parametrized path. Its displayed speed is not presented as the physical speed of an orbiting body.</figcaption>
+  <figcaption class="figure-caption">The moving point illustrates a parametrized path. Its displayed speed is not asserted to be the physical speed of an orbiting body.</figcaption>
 </figure>
 
-<p>At the qualitative level used in this lecture:</p>
 <table>
 <thead>
 <tr>
@@ -405,14 +421,10 @@ d(P,F)=d(P,D).
 </tr>
 </tbody>
 </table>
-<p>No energy calculation, Kepler-law derivation, or differential equation is introduced here. Those belong to a mechanics course or to the later synthesis after calculus.</p>
+<p>The geometric classification alone does not determine speed, force, energy, or the relation between the displayed parameter and physical time.</p>
 <div class="admonition warning">
 <p class="admonition-title">A curve is not a theory of gravity</p>
 <p>The statement “the trajectory is an ellipse” does not by itself specify how fast the body moves, why it follows that path, or which assumptions were used. The mathematical model includes the law and the assumptions, not only the shape.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Continued in the exercise set</p>
-<p>Students will classify paths, separate geometric data from parametrization and physical assumptions, identify idealizations of the two-body model and prepare a short note titled “A trajectory is not a law of motion”.</p>
 </div>
 <h2 id="block-summary">What the first four lectures have built</h2>
 <p>The first block of the course now forms one chain.</p>
