@@ -5,13 +5,13 @@ The letter appearing in a formula may play two very different roles.
 - A parameter such as $t$ selects a point on one fixed curve.
 - A parameter such as $a$, $b$, $h$, or $k$ changes the curve itself.
 
-We use one ellipse to read these roles directly:
+Consider the ellipse
 
 $$
 \frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1,\qquad a>0,\quad b>0.
 $$
 
-The equation is not introduced as a pattern to memorize. It is read geometrically:
+Its parameters have direct geometric meanings:
 
 - $(h,k)$ determines the centre;
 - $a$ determines the horizontal scale;
@@ -51,8 +51,10 @@ $$
 
 The second curve has the same horizontal and vertical scales as the first. Only its centre has moved from $(0,0)$ to $(2,-1)$.
 
-!!! warning "Do not turn this into a catalogue"
-    The lecture does not derive every standard equation of a circle, ellipse, parabola, and hyperbola. The purpose is to learn how parameters control position, scale, and shape. Repeated recognition and drawing belong to the exercises.
-
-!!! note "Continued in the exercise set"
-    Students will read simple Cartesian equations, vary one parameter at a time, produce a sequence of graphs and document the rule “parameter — geometric effect”. General classification of second-degree equations is outside this lecture.
+!!! summary "Parameter and geometric effect"
+    | Parameter | Effect |
+    |---|---|
+    | $h$ | horizontal position of the centre |
+    | $k$ | vertical position of the centre |
+    | $a$ | horizontal scale |
+    | $b$ | vertical scale |
