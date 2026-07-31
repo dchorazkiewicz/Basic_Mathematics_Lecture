@@ -1,10 +1,10 @@
 ## Exercises {#exercises}
 
-The companion set contains twenty separate problems:
+Exercise Set 04 contains twenty problems.
 
-- **Problems 01–10** consolidate point generation, parameter reading, radial calculations and direct focus-directrix checks;
-- **Problems 11–20** require comparison of parametrizations, interpretation of eccentricity, documented constructions and separation of geometry from physical modelling.
+- **Problems 01–10:** point generation, parameter reading, polar calculations and focus–directrix checks;
+- **Problems 11–20:** comparison of parametrizations, eccentricity, geometric constructions and mathematical models.
 
 [Open Exercise Set 04 →](../../exercises-04/){ .companion-button }
 
-Each problem is stored in its own Markdown file so that individual tasks can be revised, replaced or removed without rewriting the entire set.
+When a problem uses a parametrization or a polar equation, distinguish the geometric curve from the rule used to generate its points.
