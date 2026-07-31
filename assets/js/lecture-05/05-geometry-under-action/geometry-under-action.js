@@ -10,13 +10,16 @@
   const state = { mode: 'line' };
 
   const views = {
-    line: [-4.5, 3.8, 4.8, -3.8],
+    line: [-4.8, 3.4, 4.4, -3.4],
     parallel: [-4.2, 3.6, 5.0, -3.6],
     triangle: [-4.2, 3.3, 3.8, -3.0],
     square: [-0.8, 2.4, 3.0, -0.8]
   };
 
   const apply = ([x, y]) => [x + y, y];
+  const addVectors = ([x1, y1], [x2, y2]) => [x1 + x2, y1 + y2];
+  const scaleVector = (scalar, [x, y]) => [scalar * x, scalar * y];
+
   const board = JXG.JSXGraph.initBoard(host.id, {
     boundingbox: views.line,
     axis: true,
@@ -69,24 +72,45 @@
     return poly;
   };
 
-  // One input line and one transformed line.
-  const p = [-2.2, -1.1];
+  // One input line p + t v and its exact image Ap + t Av.
+  const p = [-2, -1];
   const v = [1, 1];
   const Ap = apply(p);
   const Av = apply(v);
-  segment('line', [-4.2, -3.1], [2.8, 3.9], {
+  const inputStart = addVectors(p, scaleVector(-2.3, v));
+  const inputEnd = addVectors(p, scaleVector(4.7, v));
+  const outputStart = addVectors(Ap, scaleVector(-1.2, Av));
+  const outputEnd = addVectors(Ap, scaleVector(3.5, Av));
+  const pPlusV = addVectors(p, v);
+  const ApPlusAv = addVectors(Ap, Av);
+
+  segment('line', inputStart, inputEnd, {
     strokeColor: '#aeb7c1', strokeWidth: 3, dash: 2
   });
-  segment('line', [-4.2, -2.1], [4.8, 2.4], {
+  segment('line', outputStart, outputEnd, {
     strokeColor: '#2f6f9f', strokeWidth: 4
   });
-  point('line', p, 'p', { fillColor: '#6f7882', strokeColor: '#6f7882' });
-  point('line', Ap, 'Ap', { fillColor: '#2f6f9f', strokeColor: '#2f6f9f' });
-  segment('line', p, [p[0] + v[0], p[1] + v[1]], {
-    strokeColor: '#b1782b', strokeWidth: 4, lastArrow: true
+  point('line', p, 'p', {
+    fillColor: '#6f7882', strokeColor: '#6f7882',
+    label: { offset: [10, -18] }
   });
-  segment('line', Ap, [Ap[0] + Av[0], Ap[1] + Av[1]], {
-    strokeColor: '#7c8f3d', strokeWidth: 4, lastArrow: true
+  point('line', Ap, 'Ap', {
+    fillColor: '#2f6f9f', strokeColor: '#2f6f9f',
+    label: { offset: [-36, -18] }
+  });
+  segment('line', p, pPlusV, {
+    strokeColor: '#b1782b', strokeWidth: 5, lastArrow: true
+  });
+  segment('line', Ap, ApPlusAv, {
+    strokeColor: '#7c8f3d', strokeWidth: 5, lastArrow: true
+  });
+  point('line', pPlusV, 'p + v', {
+    fillColor: '#b1782b', strokeColor: '#b1782b',
+    label: { offset: [10, 10] }
+  });
+  point('line', ApPlusAv, 'Ap + Av', {
+    fillColor: '#7c8f3d', strokeColor: '#7c8f3d',
+    label: { offset: [10, 10] }
   });
 
   // Two representative parallel input lines and their two images.
@@ -109,7 +133,6 @@
   point('parallel', v, 'v', { fillColor: '#b1782b', strokeColor: '#b1782b' });
   point('parallel', Av, 'Av', { fillColor: '#7c8f3d', strokeColor: '#7c8f3d' });
 
-  // Triangle and its image fill most of the viewport.
   const triangle = [[-3, -2], [-1.2, 2.2], [1.1, -2]];
   const transformedTriangle = triangle.map(apply);
   polygon('triangle', triangle, {
@@ -127,7 +150,6 @@
     });
   });
 
-  // Tight view around the unit square and its image.
   const square = [[0, 0], [1, 0], [1, 1], [0, 1]];
   const transformedSquare = square.map(apply);
   polygon('square', square, {
@@ -153,8 +175,8 @@
 
   const descriptions = {
     line: {
-      title: 'One input line and one transformed line',
-      latex: 'A(\\mathbf p+t\\mathbf v)=A\\mathbf p+tA\\mathbf v'
+      title: 'The point p moves to Ap, and the direction v moves to Av',
+      latex: '(\\mathbf p+t\\mathbf v)\\mapsto A\\mathbf p+tA\\mathbf v'
     },
     parallel: {
       title: 'Two input lines receive the same new direction',
