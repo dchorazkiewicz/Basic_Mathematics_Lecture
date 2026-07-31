@@ -1,6 +1,16 @@
 ## Follow one vector through both stages {#two-stage-journey}
 
-The previous calculation should also be readable as one picture. Keep one coordinate system on screen and reveal the consecutive outputs without losing the earlier stages.
+For the input vector $\mathbf x$, the complete journey is
+
+$$
+\mathbf x
+\longmapsto
+B\mathbf x
+\longmapsto
+A(B\mathbf x).
+$$
+
+The panel shows the input, the intermediate vector and the final vector in the same coordinate system.
 
 <figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
   <div class="figure-toolbar">
@@ -26,7 +36,7 @@ The previous calculation should also be readable as one picture. Keep one coordi
   <div class="relation-readout">
     <span data-two-stage-equation>$\mathbf x=\begin{bmatrix}2\\1\end{bmatrix}$</span>
   </div>
-  <figcaption class="figure-caption">The dark arrow is the current stage. Earlier arrows remain as a faint trace, so the complete process stays visible without scrolling.</figcaption>
+  <figcaption class="figure-caption">The dark arrow marks the selected stage. Earlier stages remain visible as a faint trace.</figcaption>
 </figure>
 
 The notation
@@ -35,8 +45,8 @@ $$
 A\circ B
 $$
 
-means “first apply $B$, then apply $A$”. For linear transformations, the single matrix representing this two-stage action will be written $AB$.
+means “first apply $B$, then apply $A$”. For linear transformations, the single matrix representing this two-stage action is written $AB$.
 
 !!! interpretation "Two notations, one process"
     - $A\circ B$ names the composition of two actions;
-    - $AB$ names the matrix that performs the same complete action in one step.
+    - $AB$ is the matrix that performs the same complete action in one step.
