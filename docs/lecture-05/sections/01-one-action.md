@@ -83,7 +83,6 @@ $$
 Therefore, by definition,
 
 $$
-\boxed{
 \begin{bmatrix}
 a&b\\
 c&d
@@ -93,7 +92,7 @@ c&d
 \begin{bmatrix}
 ax+by\\
 cx+dy
-\end{bmatrix}}
+\end{bmatrix}.
 $$
 
 The left-hand side is compact notation. The right-hand side tells us exactly how to calculate the two output coordinates.
