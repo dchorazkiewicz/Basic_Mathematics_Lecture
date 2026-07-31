@@ -175,7 +175,15 @@ A(B\mathbf x)
 <p>The second matrix acts on <span class="arithmatex">\(B\mathbf x\)</span>, not on the original vector <span class="arithmatex">\(\mathbf x\)</span>. The intermediate vector must remain visible in the calculation.</p>
 </div>
 <h2 id="two-stage-journey">Follow one vector through both stages</h2>
-<p>The previous calculation should also be readable as one picture. Keep one coordinate system on screen and reveal the consecutive outputs without losing the earlier stages.</p>
+<p>For the input vector <span class="arithmatex">\(\mathbf x\)</span>, the complete journey is</p>
+<div class="arithmatex">\[
+\mathbf x
+\longmapsto
+B\mathbf x
+\longmapsto
+A(B\mathbf x).
+\]</div>
+<p>The panel shows the input, the intermediate vector and the final vector in the same coordinate system.</p>
 <figure class="figure-panel jsx-panel" data-fullscreen-panel tabindex="0">
   <div class="figure-toolbar">
     <div>
@@ -200,19 +208,19 @@ A(B\mathbf x)
   <div class="relation-readout">
     <span data-two-stage-equation>$\mathbf x=\begin{bmatrix}2\\1\end{bmatrix}$</span>
   </div>
-  <figcaption class="figure-caption">The dark arrow is the current stage. Earlier arrows remain as a faint trace, so the complete process stays visible without scrolling.</figcaption>
+  <figcaption class="figure-caption">The dark arrow marks the selected stage. Earlier stages remain visible as a faint trace.</figcaption>
 </figure>
 
 <p>The notation</p>
 <div class="arithmatex">\[
 A\circ B
 \]</div>
-<p>means “first apply <span class="arithmatex">\(B\)</span>, then apply <span class="arithmatex">\(A\)</span>”. For linear transformations, the single matrix representing this two-stage action will be written <span class="arithmatex">\(AB\)</span>.</p>
+<p>means “first apply <span class="arithmatex">\(B\)</span>, then apply <span class="arithmatex">\(A\)</span>”. For linear transformations, the single matrix representing this two-stage action is written <span class="arithmatex">\(AB\)</span>.</p>
 <div class="admonition interpretation">
 <p class="admonition-title">Two notations, one process</p>
 <ul>
 <li><span class="arithmatex">\(A\circ B\)</span> names the composition of two actions;</li>
-<li><span class="arithmatex">\(AB\)</span> names the matrix that performs the same complete action in one step.</li>
+<li><span class="arithmatex">\(AB\)</span> is the matrix that performs the same complete action in one step.</li>
 </ul>
 </div>
 <h2 id="one-matrix">One matrix records the two-step action</h2>
@@ -835,14 +843,15 @@ AB\mathbf x
 </ul>
 <p>Determinant tests, inverse matrices and methods for solving linear systems are not required here. The present goal is to read and construct matrix products as compositions of visible actions.</p>
 <h2 id="exercises">Exercises</h2>
-<p>The companion set develops three connected skills:</p>
+<p>Exercise Set 06 contains problems on:</p>
 <ul>
-<li>following vectors and figures through two consecutive actions;</li>
-<li>constructing a product matrix from basis-vector journeys;</li>
-<li>checking the order of factors against a geometric description.</li>
+<li>following vectors and figures through two consecutive transformations;</li>
+<li>constructing a product matrix from the journeys of <span class="arithmatex">\(\mathbf e_1\)</span> and <span class="arithmatex">\(\mathbf e_2\)</span>;</li>
+<li>calculating entries by the row–column rule;</li>
+<li>comparing <span class="arithmatex">\(AB\)</span> with <span class="arithmatex">\(BA\)</span>.</li>
 </ul>
 <p><a class="companion-button" href="../../exercises-06/">Open Exercise Set 06 →</a></p>
-<p>The exercises remain within composition. Determinants, invertibility and inverse problems are reserved for Lectures 07 and 08.</p>
+<p>In each composition, write the chronological order first. The matrix on the right acts first.</p>
       </main>
     </div>
   
