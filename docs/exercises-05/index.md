@@ -1,19 +1,18 @@
 ---
 title: Exercises 05 — Matrices as Transformations
-description: "Exercise design for Lecture 05, connecting basis images, matrix-vector products and transformed grids."
+description: "Exercises on basis images, matrix-vector products and transformed figures."
 exercise_set: "05"
 exercise_title: Matrices as Transformations
 lecture_link: lecture-05/
-intro: "This design page specifies the required practice and developing work for matrices understood as actions on the plane. Individual problem pages will be split out after the lecture narrative and visual controls are reviewed."
+intro: "Apply matrices to vectors and figures, read transformations from their columns, and construct matrices from geometric requirements."
 section_links:
-  - { id: required-practice, title: Required practice }
-  - { id: developing-work, title: Developing work }
-  - { id: visual-standard, title: Visual standard }
+  - { id: core-practice, title: Core practice }
+  - { id: further-problems, title: Further problems }
 ---
 
-# Exercise Set 05 design
+# Exercise Set 05
 
-The set should preserve the lecture's central translation:
+For every matrix, connect three descriptions whenever possible:
 
 $$
 \text{columns}
@@ -23,43 +22,34 @@ $$
 \text{transformed grid and figures}.
 $$
 
-## Required practice {#required-practice}
+## Core practice {#core-practice}
 
-| Proposed problem | Main product |
+| Problem | Task |
 |---|---|
-| 01. Apply a matrix to four vectors | coordinate calculations and plotted input-output arrows |
-| 02. Read basis images from a matrix | two labelled column vectors |
-| 03. Build a matrix from basis images | matrix plus one verification vector |
-| 04. Transform a unit square | four output vertices and a parallelogram |
-| 05. Horizontal and vertical stretches | matched formulas and sketches |
-| 06. Reflections in coordinate axes | basis-image table |
-| 07. A simple shear | transformed grid and one polygon |
-| 08. Rotation through $90^\circ$ | basis construction and matrix |
-| 09. Match matrices to transformed grids | matched diagrams with short justifications |
-| 10. Classify an action from its picture | identity, stretch, shear, reflection or rotation |
+| 01 | Apply a matrix to four vectors and plot each input-output pair. |
+| 02 | Read $A\mathbf e_1$ and $A\mathbf e_2$ from the columns of a matrix. |
+| 03 | Build a matrix from two given basis images and verify it on one additional vector. |
+| 04 | Transform the four vertices of the unit square. |
+| 05 | Compare horizontal and vertical stretches using formulas and sketches. |
+| 06 | Construct reflections in the coordinate axes from basis images. |
+| 07 | Apply a simple shear to a grid and one polygon. |
+| 08 | Construct the matrix for a rotation through $90^\circ$. |
+| 09 | Match matrices to transformed grids and justify each match. |
+| 10 | Identify identity, stretch, shear, reflection or rotation from a picture. |
 
-## Developing work {#developing-work}
+## Further problems {#further-problems}
 
-| Proposed problem | Main product |
+| Problem | Task |
 |---|---|
-| 11. One figure under three matrices | comparison panel |
-| 12. Recover a matrix from a transformed grid | column reading and verification |
-| 13. Design a matrix for a stated action | basis-image construction |
-| 14. Rows versus columns error audit | corrected calculation and corrected picture |
-| 15. Transform a general line | parametric derivation |
-| 16. Compare two actions through basis images | basis-image tables and geometric interpretation |
-| 17. Two matrices with similar-looking formulas | visual comparison |
-| 18. Build a simple icon and transform it | vertex table and drawing |
-| 19. Explain why translations are absent | origin test |
-| 20. Complete transformation note | formula, basis images, grid, figure and interpretation |
+| 11 | Draw one figure under three different matrices and compare the results. |
+| 12 | Recover a matrix from a transformed coordinate grid. |
+| 13 | Construct a matrix for a stated geometric action. |
+| 14 | Find and correct a rows-versus-columns error. |
+| 15 | Transform a parametrized line using $A(\mathbf p+t\mathbf v)$. |
+| 16 | Compare two transformations through their basis images. |
+| 17 | Compare two matrices with similar formulas but different geometric effects. |
+| 18 | Transform a simple icon by applying a matrix to all its vertices. |
+| 19 | Use the image of the origin to explain why a $2\times2$ matrix is not a translation. |
+| 20 | Present one transformation using its formula, basis images, grid and transformed figure. |
 
-## Visual standard {#visual-standard}
-
-Every problem beyond routine arithmetic should include at least one visible mathematical object:
-
-- a labelled pair of basis vectors;
-- an original and transformed grid;
-- a unit square or triangle;
-- a table of input and output vertices.
-
-The drawing is part of the solution, not decoration. Students must use it to check signs, column order, directions and the visible effect of the action.
+A drawing is part of a geometric solution. Use it to check signs, column order and directions.
