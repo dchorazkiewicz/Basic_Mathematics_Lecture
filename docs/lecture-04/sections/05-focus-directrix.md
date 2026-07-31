@@ -38,12 +38,7 @@ $$
 d(P,F)=d(P,D).
 $$
 
-For $e<1$, the focal distance is smaller than the corresponding multiple of the directrix distance and the curve is an ellipse. For $e>1$, the hyperbolic regime appears.
+For $e<1$, the focal distance is smaller than the directrix distance multiplied by $e^{-1}$, and the curve is an ellipse. For $e>1$, the focal distance is larger relative to the directrix distance, and the hyperbolic regime appears.
 
-The lecture does **not** derive separate Cartesian equations for all conics from this condition. It uses the construction to explain why the same parameter $e$ classifies the shapes seen in the preceding animation.
-
-!!! principle "Geometry before algebraic elimination"
-    The definition compares two distances. Coordinates are introduced only when we need to calculate or draw the condition. The focus, directrix, and ratio are geometric objects independent of a particular coordinate notation.
-
-!!! note "Continued in the exercise set"
-    Students will verify the ratio for selected points, draw the two relevant distances correctly and compare the regimes $e<1$, $e=1$, and $e>1$. A full derivation of the radial equation may appear as a developing exercise, not as the centre of the lecture.
+!!! principle "Geometry before coordinate elimination"
+    The defining relation compares two distances. Coordinates are introduced only when the condition must be calculated or drawn. The focus, directrix, and constant ratio do not depend on a particular coordinate notation.
