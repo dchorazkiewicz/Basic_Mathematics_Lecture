@@ -27,14 +27,13 @@ $$
     <button class="curve-mode" type="button" data-geometry-mode="square">Unit square</button>
   </div>
   <div class="figure-stage jsx-stage">
-    <div id="geometry-action-board-v2" class="jxgbox" data-geometry-action-board-v2 aria-label="Original and transformed lines and polygons"></div>
+    <div id="geometry-action-board" class="jxgbox" data-geometry-action-board aria-label="Original and transformed lines and polygons"></div>
   </div>
   <div class="relation-readout">
     <span data-geometry-equation>$A(\mathbf p+t\mathbf v)=A\mathbf p+tA\mathbf v$</span>
   </div>
   <figcaption class="figure-caption">Grey dashed objects are inputs. Coloured solid objects are their images under the same matrix.</figcaption>
 </figure>
-<script defer src="../../assets/js/lecture-05/05-geometry-under-action/geometry-under-action-bootstrap-v2.js?v=2"></script>
 
 ### A line is transformed through one point and one direction
 
