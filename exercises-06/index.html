@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Exercise design for Lecture 06, connecting consecutive actions, matrix products, basis-vector journeys and order.">
+  <meta name="description" content="Exercises on consecutive transformations, matrix products, basis-vector journeys and order.">
   <title>Exercises 06 · Composition of Transformations · Basic Mathematics</title>
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/home.css">
@@ -41,11 +41,9 @@
         <div class="nav-label">Exercises 06</div>
         <a class="companion-link" href="../lecture-06/">← Return to lecture</a>
         
-          <a href="#required-practice">Required practice</a>
+          <a href="#core-practice">Core practice</a>
         
-          <a href="#developing-work">Developing work</a>
-        
-          <a href="#visual-standard">Visual standard</a>
+          <a href="#further-problems">Further problems</a>
         
       </aside>
       <main class="lecture-main exercise-plan-main">
@@ -53,13 +51,13 @@
           <p class="eyebrow">Exercises · Lecture 06</p>
           <h1>Composition of Transformations</h1>
           <p class="lecture-author">Damian Chorążkiewicz</p>
-          <p>Problems 01–10 consolidate two-stage calculations and product construction. Problems 11–20 require comparison, design, error analysis and documented visual reasoning.</p>
+          <p>Follow two-stage transformations, construct product matrices and compare the effects of different orders.</p>
           <div class="companion-actions">
             <a class="companion-button" href="../lecture-06/">← Return to Lecture 06</a>
           </div>
         </header>
-        <h1 id="exercise-set-06-design">Exercise Set 06 design</h1>
-<p>The set preserves the central translation</p>
+        <h1 id="exercise-set-06">Exercise Set 06</h1>
+<p>Connect the three descriptions of every composition:</p>
 <div class="arithmatex">\[
 \text{two consecutive actions}
 \longleftrightarrow
@@ -67,118 +65,109 @@
 \longleftrightarrow
 \text{one final transformed picture}.
 \]</div>
-<h2 id="required-practice">Required practice</h2>
+<h2 id="core-practice">Core practice</h2>
 <table>
 <thead>
 <tr>
-<th>Proposed problem</th>
-<th>Main product</th>
+<th>Problem</th>
+<th>Task</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>01. Follow one vector through two matrices</td>
-<td>two intermediate calculations and a plotted journey</td>
+<td>01</td>
+<td>Follow one vector through two matrices and plot all three stages.</td>
 </tr>
 <tr>
-<td>02. Read the chronological order</td>
-<td>translation between words, <span class="arithmatex">\(A(B\mathbf x)\)</span> and <span class="arithmatex">\(AB\mathbf x\)</span></td>
+<td>02</td>
+<td>Translate between words, <span class="arithmatex">\(A(B\mathbf x)\)</span> and <span class="arithmatex">\(AB\mathbf x\)</span>.</td>
 </tr>
 <tr>
-<td>03. Multiply two simple <span class="arithmatex">\(2\times2\)</span> matrices</td>
-<td>four labelled entries <span class="arithmatex">\(c_{11},c_{12},c_{21},c_{22}\)</span> plus one vector check</td>
+<td>03</td>
+<td>Multiply two <span class="arithmatex">\(2\times2\)</span> matrices and label <span class="arithmatex">\(c_{11},c_{12},c_{21},c_{22}\)</span>.</td>
 </tr>
 <tr>
-<td>04. Build the first product column</td>
-<td>journey of <span class="arithmatex">\(\mathbf e_1\)</span></td>
+<td>04</td>
+<td>Construct the first column of a product from the journey of <span class="arithmatex">\(\mathbf e_1\)</span>.</td>
 </tr>
 <tr>
-<td>05. Build the second product column</td>
-<td>journey of <span class="arithmatex">\(\mathbf e_2\)</span></td>
+<td>05</td>
+<td>Construct the second column of a product from the journey of <span class="arithmatex">\(\mathbf e_2\)</span>.</td>
 </tr>
 <tr>
-<td>06. Transform a unit square in two stages</td>
-<td>original, intermediate and final vertices</td>
+<td>06</td>
+<td>Transform the unit square in two stages.</td>
 </tr>
 <tr>
-<td>07. Stretch then rotate</td>
-<td>matrix, basis arrows and sketch</td>
+<td>07</td>
+<td>Calculate and draw a stretch followed by a rotation.</td>
 </tr>
 <tr>
-<td>08. Shear then reflect</td>
-<td>matrix, basis arrows and sketch</td>
+<td>08</td>
+<td>Calculate and draw a shear followed by a reflection.</td>
 </tr>
 <tr>
-<td>09. Compare <span class="arithmatex">\(AB\)</span> with <span class="arithmatex">\(BA\)</span></td>
-<td>two products and two final figures</td>
+<td>09</td>
+<td>Compare <span class="arithmatex">\(AB\)</span> with <span class="arithmatex">\(BA\)</span> using products and final figures.</td>
 </tr>
 <tr>
-<td>10. Recover a product from its final basis images</td>
-<td>matrix plus verification</td>
+<td>10</td>
+<td>Recover a product matrix from its final basis images.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="developing-work">Developing work</h2>
+<h2 id="further-problems">Further problems</h2>
 <table>
 <thead>
 <tr>
-<th>Proposed problem</th>
-<th>Main product</th>
+<th>Problem</th>
+<th>Task</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>11. Derive the indexed product rule</td>
-<td>explanation of <span class="arithmatex">\(c_{ij}=\sum_{k=1}^{2}a_{ik}b_{kj}\)</span> from rows and columns</td>
+<td>11</td>
+<td>Derive <span class="arithmatex">\(c_{ij}=\sum_{k=1}^{2}a_{ik}b_{kj}\)</span> from the row–column rule.</td>
 </tr>
 <tr>
-<td>12. Compute a product in two ways</td>
-<td>indexed row-by-column and basis-image methods</td>
+<td>12</td>
+<td>Compute one product by both the row–column and basis-image methods.</td>
 </tr>
 <tr>
-<td>13. Design a stated two-step action</td>
-<td>named stages, product and drawing</td>
+<td>13</td>
+<td>Design a stated two-step transformation and calculate its product.</td>
 </tr>
 <tr>
-<td>14. Audit a reversed-order solution</td>
-<td>corrected notation, matrix and figure</td>
+<td>14</td>
+<td>Find and correct a solution with the factors in the wrong order.</td>
 </tr>
 <tr>
-<td>15. Compose three transformations</td>
-<td>staged journey and two groupings</td>
+<td>15</td>
+<td>Compose three transformations and compare <span class="arithmatex">\((AB)C\)</span> with <span class="arithmatex">\(A(BC)\)</span>.</td>
 </tr>
 <tr>
-<td>16. Transform a parametrized line twice</td>
-<td>final parametrization and geometric check</td>
+<td>16</td>
+<td>Transform a parametrized line twice.</td>
 </tr>
 <tr>
-<td>17. Compare two procedures with the same first action</td>
-<td>matrix and visual comparison</td>
+<td>17</td>
+<td>Compare two procedures that share the same first transformation.</td>
 </tr>
 <tr>
-<td>18. Transform a simple icon in two stages</td>
-<td>three vertex tables and drawings</td>
+<td>18</td>
+<td>Transform a simple icon in two stages.</td>
 </tr>
 <tr>
-<td>19. Explain non-commutativity geometrically</td>
-<td>concise comparison note</td>
+<td>19</td>
+<td>Explain geometrically why matrix multiplication is not generally commutative.</td>
 </tr>
 <tr>
-<td>20. Complete composition note</td>
-<td>stages, product, basis check, figure and interpretation</td>
+<td>20</td>
+<td>Present one composition using its stages, product, basis check and final figure.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="visual-standard">Visual standard</h2>
-<p>Every problem beyond routine arithmetic should show at least two of the following:</p>
-<ul>
-<li>an input, intermediate and final arrow;</li>
-<li>the original, intermediate and final figure;</li>
-<li>the images of <span class="arithmatex">\(\mathbf e_1\)</span> and <span class="arithmatex">\(\mathbf e_2\)</span> after each stage;</li>
-<li>a colour-coded row–column diagram for the entries <span class="arithmatex">\(c_{ij}\)</span>;</li>
-<li>a table of vertices before and after each matrix.</li>
-</ul>
-<p>The intermediate stage is not decoration. It is the evidence that the matrices were applied in the correct order. In multiplication problems, indices and row–column highlighting are part of the explanation, not optional styling.</p>
+<p>Always write the chronological order before multiplying. In <span class="arithmatex">\(AB\mathbf x\)</span>, the matrix <span class="arithmatex">\(B\)</span> acts first.</p>
       </main>
     </div>
   
