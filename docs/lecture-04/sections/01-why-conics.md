@@ -49,7 +49,13 @@ $$
 x(t)=3\cos t,\qquad y(t)=3\sin t,
 $$
 
-we calculate only the four transparent values $t=0,\frac{\pi}{2},\pi,\frac{3\pi}{2}$. They produce the four axis points of the circle.
+the values
+
+$$
+t=0,\quad \frac{\pi}{2},\quad \pi,\quad \frac{3\pi}{2}
+$$
+
+produce the four axis points of the circle.
 
 The comparison with
 
@@ -63,6 +69,3 @@ shows an important distinction: the geometric set is the same circle, but the pa
     - the **curve** is the set of points;
     - the **parametrization** is the rule that selects and orders those points;
     - **time** is a physical interpretation of the parameter that requires additional assumptions.
-
-!!! note "Continued in the exercise set"
-    Students will generate points, compare two parametrizations of the same curve, restrict the parameter interval and verify generated points in a Cartesian equation. The lecture establishes the distinction; the exercises develop the technique.
