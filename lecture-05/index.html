@@ -78,80 +78,147 @@
           
         </header>
         <h2 id="one-action">One rule acts on every vector</h2>
-<p>In the previous lectures, vectors described changes, directions and combinations. We now study <strong>actions on vectors</strong>.</p>
+<p>In the previous lectures, vectors described changes, directions and combinations. We now introduce a new object: a rule that acts on vectors.</p>
 <p>An action receives an input vector and produces an output vector:</p>
 <div class="arithmatex">\[
 \begin{bmatrix}x\\y\end{bmatrix}
 \longmapsto
 \begin{bmatrix}x'\\y'\end{bmatrix}.
 \]</div>
-<p>For example,</p>
+<p>For example, the rule</p>
 <div class="arithmatex">\[
 \begin{bmatrix}x\\y\end{bmatrix}
 \longmapsto
 \begin{bmatrix}2x\\y\end{bmatrix}
 \]</div>
-<p>doubles every horizontal component and leaves every vertical component unchanged. The same rule acts on every point, every arrow and every figure.</p>
+<p>doubles the horizontal component and leaves the vertical component unchanged. The same rule acts on every point, every arrow and every figure.</p>
 <div class="admonition principle">
-<p class="admonition-title">A matrix represents one consistent action</p>
-<p>We do not choose a new formula for each point. One matrix supplies one rule, and that rule is applied everywhere in the plane.</p>
+<p class="admonition-title">One action, one rule</p>
+<p>We do not choose a new formula for each input. We specify one rule and apply it to every vector in the plane.</p>
 </div>
-<p>The general two-dimensional rule used in this lecture is</p>
+<h3 id="start-with-two-coordinate-formulas">Start with two coordinate formulas</h3>
+<p>A general rule of the type studied in this lecture has the form</p>
 <div class="arithmatex">\[
 \begin{aligned}
 x' &amp;= ax+by,\\
 y' &amp;= cx+dy.
 \end{aligned}
 \]</div>
-<p>The four coefficients are written compactly as</p>
+<p>Read these equations literally:</p>
+<ul>
+<li>the first output coordinate is built from <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> using the coefficients <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>;</li>
+<li>the second output coordinate is built from <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> using the coefficients <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(d\)</span>.</li>
+</ul>
+<p>The four coefficients can be stored in a rectangular array:</p>
 <div class="arithmatex">\[
 A=
 \begin{bmatrix}
 a&amp;b\\
 c&amp;d
-\end{bmatrix},
-\qquad
+\end{bmatrix}.
+\]</div>
+<p>This array is called a <strong>matrix</strong>. At this point it is only an organised way to store the four coefficients of the rule.</p>
+<h3 id="definition-matrix-times-vector">Definition: matrix times vector</h3>
+<p>We now <strong>define</strong> what the expression</p>
+<div class="arithmatex">\[
 A
+\begin{bmatrix}x\\y\end{bmatrix}
+\]</div>
+<p>means.</p>
+<p>Take one row at a time:</p>
+<div class="arithmatex">\[
+\begin{array}{c}
+\text{first row }[a\ b]
+\end{array}
+\quad\Longrightarrow\quad
+ax+by,
+\]</div>
+<div class="arithmatex">\[
+\begin{array}{c}
+\text{second row }[c\ d]
+\end{array}
+\quad\Longrightarrow\quad
+cx+dy.
+\]</div>
+<p>Therefore, by definition,</p>
+<div class="arithmatex">\[
+\boxed{
+\begin{bmatrix}
+a&amp;b\\
+c&amp;d
+\end{bmatrix}
 \begin{bmatrix}x\\y\end{bmatrix}
 =
 \begin{bmatrix}
 ax+by\\
 cx+dy
-\end{bmatrix}.
+\end{bmatrix}}
 \]</div>
+<p>The left-hand side is compact notation. The right-hand side tells us exactly how to calculate the two output coordinates.</p>
+<div class="admonition definition">
+<p class="admonition-title">Matrix-vector multiplication</p>
+<p>Multiplying a <span class="arithmatex">\(2\times2\)</span> matrix by a two-component vector means:</p>
+<ol>
+<li>use the first row to calculate the first output coordinate;</li>
+<li>use the second row to calculate the second output coordinate.</li>
+</ol>
+<p>Nothing is being assumed here. This is the definition of the operation introduced in this lecture.</p>
+</div>
 <p>The output coordinates are linear combinations of the input coordinates. There are no constant terms such as <span class="arithmatex">\(+3\)</span> or <span class="arithmatex">\(-1\)</span>.</p>
 <div class="admonition consequence">
 <p class="admonition-title">The origin stays fixed</p>
-<p>For every matrix <span class="arithmatex">\(A\)</span>,</p>
+<p>Substituting <span class="arithmatex">\(x=0\)</span> and <span class="arithmatex">\(y=0\)</span> into the definition gives</p>
 <div class="arithmatex">\[
 A\begin{bmatrix}0\\0\end{bmatrix}
 =
+\begin{bmatrix}
+a\cdot0+b\cdot0\\
+c\cdot0+d\cdot0
+\end{bmatrix}
+=
 \begin{bmatrix}0\\0\end{bmatrix}.
 \]</div>
-<p>A translation is therefore not represented by a <span class="arithmatex">\(2\times2\)</span> matrix acting on ordinary plane vectors. Translations will require a different representation later.</p>
+<p>A translation is therefore not represented by a <span class="arithmatex">\(2\times2\)</span> matrix acting on ordinary plane vectors. Translations require a different representation.</p>
 </div>
-<h3 id="first-reading-example">First reading example</h3>
+<h3 id="first-calculation-row-by-row">First calculation, row by row</h3>
 <p>Let</p>
 <div class="arithmatex">\[
 A=
 \begin{bmatrix}
 2&amp;1\\
 0&amp;1
-\end{bmatrix}.
+\end{bmatrix},
+\qquad
+\mathbf x=
+\begin{bmatrix}3\\2\end{bmatrix}.
 \]</div>
-<p>Then</p>
+<p>The first row produces the first output coordinate:</p>
 <div class="arithmatex">\[
-A
+[2\ \ 1]
 \begin{bmatrix}3\\2\end{bmatrix}
+=2\cdot3+1\cdot2
+=8.
+\]</div>
+<p>The second row produces the second output coordinate:</p>
+<div class="arithmatex">\[
+[0\ \ 1]
+\begin{bmatrix}3\\2\end{bmatrix}
+=0\cdot3+1\cdot2
+=2.
+\]</div>
+<p>Putting the two results into one vector gives</p>
+<div class="arithmatex">\[
+A\mathbf x
 =
 \begin{bmatrix}
-2\cdot3+1\cdot2\\
-0\cdot3+1\cdot2
+2&amp;1\\
+0&amp;1
 \end{bmatrix}
+\begin{bmatrix}3\\2\end{bmatrix}
 =
 \begin{bmatrix}8\\2\end{bmatrix}.
 \]</div>
-<p>The arithmetic gives one transformed vector. The geometry asks a larger question: <strong>what does the same rule do to the whole plane?</strong></p>
+<p>The arithmetic gives one transformed vector. The geometric question for the rest of the lecture is: <strong>what does this same rule do to the whole plane?</strong></p>
 <h2 id="basis-images">The columns show where the basis vectors go</h2>
 <p>Recall the standard basis vectors</p>
 <div class="arithmatex">\[
