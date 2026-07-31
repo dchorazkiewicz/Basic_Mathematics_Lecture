@@ -1,22 +1,16 @@
 ## Exercises {#exercises}
 
-The exercise set is now maintained as a separate companion section so that every problem has its own page and can be moved, revised or expanded without overloading the lecture text.
+Exercise Set 01 contains twenty problems.
 
-<div class="exercise-transfer" markdown>
+- **Problems 01–10:** coordinate calculations, changes of origin and scale, distance, graphs and direct verification;
+- **Problems 11–20:** comparisons of representations, constructions, intersections and regions.
 
-### Exercise Set 01
+[Open Exercise Set 01 →](../../exercises-01/){ .exercise-download }
 
-- **Problems 01–10:** required computational practice;
-- **Problems 11–20:** developing problems involving explanation, comparison, construction and mathematical documentation.
+The problems use the main ideas of the lecture:
 
-[Open the complete Exercise Set 01 →](../../exercises-01/){ .exercise-download }
-
-</div>
-
-The exercises continue the lecture in five directions:
-
-1. object versus representation;
-2. changes of origin and scale;
-3. Euclidean distance;
-4. equations, relations and parametrizations as generators of sets;
-5. intersections and regions described by simultaneous conditions.
+1. distinguishing a geometric object from its coordinates;
+2. changing origin and scale;
+3. calculating Euclidean distance;
+4. generating sets with equations, relations and parametrizations;
+5. describing intersections and regions with simultaneous conditions.
