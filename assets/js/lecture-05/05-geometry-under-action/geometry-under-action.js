@@ -11,14 +11,15 @@
 
   const views = {
     line: [-5.0, 3.5, 4.2, -3.5],
-    parallel: [-4.2, 3.6, 5.0, -3.6],
+    parallel: [-4.4, 4.1, 5.2, -3.5],
     triangle: [-4.2, 3.3, 3.8, -3.0],
     square: [-0.8, 2.4, 3.0, -0.8]
   };
 
   const apply = ([x, y]) => [x + y, y];
-  const addVectors = ([x1, y1], [x2, y2]) => [x1 + x2, y1 + y2];
-  const scaleVector = (scalar, [x, y]) => [scalar * x, scalar * y];
+  const add = ([x1, y1], [x2, y2]) => [x1 + x2, y1 + y2];
+  const scale = (scalar, [x, y]) => [scalar * x, scalar * y];
+  const linePoint = (base, direction, parameter) => add(base, scale(parameter, direction));
 
   const board = JXG.JSXGraph.initBoard(host.id, {
     boundingbox: views.line,
@@ -33,162 +34,239 @@
   });
 
   const groups = { line: [], parallel: [], triangle: [], square: [] };
-  const add = (mode, object) => {
+  const register = (mode, object) => {
     groups[mode].push(object);
     return object;
   };
 
-  const segment = (mode, p, q, attrs) => add(mode, board.create('segment', [p, q], {
-    ...fixed,
-    ...attrs
-  }));
+  const segment = (mode, start, end, attrs) => register(
+    mode,
+    board.create('segment', [start, end], { ...fixed, ...attrs })
+  );
 
-  const point = (mode, p, name, attrs) => add(mode, board.create('point', p, {
-    name,
-    size: 4,
-    ...fixed,
-    ...attrs,
-    label: {
-      display: 'html',
-      cssClass: 'vector-label-chip',
-      offset: [8, 10],
-      fontSize: 14,
-      ...(attrs.label || {})
-    }
-  }));
+  const arrow = (mode, start, end, attrs) => segment(mode, start, end, {
+    lastArrow: true,
+    ...attrs
+  });
+
+  const point = (mode, coordinates, name, attrs = {}) => register(
+    mode,
+    board.create('point', coordinates, {
+      name,
+      size: 4,
+      ...fixed,
+      ...attrs,
+      label: {
+        display: 'html',
+        cssClass: 'vector-label-chip',
+        offset: [8, 10],
+        fontSize: 14,
+        ...(attrs.label || {})
+      }
+    })
+  );
 
   const polygon = (mode, vertices, attrs) => {
-    const constructionPoints = vertices.map(p => board.create('point', p, {
+    const constructionPoints = vertices.map(coordinates => board.create('point', coordinates, {
       visible: false,
       withLabel: false,
       ...fixed
     }));
-    const poly = add(mode, board.create('polygon', constructionPoints, {
+    const shape = register(mode, board.create('polygon', constructionPoints, {
       ...fixed,
       vertices: { visible: false },
       ...attrs
     }));
-    poly.borders.forEach(border => groups[mode].push(border));
-    return poly;
+    shape.borders.forEach(border => groups[mode].push(border));
+    return shape;
   };
 
-  // One input line p + t v and its exact image Ap + t Av.
-  // The values are chosen so p + v and Ap + Av are visibly distinct.
+  const drawParametricLine = ({ mode, base, direction, parameters, attrs }) => {
+    const [from, to] = parameters;
+    return segment(
+      mode,
+      linePoint(base, direction, from),
+      linePoint(base, direction, to),
+      attrs
+    );
+  };
+
+  const inputStyle = { strokeColor: '#aeb7c1', strokeWidth: 3, dash: 2 };
+  const outputStyle = { strokeColor: '#2f6f9f', strokeWidth: 4 };
+  const inputPointStyle = { fillColor: '#6f7882', strokeColor: '#6f7882' };
+  const outputPointStyle = { fillColor: '#2f6f9f', strokeColor: '#2f6f9f' };
+  const directionStyle = { strokeColor: '#b1782b', strokeWidth: 5 };
+  const transformedDirectionStyle = { strokeColor: '#7c8f3d', strokeWidth: 5 };
+
+  /* LINE MODE
+     Input:  L(t)  = p + t v
+     Output: A(L(t)) = Ap + t Av
+  */
   const p = [-2, -1];
   const v = [1, 2];
   const Ap = apply(p);
   const Av = apply(v);
-  const inputStart = addVectors(p, scaleVector(-1, v));
-  const inputEnd = addVectors(p, scaleVector(2, v));
-  const outputStart = addVectors(Ap, scaleVector(-0.5, Av));
-  const outputEnd = addVectors(Ap, scaleVector(2, Av));
-  const pPlusV = addVectors(p, v);
-  const ApPlusAv = addVectors(Ap, Av);
+  const pPlusV = add(p, v);
+  const ApPlusAv = add(Ap, Av);
 
-  segment('line', inputStart, inputEnd, {
-    strokeColor: '#aeb7c1', strokeWidth: 3, dash: 2
+  drawParametricLine({
+    mode: 'line',
+    base: p,
+    direction: v,
+    parameters: [-1, 2],
+    attrs: inputStyle
   });
-  segment('line', outputStart, outputEnd, {
-    strokeColor: '#2f6f9f', strokeWidth: 4
+  drawParametricLine({
+    mode: 'line',
+    base: Ap,
+    direction: Av,
+    parameters: [-0.5, 1.7],
+    attrs: outputStyle
   });
   point('line', p, 'p', {
-    fillColor: '#6f7882', strokeColor: '#6f7882',
+    ...inputPointStyle,
     label: { offset: [10, -18] }
   });
   point('line', Ap, 'Ap', {
-    fillColor: '#2f6f9f', strokeColor: '#2f6f9f',
+    ...outputPointStyle,
     label: { offset: [-36, -18] }
   });
-  segment('line', p, pPlusV, {
-    strokeColor: '#b1782b', strokeWidth: 5, lastArrow: true
-  });
-  segment('line', Ap, ApPlusAv, {
-    strokeColor: '#7c8f3d', strokeWidth: 5, lastArrow: true
-  });
+  arrow('line', p, pPlusV, directionStyle);
+  arrow('line', Ap, ApPlusAv, transformedDirectionStyle);
   point('line', pPlusV, 'p + v', {
-    fillColor: '#b1782b', strokeColor: '#b1782b',
+    fillColor: '#b1782b',
+    strokeColor: '#b1782b',
     label: { offset: [-54, 12] }
   });
   point('line', ApPlusAv, 'Ap + Av', {
-    fillColor: '#7c8f3d', strokeColor: '#7c8f3d',
+    fillColor: '#7c8f3d',
+    strokeColor: '#7c8f3d',
     label: { offset: [10, 12] }
   });
 
-  // Two representative parallel input lines and their two images.
-  [-1.2, 1.2].forEach(offset => {
-    const start = [-3.6, -2.6 + offset];
-    const end = [2.4, 3.4 + offset];
-    segment('parallel', start, end, {
-      strokeColor: '#aeb7c1', strokeWidth: 2.8, dash: 2
-    });
-    segment('parallel', apply(start), apply(end), {
-      strokeColor: '#2f6f9f', strokeWidth: 3.5
-    });
-  });
-  segment('parallel', [0, 0], v, {
-    strokeColor: '#b1782b', strokeWidth: 4, lastArrow: true
-  });
-  segment('parallel', [0, 0], Av, {
-    strokeColor: '#7c8f3d', strokeWidth: 4, lastArrow: true
-  });
-  point('parallel', v, 'v', { fillColor: '#b1782b', strokeColor: '#b1782b' });
-  point('parallel', Av, 'Av', { fillColor: '#7c8f3d', strokeColor: '#7c8f3d' });
+  /* PARALLEL-LINES MODE
+     Both input lines use exactly the same direction v.
+     Their images use exactly the same direction Av.
+  */
+  const parallelBases = [
+    [-3, -2],
+    [-3, 0]
+  ];
 
+  parallelBases.forEach((base, index) => {
+    const transformedBase = apply(base);
+
+    drawParametricLine({
+      mode: 'parallel',
+      base,
+      direction: v,
+      parameters: [-0.6, 3.2],
+      attrs: inputStyle
+    });
+    drawParametricLine({
+      mode: 'parallel',
+      base: transformedBase,
+      direction: Av,
+      parameters: [-0.35, 2.25],
+      attrs: outputStyle
+    });
+
+    point('parallel', base, `p${index + 1}`, {
+      ...inputPointStyle,
+      size: 3,
+      label: { offset: [-30, -18] }
+    });
+    point('parallel', transformedBase, `Ap${index + 1}`, {
+      ...outputPointStyle,
+      size: 3,
+      label: { offset: [8, -18] }
+    });
+  });
+
+  arrow('parallel', [0, 0], v, directionStyle);
+  arrow('parallel', [0, 0], Av, transformedDirectionStyle);
+  point('parallel', v, 'v', {
+    fillColor: '#b1782b',
+    strokeColor: '#b1782b',
+    label: { offset: [8, 10] }
+  });
+  point('parallel', Av, 'Av', {
+    fillColor: '#7c8f3d',
+    strokeColor: '#7c8f3d',
+    label: { offset: [8, 10] }
+  });
+
+  /* TRIANGLE MODE
+     Every displayed image vertex is computed by apply(vertex).
+  */
   const triangle = [[-3, -2], [-1.2, 2.2], [1.1, -2]];
   const transformedTriangle = triangle.map(apply);
+
   polygon('triangle', triangle, {
-    fillColor: '#aeb7c1', fillOpacity: 0.1,
-    borders: { strokeColor: '#aeb7c1', strokeWidth: 3, dash: 2, ...fixed }
+    fillColor: '#aeb7c1',
+    fillOpacity: 0.1,
+    borders: { ...fixed, ...inputStyle }
   });
   polygon('triangle', transformedTriangle, {
-    fillColor: '#2f6f9f', fillOpacity: 0.22,
-    borders: { strokeColor: '#2f6f9f', strokeWidth: 4, ...fixed }
+    fillColor: '#2f6f9f',
+    fillOpacity: 0.22,
+    borders: { ...fixed, ...outputStyle }
   });
-  ['p', 'q', 'r'].forEach((name, i) => {
-    point('triangle', triangle[i], name, { fillColor: '#6f7882', strokeColor: '#6f7882' });
-    point('triangle', transformedTriangle[i], `A${name}`, {
-      fillColor: '#2f6f9f', strokeColor: '#2f6f9f'
-    });
+  ['p', 'q', 'r'].forEach((name, index) => {
+    point('triangle', triangle[index], name, inputPointStyle);
+    point('triangle', transformedTriangle[index], `A${name}`, outputPointStyle);
   });
 
+  /* UNIT-SQUARE MODE
+     The transformed vertices are exactly A(0), Ae1, Ae1+Ae2, Ae2.
+  */
   const square = [[0, 0], [1, 0], [1, 1], [0, 1]];
   const transformedSquare = square.map(apply);
+  const Ae1 = apply([1, 0]);
+  const Ae2 = apply([0, 1]);
+
   polygon('square', square, {
-    fillColor: '#aeb7c1', fillOpacity: 0.12,
-    borders: { strokeColor: '#aeb7c1', strokeWidth: 3, dash: 2, ...fixed }
+    fillColor: '#aeb7c1',
+    fillOpacity: 0.12,
+    borders: { ...fixed, ...inputStyle }
   });
   polygon('square', transformedSquare, {
-    fillColor: '#b1782b', fillOpacity: 0.25,
-    borders: { strokeColor: '#b1782b', strokeWidth: 4, ...fixed }
+    fillColor: '#b1782b',
+    fillOpacity: 0.25,
+    borders: { ...fixed, strokeColor: '#b1782b', strokeWidth: 4 }
   });
-  segment('square', [0, 0], apply([1, 0]), {
-    strokeColor: '#2f6f9f', strokeWidth: 4, lastArrow: true
+  arrow('square', [0, 0], Ae1, {
+    strokeColor: '#2f6f9f',
+    strokeWidth: 4
   });
-  segment('square', [0, 0], apply([0, 1]), {
-    strokeColor: '#7c8f3d', strokeWidth: 4, lastArrow: true
+  arrow('square', [0, 0], Ae2, {
+    strokeColor: '#7c8f3d',
+    strokeWidth: 4
   });
-  point('square', apply([1, 0]), 'Ae₁', {
-    fillColor: '#2f6f9f', strokeColor: '#2f6f9f'
+  point('square', Ae1, 'Ae₁', {
+    fillColor: '#2f6f9f',
+    strokeColor: '#2f6f9f'
   });
-  point('square', apply([0, 1]), 'Ae₂', {
-    fillColor: '#7c8f3d', strokeColor: '#7c8f3d'
+  point('square', Ae2, 'Ae₂', {
+    fillColor: '#7c8f3d',
+    strokeColor: '#7c8f3d'
   });
 
   const descriptions = {
     line: {
-      title: 'The point p moves to Ap, and the direction v moves to Av',
+      title: 'One point and one direction determine the complete line',
       latex: '(\\mathbf p+t\\mathbf v)\\mapsto A\\mathbf p+tA\\mathbf v'
     },
     parallel: {
-      title: 'Two input lines receive the same new direction',
-      latex: '\\mathbf v\\mapsto A\\mathbf v\\quad\\Longrightarrow\\quad\\text{parallel lines remain parallel}'
+      title: 'Both input lines use v; both output lines use Av',
+      latex: 'L_i(t)=\\mathbf p_i+t\\mathbf v\\quad\\Longrightarrow\\quad A(L_i(t))=A\\mathbf p_i+tA\\mathbf v'
     },
     triangle: {
-      title: 'Transform the three vertices, then reconnect them',
+      title: 'Every output vertex is the image of the matching input vertex',
       latex: '(\\mathbf p,\\mathbf q,\\mathbf r)\\mapsto(A\\mathbf p,A\\mathbf q,A\\mathbf r)'
     },
     square: {
-      title: 'The unit square becomes the parallelogram generated by the columns',
+      title: 'The image is generated by the two transformed basis vectors',
       latex: '\\mathbf e_1\\mapsto A\\mathbf e_1,\\qquad\\mathbf e_2\\mapsto A\\mathbf e_2'
     }
   };
