@@ -26,10 +26,8 @@ A curve equation supplies the first level. A parametrization supplies an orderin
   <div class="figure-stage jsx-stage"><div id="orbit-model-board" class="jxgbox" data-orbit-models></div></div>
   <label class="parameter-control single-parameter"><span>display parameter $\theta$ = <output data-orbit-theta>0</output></span><input type="range" min="0" max="6.283" step="0.01" value="0" data-orbit-theta-slider></label>
   <div class="relation-readout"><span data-orbit-motion-note>The slider chooses a point on the path; it is not yet a physical time law.</span></div>
-  <figcaption class="figure-caption">The moving point is an illustration of a parametrized path. Its displayed speed is not presented as the physical speed of an orbiting body.</figcaption>
+  <figcaption class="figure-caption">The moving point illustrates a parametrized path. Its displayed speed is not asserted to be the physical speed of an orbiting body.</figcaption>
 </figure>
-
-At the qualitative level used in this lecture:
 
 | Geometric type | Interpretation in the idealized model |
 |---|---|
@@ -37,10 +35,7 @@ At the qualitative level used in this lecture:
 | parabola | limiting case between bounded and unbounded motion |
 | hyperbola | unbounded passage |
 
-No energy calculation, Kepler-law derivation, or differential equation is introduced here. Those belong to a mechanics course or to the later synthesis after calculus.
+The geometric classification alone does not determine speed, force, energy, or the relation between the displayed parameter and physical time.
 
 !!! warning "A curve is not a theory of gravity"
     The statement “the trajectory is an ellipse” does not by itself specify how fast the body moves, why it follows that path, or which assumptions were used. The mathematical model includes the law and the assumptions, not only the shape.
-
-!!! note "Continued in the exercise set"
-    Students will classify paths, separate geometric data from parametrization and physical assumptions, identify idealizations of the two-body model and prepare a short note titled “A trajectory is not a law of motion”.
