@@ -38,7 +38,19 @@ $$
 d(P,F)=d(P,D).
 $$
 
-For $e<1$, the focal distance is smaller than the directrix distance multiplied by $e^{-1}$, and the curve is an ellipse. For $e>1$, the focal distance is larger relative to the directrix distance, and the hyperbolic regime appears.
+For $e<1$,
+
+$$
+d(P,F)<d(P,D),
+$$
+
+and the curve is an ellipse. For $e>1$,
+
+$$
+d(P,F)>d(P,D),
+$$
+
+and the hyperbolic regime appears.
 
 !!! principle "Geometry before coordinate elimination"
     The defining relation compares two distances. Coordinates are introduced only when the condition must be calculated or drawn. The focus, directrix, and constant ratio do not depend on a particular coordinate notation.
