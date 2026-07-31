@@ -1,12 +1,13 @@
-## Questions reserved for later lectures {#later-questions}
+## What composition does not yet answer {#later-questions}
 
-This lecture answers one question:
+A product matrix represents several consecutive linear actions as one linear action.
 
-> How can several linear actions be represented by one matrix?
+Two further problems arise naturally:
 
-Two important questions remain.
+- How can we tell whether a transformation changes area, loses information, or can be reversed?
+- Given an output $\mathbf b$, how can we recover an input $\mathbf x$ satisfying
+  $$
+  A\mathbf x=\mathbf b?
+  $$
 
-- **Lecture 07 — Determinants and Invertibility:** How does a transformation change area, when is information lost, and when can an action be reversed?
-- **Lecture 08 — Linear Systems as Inverse Problems:** Given an output $\mathbf b$, how can we recover an input $\mathbf x$ satisfying $A\mathbf x=\mathbf b$?
-
-Determinant tests, inverse matrices and methods for solving linear systems are not required here. The present goal is to read and construct matrix products as compositions of visible actions.
+The first problem leads to determinants and invertibility. The second leads to linear systems viewed as inverse problems.
