@@ -1,10 +1,12 @@
 ## Exercises {#exercises}
 
-The companion design page separates two levels of work:
+Exercise Set 05 contains problems on:
 
-- **required practice** connects columns, basis images, matrix-vector products and elementary transformations;
-- **developing work** asks students to design matrices, compare pictures with formulas and diagnose dimension collapse.
+- applying a matrix to vectors;
+- reading columns as images of basis vectors;
+- transforming grids, squares, triangles and simple figures;
+- constructing a matrix from a required geometric action.
 
-[Open Exercise Set 05 design page →](../../exercises-05/){ .companion-button }
+[Open Exercise Set 05 →](../../exercises-05/){ .companion-button }
 
-The exercise set is deliberately visual. Every substantial calculation should be accompanied by a labelled grid, basis arrows or a transformed figure.
+For geometric problems, use the drawing to check the column order, the direction of the transformed basis vectors and the position of the final figure.
