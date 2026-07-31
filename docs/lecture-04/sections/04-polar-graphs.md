@@ -24,7 +24,7 @@ The parameters have different jobs:
   <figcaption class="figure-caption">Move $\theta$ to read the formula as a radial instruction. Then vary $e$ and observe how the entire curve changes.</figcaption>
 </figure>
 
-The lecture stops at four qualitative cases:
+The value of $e$ determines four qualitative cases:
 
 | Eccentricity | Geometric type |
 |---|---|
@@ -33,9 +33,9 @@ The lecture stops at four qualitative cases:
 | $e=1$ | parabola |
 | $e>1$ | hyperbola branch |
 
-This is not a list of four unrelated formulas. It is one family with a shape parameter.
+These are not four unrelated formulas. They are four regimes of one family.
 
-For a transparent numerical reading, fix $p=2.4$ and $e=0.6$. Then
+For $p=2.4$ and $e=0.6$,
 
 $$
 r(0)=\frac{2.4}{1.6}=1.5,
@@ -51,8 +51,3 @@ The two opposite directions have very different focal distances. This is the geo
 
 !!! interpretation "The transition at $e=1$"
     For $e<1$, the denominator stays positive for every direction and the curve closes. At $e=1$, it can approach zero in one limiting direction. For $e>1$, some directions no longer produce a finite nonnegative radius, and an open hyperbolic branch appears.
-
-No general second-degree classification and no lengthy algebraic conversion are needed here. The animation carries the qualitative argument; the two hand calculations show how the formula is read.
-
-!!! note "Continued in the exercise set"
-    Students will calculate selected radii, create a four-case comparison table, plot representative curves and explain what changes when $e$ approaches $1$ from below and above.
