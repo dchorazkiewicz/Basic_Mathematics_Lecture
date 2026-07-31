@@ -1,6 +1,6 @@
 ## Lines in the Cartesian plane {#line-construction}
 
-A line should not first appear as a formula to be recognised. We already have all the ingredients needed to construct it geometrically: a point tells us where to begin, and a nonzero free vector tells us in which direction motion is allowed.
+A line can be constructed from one point and one nonzero direction vector. The point specifies where the line passes, and the vector specifies the allowed direction of motion.
 
 The two bridge operations from Lecture 2 will be used throughout this chapter:
 
