@@ -1,10 +1,10 @@
 ## Exercises {#exercises}
 
-The companion set contains twenty problems:
+Exercise Set 02 contains twenty problems.
 
-- **Problems 01–10** consolidate vector calculations, drawing and direct verification;
-- **Problems 11–20** require explanation, comparison, construction and concise mathematical documentation.
+- **Problems 01–10:** vector calculations, drawings and direct verification;
+- **Problems 11–20:** explanation, comparison and construction with vectors, bases and projections.
 
 [Open Exercise Set 02 →](../../exercises-02/){ .companion-button }
 
-The problems are stored separately so that individual tasks can be revised, replaced or removed without rewriting the entire set.
+Use diagrams together with calculations whenever the problem concerns direction, projection, linear combination or change of basis.
