@@ -1,19 +1,18 @@
 ---
 title: Exercises 06 — Composition of Transformations
-description: "Exercise design for Lecture 06, connecting consecutive actions, matrix products, basis-vector journeys and order."
+description: "Exercises on consecutive transformations, matrix products, basis-vector journeys and order."
 exercise_set: "06"
 exercise_title: Composition of Transformations
 lecture_link: lecture-06/
-intro: "Problems 01–10 consolidate two-stage calculations and product construction. Problems 11–20 require comparison, design, error analysis and documented visual reasoning."
+intro: "Follow two-stage transformations, construct product matrices and compare the effects of different orders."
 section_links:
-  - { id: required-practice, title: Required practice }
-  - { id: developing-work, title: Developing work }
-  - { id: visual-standard, title: Visual standard }
+  - { id: core-practice, title: Core practice }
+  - { id: further-problems, title: Further problems }
 ---
 
-# Exercise Set 06 design
+# Exercise Set 06
 
-The set preserves the central translation
+Connect the three descriptions of every composition:
 
 $$
 \text{two consecutive actions}
@@ -23,44 +22,34 @@ $$
 \text{one final transformed picture}.
 $$
 
-## Required practice {#required-practice}
+## Core practice {#core-practice}
 
-| Proposed problem | Main product |
+| Problem | Task |
 |---|---|
-| 01. Follow one vector through two matrices | two intermediate calculations and a plotted journey |
-| 02. Read the chronological order | translation between words, $A(B\mathbf x)$ and $AB\mathbf x$ |
-| 03. Multiply two simple $2\times2$ matrices | four labelled entries $c_{11},c_{12},c_{21},c_{22}$ plus one vector check |
-| 04. Build the first product column | journey of $\mathbf e_1$ |
-| 05. Build the second product column | journey of $\mathbf e_2$ |
-| 06. Transform a unit square in two stages | original, intermediate and final vertices |
-| 07. Stretch then rotate | matrix, basis arrows and sketch |
-| 08. Shear then reflect | matrix, basis arrows and sketch |
-| 09. Compare $AB$ with $BA$ | two products and two final figures |
-| 10. Recover a product from its final basis images | matrix plus verification |
+| 01 | Follow one vector through two matrices and plot all three stages. |
+| 02 | Translate between words, $A(B\mathbf x)$ and $AB\mathbf x$. |
+| 03 | Multiply two $2\times2$ matrices and label $c_{11},c_{12},c_{21},c_{22}$. |
+| 04 | Construct the first column of a product from the journey of $\mathbf e_1$. |
+| 05 | Construct the second column of a product from the journey of $\mathbf e_2$. |
+| 06 | Transform the unit square in two stages. |
+| 07 | Calculate and draw a stretch followed by a rotation. |
+| 08 | Calculate and draw a shear followed by a reflection. |
+| 09 | Compare $AB$ with $BA$ using products and final figures. |
+| 10 | Recover a product matrix from its final basis images. |
 
-## Developing work {#developing-work}
+## Further problems {#further-problems}
 
-| Proposed problem | Main product |
+| Problem | Task |
 |---|---|
-| 11. Derive the indexed product rule | explanation of $c_{ij}=\sum_{k=1}^{2}a_{ik}b_{kj}$ from rows and columns |
-| 12. Compute a product in two ways | indexed row-by-column and basis-image methods |
-| 13. Design a stated two-step action | named stages, product and drawing |
-| 14. Audit a reversed-order solution | corrected notation, matrix and figure |
-| 15. Compose three transformations | staged journey and two groupings |
-| 16. Transform a parametrized line twice | final parametrization and geometric check |
-| 17. Compare two procedures with the same first action | matrix and visual comparison |
-| 18. Transform a simple icon in two stages | three vertex tables and drawings |
-| 19. Explain non-commutativity geometrically | concise comparison note |
-| 20. Complete composition note | stages, product, basis check, figure and interpretation |
+| 11 | Derive $c_{ij}=\sum_{k=1}^{2}a_{ik}b_{kj}$ from the row–column rule. |
+| 12 | Compute one product by both the row–column and basis-image methods. |
+| 13 | Design a stated two-step transformation and calculate its product. |
+| 14 | Find and correct a solution with the factors in the wrong order. |
+| 15 | Compose three transformations and compare $(AB)C$ with $A(BC)$. |
+| 16 | Transform a parametrized line twice. |
+| 17 | Compare two procedures that share the same first transformation. |
+| 18 | Transform a simple icon in two stages. |
+| 19 | Explain geometrically why matrix multiplication is not generally commutative. |
+| 20 | Present one composition using its stages, product, basis check and final figure. |
 
-## Visual standard {#visual-standard}
-
-Every problem beyond routine arithmetic should show at least two of the following:
-
-- an input, intermediate and final arrow;
-- the original, intermediate and final figure;
-- the images of $\mathbf e_1$ and $\mathbf e_2$ after each stage;
-- a colour-coded row–column diagram for the entries $c_{ij}$;
-- a table of vertices before and after each matrix.
-
-The intermediate stage is not decoration. It is the evidence that the matrices were applied in the correct order. In multiplication problems, indices and row–column highlighting are part of the explanation, not optional styling.
+Always write the chronological order before multiplying. In $AB\mathbf x$, the matrix $B$ acts first.
