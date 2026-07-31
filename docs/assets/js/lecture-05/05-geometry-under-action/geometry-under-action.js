@@ -10,7 +10,7 @@
   const state = { mode: 'line' };
 
   const views = {
-    line: [-4.8, 3.4, 4.4, -3.4],
+    line: [-5.0, 3.5, 4.2, -3.5],
     parallel: [-4.2, 3.6, 5.0, -3.6],
     triangle: [-4.2, 3.3, 3.8, -3.0],
     square: [-0.8, 2.4, 3.0, -0.8]
@@ -73,14 +73,15 @@
   };
 
   // One input line p + t v and its exact image Ap + t Av.
+  // The values are chosen so p + v and Ap + Av are visibly distinct.
   const p = [-2, -1];
-  const v = [1, 1];
+  const v = [1, 2];
   const Ap = apply(p);
   const Av = apply(v);
-  const inputStart = addVectors(p, scaleVector(-2.3, v));
-  const inputEnd = addVectors(p, scaleVector(4.7, v));
-  const outputStart = addVectors(Ap, scaleVector(-1.2, Av));
-  const outputEnd = addVectors(Ap, scaleVector(3.5, Av));
+  const inputStart = addVectors(p, scaleVector(-1, v));
+  const inputEnd = addVectors(p, scaleVector(2, v));
+  const outputStart = addVectors(Ap, scaleVector(-0.5, Av));
+  const outputEnd = addVectors(Ap, scaleVector(2, Av));
   const pPlusV = addVectors(p, v);
   const ApPlusAv = addVectors(Ap, Av);
 
@@ -106,11 +107,11 @@
   });
   point('line', pPlusV, 'p + v', {
     fillColor: '#b1782b', strokeColor: '#b1782b',
-    label: { offset: [10, 10] }
+    label: { offset: [-54, 12] }
   });
   point('line', ApPlusAv, 'Ap + Av', {
     fillColor: '#7c8f3d', strokeColor: '#7c8f3d',
-    label: { offset: [10, 10] }
+    label: { offset: [10, 12] }
   });
 
   // Two representative parallel input lines and their two images.
