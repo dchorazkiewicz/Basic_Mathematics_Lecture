@@ -28,13 +28,15 @@ $$
 r=\sqrt{x^2+y^2}.
 $$
 
-Only one elementary conversion is performed on the lecture. For $(r,\theta)=(4,\pi/3)$,
+For $(r,\theta)=(4,\pi/3)$,
 
 $$
-x=2,\qquad y=2\sqrt3.
+x=4\cos\frac{\pi}{3}=2,
+\qquad
+y=4\sin\frac{\pi}{3}=2\sqrt3.
 $$
 
-The essential idea is not the conversion algorithm. It is the operational reading of a radial equation:
+A radial equation is read operationally:
 
 > Choose a direction $\theta$, calculate $r(\theta)$, and place the point at that distance from the pole.
 
@@ -45,16 +47,25 @@ The essential idea is not the conversion algorithm. It is the operational readin
   <figcaption class="figure-caption">The rotating ray and the changing radial distance materialize the meaning of $r=f(\theta)$.</figcaption>
 </figure>
 
-The example
+The equation
 
 $$
 r=2R\cos\theta
 $$
 
-generates a circle that passes through the pole. We do not spend the lecture converting many radial equations to Cartesian form. One conversion is enough to verify that two descriptions can generate the same curve.
+generates a circle passing through the pole. Substituting $r^2=x^2+y^2$ and $r\cos\theta=x$ gives
 
-!!! principle "Why this coordinate system appears now"
+$$
+x^2+y^2=2Rx,
+$$
+
+or
+
+$$
+(x-R)^2+y^2=R^2.
+$$
+
+Thus the radial and Cartesian equations describe the same circle.
+
+!!! principle "Why radial coordinates are useful"
     A focus or a central body is a distinguished point. A radial description records distance from that point directly instead of reconstructing it from horizontal and vertical coordinates.
-
-!!! note "Continued in the exercise set"
-    Students will convert several simple points, read radial equations operationally, generate tables of $r(\theta)$ and compare one radial description with a Cartesian description of the same curve.
