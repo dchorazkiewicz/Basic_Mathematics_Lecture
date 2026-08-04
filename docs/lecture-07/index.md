@@ -1,6 +1,6 @@
 ---
 title: Determinants and Invertibility
-description: "Lecture 7 — determinant as signed area, singular collapse and the possibility of reversing a linear action."
+description: "Lecture 7 — determinant as signed area, singular collapse and the test for unique reversibility."
 lecture: "07"
 eyebrow: Lecture 07 · Actions and Linear Algebra
 lecture_title: Determinants and Invertibility
@@ -12,7 +12,7 @@ section_links:
   - { id: determinant-calculation, title: Calculate the determinant }
   - { id: collapse-to-line, title: Collapse from 2D to 1D }
   - { id: information-loss, title: Where the information goes }
-  - { id: invertibility, title: Undoing an action }
+  - { id: invertibility, title: When reversal is possible }
   - { id: determinant-composition, title: Determinants of compositions }
   - { id: exercises, title: Exercises }
 ---
