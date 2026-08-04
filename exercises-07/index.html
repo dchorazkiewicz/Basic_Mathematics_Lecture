@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Exercises on signed area, singular collapse, information loss and tests for reversibility.">
+  <title>Exercises 07 — Determinants and Invertibility · Basic Mathematics</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/home.css">
+  <link rel="stylesheet" href="../assets/css/lecture.css">
+  <link rel="stylesheet" href="../assets/css/figures.css">
+  <link rel="stylesheet" href="../assets/css/exercises.css">
+  <link rel="stylesheet" href="../assets/css/mkdocs-adapter.css">
+  
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        tags: 'ams'
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="..">Basic Mathematics</a>
+    <nav class="header-links" aria-label="Primary navigation">
+      <a href="..#course-map">Course map</a>
+      <a href="https://github.com/dchorazkiewicz/basic_mathematics">GitHub</a>
+    </nav>
+  </header>
+
+  
+    <div class="lecture-shell">
+      <aside class="lecture-nav" aria-label="Exercise set contents">
+        <div class="nav-label">Exercises 07</div>
+        <a class="companion-link" href="../lecture-07/">← Return to lecture</a>
+        
+          <a href="#core-practice">Core practice</a>
+        
+          <a href="#further-problems">Further problems</a>
+        
+      </aside>
+      <main class="lecture-main exercise-plan-main">
+        <header class="lecture-header">
+          <p class="eyebrow">Exercises · Lecture 07</p>
+          <h1>Determinants and Invertibility</h1>
+          <p class="lecture-author">Damian Chorążkiewicz</p>
+          <p>Calculate determinants, interpret their signs and connect a zero determinant with collapse and information loss.</p>
+          <div class="companion-actions">
+            <a class="companion-button" href="../lecture-07/">← Return to Lecture 07</a>
+          </div>
+        </header>
+        <h1 id="exercise-set-07">Exercise Set 07</h1>
+<p>For each matrix, connect the calculation with the geometry:</p>
+<div class="arithmatex">\[
+\det A
+\longleftrightarrow
+\text{signed area}
+\longleftrightarrow
+\text{column directions}
+\longleftrightarrow
+\text{information loss or reversibility}.
+\]</div>
+<h2 id="core-practice">Core practice</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Calculate the determinant of six simple <span class="arithmatex">\(2\times2\)</span> matrices.</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Match determinant values with transformed unit squares.</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Draw the image of the unit square and read its ordinary area.</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Compare a stretch and a shear with the same or different area factors.</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Identify whether orientation is preserved or reversed.</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Calculate the determinant of a reflection and explain the negative sign.</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Find which matrices collapse the unit square to a segment.</td>
+</tr>
+<tr>
+<td>08</td>
+<td>For <span class="arithmatex">\(S=\begin{bmatrix}1&amp;1\\1&amp;1\end{bmatrix}\)</span>, find four different inputs with the same output.</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Find a nonzero vector sent to zero by a given singular matrix.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Decide whether a linear action can be reversed uniquely.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="further-problems">Further problems</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>Derive $</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Recover possible determinant signs from the order of two column vectors.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Construct a matrix with determinant <span class="arithmatex">\(3\)</span> and draw its unit-square image.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Construct two different matrices with determinant <span class="arithmatex">\(1\)</span>.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Construct a singular matrix whose image is the line <span class="arithmatex">\(y=2x\)</span>.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Explain algebraically why collinear columns produce determinant zero.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Show that <span class="arithmatex">\(A\mathbf p=A\mathbf q\)</span> implies <span class="arithmatex">\(A(\mathbf p-\mathbf q)=\mathbf0\)</span>.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Verify <span class="arithmatex">\(\det(AB)=\det A\det B\)</span> for two simple transformations.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Explain why a later linear action cannot restore a dimension lost earlier.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Present one matrix through its columns, transformed square, determinant and information-loss test.</td>
+</tr>
+</tbody>
+</table>
+<p>Do not calculate inverse matrices in this set. The determinant is used only to decide whether unique reversal is possible.</p>
+      </main>
+    </div>
+  
+</body>
+</html>
