@@ -2,19 +2,19 @@
 
 ## Rola wykładu w całym kursie
 
-Poprzednie dwa wykłady pokazały, jak opisywać przekształcenia i jak je składać. Teraz pojawia się pierwsze zasadnicze ograniczenie tego języka: nie każde działanie można odwrócić.
+Poprzednie dwa wykłady pokazały, jak opisywać przekształcenia i jak je składać. Teraz pojawia się pierwsze zasadnicze ograniczenie tego języka: nie każde działanie można jednoznacznie cofnąć.
 
-Wyznacznik, odwracalność i macierz odwrotna nie powinny być przedstawiane jako trzy niezależne tematy. Wszystkie odpowiadają na jedno pytanie o utratę informacji.
+Wykład 07 skupia się na utracie informacji, wyznaczniku i rozpoznawaniu odwracalności. Nie wprowadza jeszcze macierzy odwrotnej ani technik jej obliczania. Te pojawią się w wykładzie 08 razem z problemem odzyskiwania wejścia z równania \(Ax=b\).
 
 ## Główne pytanie
 
-> Kiedy przekształcenie można cofnąć, a kiedy jego działanie bezpowrotnie łączy różne dane wejściowe w ten sam wynik?
+> Kiedy przekształcenie można cofnąć jednoznacznie, a kiedy jego działanie łączy różne dane wejściowe w ten sam wynik?
 
 ## Centralna idea
 
 > Przekształcenie jest odwracalne wtedy, gdy nie traci informacji.
 
-Wyznacznik mierzy, jak przekształcenie zmienia zorientowane pole w dwóch wymiarach lub zorientowaną objętość w trzech wymiarach. W szczególności
+Wyznacznik mierzy, jak przekształcenie zmienia zorientowane pole w dwóch wymiarach. W szczególności
 
 \[
 \det A=0
@@ -24,28 +24,25 @@ oznacza, że figura o dodatnim polu została spłaszczona do obiektu niższego w
 
 ## Proponowana narracja wykładu
 
-### 1. Próba cofania prostych przekształceń
+### 1. Obraz kwadratu jednostkowego
 
-Zaczynamy od przykładów:
+Zaczynamy od kolumn macierzy i obrazu kwadratu jednostkowego. Pokazujemy kolejno:
 
-- obrót można cofnąć obrotem przeciwnym,
-- niezerowe skalowanie można cofnąć skalowaniem odwrotnym,
-- ścinanie można cofnąć odpowiednim ścinaniem,
-- rzut płaszczyzny na prostą nie może zostać cofnięty.
+- zachowanie pola przez identyczność,
+- zmianę pola przez skalowanie,
+- zmianę kształtu bez zmiany pola przez ścinanie,
+- zmianę orientacji przez odbicie,
+- spłaszczenie kwadratu do odcinka.
 
-W ostatnim przypadku wiele punktów ma ten sam obraz. To nie jest brak sprytnego algorytmu, lecz rzeczywista utrata informacji.
+Interpretacja geometryczna poprzedza definicję i wzór.
 
-### 2. Geometria pola i orientacji
-
-Śledzimy obraz kwadratu jednostkowego. Po przekształceniu otrzymujemy równoległobok rozpięty przez kolumny macierzy.
+### 2. Pole i orientacja
 
 Wyznacznik opisuje:
 
-- współczynnik zmiany pola,
-- zmianę lub zachowanie orientacji przez znak,
+- współczynnik zmiany pola przez wartość bezwzględną,
+- zachowanie lub zmianę orientacji przez znak,
 - spłaszczenie, gdy wartość wynosi zero.
-
-Interpretacja geometryczna powinna poprzedzić wzór rachunkowy.
 
 ### 3. Wyznacznik macierzy \(2\times2\)
 
@@ -61,59 +58,98 @@ wprowadzamy
 \det A=ad-bc.
 \]
 
-Wzór ma zostać powiązany z polem równoległoboku utworzonego przez kolumny macierzy. Nie powinien pojawić się jako czysto formalna definicja pozbawiona wcześniejszej potrzeby.
+Wzór wynika z pola równoległoboku utworzonego przez kolumny macierzy. Najpierw pojawia się jawny przykład liczbowy, w którym pole jest liczone jako długość podstawy razy wysokość prostopadła. Dopiero potem ten sam argument zostaje zapisany dla współczynników \(a,b,c,d\).
 
-### 4. Macierz odwrotna jako cofnięcie działania
+### 4. Kolaps z dwóch wymiarów do jednego
 
-Jeżeli przekształcenie nie traci informacji, istnieje działanie odwrotne. Macierz \(A^{-1}\) spełnia
+Centralnym przykładem jest
 
 \[
-A^{-1}A=AA^{-1}=I.
+S=\begin{bmatrix}1&1\\1&1\end{bmatrix}.
 \]
 
-Macierz odwrotna jest więc reprezentacją cofnięcia przekształcenia.
+Pokazujemy jednocześnie obrazowo i algebraicznie, że
 
-W wymiarze dwa można pokazać wzór na odwrotność i jeden przykład, ale nie należy rozbudowywać wykładu w katalog metod obliczeniowych.
+\[
+S\begin{bmatrix}s\\t\end{bmatrix}
+=(s+t)\begin{bmatrix}1\\1\end{bmatrix}.
+\]
 
-### 5. Równoważność pojęć
+Dwa parametry wejściowe \(s,t\) zostają zastąpione jednym parametrem \(s+t\). Cała płaszczyzna trafia na jedną prostą.
 
-W prostym, dwuwymiarowym kontekście spinamy najważniejsze fakty:
+### 5. Utrata informacji
+
+Dwa różne wejścia mogą mieć ten sam obraz. Na konkretnych wektorach pokazujemy
+
+\[
+S\mathbf p=S\mathbf q,
+\]
+
+a następnie
+
+\[
+S(\mathbf p-\mathbf q)=\mathbf0.
+\]
+
+Student widzi dwa równoważne opisy tego samego zjawiska:
+
+- różne wejścia zlewają się w jeden wynik,
+- pewien niezerowy kierunek znika całkowicie.
+
+### 6. Test odwracalności
+
+W wymiarze dwa spinamy fakty:
 
 - \(\det A\neq0\),
 - kolumny macierzy nie są współliniowe,
+- kolumny tworzą bazę płaszczyzny,
 - przekształcenie nie spłaszcza płaszczyzny,
-- istnieje macierz odwrotna,
-- każde wyjście pochodzi od dokładnie jednego wejścia.
+- żaden niezerowy wektor nie jest wysyłany do zera,
+- każdy wynik pochodzi od dokładnie jednego wejścia.
 
-Student powinien zobaczyć, że są to różne opisy tego samego zjawiska.
+Na tym etapie odwracalność jest własnością przekształcenia, nie algorytmem. Nie używamy jeszcze symbolu \(A^{-1}\), nie podajemy wzoru na odwrotność i nie wykonujemy obliczeń macierzy odwrotnych.
+
+### 7. Wyznacznik złożenia
+
+Z interpretacji pola wynika
+
+\[
+\det(AB)=\det A\det B.
+\]
+
+Pokazujemy jeden prosty przykład: skalowanie zmienia pole, a następujące po nim ścinanie zachowuje otrzymane pole. Jeżeli jeden etap ma wyznacznik zero, cały proces pozostaje singularny, ponieważ późniejsza transformacja nie może odtworzyć utraconego wymiaru.
 
 ## Zakres konieczny
 
 Na wykładzie powinny pojawić się:
 
-- utrata informacji jako źródło problemu,
+- obraz kwadratu jednostkowego,
 - wyznacznik \(2\times2\),
 - interpretacja pola i znaku,
+- kolaps z 2D do 1D,
+- utrata informacji i niezerowy kierunek wysyłany do zera,
 - warunek \(\det A=0\),
-- idea macierzy odwrotnej,
-- jeden prosty przykład obliczenia odwrotności.
+- test możliwości jednoznacznego cofnięcia,
+- własność \(\det(AB)=\det A\det B\).
 
-Pełne rozwinięcie Laplace'a, wzory dla dużych macierzy i rozbudowane techniki rachunkowe nie są potrzebne w głównej narracji.
+Macierz odwrotna, symbol \(A^{-1}\), wzór na odwrotność i jej obliczanie nie należą do tego wykładu.
 
 ## Co można przenieść do ćwiczeń
 
 - większą liczbę obliczeń wyznaczników,
-- techniczne wyznaczanie macierzy odwrotnych,
-- metodę Gaussa–Jordana,
-- wyznaczniki wyższych rzędów,
-- sprawdzanie odwracalności na podstawie różnych kryteriów.
+- budowanie macierzy o zadanym wyznaczniku,
+- znajdowanie kierunków wysyłanych do zera,
+- porównywanie różnych kryteriów odwracalności,
+- sprawdzanie wyznacznika złożenia na przykładach.
 
 ## Co student powinien zapamiętać
 
-> Zerowy wyznacznik oznacza spłaszczenie i utratę informacji; niezerowy wyznacznik oznacza, że przekształcenie można odwrócić.
+> Zerowy wyznacznik oznacza spłaszczenie i utratę informacji; niezerowy wyznacznik oznacza, że każde wyjście ma dokładnie jedno wejście.
 
 ## Przejście do następnego wykładu
 
-Jeżeli znamy wynik działania przekształcenia, naturalnie chcemy odzyskać dane wejściowe. Prowadzi to do pytania:
+Jeżeli wiemy już, że cofnięcie jest możliwe, pozostaje pytanie rachunkowe:
 
-> Jak rozwiązać równanie \(Ax=b\), gdy \(x\) jest nieznane?
+> Jak znaleźć wejście \(x\), gdy znamy macierz \(A\) i wynik \(b\) w równaniu \(Ax=b\)?
+
+To pytanie prowadzi do macierzy odwrotnej i układów równań w wykładzie 08.
