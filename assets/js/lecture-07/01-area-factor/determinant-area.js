@@ -125,7 +125,7 @@
   });
   board.create('text', [
     () => current().matrix[0][1] + 0.12,
-    () => current().matrix[1][1] + 0.12,
+    () => current().matrix[1][1] - 0.28,
     () => 'A e₂'
   ], {
     fixed: true,
