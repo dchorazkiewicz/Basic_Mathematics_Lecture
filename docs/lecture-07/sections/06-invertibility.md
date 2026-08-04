@@ -137,11 +137,9 @@ For a singular matrix, each statement fails. For a matrix with nonzero determina
 The determinant therefore answers the first reversal question:
 
 $$
-\boxed{
 \det A\neq0
 \quad\Longleftrightarrow\quad
-\text{the action can be reversed uniquely}
-}
+\text{the action can be reversed uniquely}.
 $$
 
 The next question is computational: given a particular output $\mathbf b$, how do we find its input $\mathbf x$?
