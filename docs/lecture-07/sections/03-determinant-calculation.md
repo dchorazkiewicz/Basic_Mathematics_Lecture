@@ -88,7 +88,7 @@ c&d
 \begin{bmatrix}b\\d\end{bmatrix}.
 $$
 
-A perpendicular unit direction to $\mathbf u$ is
+Assume first that $\mathbf u\neq\mathbf0$. A perpendicular unit direction to $\mathbf u$ is
 
 $$
 \mathbf n=rac1{\sqrt{a^2+c^2}}
@@ -107,6 +107,8 @@ Multiplying by the base length $\sqrt{a^2+c^2}$ gives ordinary area
 $$
 |ad-bc|.
 $$
+
+If $\mathbf u=\mathbf0$, the parallelogram is already collapsed and both its area and $|ad-bc|$ are zero.
 
 The sign records the orientation, so we define:
 
