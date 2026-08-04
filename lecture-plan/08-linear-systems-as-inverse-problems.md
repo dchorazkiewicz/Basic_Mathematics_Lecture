@@ -2,7 +2,7 @@
 
 ## Rola wykładu w całym kursie
 
-Ten wykład zamyka blok algebry liniowej. Wszystkie wcześniejsze idee mają tu zostać użyte razem.
+Ten wykład zamyka blok algebry liniowej. Wykład 07 rozstrzygnął, kiedy jednoznaczne cofnięcie działania jest możliwe. Teraz konstruujemy samo działanie odwrotne i używamy go do odzyskiwania nieznanego wejścia.
 
 Nie zaczynamy od układu równań jako osobnego działu rachunkowego. Zaczynamy od problemu odwrotnego: znamy wynik działania, lecz nie znamy danych wejściowych.
 
@@ -20,7 +20,7 @@ nie jest nową notacją bez motywacji. Jest naturalnym zapisem pytania o przyczy
 
 ## Centralna idea
 
-> Układ równań liniowych jest problemem odwrotnym dla przekształcenia liniowego.
+> Macierz odwrotna opisuje cofnięcie odwracalnego działania, a układ równań pyta o wejście prowadzące do znanego wyniku.
 
 Macierz \(A\) opisuje działanie, wektor \(x\) jest nieznanym wejściem, a wektor \(b\) jest znanym wynikiem.
 
@@ -38,54 +38,66 @@ Zapisujemy problem jako
 Ax=b.
 \]
 
-Student powinien umieć odczytać każdą część równania:
+Każda część równania ma bezpośrednie znaczenie:
 
 - \(x\) — nieznane dane,
 - \(A\) — znana reguła ich przekształcenia,
 - \(b\) — znany rezultat.
 
-### 2. Przypadek odwracalny
+### 2. Macierz odwrotna jako cofnięcie działania
 
-Jeżeli \(A\) jest odwracalna, to przekształcenie nie utraciło informacji. Można zastosować działanie odwrotne:
+Jeżeli \(\det A\neq0\), wykład 07 pokazał, że każde wyjście ma dokładnie jedno wejście. Wprowadzamy macierz \(A^{-1}\) jako macierz działania cofającego:
+
+\[
+A^{-1}A=AA^{-1}=I.
+\]
+
+Najpierw pokazujemy cofnięcie na prostym przykładzie geometrycznym, a dopiero potem symbol i rachunek.
+
+Dla macierzy \(2\times2\) można podać wzór na odwrotność i jeden jawny przykład. Student ma rozumieć, że czynnik \(1/\det A\) jest możliwy tylko wtedy, gdy wyznacznik jest niezerowy.
+
+### 3. Przypadek odwracalny w równaniu \(Ax=b\)
+
+Zastosowanie działania odwrotnego daje
 
 \[
 x=A^{-1}b.
 \]
 
-Ten wzór powinien być interpretowany jako cofnięcie przekształcenia, nie jako formalny trik polegający na przeniesieniu macierzy na drugą stronę.
+Ten wzór jest cofnięciem przekształcenia, a nie formalnym przeniesieniem macierzy na drugą stronę równania.
 
-### 3. Gdy odwrotność nie istnieje
+### 4. Gdy odwrotność nie istnieje
 
-Brak macierzy odwrotnej nie rozstrzyga jeszcze samodzielnie, czy rozwiązanie istnieje. Pojawiają się trzy możliwości:
+Brak macierzy odwrotnej nie rozstrzyga jeszcze samodzielnie, czy dla konkretnego \(b\) istnieje rozwiązanie. Pojawiają się trzy możliwości:
 
 - dokładnie jedno rozwiązanie,
 - brak rozwiązań,
 - nieskończenie wiele rozwiązań.
 
-Interpretujemy je geometrycznie jako wzajemne położenie prostych lub płaszczyzn oraz jako pytanie, czy \(b\) należy do zbioru możliwych wyników przekształcenia.
+Interpretujemy je geometrycznie jako pytanie, czy \(b\) należy do zbioru możliwych wyników przekształcenia.
 
-W kontekście macierzy kwadratowej przypadek dokładnie jednego rozwiązania odpowiada odwracalności. Przypadki osobliwe pokazują, co dzieje się po utracie wymiaru lub przy sprzecznych wymaganiach.
+W przypadku macierzy kwadratowej dokładnie jedno rozwiązanie dla każdego \(b\) odpowiada odwracalności. Przypadki singularne pokazują, co dzieje się po utracie wymiaru.
 
-### 4. Eliminacja jako zachowanie zbioru rozwiązań
+### 5. Eliminacja jako zachowanie zbioru rozwiązań
 
-Metoda eliminacji powinna pojawić się jako sposób zastępowania układu innym, prostszym układem o tym samym zbiorze rozwiązań.
+Metoda eliminacji pojawia się jako sposób zastępowania układu innym, prostszym układem o tym samym zbiorze rozwiązań.
 
-Operacje elementarne na równaniach nie są arbitralnymi manipulacjami. Każda z nich zachowuje informację o rozwiązaniach:
+Operacje elementarne na równaniach zachowują rozwiązania:
 
 - zamiana równań,
 - pomnożenie równania przez niezerową liczbę,
 - dodanie wielokrotności jednego równania do drugiego.
 
-Na wykładzie wystarczy jeden przejrzysty przykład eliminacji. Biegłość algorytmiczna powinna być rozwijana na ćwiczeniach.
+Na wykładzie wystarczy jeden przejrzysty przykład eliminacji. Biegłość algorytmiczna jest rozwijana na ćwiczeniach.
 
-### 5. Synteza całego bloku
+### 6. Synteza całego bloku
 
 W jednym schemacie łączymy cztery wykłady:
 
 1. macierz opisuje przekształcenie,
 2. iloczyn macierzy opisuje składanie działań,
-3. wyznacznik rozpoznaje utratę informacji i odwracalność,
-4. układ \(Ax=b\) pyta o wejście prowadzące do znanego wyniku.
+3. wyznacznik rozpoznaje utratę informacji i możliwość cofnięcia,
+4. macierz odwrotna i układ \(Ax=b\) odzyskują wejście ze znanego wyniku.
 
 Dzięki temu algebra liniowa nie jest zbiorem niepowiązanych algorytmów, lecz spójnym językiem opisu działań i problemów odwrotnych.
 
@@ -94,9 +106,12 @@ Dzięki temu algebra liniowa nie jest zbiorem niepowiązanych algorytmów, lecz 
 Na wykładzie powinny pojawić się:
 
 - interpretacja \(Ax=b\),
+- macierz odwrotna jako cofnięcie działania,
+- warunki \(A^{-1}A=AA^{-1}=I\),
+- wzór na odwrotność macierzy \(2\times2\),
+- jeden jawny przykład obliczenia odwrotności,
 - rozwiązanie przez odwrotność w przypadku odwracalnym,
 - trzy możliwe liczby rozwiązań,
-- geometryczna interpretacja prostych układów,
 - podstawowa idea eliminacji,
 - jeden kompletny przykład rachunkowy.
 
@@ -105,15 +120,15 @@ Nie jest konieczne omawianie wszystkich wariantów metod rozwiązywania ani budo
 ## Co można przenieść do ćwiczeń
 
 - techniczne wykonywanie eliminacji Gaussa,
-- rozwiązywanie większej liczby układów,
+- obliczanie większej liczby macierzy odwrotnych,
 - metoda Gaussa–Jordana,
-- reguła Cramera jako dodatkowa metoda i okazja do użycia wyznaczników,
+- reguła Cramera jako dodatkowa metoda,
 - klasyfikowanie układów na podstawie postaci schodkowej,
 - zadania modelowe prowadzące do układów równań.
 
 ## Co student powinien zapamiętać
 
-> Rozwiązując \(Ax=b\), szukamy danych wejściowych, które po znanym przekształceniu dają obserwowany wynik.
+> Rozwiązując \(Ax=b\), szukamy danych wejściowych, które po znanym przekształceniu dają obserwowany wynik; gdy działanie jest odwracalne, macierz odwrotna wykonuje cofnięcie.
 
 ## Domknięcie bloku algebry liniowej
 
@@ -121,10 +136,8 @@ Rozdziały 5–8 odpowiadają kolejno na cztery pytania:
 
 1. Jak opisać przekształcenie? — macierzą.
 2. Jak składać przekształcenia? — mnożąc macierze.
-3. Kiedy działanie można cofnąć? — badając odwracalność i wyznacznik.
-4. Jak odzyskać wejście ze znanego wyniku? — rozwiązując układ liniowy.
-
-Wspólnym motywem jest przejście od opisu obiektów do opisu operacji wykonywanych na obiektach.
+3. Kiedy działanie można cofnąć? — badając wyznacznik i utratę informacji.
+4. Jak rzeczywiście odzyskać wejście ze znanego wyniku? — używając macierzy odwrotnej lub eliminacji.
 
 ## Przejście do rachunku różniczkowego
 
