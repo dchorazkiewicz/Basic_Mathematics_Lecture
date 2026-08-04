@@ -35,7 +35,7 @@ $$
 A vector perpendicular to $\mathbf u=[2,1]$ is $[-1,2]$. Its unit version is
 
 $$
-\mathbf n=rac1{\sqrt5}
+\mathbf n=\dfrac1{\sqrt5}
 \begin{bmatrix}-1\\2\end{bmatrix}.
 $$
 
@@ -48,10 +48,10 @@ h
 &=\left|
 \begin{bmatrix}1\\3\end{bmatrix}
 \cdot
-\frac1{\sqrt5}
+\dfrac1{\sqrt5}
 \begin{bmatrix}-1\\2\end{bmatrix}
 \right|\\
-&=\frac{|-1+6|}{\sqrt5}\\
+&=\dfrac{|-1+6|}{\sqrt5}\\
 &=\sqrt5.
 \end{aligned}
 $$
@@ -91,7 +91,7 @@ $$
 Assume first that $\mathbf u\neq\mathbf0$. A perpendicular unit direction to $\mathbf u$ is
 
 $$
-\mathbf n=rac1{\sqrt{a^2+c^2}}
+\mathbf n=\dfrac1{\sqrt{a^2+c^2}}
 \begin{bmatrix}-c\\a\end{bmatrix}.
 $$
 
@@ -99,7 +99,7 @@ Hence the height is
 
 $$
 |\mathbf v\cdot\mathbf n|
-=rac{|ad-bc|}{\sqrt{a^2+c^2}}.
+=\dfrac{|ad-bc|}{\sqrt{a^2+c^2}}.
 $$
 
 Multiplying by the base length $\sqrt{a^2+c^2}$ gives ordinary area
