@@ -53,5 +53,3 @@ $$
 | 18 | Verify $\det(AB)=\det A\det B$ for two simple transformations. |
 | 19 | Explain why a later linear action cannot restore a dimension lost earlier. |
 | 20 | Present one matrix through its columns, transformed square, determinant and information-loss test. |
-
-Do not calculate inverse matrices in this set. The determinant is used only to decide whether unique reversal is possible.
