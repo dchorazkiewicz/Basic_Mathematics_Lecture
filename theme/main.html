@@ -86,6 +86,11 @@
         'assets/js/lecture-06/04-basis-journey/basis-journey.js',
         'assets/js/lecture-06/05-order-matters/order-matters.js'
       ] %}
+    {% elif page.meta.lecture == '07' %}
+      {% set scripts = scripts + [
+        'assets/js/lecture-07/01-area-factor/determinant-area.js',
+        'assets/js/lecture-07/04-collapse/singular-collapse.js'
+      ] %}
     {% endif %}
     {% for script in scripts %}<script defer src="{{ script | url }}"></script>{% endfor %}
   {% endif %}
